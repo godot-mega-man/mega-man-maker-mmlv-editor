@@ -25,6 +25,9 @@ class_name DataGameTile
 #      Properties
 #-------------------------------------------------
 
+#Position
+export (Vector2) var pos
+
 #e
 export (int) var block_id
 

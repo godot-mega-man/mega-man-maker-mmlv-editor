@@ -33,6 +33,7 @@ export (String) var level_file_name = "level"
 
 export (bool) var load_file setget load_file
 export (bool) var save setget set_save
+export (bool) var close setget set_close
 
 #--Level Settings
 
@@ -70,11 +71,7 @@ func construct_level(file_data : String):
 	var _gameobj_data : Array = $GameObjectDataBuilder.get_gameobj_data(file_data)
 	var _tile_data : Array = $GameObjectDataBuilder.get_tile_data(file_data)
 	
-	#Clear children from Tile and Objects
-	for i in $Tile.get_children():
-		i.queue_free()
-	for i in $Objects.get_children():
-		i.queue_free()
+	clear_level()
 	
 	#Initiate level data (Coming soon!)
 	pass
@@ -95,6 +92,20 @@ func construct_level(file_data : String):
 		prev_obj.set_owner(get_tree().edited_scene_root)
 	
 	#Init tile
+	for i in _tile_data:
+		i = i as DataGameTile
+		
+		$TileMap.set_cellv($TileMap.world_to_map(i.pos), 0)
+
+func clear_level():
+	#Clear TileMap
+	$TileMap.clear()
+	
+	#Clear children from Objects
+	for i in $Objects.get_children():
+		i.queue_free()
+	
+	level_name = String()
 
 #-------------------------------------------------
 #      Connections
@@ -129,5 +140,17 @@ func load_file(val : bool) -> void:
 	f.close()
 
 func set_save(val : bool) -> void:
-	if val:
-		OS.alert("Level saved!", "Saved")
+	if not val:
+		return
+	
+	if level_name.empty():
+		OS.alert("Please enter a level name before saving a level.", "Save")
+		return
+	
+	OS.alert("Level saved!", "Saved")
+
+func set_close(val : bool) -> void:
+	if not val:
+		return
+	
+	clear_level()

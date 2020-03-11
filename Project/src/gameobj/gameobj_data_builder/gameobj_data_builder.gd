@@ -60,7 +60,7 @@ func get_gameobj_data(file_data : String) -> Array:
 		var _data_gameobj = DataGameObject.new()
 		var idx2 = idx
 		
-		while(idx2 < idx + 36):
+		while(idx2 < idx + 12):
 			var _dataset : PoolStringArray
 			
 			match _data_array[idx2].left(1):
@@ -95,7 +95,42 @@ func get_gameobj_data(file_data : String) -> Array:
 	return result
 
 func get_tile_data(file_data : String) -> Array:
-	return []
+	var _data_array : PoolStringArray = file_data.split("\n")
+	var result : Array
+	
+	for idx in _data_array.size():
+		var _line : String = _data_array[idx]
+		
+		if not _line.begins_with("k"):
+			continue
+		
+		#Start creating
+		
+		var _data_gametile = DataGameTile.new()
+		var idx2 = idx
+		
+		while(idx2 < idx + 8):
+			var _dataset : PoolStringArray
+			
+			match _data_array[idx2].left(1):
+				"k":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "k")
+					_data_gametile.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
+					_data_gametile.tileset_offset.y = float(_dataset[2])
+				"j":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "j")
+					_data_gametile.tileset_offset.x = float(_dataset[2])
+				"e":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "e")
+					_data_gametile.block_id = float(_dataset[2])
+				_:
+					break
+			
+			idx2 += 1
+		
+		result.append(_data_gametile)
+	
+	return result
 
 #-------------------------------------------------
 #      Connections
