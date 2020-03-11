@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/level.gd" type="Script" id=1]
 [ext_resource path="res://src/gameobj/gameobj_data_builder/gameobj_data_builder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/gameobj/game_grid/game_grid.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
-level_file_name = "0.mmlv"
+level_file_name = "automated man - dont move"
 
 [node name="GameObjectDataBuilder" parent="." instance=ExtResource( 2 )]
 
 [node name="Tile" type="Node2D" parent="."]
 
 [node name="Objects" type="Node2D" parent="."]
+
+[node name="GameGrid" parent="." instance=ExtResource( 3 )]

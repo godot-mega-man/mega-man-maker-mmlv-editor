@@ -28,7 +28,8 @@ class_name DataGameTile
 #e
 export (int) var block_id
 
-#j, k (not quite precise)
+#Position of tileset
+#j = x-position, k = y-position
 export (Vector2) var tileset_offset
 
 #-------------------------------------------------

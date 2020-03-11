@@ -1,6 +1,7 @@
 # Level
 # Written by: First
 
+tool
 extends Node
 
 #class_name optional
@@ -28,7 +29,7 @@ const PREVIEW_GAME_OBJ = preload("res://src/gameobj/preview_object/preview_game_
 #-------------------------------------------------
 
 export (String) var level_path = "C:/Users/Acer/AppData/Local/MegaMaker/Levels"
-export (String) var level_file_name = "level.mmlv"
+export (String) var level_file_name = "level"
 
 export (bool) var load_file setget load_file
 export (bool) var save setget set_save
@@ -91,6 +92,7 @@ func construct_level(file_data : String):
 		prev_obj.obj_id = i.obj_id
 		prev_obj.obj_appearance = i.obj_appearance
 		prev_obj.obj_timer = i.obj_timer
+		prev_obj.set_owner(get_tree().edited_scene_root)
 	
 	#Init tile
 
@@ -117,7 +119,7 @@ func load_file(val : bool) -> void:
 		return
 	
 	var f = File.new()
-	var open_result = f.open(level_path.plus_file(level_file_name), File.READ)
+	var open_result = f.open(level_path.plus_file(level_file_name + ".mmlv"), File.READ)
 	
 	if open_result == OK:
 		construct_level(f.get_as_text())

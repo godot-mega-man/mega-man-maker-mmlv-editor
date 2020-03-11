@@ -28,18 +28,12 @@ _global_script_classes=[ {
 "class": "PreviewObject",
 "language": "GDScript",
 "path": "res://src/gameobj/preview_object/preview_object.gd"
-}, {
-"base": "PreviewObject",
-"class": "PreviewTile",
-"language": "GDScript",
-"path": "res://src/gameobj/preview_object/preview_tile.gd"
 } ]
 _global_script_class_icons={
 "DataGameObject": "",
 "DataGameTile": "",
 "PreviewGameObject": "",
-"PreviewObject": "",
-"PreviewTile": ""
+"PreviewObject": ""
 }
 
 [application]

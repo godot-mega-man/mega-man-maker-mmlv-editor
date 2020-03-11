@@ -1,6 +1,7 @@
 # Script_Name_Here
 # Written by: 
 
+tool
 extends Node
 
 #class_name optional
