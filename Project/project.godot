@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "GameTileSetData",
 "language": "GDScript",
-"path": "res://src/game_database/database/game_tileset_data/game_tileset_data.gd"
+"path": "res://src/game_database/database/game_tileset_data.gd"
 }, {
 "base": "PreviewObject",
 "class": "PreviewGameObject",

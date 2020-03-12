@@ -92,10 +92,7 @@ func construct_level(file_data : String):
 		prev_obj.set_owner(get_tree().edited_scene_root)
 	
 	#Init tile
-	for i in _tile_data:
-		i = i as DataGameTile
-		
-		$TileMap.set_cellv($TileMap.world_to_map(i.pos), 0)
+	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
 
 func clear_level():
 	#Clear TileMap
