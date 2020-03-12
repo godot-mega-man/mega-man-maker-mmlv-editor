@@ -1,21 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/level.gd" type="Script" id=1]
 [ext_resource path="res://src/gameobj/gameobj_data_builder/gameobj_data_builder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/gameobj/game_grid/game_grid.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/images/tilesets/TstMM4Drill.png" type="Texture" id=4]
-
-[sub_resource type="TileSet" id=1]
-0/name = "TstMM4Drill.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [  ]
-0/z_index = 0
+[ext_resource path="res://src/gameobj/game_tilemap_drawer/game_tilemap_drawer.tscn" type="PackedScene" id=4]
 
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
@@ -23,10 +11,7 @@ level_name = ""
 
 [node name="GameObjectDataBuilder" parent="." instance=ExtResource( 2 )]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 16, 16 )
-format = 1
+[node name="GameTileMapDrawer" parent="." instance=ExtResource( 4 )]
 
 [node name="Objects" type="Node2D" parent="."]
 
