@@ -96,7 +96,7 @@ func construct_level(file_data : String):
 
 func clear_level():
 	#Clear TileMap
-	$TileMap.clear()
+	$GameTileMapDrawer.clear()
 	
 	#Clear children from Objects
 	for i in $Objects.get_children():

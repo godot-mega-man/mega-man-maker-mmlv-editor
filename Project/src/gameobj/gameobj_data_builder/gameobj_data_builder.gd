@@ -109,7 +109,7 @@ func get_tile_data(file_data : String) -> Array:
 		var _data_gametile = DataGameTile.new()
 		var idx2 = idx
 		
-		while(idx2 < idx + 8):
+		while(idx2 < idx + 16):
 			var _dataset : PoolStringArray
 			
 			match _data_array[idx2].left(1):
@@ -123,7 +123,7 @@ func get_tile_data(file_data : String) -> Array:
 				"e":
 					_dataset = _get_dataset_from_line_data(_data_array[idx2], "e")
 					_data_gametile.block_id = float(_dataset[2])
-				_:
+				"a":
 					break
 			
 			idx2 += 1

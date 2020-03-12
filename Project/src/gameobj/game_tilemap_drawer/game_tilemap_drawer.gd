@@ -1,6 +1,7 @@
 # TilemapDrawer
 # Written by: First
 
+tool
 extends TileMap
 
 #class_name optional
@@ -25,8 +26,6 @@ extends TileMap
 #      Properties
 #-------------------------------------------------
 
-var _current_data_tiles : Array
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -44,13 +43,10 @@ var _current_data_tiles : Array
 #-------------------------------------------------
 
 func draw_from_game_data_tiles(tiles_data : Array = []):
-	if _current_data_tiles == null:
-		_current_data_tiles = tiles_data
-	
-	for i in _current_data_tiles:
+	for i in tiles_data:
 		i = i as DataGameTile
 		
-		$TileMap.set_cellv($TileMap.world_to_map(i.pos), 0)
+		set_cellv(world_to_map(i.pos), (i.block_id * GameTileSetData.TILE_COUNT) + GameTileSetData.SUBTILE_POSITION_IDS.get(i.tileset_offset))
 
 #-------------------------------------------------
 #      Connections
