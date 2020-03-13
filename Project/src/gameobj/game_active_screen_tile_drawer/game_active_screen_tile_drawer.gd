@@ -1,10 +1,10 @@
-# GameGrid
+# GameActiveScreenTileDrawer
 # Written by: First
 
 tool
-extends Node2D
+extends TileMap
 
-class_name GameGrid
+#class_name optional
 
 """
 	Enter desc here.
@@ -22,11 +22,6 @@ class_name GameGrid
 #      Constants
 #-------------------------------------------------
 
-const LEVEL_SIZE = Vector2(50, 20)
-const SCREEN_SIZE = Vector2(256, 224)
-const GRID_COLOR = Color.gray
-const GRID_LINE_WIDTH = 1
-
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -34,27 +29,6 @@ const GRID_LINE_WIDTH = 1
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	update()
-
-func _draw() -> void:
-	#Draw vertical lines
-	for i in LEVEL_SIZE.x:
-		draw_line(
-			Vector2(SCREEN_SIZE.x * i, 0),
-			Vector2(SCREEN_SIZE.x * i, SCREEN_SIZE.y * LEVEL_SIZE.y),
-			GRID_COLOR,
-			GRID_LINE_WIDTH
-		)
-	#Draw horizontal lines
-	for i in LEVEL_SIZE.y:
-		draw_line(
-			Vector2(0, SCREEN_SIZE.y * i),
-			Vector2(SCREEN_SIZE.x * LEVEL_SIZE.x, SCREEN_SIZE.y * i),
-			GRID_COLOR,
-			GRID_LINE_WIDTH
-		)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -67,6 +41,19 @@ func _draw() -> void:
 #-------------------------------------------------
 #      Public Methods
 #-------------------------------------------------
+
+func draw_from_vectors(_active_screen_positions : PoolVector2Array):
+	set_all_cells_inactive()
+	
+	for i in _active_screen_positions:
+		i = i as Vector2
+		
+		set_cellv(world_to_map(i), -1)
+
+func set_all_cells_inactive():
+	for xs in int(GameGrid.LEVEL_SIZE.x):
+		for ys in int(GameGrid.LEVEL_SIZE.y):
+			set_cell(xs, ys, 0)
 
 #-------------------------------------------------
 #      Connections

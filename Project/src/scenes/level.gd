@@ -72,11 +72,13 @@ func construct_level(file_data : String):
 	_generate_objects(file_data)
 	_generate_tilemap(file_data)
 	_generate_bgs(file_data)
+	_generate_active_screens(file_data)
 
 func clear_level():
 	#Clear all TileMap(s)
 	$GameTileMapDrawer.clear()
 	$GameBgTileDrawer.clear()
+	$GameActiveScreenTileDrawer.set_all_cells_inactive()
 	
 	#Clear children from Objects
 	for i in $Objects.get_children():
@@ -120,6 +122,9 @@ func _generate_tilemap(file_data : String):
 func _generate_bgs(file_data : String):
 	var _bg_tile_data : Array = $GameObjectDataBuilder.get_bg_data(file_data)
 	$GameBgTileDrawer.draw_from_game_bg_data(_bg_tile_data)
+
+func _generate_active_screens(file_data : String):
+	$GameActiveScreenTileDrawer.draw_from_vectors($GameObjectDataBuilder.get_active_screens_data(file_data))
 
 #-------------------------------------------------
 #      Setters & Getters

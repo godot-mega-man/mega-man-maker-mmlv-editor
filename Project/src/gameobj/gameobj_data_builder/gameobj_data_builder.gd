@@ -156,6 +156,26 @@ func get_bg_data(file_data : String) -> Array:
 	
 	return result
 
+func get_active_screens_data(file_data : String) -> PoolVector2Array:
+	var _data_array : PoolStringArray = file_data.split("\n")
+	var result : PoolVector2Array
+	
+	for idx in _data_array.size():
+		var _line : String = _data_array[idx]
+		
+		if not _line.begins_with("2a"):
+			continue
+		
+		#Start creating
+		
+		var _dataset : PoolStringArray
+		
+		if _data_array[idx].left(2) == "2a":
+			_dataset = _get_dataset_from_line_data(_data_array[idx], "2a")
+			result.append(Vector2(float(_dataset[0]), float(_dataset[1])))
+	
+	return result
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
