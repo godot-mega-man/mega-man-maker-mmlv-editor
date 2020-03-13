@@ -74,8 +74,9 @@ func construct_level(file_data : String):
 	_generate_bgs(file_data)
 
 func clear_level():
-	#Clear TileMap
+	#Clear all TileMap(s)
 	$GameTileMapDrawer.clear()
+	$GameBgTileDrawer.clear()
 	
 	#Clear children from Objects
 	for i in $Objects.get_children():
@@ -117,7 +118,8 @@ func _generate_tilemap(file_data : String):
 	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
 
 func _generate_bgs(file_data : String):
-	pass
+	var _bg_tile_data : Array = $GameObjectDataBuilder.get_bg_data(file_data)
+	$GameBgTileDrawer.draw_from_game_bg_data(_bg_tile_data)
 
 #-------------------------------------------------
 #      Setters & Getters

@@ -106,15 +106,29 @@ func get_tile_data(file_data : String) -> Array:
 		
 		#Start creating
 		
-		var _data_gamebg = DataGameBg.new()
-		var _dataset : PoolStringArray
+		var _data_gametile = DataGameTile.new()
+		var idx2 = idx
 		
-		if _data_array[idx].left(2) == "2d":
-			_dataset = _get_dataset_from_line_data(_data_array[idx], "2d")
-			_data_gamebg.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
-			_data_gamebg.bg_id = float(_dataset[2])
+		while(idx2 < idx + 16):
+			var _dataset : PoolStringArray
+			
+			match _data_array[idx2].left(1):
+				"k":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "k")
+					_data_gametile.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
+					_data_gametile.tileset_offset.y = float(_dataset[2])
+				"j":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "j")
+					_data_gametile.tileset_offset.x = float(_dataset[2])
+				"e":
+					_dataset = _get_dataset_from_line_data(_data_array[idx2], "e")
+					_data_gametile.block_id = float(_dataset[2])
+				"a":
+					break
+			
+			idx2 += 1
 		
-		result.append(_data_gamebg)
+		result.append(_data_gametile)
 	
 	return result
 
@@ -130,40 +144,15 @@ func get_bg_data(file_data : String) -> Array:
 		
 		#Start creating
 		
-		var _data_gameobj = DataGameObject.new()
-		var idx2 = idx
+		var _data_gamebg = DataGameBg.new()
+		var _dataset : PoolStringArray
 		
-		while(idx2 < idx + 12):
-			var _dataset : PoolStringArray
-			
-			match _data_array[idx2].left(1):
-				"o":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "o")
-					_data_gameobj.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
-				"b":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "b")
-					_data_gameobj.obj_vector_x = float(_dataset[2])
-				"c":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "c")
-					_data_gameobj.obj_vector_y = float(_dataset[2])
-				"d":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "d")
-					_data_gameobj.obj_type = float(_dataset[2])
-				"e":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "e")
-					_data_gameobj.obj_id = float(_dataset[2])
-				"f":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "f")
-					_data_gameobj.obj_appearance = float(_dataset[2])
-				"h":
-					_dataset = _get_dataset_from_line_data(_data_array[idx2], "h")
-					_data_gameobj.obj_timer = float(_dataset[2])
-				_:
-					break
-			
-			idx2 += 1
+		if _data_array[idx].left(2) == "2d":
+			_dataset = _get_dataset_from_line_data(_data_array[idx], "2d")
+			_data_gamebg.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
+			_data_gamebg.bg_id = float(_dataset[2])
 		
-		result.append(_data_gameobj)
+		result.append(_data_gamebg)
 	
 	return result
 
