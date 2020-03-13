@@ -3,7 +3,7 @@
 
 extends Reference
 
-class_name DataGameTile
+class_name DataGameBg
 
 """
 	Enter desc here.
@@ -28,12 +28,8 @@ class_name DataGameTile
 #Position
 export (Vector2) var pos
 
-#e
-export (int) var block_id
-
-#Position of tileset
-#j = x-position, k = y-position
-export (Vector2) var tileset_offset
+#2d (Not a dimension. Don't get confused!)
+export (int) var bg_id
 
 #-------------------------------------------------
 #      Notifications

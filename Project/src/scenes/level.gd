@@ -67,32 +67,11 @@ export (float) var boss_portrait = -1.000000 #1f
 #-------------------------------------------------
 
 func construct_level(file_data : String):
-	var _level_data : Array = $GameObjectDataBuilder.get_level_data(file_data)
-	var _gameobj_data : Array = $GameObjectDataBuilder.get_gameobj_data(file_data)
-	var _tile_data : Array = $GameObjectDataBuilder.get_tile_data(file_data)
-	
 	clear_level()
-	
-	#Initiate level data (Coming soon!)
-	pass
-	
-	#Init objects
-	for i in _gameobj_data:
-		i = i as DataGameObject
-		
-		var prev_obj = PREVIEW_GAME_OBJ.instance()
-		$Objects.add_child(prev_obj)
-		prev_obj.global_position = i.pos
-		prev_obj.obj_vector_x = i.obj_vector_x
-		prev_obj.obj_vector_y = i.obj_vector_y
-		prev_obj.obj_type = i.obj_type
-		prev_obj.obj_id = i.obj_id
-		prev_obj.obj_appearance = i.obj_appearance
-		prev_obj.obj_timer = i.obj_timer
-		prev_obj.set_owner(get_tree().edited_scene_root)
-	
-	#Init tile
-	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
+	_init_level_data(file_data)
+	_generate_objects(file_data)
+	_generate_tilemap(file_data)
+	_generate_bgs(file_data)
 
 func clear_level():
 	#Clear TileMap
@@ -111,6 +90,34 @@ func clear_level():
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _init_level_data(file_data : String):
+	var _level_data : Array = $GameObjectDataBuilder.get_level_data(file_data)
+	#coming soon
+
+func _generate_objects(file_data : String):
+	var _gameobj_data : Array = $GameObjectDataBuilder.get_gameobj_data(file_data)
+	
+	for i in _gameobj_data:
+		i = i as DataGameObject
+		
+		var prev_obj = PREVIEW_GAME_OBJ.instance()
+		$Objects.add_child(prev_obj)
+		prev_obj.global_position = i.pos
+		prev_obj.obj_vector_x = i.obj_vector_x
+		prev_obj.obj_vector_y = i.obj_vector_y
+		prev_obj.obj_type = i.obj_type
+		prev_obj.obj_id = i.obj_id
+		prev_obj.obj_appearance = i.obj_appearance
+		prev_obj.obj_timer = i.obj_timer
+		prev_obj.set_owner(get_tree().edited_scene_root)
+
+func _generate_tilemap(file_data : String):
+	var _tile_data : Array = $GameObjectDataBuilder.get_tile_data(file_data)
+	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
+
+func _generate_bgs(file_data : String):
+	pass
 
 #-------------------------------------------------
 #      Setters & Getters
