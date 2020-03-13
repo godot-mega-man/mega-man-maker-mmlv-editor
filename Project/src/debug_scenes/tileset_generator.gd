@@ -21,11 +21,19 @@ extends Node
 #-------------------------------------------------
 
 const OUTPUT_TILESET_RES_NAME = "MMM Tileset"
-const GEN_SUCCESS_TITLE = "Tileset Generator"
-const GEN_SUCCESS_MSG = str(
+const OUTPUT_BG_TILESET_RES_NAME = "MMM Bg Tileset"
+
+const GEN_TITLE = "Tileset Generator"
+const GEN_TILESET_SUCCESS_MSG = str(
 	"Generated successfully!\n\n",
 	"For the next step, you might want to save the output as a resource file to the assets folder.\n",
 	"Please save the tileset as a resource file to res://assets/tilesets/ and assign it to a tilemap object GameTilemapDrawer.\n\n",
+	"NOTE: Tileset Output might not be updated (visual bug?). You might need to click on it."
+)
+const GEN_BG_TILESET_SUCCESS_MSG = str(
+	"Generated successfully!\n\n",
+	"For the next step, you might want to save the output as a resource file to the assets folder.\n",
+	"Please save the tileset as a resource file to res://assets/bg/ and assign it to a tilemap object GameBgTilemapDrawer.\n\n",
 	"NOTE: Tileset Output might not be updated (visual bug?). You might need to click on it."
 )
 
@@ -35,7 +43,8 @@ const GEN_SUCCESS_MSG = str(
 
 export (TileSet) var tileset_output
 
-export (bool) var create setget set_create
+export (bool) var create_tileset setget set_create_tileset
+export (bool) var create_bg_tileset setget set_create_bg_tileset
 
 #-------------------------------------------------
 #      Notifications
@@ -53,7 +62,7 @@ export (bool) var create setget set_create
 #      Public Methods
 #-------------------------------------------------
 
-func generate():
+func generate_tileset():
 	tileset_output = TileSet.new()
 	
 	var idx_i : int = 0
@@ -72,7 +81,19 @@ func generate():
 	
 	tileset_output.resource_name = OUTPUT_TILESET_RES_NAME
 	
-	OS.alert(GEN_SUCCESS_MSG, GEN_SUCCESS_TITLE)
+	OS.alert(GEN_TILESET_SUCCESS_MSG, GEN_TITLE)
+
+func generate_bg_tileset():
+	tileset_output = TileSet.new()
+	
+	for i in GameBgData.BG_DATA.keys():
+		tileset_output.create_tile(i)
+		tileset_output.tile_set_texture(i, load("res://assets/images/bg/" + GameBgData.BG_DATA.get(i) + ".png"))
+		tileset_output.tile_set_name(i, GameBgData.BG_DATA.get(i) + "_" + str(i))
+	
+	tileset_output.resource_name = OUTPUT_BG_TILESET_RES_NAME
+	
+	OS.alert(GEN_BG_TILESET_SUCCESS_MSG, GEN_TITLE)
 
 #-------------------------------------------------
 #      Connections
@@ -86,9 +107,14 @@ func generate():
 #      Setters & Getters
 #-------------------------------------------------
 
-func set_create(val : bool):
+func set_create_tileset(val : bool):
 	if not val:
 		return
 	
-	generate()
-	emit_signal("script_changed")
+	generate_tileset()
+
+func set_create_bg_tileset(val : bool):
+	if not val:
+		return
+	
+	generate_bg_tileset()

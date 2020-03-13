@@ -132,6 +132,30 @@ func get_tile_data(file_data : String) -> Array:
 	
 	return result
 
+func get_bg_data(file_data : String) -> Array:
+	var _data_array : PoolStringArray = file_data.split("\n")
+	var result : Array
+	
+	for idx in _data_array.size():
+		var _line : String = _data_array[idx]
+		
+		if not _line.begins_with("2d"):
+			continue
+		
+		#Start creating
+		
+		var _data_gamebg = DataGameBg.new()
+		var _dataset : PoolStringArray
+		
+		if _data_array[idx].left(2) == "2d":
+			_dataset = _get_dataset_from_line_data(_data_array[idx], "2d")
+			_data_gamebg.pos = Vector2(float(_dataset[0]), float(_dataset[1]))
+			_data_gamebg.bg_id = float(_dataset[2])
+		
+		result.append(_data_gamebg)
+	
+	return result
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
