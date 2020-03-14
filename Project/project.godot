@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://src/game_database/global_gameclass/data_gamebg.gd"
 }, {
 "base": "Reference",
+"class": "DataGameLevel",
+"language": "GDScript",
+"path": "res://src/game_database/global_gameclass/data_gamelevel.gd"
+}, {
+"base": "Reference",
 "class": "DataGameObject",
 "language": "GDScript",
 "path": "res://src/game_database/global_gameclass/data_gameobject.gd"
@@ -23,6 +28,11 @@ _global_script_classes=[ {
 "class": "DataGameTile",
 "language": "GDScript",
 "path": "res://src/game_database/global_gameclass/data_gametile.gd"
+}, {
+"base": "Reference",
+"class": "GameBgColorData",
+"language": "GDScript",
+"path": "res://src/game_database/database/game_bg_color_data.gd"
 }, {
 "base": "Reference",
 "class": "GameBgData",
@@ -51,8 +61,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DataGameBg": "",
+"DataGameLevel": "",
 "DataGameObject": "",
 "DataGameTile": "",
+"GameBgColorData": "",
 "GameBgData": "",
 "GameGrid": "",
 "GameTileSetData": "",

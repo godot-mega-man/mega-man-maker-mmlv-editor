@@ -42,8 +42,68 @@ extends Node
 #      Public Methods
 #-------------------------------------------------
 
-func get_level_data(file_data : String) -> Array:
-	return []
+func get_game_level_data(file_data : String) -> DataGameLevel:
+	var _data_array : PoolStringArray = file_data.split("\n")
+	var result = DataGameLevel.new()
+	
+	for idx in _data_array.size():
+		var _line : String = _data_array[idx]
+		var _dataset : PoolStringArray
+		
+		match _data_array[idx].left(2):
+			"0a": #User id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "0a")
+				result.user_id = float(_dataset[1])
+			"0v": #Level version
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "0v")
+				result.level_version = str(_dataset[1])
+			"1a": #Level name
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1a")
+				result.level_name = str(_dataset[1])
+			"4a": #Username
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "4a")
+				result.user_name = str(_dataset[1])
+			"4b": #User icon (portrait)
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "4b")
+				result.user_icon_id = float(_dataset[1])
+			"1b": #Sliding
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1b")
+				result.sliding = float(_dataset[1])
+			"1c": #Charge shot enabled
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1c")
+				result.charge_shot_enable = float(_dataset[1])
+			"1d": #Charge shot type
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1d")
+				result.charge_shot_type = float(_dataset[1])
+			"1e": #Default bg color id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1e")
+				result.default_background_color = float(_dataset[1])
+			"1f": #Boss portrait
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1f")
+				result.boss_portrait = float(_dataset[1])
+			"1k": #Weapon slots
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1k")
+				result.weapons[int(_dataset[0])] = float(_dataset[1])
+			"1l": #Level track ID
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1l")
+				result.default_background_color = float(_dataset[1])
+			"1m": #Level music (game number)
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1m")
+				result.default_background_color = float(_dataset[1])
+			"1p": #Default bg color id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1p")
+				result.val_p = float(_dataset[1])
+			"1q": #Default bg color id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1q")
+				result.val_q = float(_dataset[1])
+			"1r": #Default bg color id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1r")
+				result.val_r = float(_dataset[1])
+			"1s": #Default bg color id
+				_dataset = _get_dataset_from_line_data(_data_array[idx], "1s")
+				result.val_s = float(_dataset[1])
+	
+	return result
 
 func get_gameobj_data(file_data : String) -> Array:
 	var _data_array : PoolStringArray = file_data.split("\n")
