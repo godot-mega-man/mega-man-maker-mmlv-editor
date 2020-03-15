@@ -25,28 +25,28 @@ class PoolStringReverse:
 class TempObjectCodeData:
 	extends Reference
 	
-	var a : float = NAN
-	var b : float = NAN
-	var c : float = NAN
-	var d : float = NAN
-	var e : float = NAN
-	var f : float = NAN
-	var g : float = NAN
-	var h : float = NAN
+	var a : float = DataGameObject.MISSING_DATA
+	var b : float = DataGameObject.MISSING_DATA
+	var c : float = DataGameObject.MISSING_DATA
+	var d : float = DataGameObject.MISSING_DATA
+	var e : float = DataGameObject.MISSING_DATA
+	var f : float = DataGameObject.MISSING_DATA
+	var g : float = DataGameObject.MISSING_DATA
+	var h : float = DataGameObject.MISSING_DATA
 	var i : float = 0
-	var j : float = NAN
-	var k : float = NAN
+	var j : float = DataGameObject.MISSING_DATA
+	var k : float = DataGameObject.MISSING_DATA
 	var l : float = 0
-	var m : float = NAN
-	var n : float = NAN
-	var o : float = NAN
+	var m : float = DataGameObject.MISSING_DATA
+	var n : float = DataGameObject.MISSING_DATA
+	var o : float = DataGameObject.MISSING_DATA
 	var pos : Vector2
 
 class TempBossCodeData:
 	extends Reference
 	
-	var _1xc
-	var _1yc
+	var _1xc = 0
+	var _1yc = 0
 	var _1ga
 	var _1g
 	var _1ha
@@ -324,10 +324,10 @@ func build(file_data : String):
 				temp_obj_code_data.l = float(_dataset[2])
 			"m":
 				_dataset = _get_dataset_from_line_data(i, "m")
-				temp_obj_code_data.l = float(_dataset[2])
+				temp_obj_code_data.m = float(_dataset[2])
 			"n":
 				_dataset = _get_dataset_from_line_data(i, "n")
-				temp_obj_code_data.l = float(_dataset[2])
+				temp_obj_code_data.n = float(_dataset[2])
 			"o":
 				_dataset = _get_dataset_from_line_data(i, "o")
 				temp_obj_code_data.o = float(_dataset[2])
@@ -351,28 +351,30 @@ func _build_from_code_data(code_data):
 		if code_data.i == BlockType.OBJECT:
 			var data_game_obj = DataGameObject.new()
 			data_game_obj.pos = code_data.pos
-			if code_data.b != NAN:
+			if code_data.b != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_vector_x = code_data.b
-			if code_data.c != NAN:
+			if code_data.c != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_vector_y = code_data.c
-			if code_data.d != NAN:
+			if code_data.d != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_type = code_data.d
-			if code_data.e != NAN:
+			if code_data.e != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_id = code_data.e
-			if code_data.f != NAN:
+			if code_data.f != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_appearance = code_data.f
-			if code_data.g != NAN:
+			if code_data.g != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_direction = code_data.g
-			if code_data.h != NAN:
+			if code_data.h != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_timer = code_data.h
-			if code_data.j != NAN:
+			if code_data.j != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_tex_h_offset = code_data.j
-			if code_data.k != NAN:
+			if code_data.k != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_tex_v_offset = code_data.k
-			if code_data.m != NAN:
+			if code_data.m != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_destination_x = code_data.m
-			if code_data.n != NAN:
+			if code_data.n != DataGameObject.MISSING_DATA:
 				data_game_obj.obj_destination_y = code_data.n
+			if code_data.o != DataGameObject.MISSING_DATA:
+				data_game_obj.obj_option = code_data.o
 			_data_game_objects.append(data_game_obj)
 		elif code_data.i == BlockType.TILE:
 			var data_tile = DataGameTile.new()
@@ -410,6 +412,7 @@ func _build_from_code_data(code_data):
 		data_boss.change_player_id = code_data._1x
 		data_boss.music_category = code_data._1n
 		data_boss.music_id = code_data._1o
+		
 		_data_bosses.append(data_boss)
 
 

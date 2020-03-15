@@ -10,7 +10,6 @@
 
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
-double_damage = 1.0
 
 [node name="GameBgTileDrawer" parent="." instance=ExtResource( 5 )]
 

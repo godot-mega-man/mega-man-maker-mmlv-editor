@@ -109,6 +109,166 @@ func clear_level():
 	
 	level_name = String()
 
+func get_save() -> String:
+	var txt_pool : PoolStringArray
+	
+	#Save level settings
+	txt_pool.append(_combine_code_line_text("0a", user_id))
+	txt_pool.append(_combine_code_line_text("0v", level_version))
+	txt_pool.append(_combine_code_line_text("1a", level_name))
+	txt_pool.append(_combine_code_line_text("4a", user_name))
+	txt_pool.append(_combine_code_line_text("4b", user_icon_id))
+	txt_pool.append(_combine_code_line_text("1b", sliding))
+	txt_pool.append(_combine_code_line_text("1c", charge_shot_enable))
+	txt_pool.append(_combine_code_line_text("1ba", double_damage))
+	txt_pool.append(_combine_code_line_text("1ca", proto_strike))
+	txt_pool.append(_combine_code_line_text("1bb", double_jump))
+	txt_pool.append(_combine_code_line_text("1d", charge_shot_type))
+	txt_pool.append(_combine_code_line_text("1e", default_background_color))
+	txt_pool.append(_combine_code_line_text("1f", boss_portrait))
+	txt_pool.append(_combine_code_line_text("1bc", bosses_count))
+	
+	#Bosses
+	#TODO: Fix dismatching boss index
+	var idx : int = 0
+	for boss in data_bosses:
+		boss = boss as DataGameBoss
+		txt_pool.append(_combine_code_line_text("1xc" + str(idx), boss.pos.x))
+		txt_pool.append(_combine_code_line_text("1yc" + str(idx), boss.pos.y))
+		txt_pool.append(_combine_code_line_text("1ga" + str(idx), boss.primary_weak_enabled))
+		txt_pool.append(_combine_code_line_text("1g" + str(idx), boss.primary_weak_wp_slot_id))
+		txt_pool.append(_combine_code_line_text("1ha" + str(idx), boss.secondary_weak_enabled))
+		txt_pool.append(_combine_code_line_text("1h" + str(idx), boss.secondary_weak_wp_slot_id))
+		txt_pool.append(_combine_code_line_text("1i" + str(idx), boss.immune_enabled))
+		txt_pool.append(_combine_code_line_text("1j" + str(idx), boss.immune_wp_slot_id))
+		txt_pool.append(_combine_code_line_text("1ua" + str(idx), boss.drop_item_on_death))
+		txt_pool.append(_combine_code_line_text("1u" + str(idx), boss.drop_item_id))
+		txt_pool.append(_combine_code_line_text("1va" + str(idx), boss.drop_wp_on_death))
+		txt_pool.append(_combine_code_line_text("1v" + str(idx), boss.drop_mode))
+		txt_pool.append(_combine_code_line_text("1w" + str(idx), boss.drop_wp_slot_id))
+		txt_pool.append(_combine_code_line_text("1xa" + str(idx), boss.change_player_enabled))
+		txt_pool.append(_combine_code_line_text("1x" + str(idx), boss.change_player_id))
+		txt_pool.append(_combine_code_line_text("1n" + str(idx), boss.music_category))
+		txt_pool.append(_combine_code_line_text("1o" + str(idx), boss.music_id))
+		
+		idx += 1
+	
+	#Weapons
+	idx = 0
+	for i in weapons:
+		if i == -1: #Nothing. Don't save.
+			continue
+		
+		txt_pool.append(_combine_code_line_text("1k" + str(idx), i))
+		
+		idx += 1
+	
+	#Level (cont.)
+	txt_pool.append(_combine_code_line_text("1l", music_track_id))
+	txt_pool.append(_combine_code_line_text("1m", music_game_id))
+	txt_pool.append(_combine_code_line_text("1p", val_p))
+	txt_pool.append(_combine_code_line_text("1q", val_q))
+	txt_pool.append(_combine_code_line_text("1r", val_r))
+	txt_pool.append(_combine_code_line_text("1s", val_s))
+	
+	#Screen disconnections
+	for pos in disconnected_screens:
+		pos = pos as Vector2
+		txt_pool.append(_combine_code_line_text("2b", 0, pos))
+	
+	#Active screens
+	for i in GameGrid.LEVEL_SIZE.x:
+		for j in GameGrid.LEVEL_SIZE.y:
+			var map_to_world_pos = $GameActiveScreenTileDrawer.map_to_world(Vector2(i, j))
+			
+			if $GameActiveScreenTileDrawer.get_cell(i, j) == TileMap.INVALID_CELL:
+				txt_pool.append(_combine_code_line_text("2a", 1, map_to_world_pos))
+	
+	#Backgrounds
+	for i in $GameBgTileDrawer.get_used_cells():
+		var map_to_world_pos = $GameBgTileDrawer.map_to_world(i)
+		var cell_id = $GameBgTileDrawer.get_cellv(i)
+		
+		txt_pool.append(_combine_code_line_text("2d", cell_id, map_to_world_pos))
+	
+	#Save all objects (not including tile, ladder, and spikes)
+	for i in get_tree().get_nodes_in_group("PreviewGameObject"):
+		i = i as PreviewGameObject
+		
+		txt_pool.append(_combine_code_line_text("a", 1, i.position))
+		if i.obj_vector_x != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("b", i.obj_vector_x, i.position))
+		if i.obj_vector_y != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("c", i.obj_vector_y, i.position))
+		if i.obj_type != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("d", i.obj_type, i.position))
+		if i.obj_id != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("e", i.obj_id, i.position))
+		if i.obj_appearance != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("f", i.obj_appearance, i.position))
+		if i.obj_direction != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("g", i.obj_direction, i.position))
+		if i.obj_timer != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("h", i.obj_timer, i.position))
+		if i.obj_tex_h_offset != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("j", i.obj_tex_h_offset, i.position))
+		if i.obj_tex_v_offset != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("k", i.obj_tex_v_offset, i.position))
+		if i.obj_destination_x != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("m", i.obj_destination_x, i.position))
+		if i.obj_destination_y != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("n", i.obj_destination_y, i.position))
+		if i.obj_option != DataGameObject.MISSING_DATA:
+			txt_pool.append(_combine_code_line_text("o", i.obj_option, i.position))
+	
+	#Save Tiles
+	for i in $GameTileMapDrawer.get_used_cells():
+		var map_to_world_pos = $GameTileMapDrawer.map_to_world(i)
+		var cell_id = $GameTileMapDrawer.get_cellv(i)
+		
+		txt_pool.append(_combine_code_line_text("a", 1, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("e", cell_id / GameTileSetData.TILE_COUNT, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("i", 1, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("j", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].x, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("k", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].y, map_to_world_pos))
+	
+	#Save Spikes
+	for i in $GameSpikeTileDrawer.get_used_cells():
+		var map_to_world_pos = $GameSpikeTileDrawer.map_to_world(i)
+		var cell_id = $GameSpikeTileDrawer.get_cellv(i)
+		
+		txt_pool.append(_combine_code_line_text("a", 1, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("e", floor(cell_id / GameSpikeData.SPIKE_TILE_COUNT), map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("i", 2, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("l", cell_id % GameSpikeData.SPIKE_TILE_COUNT, map_to_world_pos))
+	
+	#Save Ladders
+	for i in $GameLadderTileDrawer.get_used_cells():
+		var map_to_world_pos = $GameLadderTileDrawer.map_to_world(i)
+		var cell_id = $GameLadderTileDrawer.get_cellv(i)
+		
+		txt_pool.append(_combine_code_line_text("a", 1, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("e", cell_id, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("i", 3, map_to_world_pos))
+	
+	#Header
+	txt_pool.append("")
+	txt_pool.append("# 'Add description header on save'.")
+	txt_pool.append("# go to File > Preferences... > Generate > and deselect")
+	txt_pool.append("# If you wish to remove this header after a level is generated,")
+	txt_pool.append("# ")
+	txt_pool.append("# https://github.com/Firstject/mega-man-maker-mmlv-editor")
+	txt_pool.append("# For more information and bug reports, please visit this link:")
+	txt_pool.append("# This level has been modified by MMLV Editor.")
+	txt_pool.append("")
+	
+	#Config header
+	txt_pool.append("[Level]")
+	
+	txt_pool.invert()
+	
+	return txt_pool.join("\n")
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
@@ -116,6 +276,24 @@ func clear_level():
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _combine_code_line_text(code : String, value, position = null) -> String:
+	var line : String
+	
+	line += code
+	
+	if position != null:
+		position = position as Vector2
+		line += str(position.x)
+		line += ","
+		line += str(position.y)
+	
+	line += "="
+	line += "\""
+	line += str(value)
+	line += "\""
+	
+	return line
 
 func _init_level_data():
 	var _gamelv_data : DataGameLevel = game_data_builder.get_data_game_level()
@@ -156,7 +334,13 @@ func _generate_objects():
 		prev_obj.obj_type = i.obj_type
 		prev_obj.obj_id = i.obj_id
 		prev_obj.obj_appearance = i.obj_appearance
+		prev_obj.obj_direction = i.obj_direction
 		prev_obj.obj_timer = i.obj_timer
+		prev_obj.obj_tex_h_offset = i.obj_tex_h_offset
+		prev_obj.obj_tex_v_offset = i.obj_tex_v_offset
+		prev_obj.obj_destination_x = i.obj_destination_x
+		prev_obj.obj_destination_y = i.obj_destination_y
+		prev_obj.obj_option = i.obj_option
 		prev_obj.set_owner(get_tree().edited_scene_root)
 
 func _generate_tilemap():
@@ -209,6 +393,21 @@ func set_save(val : bool) -> void:
 	if level_name.empty():
 		OS.alert("Please enter a level name before saving a level.", "Save")
 		return
+	
+	var dir = Directory.new()
+	var dir_result = dir.open(level_path)
+	if dir_result != OK:
+		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
+		return
+	
+	var f = File.new()
+	var open_result = f.open(level_path.plus_file(level_file_name + ".mmlv"), File.WRITE)
+	
+	if open_result == OK:
+		
+		f.store_line(get_save())
+	
+	f.close()
 	
 	OS.alert("Level saved!", "Saved")
 
