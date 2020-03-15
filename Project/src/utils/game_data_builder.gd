@@ -36,7 +36,7 @@ class TempObjectCodeData:
 	var i : float = 0
 	var j : float = NAN
 	var k : float = NAN
-	var l : float = NAN
+	var l : float = 0
 	var m : float = NAN
 	var n : float = NAN
 	var o : float = NAN
@@ -85,6 +85,8 @@ enum BlockType {
 var _data_game_level : DataGameLevel setget , get_data_game_level
 var _data_game_objects : Array setget , get_data_game_objects
 var _data_tiles : Array setget , get_data_tiles
+var _data_spikes : Array setget , get_data_spikes
+var _data_ladders : Array setget , get_data_ladders
 var _data_bgs : Array setget , get_data_bgs
 var _data_active_screen_positions : PoolVector2Array setget , get_active_screen_positions
 
@@ -374,9 +376,16 @@ func _build_from_code_data(code_data):
 			data_tile.tileset_offset = Vector2(code_data.j, code_data.k)
 			_data_tiles.append(data_tile)
 		elif code_data.i == BlockType.SPIKE:
-			pass
+			var data_spike = DataGameSpike.new()
+			data_spike.pos = code_data.pos
+			data_spike.spike_id = code_data.e
+			data_spike.direction = code_data.l
+			_data_spikes.append(data_spike)
 		elif code_data.i == BlockType.LADDER:
-			pass
+			var data_ladder = DataGameLadder.new()
+			data_ladder.pos = code_data.pos
+			data_ladder.ladder_id = code_data.e
+			_data_ladders.append(data_ladder)
 		
 	if code_data is TempBossCodeData:
 		pass
@@ -419,6 +428,12 @@ func get_data_game_objects() -> Array:
 
 func get_data_tiles() -> Array:
 	return _data_tiles
+
+func get_data_ladders() -> Array:
+	return _data_ladders
+
+func get_data_spikes() -> Array:
+	return _data_spikes
 
 func get_data_bgs() -> Array:
 	return _data_bgs

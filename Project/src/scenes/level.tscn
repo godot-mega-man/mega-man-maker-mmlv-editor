@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/level.gd" type="Script" id=1]
+[ext_resource path="res://src/gameobj/game_laddertile_drawer/game_laddertile_drawer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/gameobj/game_grid/game_grid.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/gameobj/game_tilemap_drawer/game_tilemap_drawer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/gameobj/game_bgtile_drawer/game_bgtile_drawer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/gameobj/game_active_screen_tile_drawer/game_active_screen_tile_drawer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/gameobj/game_spiketile_drawer/game_spiketile_drawer.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
+double_damage = 1.0
 
 [node name="GameBgTileDrawer" parent="." instance=ExtResource( 5 )]
 
 [node name="GameTileMapDrawer" parent="." instance=ExtResource( 4 )]
+
+[node name="GameSpikeTileDrawer" parent="." instance=ExtResource( 9 )]
+
+[node name="GameLadderTileDrawer" parent="." instance=ExtResource( 2 )]
 
 [node name="Objects" type="Node2D" parent="."]
 

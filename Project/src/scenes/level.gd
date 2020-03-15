@@ -86,12 +86,16 @@ func construct_level(file_data : String):
 	_init_level_data()
 	_generate_objects()
 	_generate_tilemap()
+	_generate_spikes()
+	_generate_ladders()
 	_generate_bgs()
 	_generate_active_screens()
 
 func clear_level():
 	#Clear all TileMap(s)
 	$GameTileMapDrawer.clear()
+	$GameLadderTileDrawer.clear()
+	$GameSpikeTileDrawer.clear()
 	$GameBgTileDrawer.clear()
 	$GameActiveScreenTileDrawer.set_all_cells_inactive()
 	
@@ -134,10 +138,6 @@ func _init_level_data():
 	val_r = _gamelv_data.val_r
 	val_s = _gamelv_data.val_s
 
-func _get_value_from_line(val):
-	val = val.replace("\"", "")
-	return val.split(val, "=")[1]
-
 func _generate_objects():
 	var _gameobj_data = game_data_builder.get_data_game_objects()
 	
@@ -158,6 +158,14 @@ func _generate_objects():
 func _generate_tilemap():
 	var _tile_data : Array = game_data_builder.get_data_tiles()
 	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
+
+func _generate_spikes():
+	var _spike_tiles_data : Array = game_data_builder.get_data_spikes()
+	$GameSpikeTileDrawer.draw_from_game_data_spikes(_spike_tiles_data)
+
+func _generate_ladders():
+	var _ladder_tiles_data : Array = game_data_builder.get_data_ladders()
+	$GameLadderTileDrawer.draw_from_game_data_ladders(_ladder_tiles_data)
 
 func _generate_bgs():
 	var _bg_tile_data : Array = game_data_builder.get_data_bgs()
