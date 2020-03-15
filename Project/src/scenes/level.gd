@@ -251,17 +251,6 @@ func get_save() -> String:
 		txt_pool.append(_combine_code_line_text("e", cell_id, map_to_world_pos))
 		txt_pool.append(_combine_code_line_text("i", 3, map_to_world_pos))
 	
-	#Header
-	txt_pool.append("")
-	txt_pool.append("# 'Add description header on save'.")
-	txt_pool.append("# go to File > Preferences... > Generate > and deselect")
-	txt_pool.append("# If you wish to remove this header after a level is generated,")
-	txt_pool.append("# ")
-	txt_pool.append("# https://github.com/Firstject/mega-man-maker-mmlv-editor")
-	txt_pool.append("# For more information and bug reports, please visit this link:")
-	txt_pool.append("# This level has been modified by MMLV Editor.")
-	txt_pool.append("")
-	
 	#Config header
 	txt_pool.append("[Level]")
 	
