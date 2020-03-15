@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/scenes/level.gd" type="Script" id=1]
-[ext_resource path="res://src/gameobj/gameobj_data_builder/gameobj_data_builder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/gameobj/game_grid/game_grid.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/gameobj/game_tilemap_drawer/game_tilemap_drawer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/gameobj/game_bgtile_drawer/game_bgtile_drawer.tscn" type="PackedScene" id=5]
@@ -9,9 +8,6 @@
 
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
-level_name = ""
-
-[node name="GameObjectDataBuilder" parent="." instance=ExtResource( 2 )]
 
 [node name="GameBgTileDrawer" parent="." instance=ExtResource( 5 )]
 

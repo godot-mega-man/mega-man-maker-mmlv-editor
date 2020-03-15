@@ -59,6 +59,8 @@ export (float) var val_q = 0.000000
 export (float) var val_r = 0.000000
 export (float) var val_s = 0.000000
 
+var game_data_builder : GameDataBuilder
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -77,11 +79,15 @@ export (float) var val_s = 0.000000
 
 func construct_level(file_data : String):
 	clear_level()
-	_init_level_data(file_data)
-	_generate_objects(file_data)
-	_generate_tilemap(file_data)
-	_generate_bgs(file_data)
-	_generate_active_screens(file_data)
+	
+	game_data_builder = GameDataBuilder.new()
+	game_data_builder.build(file_data)
+	
+	_init_level_data()
+	_generate_objects()
+	_generate_tilemap()
+	_generate_bgs()
+	_generate_active_screens()
 
 func clear_level():
 	#Clear all TileMap(s)
@@ -103,8 +109,8 @@ func clear_level():
 #      Private Methods
 #-------------------------------------------------
 
-func _init_level_data(file_data : String):
-	var _gamelv_data : DataGameLevel = $GameObjectDataBuilder.get_game_level_data(file_data)
+func _init_level_data():
+	var _gamelv_data : DataGameLevel = game_data_builder.get_data_game_level()
 	
 	user_id = _gamelv_data.user_id
 	level_version = _gamelv_data.level_version
@@ -128,13 +134,12 @@ func _init_level_data(file_data : String):
 	val_r = _gamelv_data.val_r
 	val_s = _gamelv_data.val_s
 
-
 func _get_value_from_line(val):
 	val = val.replace("\"", "")
 	return val.split(val, "=")[1]
 
-func _generate_objects(file_data : String):
-	var _gameobj_data : Array = $GameObjectDataBuilder.get_gameobj_data(file_data)
+func _generate_objects():
+	var _gameobj_data = game_data_builder.get_data_game_objects()
 	
 	for i in _gameobj_data:
 		i = i as DataGameObject
@@ -150,16 +155,16 @@ func _generate_objects(file_data : String):
 		prev_obj.obj_timer = i.obj_timer
 		prev_obj.set_owner(get_tree().edited_scene_root)
 
-func _generate_tilemap(file_data : String):
-	var _tile_data : Array = $GameObjectDataBuilder.get_tile_data(file_data)
+func _generate_tilemap():
+	var _tile_data : Array = game_data_builder.get_data_tiles()
 	$GameTileMapDrawer.draw_from_game_data_tiles(_tile_data)
 
-func _generate_bgs(file_data : String):
-	var _bg_tile_data : Array = $GameObjectDataBuilder.get_bg_data(file_data)
+func _generate_bgs():
+	var _bg_tile_data : Array = game_data_builder.get_data_bgs()
 	$GameBgTileDrawer.draw_from_game_bg_data(_bg_tile_data)
 
-func _generate_active_screens(file_data : String):
-	$GameActiveScreenTileDrawer.draw_from_vectors($GameObjectDataBuilder.get_active_screens_data(file_data))
+func _generate_active_screens():
+	$GameActiveScreenTileDrawer.draw_from_vectors(game_data_builder.get_active_screen_positions())
 
 #-------------------------------------------------
 #      Setters & Getters
