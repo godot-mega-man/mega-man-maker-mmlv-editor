@@ -83,12 +83,14 @@ enum BlockType {
 #-------------------------------------------------
 
 var _data_game_level : DataGameLevel setget , get_data_game_level
+var _data_bosses : Array setget , get_data_bosses
 var _data_game_objects : Array setget , get_data_game_objects
 var _data_tiles : Array setget , get_data_tiles
 var _data_spikes : Array setget , get_data_spikes
 var _data_ladders : Array setget , get_data_ladders
 var _data_bgs : Array setget , get_data_bgs
-var _data_active_screen_positions : PoolVector2Array setget , get_active_screen_positions
+var _data_active_screen_positions : PoolVector2Array setget , get_data_active_screen_positions
+var _data_disconnected_screen_positions : PoolVector2Array setget , get_data_disconnected_screen_positions
 
 #-------------------------------------------------
 #      Notifications
@@ -260,8 +262,11 @@ func build(file_data : String):
 				if float(_dataset[2]) == 1.0:
 					_data_active_screen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
 		
-		#Screen connections
-		pass
+		#Screen disconnections
+		match i.left(2):
+			"2b":
+				_dataset = _get_dataset_from_line_data(i, "2b")
+				_data_disconnected_screen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
 		
 		#Backgrounds
 		match i.left(2):
@@ -388,8 +393,24 @@ func _build_from_code_data(code_data):
 			_data_ladders.append(data_ladder)
 		
 	if code_data is TempBossCodeData:
-		pass
-		
+		var data_boss = DataGameBoss.new()
+		data_boss.pos = Vector2(code_data._1xc, code_data._1yc)
+		data_boss.primary_weak_enabled = code_data._1ga
+		data_boss.primary_weak_wp_slot_id = code_data._1g
+		data_boss.secondary_weak_enabled = code_data._1ga
+		data_boss.secondary_weak_wp_slot_id = code_data._1g
+		data_boss.immune_enabled = code_data._1i
+		data_boss.immune_wp_slot_id = code_data._1j
+		data_boss.drop_item_on_death = code_data._1ua
+		data_boss.drop_item_id = code_data._1u
+		data_boss.drop_wp_on_death = code_data._1va
+		data_boss.drop_mode = code_data._1v
+		data_boss.drop_wp_slot_id = code_data._1w
+		data_boss.change_player_enabled = code_data._1xa
+		data_boss.change_player_id = code_data._1x
+		data_boss.music_category = code_data._1n
+		data_boss.music_id = code_data._1o
+		_data_bosses.append(data_boss)
 
 
 #-------------------------------------------------
@@ -423,6 +444,9 @@ func _get_dataset_from_line_data(_line_data : String, _prefix_letter : String) -
 func get_data_game_level() -> DataGameLevel:
 	return _data_game_level
 
+func get_data_bosses() -> Array:
+	return _data_bosses
+
 func get_data_game_objects() -> Array:
 	return _data_game_objects
 
@@ -438,5 +462,8 @@ func get_data_spikes() -> Array:
 func get_data_bgs() -> Array:
 	return _data_bgs
 
-func get_active_screen_positions() -> PoolVector2Array:
+func get_data_active_screen_positions() -> PoolVector2Array:
 	return _data_active_screen_positions
+
+func get_data_disconnected_screen_positions() -> PoolVector2Array:
+	return _data_disconnected_screen_positions

@@ -58,6 +58,8 @@ export (float) var val_p = 0.000000
 export (float) var val_q = 0.000000
 export (float) var val_r = 0.000000
 export (float) var val_s = 0.000000
+export (Array) var data_bosses
+export (PoolVector2Array) var disconnected_screens
 
 var game_data_builder : GameDataBuilder
 
@@ -90,6 +92,8 @@ func construct_level(file_data : String):
 	_generate_ladders()
 	_generate_bgs()
 	_generate_active_screens()
+	data_bosses = game_data_builder.get_data_bosses()
+	disconnected_screens = game_data_builder.get_data_disconnected_screen_positions()
 
 func clear_level():
 	#Clear all TileMap(s)
@@ -172,7 +176,7 @@ func _generate_bgs():
 	$GameBgTileDrawer.draw_from_game_bg_data(_bg_tile_data)
 
 func _generate_active_screens():
-	$GameActiveScreenTileDrawer.draw_from_vectors(game_data_builder.get_active_screen_positions())
+	$GameActiveScreenTileDrawer.draw_from_vectors(game_data_builder.get_data_active_screen_positions())
 
 #-------------------------------------------------
 #      Setters & Getters
