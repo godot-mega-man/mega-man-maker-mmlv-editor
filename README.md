@@ -38,9 +38,12 @@ https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz
 
 **Against the Ruined Pressure**
 https://megamanmaker.com/?level=385754
+
 **Minecraft Man**
 https://megamanmaker.com/?level=386668
+
 **Yoku Man**
 https://megamanmaker.com/?level=386428
+
 **Impregnable Fortress**
 https://megamanmaker.com/?level=387336
