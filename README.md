@@ -31,14 +31,7 @@ And these which are currently possible but might not save correctly:
 
 > **NOTE:** Currently the program is not ready for editing. However, you can try playing around with the code by downloading [Godot engine](https://godotengine.org/) and open this project to edit levels.
 
-# Future
-
-The final version will be a completed program with fully functional level editor.
-
-**For the roadmap plans, visit the Trello link:**
-https://trello.com/b/ExHPE2dc/mmlv-editor-progress
-
-**All MMM Data**
+# All MMM Data
 https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz84g/edit?usp=drivesdk
 
 # Example Levels Made With MMLV Editor
