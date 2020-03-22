@@ -90,7 +90,8 @@ var _data_spikes : Array setget , get_data_spikes
 var _data_ladders : Array setget , get_data_ladders
 var _data_bgs : Array setget , get_data_bgs
 var _data_active_screen_positions : PoolVector2Array setget , get_data_active_screen_positions
-var _data_disconnected_screen_positions : PoolVector2Array setget , get_data_disconnected_screen_positions
+var _data_disconnected_hscreen_positions : PoolVector2Array setget , get_data_disconnected_hscreen_positions
+var _data_disconnected_vscreen_positions : PoolVector2Array setget , get_data_disconnected_vscreen_positions
 
 #-------------------------------------------------
 #      Notifications
@@ -263,10 +264,15 @@ func build(file_data : String):
 					_data_active_screen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
 		
 		#Screen disconnections
+		#Horizontal, and Vertical, respectively
 		match i.left(2):
-			"2b":
+			"2b": #Horizontal
 				_dataset = _get_dataset_from_line_data(i, "2b")
-				_data_disconnected_screen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
+				_data_disconnected_hscreen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
+			"2c": #Vertical
+				_dataset = _get_dataset_from_line_data(i, "2c")
+				_data_disconnected_vscreen_positions.append(Vector2(float(_dataset[0]), float(_dataset[1])))
+		
 		
 		#Backgrounds
 		match i.left(2):
@@ -399,8 +405,8 @@ func _build_from_code_data(code_data):
 		data_boss.pos = Vector2(code_data._1xc, code_data._1yc)
 		data_boss.primary_weak_enabled = code_data._1ga
 		data_boss.primary_weak_wp_slot_id = code_data._1g
-		data_boss.secondary_weak_enabled = code_data._1ga
-		data_boss.secondary_weak_wp_slot_id = code_data._1g
+		data_boss.secondary_weak_enabled = code_data._1ha
+		data_boss.secondary_weak_wp_slot_id = code_data._1h
 		data_boss.immune_enabled = code_data._1i
 		data_boss.immune_wp_slot_id = code_data._1j
 		data_boss.drop_item_on_death = code_data._1ua
@@ -468,5 +474,8 @@ func get_data_bgs() -> Array:
 func get_data_active_screen_positions() -> PoolVector2Array:
 	return _data_active_screen_positions
 
-func get_data_disconnected_screen_positions() -> PoolVector2Array:
-	return _data_disconnected_screen_positions
+func get_data_disconnected_hscreen_positions() -> PoolVector2Array:
+	return _data_disconnected_hscreen_positions
+
+func get_data_disconnected_vscreen_positions() -> PoolVector2Array:
+	return _data_disconnected_vscreen_positions

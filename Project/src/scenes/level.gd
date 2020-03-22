@@ -34,6 +34,7 @@ export (String) var level_file_name = "level"
 export (bool) var load_file setget load_file
 export (bool) var save setget set_save
 export (bool) var close setget set_close
+export (bool) var copy_save_data setget set_copy_save_data
 
 #--Level Settings
 
@@ -59,7 +60,8 @@ export (float) var val_q = 0.000000
 export (float) var val_r = 0.000000
 export (float) var val_s = 0.000000
 export (Array) var data_bosses
-export (PoolVector2Array) var disconnected_screens
+export (PoolVector2Array) var disconnected_hscreens
+export (PoolVector2Array) var disconnected_vscreens
 
 var game_data_builder : GameDataBuilder
 
@@ -93,7 +95,8 @@ func construct_level(file_data : String):
 	_generate_bgs()
 	_generate_active_screens()
 	data_bosses = game_data_builder.get_data_bosses()
-	disconnected_screens = game_data_builder.get_data_disconnected_screen_positions()
+	disconnected_hscreens = game_data_builder.get_data_disconnected_hscreen_positions()
+	disconnected_vscreens = game_data_builder.get_data_disconnected_vscreen_positions()
 
 func clear_level():
 	#Clear all TileMap(s)
@@ -172,9 +175,12 @@ func get_save() -> String:
 	txt_pool.append(_combine_code_line_text("1s", val_s))
 	
 	#Screen disconnections
-	for pos in disconnected_screens:
+	for pos in disconnected_hscreens:
 		pos = pos as Vector2
 		txt_pool.append(_combine_code_line_text("2b", 0, pos))
+	for pos in disconnected_vscreens:
+		pos = pos as Vector2
+		txt_pool.append(_combine_code_line_text("2c", 1, pos))
 	
 	#Active screens
 	for i in GameGrid.LEVEL_SIZE.x:
@@ -227,7 +233,7 @@ func get_save() -> String:
 		var cell_id = $GameTileMapDrawer.get_cellv(i)
 		
 		txt_pool.append(_combine_code_line_text("a", 1, map_to_world_pos))
-		txt_pool.append(_combine_code_line_text("e", cell_id / GameTileSetData.TILE_COUNT, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("e", floor(cell_id / GameTileSetData.TILE_COUNT), map_to_world_pos))
 		txt_pool.append(_combine_code_line_text("i", 1, map_to_world_pos))
 		txt_pool.append(_combine_code_line_text("j", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].x, map_to_world_pos))
 		txt_pool.append(_combine_code_line_text("k", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].y, map_to_world_pos))
@@ -405,3 +411,11 @@ func set_close(val : bool) -> void:
 		return
 	
 	clear_level()
+
+func set_copy_save_data(val : bool) -> void:
+	if not val:
+		return
+	
+	print(get_save())
+	OS.set_clipboard(get_save())
+	OS.alert("Save data copied to clipboard.", "Message")
