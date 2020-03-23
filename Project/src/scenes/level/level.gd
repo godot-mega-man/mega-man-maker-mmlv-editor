@@ -49,7 +49,7 @@ export (float) var double_damage = 0.000000
 export (float) var proto_strike = 0.000000
 export (float) var double_jump = 0.000000
 export (float) var charge_shot_type = 4.000000
-export (float) var default_background_color = 29.000000
+export (float) var default_background_color = 29.000000 setget set_default_background_color
 export (float) var boss_portrait = -1.000000
 export (float) var bosses_count = 0.000000
 export (PoolIntArray) var weapons = [0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
@@ -94,6 +94,7 @@ func construct_level(file_data : String):
 	_generate_ladders()
 	_generate_bgs()
 	_generate_active_screens()
+	_update_bg_color()
 	data_bosses = game_data_builder.get_data_bosses()
 	disconnected_hscreens = game_data_builder.get_data_disconnected_hscreen_positions()
 	disconnected_vscreens = game_data_builder.get_data_disconnected_vscreen_positions()
@@ -357,6 +358,9 @@ func _generate_bgs():
 func _generate_active_screens():
 	$GameActiveScreenTileDrawer.draw_from_vectors(game_data_builder.get_data_active_screen_positions())
 
+func _update_bg_color():
+	$Bg.color = Color(GameBgColorData.COLORS[int(default_background_color)])
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
@@ -419,3 +423,7 @@ func set_copy_save_data(val : bool) -> void:
 	print(get_save())
 	OS.set_clipboard(get_save())
 	OS.alert("Save data copied to clipboard.", "Message")
+
+func set_default_background_color(val : float) -> void:
+	default_background_color = val
+	_update_bg_color()
