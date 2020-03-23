@@ -24,7 +24,7 @@ class_name GameGrid
 
 const LEVEL_SIZE = Vector2(50, 20)
 const SCREEN_SIZE = Vector2(256, 224)
-const GRID_COLOR = Color.gray
+const GRID_COLOR = Color.white
 const GRID_LINE_WIDTH = 1
 
 #-------------------------------------------------
