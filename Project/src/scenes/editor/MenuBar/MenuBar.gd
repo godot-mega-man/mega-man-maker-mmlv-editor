@@ -17,6 +17,13 @@ extends Panel
 #      Signals
 #-------------------------------------------------
 
+signal new_file
+signal opening_file
+signal saving_file
+signal saving_file_as
+signal opening_preferences
+signal exiting
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -35,17 +42,17 @@ const ID_MENU_EDIT_COPY = 3
 const ID_MENU_EDIT_PASTE = 4
 const ID_MENU_EDIT_DELETE = 5
 
-const ID_MENU_VIEW_ZOOM_IN = 0
-const ID_MENU_VIEW_ZOOM_OUT = 1
-const ID_MENU_VIEW_ZOOM_RESET = 2
-const ID_MENU_VIEW_SCREEN_GRID = 3
-const ID_MENU_VIEW_TILE_GRID = 4
-const ID_MENU_VIEW_TILES = 5
-const ID_MENU_VIEW_BACKGROUNDS = 6
-const ID_MENU_VIEW_OBJECTS = 7
-const ID_MENU_VIEW_ACTIVE_SCREENS = 8
-const ID_MENU_VIEW_LADDERS = 9
-const ID_MENU_VIEW_SPIKES = 10
+const ID_MENU_VIEW_SCREEN_GRID = 0
+const ID_MENU_VIEW_TILE_GRID = 1
+const ID_MENU_VIEW_TILES = 2
+const ID_MENU_VIEW_BACKGROUNDS = 3
+const ID_MENU_VIEW_OBJECTS = 4
+const ID_MENU_VIEW_ACTIVE_SCREENS = 5
+const ID_MENU_VIEW_LADDERS = 6
+const ID_MENU_VIEW_SPIKES = 7
+const ID_MENU_VIEW_ZOOM_IN = 8
+const ID_MENU_VIEW_ZOOM_OUT = 9
+const ID_MENU_VIEW_NORMAL_ZOOM = 10
 
 const ID_MENU_HELP_README = 0
 const ID_MENU_HELP_ABOUT = 1
@@ -106,6 +113,8 @@ func _ready() -> void:
 #-------------------------------------------------
 
 func _init_file_menus():
+	file_menu.get_popup().connect("id_pressed", self, "_on_file_menu_popup_pressed")
+	
 	file_menu.get_popup().add_item("New Level", ID_MENU_FILE_NEW)
 	file_menu.get_popup().set_item_shortcut(ID_MENU_FILE_NEW, shortcut_file_new, true)
 	
@@ -130,6 +139,8 @@ func _init_file_menus():
 	file_menu.get_popup().set_item_shortcut(ID_MENU_FILE_EXIT + 3, shortcut_file_exit, true)
 
 func _init_edit_menus():
+	edit_menu.get_popup().connect("id_pressed", self, "_on_edit_menu_popup_pressed")
+	
 	edit_menu.get_popup().add_item("Undo", ID_MENU_EDIT_UNDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_UNDO, shortcut_edit_undo, true)
 	
@@ -151,43 +162,46 @@ func _init_edit_menus():
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_DELETE + 1, shortcut_edit_delete, true)
 
 func _init_view_menus():
-	view_menu.get_popup().add_item("Zoom In", ID_MENU_VIEW_ZOOM_IN)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ZOOM_IN, shortcut_view_zoom_in, true)
-	
-	view_menu.get_popup().add_item("Zoom Out", ID_MENU_VIEW_ZOOM_OUT)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ZOOM_OUT, shortcut_view_zoom_out, true)
-	
-	view_menu.get_popup().add_item("Reset Zoom", ID_MENU_VIEW_ZOOM_RESET)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ZOOM_RESET, shortcut_view_zoom_reset, true)
-	
-	view_menu.get_popup().add_separator()
+	view_menu.get_popup().connect("id_pressed", self, "_on_view_menu_popup_pressed")
 	
 	view_menu.get_popup().add_check_item("Screen Grid", ID_MENU_VIEW_SCREEN_GRID)
 	
 	view_menu.get_popup().add_check_item("Tile Grid", ID_MENU_VIEW_TILE_GRID)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_TILE_GRID + 1, shortcut_view_tile_grid, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_TILE_GRID, shortcut_view_tile_grid, true)
 	
 	view_menu.get_popup().add_separator()
 	
 	view_menu.get_popup().add_check_item("Tiles", ID_MENU_VIEW_TILES)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_TILES + 2, shortcut_view_tiles, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_TILES + 1, shortcut_view_tiles, true)
 	
 	view_menu.get_popup().add_check_item("Backgrounds", ID_MENU_VIEW_BACKGROUNDS)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_BACKGROUNDS + 2, shortcut_view_backgrounds, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_BACKGROUNDS + 1, shortcut_view_backgrounds, true)
 	
 	view_menu.get_popup().add_check_item("Objects", ID_MENU_VIEW_OBJECTS)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_OBJECTS + 2, shortcut_view_objects, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_OBJECTS + 1, shortcut_view_objects, true)
 	
 	view_menu.get_popup().add_check_item("Active Screens", ID_MENU_VIEW_ACTIVE_SCREENS)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ACTIVE_SCREENS + 2, shortcut_view_active_screens, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ACTIVE_SCREENS + 1, shortcut_view_active_screens, true)
 	
 	view_menu.get_popup().add_check_item("Ladders", ID_MENU_VIEW_LADDERS)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_LADDERS + 2, shortcut_view_ladders, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_LADDERS + 1, shortcut_view_ladders, true)
 	
 	view_menu.get_popup().add_check_item("Spikes", ID_MENU_VIEW_SPIKES)
-	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_SPIKES + 2, shortcut_view_spikes, true)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_SPIKES + 1, shortcut_view_spikes, true)
+	
+	view_menu.get_popup().add_separator()
+	
+	view_menu.get_popup().add_item("Zoom In", ID_MENU_VIEW_ZOOM_IN)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ZOOM_IN + 2, shortcut_view_zoom_in, true)
+	
+	view_menu.get_popup().add_item("Zoom Out", ID_MENU_VIEW_ZOOM_OUT)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_ZOOM_OUT + 2, shortcut_view_zoom_out, true)
+	
+	view_menu.get_popup().add_item("Reset Zoom", ID_MENU_VIEW_NORMAL_ZOOM)
+	view_menu.get_popup().set_item_shortcut(ID_MENU_VIEW_NORMAL_ZOOM + 2, shortcut_view_zoom_reset, true)
 
 func _init_help_menus():
+	help_menu.get_popup().connect("id_pressed", self, "_on_help_menu_popup_pressed")
 	help_menu.get_popup().add_item("Read Me", ID_MENU_HELP_README)
 	
 	help_menu.get_popup().add_separator()
@@ -199,6 +213,34 @@ func _init_help_menus():
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
+
+#Connected from _init_file_menu()
+func _on_file_menu_popup_pressed(id : int) -> void:
+	match id:
+		ID_MENU_FILE_NEW:
+			emit_signal("new_file")
+		ID_MENU_FILE_OPEN:
+			emit_signal("opening_file")
+		ID_MENU_FILE_SAVE:
+			emit_signal("saving_file")
+		ID_MENU_FILE_SAVE_AS:
+			emit_signal("saving_file_as")
+		ID_MENU_FILE_PREFERENCES:
+			pass
+		ID_MENU_FILE_EXIT:
+			emit_signal("exiting")
+
+#Connected from _init_edit_menu()
+func _on_edit_menu_popup_pressed(id : int) -> void:
+	pass
+
+#Connected from _init_view_menu()
+func _on_view_menu_popup_pressed(id : int) -> void:
+	pass
+
+#Connected from _init_help_menu()
+func _on_help_menu_popup_pressed(id : int) -> void:
+	pass
 
 #-------------------------------------------------
 #      Private Methods

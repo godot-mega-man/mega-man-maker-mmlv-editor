@@ -1,7 +1,6 @@
 # Level
 # Written by: First
 
-tool
 extends Node
 
 #class_name optional
@@ -18,6 +17,8 @@ extends Node
 #      Signals
 #-------------------------------------------------
 
+signal cleared_level
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -28,11 +29,6 @@ const PREVIEW_GAME_OBJ = preload("res://src/gameobj/preview_object/preview_game_
 #      Properties
 #-------------------------------------------------
 
-export (String) var level_path = "C:/Users/Acer/AppData/Local/MegaMaker/Levels"
-export (String) var level_file_name = "level"
-
-export (bool) var load_file setget load_file
-export (bool) var save setget set_save
 export (bool) var close setget set_close
 export (bool) var copy_save_data setget set_copy_save_data
 
@@ -81,6 +77,47 @@ var game_data_builder : GameDataBuilder
 #      Public Methods
 #-------------------------------------------------
 
+func load_level(level_dir : String, level_file_path : String) -> int:
+	#Check if file is .mmlv
+	if not level_file_path.get_extension() == "mmlv":
+		OS.alert("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", "File Open Failure")
+		return ERR_FILE_UNRECOGNIZED
+	
+	var dir = Directory.new()
+	var dir_result = dir.open(level_dir)
+	if dir_result != OK:
+		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
+		return dir_result
+	
+	var f = File.new()
+	var open_result = f.open(level_file_path, File.READ)
+	
+	if open_result == OK:
+		construct_level(f.get_as_text())
+	else:
+		OS.alert("Could not open the file. Returned " + str(open_result), "File open failed!")
+	
+	f.close()
+	
+	return OK
+
+func save_level(level_dir : String, level_file_path : String) -> void:
+	var dir = Directory.new()
+	var dir_result = dir.open(level_dir)
+	if dir_result != OK:
+		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
+		return
+	
+	var f = File.new()
+	var open_result = f.open(level_file_path, File.WRITE)
+	
+	if open_result == OK:
+		f.store_line(get_save())
+	
+	f.close()
+	
+	OS.alert("Level saved!", "Saved")
+
 func construct_level(file_data : String):
 	clear_level()
 	
@@ -112,6 +149,8 @@ func clear_level():
 		i.queue_free()
 	
 	level_name = String()
+	
+	emit_signal("cleared_level")
 
 func get_save() -> String:
 	var txt_pool : PoolStringArray
@@ -364,51 +403,6 @@ func _update_bg_color():
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-
-func load_file(val : bool) -> void:
-	if not val:
-		return
-	
-	var dir = Directory.new()
-	var dir_result = dir.open(level_path)
-	if dir_result != OK:
-		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
-		return
-	
-	var f = File.new()
-	var open_result = f.open(level_path.plus_file(level_file_name + ".mmlv"), File.READ)
-	
-	if open_result == OK:
-		construct_level(f.get_as_text())
-	else:
-		OS.alert("Could not open the file. Returned " + str(open_result), "File open failed!")
-	
-	f.close()
-
-func set_save(val : bool) -> void:
-	if not val:
-		return
-	
-	if level_name.empty():
-		OS.alert("Please enter a level name before saving a level.", "Save")
-		return
-	
-	var dir = Directory.new()
-	var dir_result = dir.open(level_path)
-	if dir_result != OK:
-		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
-		return
-	
-	var f = File.new()
-	var open_result = f.open(level_path.plus_file(level_file_name + ".mmlv"), File.WRITE)
-	
-	if open_result == OK:
-		
-		f.store_line(get_save())
-	
-	f.close()
-	
-	OS.alert("Level saved!", "Saved")
 
 func set_close(val : bool) -> void:
 	if not val:

@@ -23,7 +23,6 @@ __meta__ = {
 [node name="GameBgTileDrawer" parent="." instance=ExtResource( 5 )]
 
 [node name="GameTileMapDrawer" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [node name="GameSpikeTileDrawer" parent="." instance=ExtResource( 9 )]
 

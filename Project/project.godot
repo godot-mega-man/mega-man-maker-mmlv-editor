@@ -117,6 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mega Man Maker MMLV Editor"
+run/main_scene="res://src/scenes/editor/editor.tscn"
 config/icon="res://icon.png"
 
 [display]
