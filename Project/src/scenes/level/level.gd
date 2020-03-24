@@ -116,7 +116,7 @@ func save_level(level_dir : String, level_file_path : String) -> void:
 	
 	f.close()
 	
-	OS.alert("Level saved!", "Saved")
+	print("Level saved at path: " + level_file_path)
 
 func construct_level(file_data : String):
 	clear_level()

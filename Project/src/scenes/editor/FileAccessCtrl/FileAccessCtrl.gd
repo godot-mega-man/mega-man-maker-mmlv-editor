@@ -39,6 +39,10 @@ var current_level_path : String
 #      Notifications
 #-------------------------------------------------
 
+func _ready() -> void:
+	$OpenFileDialog.set_current_path(_get_mega_maker_path())
+	$SaveFileDialog.set_current_path(_get_mega_maker_path())
+
 #-------------------------------------------------
 #      Virtual Methods
 #-------------------------------------------------
@@ -85,6 +89,11 @@ func _on_SaveFileDialog_file_selected(path: String) -> void:
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _get_mega_maker_path() -> String:
+	var user = OS.get_user_data_dir().split("/")[2]
+	
+	return "C:/Users/" + user + "/AppData/Local/MegaMaker/Levels/"
 
 #-------------------------------------------------
 #      Setters & Getters
