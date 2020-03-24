@@ -1,0 +1,155 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/images/editor_ui/ToolBar/AddPressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/AddHover.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/Add.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapHover.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapPressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/TileMap.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/ObjectHover.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/Object.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/ObjectPressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/BackgroundHover.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/Background.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/BackgroundPressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/ActiveScreenPressed.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/ActiveScreenHover.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/Ladder.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/ActiveScreen.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/Spike.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/SpikePressed.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/SpikeHover.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/LadderPressed.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/LadderHover.png" type="Texture" id=21]
+
+[node name="ToolBar" type="Panel"]
+self_modulate = Color( 0, 0.505882, 1, 0.752941 )
+anchor_right = 1.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddBtn" type="TextureButton" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Insert New Object
+
+Add a new game object with customizable properties."
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 44.0
+margin_right = 48.0
+margin_bottom = 40.0
+
+[node name="ObjectBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 60.0
+margin_right = 92.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Object Edit Mode"
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMapBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 104.0
+margin_right = 136.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Tile Edit Mode"
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 148.0
+margin_right = 180.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Background Edit Mode"
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActiveScreenBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 192.0
+margin_right = 224.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Active Screen Edit Mode"
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="LadderBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 236.0
+margin_right = 268.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Ladder Edit Mode"
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SpikeBtn" type="TextureButton" parent="HBoxContainer"]
+margin_left = 280.0
+margin_right = 312.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Spike Edit Mode"
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
