@@ -190,6 +190,8 @@ shortcut_view_spikes = SubResource( 42 )
 [node name="MenuBarHBox" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
 custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
