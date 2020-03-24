@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/scenes/editor/MenuBar/MenuBar.gd" type="Script" id=1]
 
@@ -83,6 +83,14 @@ scancode = 80
 [sub_resource type="ShortCut" id=20]
 shortcut = SubResource( 19 )
 
+[sub_resource type="InputEventKey" id=43]
+control = true
+command = true
+scancode = 68
+
+[sub_resource type="ShortCut" id=44]
+shortcut = SubResource( 43 )
+
 [sub_resource type="InputEventKey" id=21]
 scancode = 16777224
 
@@ -90,7 +98,7 @@ scancode = 16777224
 shortcut = SubResource( 21 )
 
 [sub_resource type="InputEventKey" id=23]
-scancode = 43
+scancode = 61
 
 [sub_resource type="ShortCut" id=24]
 shortcut = SubResource( 23 )
@@ -166,6 +174,7 @@ shortcut_edit_redo = SubResource( 14 )
 shortcut_edit_cut = SubResource( 16 )
 shortcut_edit_copy = SubResource( 18 )
 shortcut_edit_paste = SubResource( 20 )
+shortcut_edit_duplicate = SubResource( 44 )
 shortcut_edit_delete = SubResource( 22 )
 shortcut_view_zoom_in = SubResource( 24 )
 shortcut_view_zoom_out = SubResource( 26 )

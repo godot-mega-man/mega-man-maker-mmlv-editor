@@ -1,9 +1,9 @@
-# GameGrid
-# Written by: First
+# MainCamera
+# Written by: First 
 
-extends Node2D
+extends Camera2D
 
-class_name GameGrid
+#class_name optional
 
 """
 	Enter desc here.
@@ -21,66 +21,25 @@ class_name GameGrid
 #      Constants
 #-------------------------------------------------
 
-enum PreviewMode {
-	SCREEN,
-	TILE
-}
-
-const LEVEL_SIZE = Vector2(50, 20)
-const SCREEN_SIZE = Vector2(256, 224)
-const GRID_COLOR = Color.white
-const GRID_LINE_WIDTH = 1
-const GRID_TILE_COLOR = Color(0, 0, 0, 0.25)
-const GRID_TILE_LINE_WIDTH = 2
+const MIN_ZOOM = 0.1125
+const MAX_ZOOM = 16.0
+const NORMAL_ZOOM = 1
+const ZOOM_CHANGE = 0.5
+const ZOOM_CHANGE_BELOW_NORMAL = 0.25
+const MINI_ZOOM_CHANGE = 0.2
+const MINI_ZOOM_CHANGE_BELOW_NORMAL = 0.05
 
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-export (PreviewMode) var preview_mode
+onready var tween = $Tween
+
+var current_zoom := Vector2(1, 1)
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	update()
-
-func _draw() -> void:
-	if preview_mode == PreviewMode.SCREEN:
-		#Draw vertical lines
-		for i in LEVEL_SIZE.x:
-			draw_line(
-				Vector2(SCREEN_SIZE.x * i, 0),
-				Vector2(SCREEN_SIZE.x * i, SCREEN_SIZE.y * LEVEL_SIZE.y),
-				GRID_COLOR,
-				GRID_LINE_WIDTH
-			)
-		#Draw horizontal lines
-		for i in LEVEL_SIZE.y:
-			draw_line(
-				Vector2(0, SCREEN_SIZE.y * i),
-				Vector2(SCREEN_SIZE.x * LEVEL_SIZE.x, SCREEN_SIZE.y * i),
-				GRID_COLOR,
-				GRID_LINE_WIDTH
-			)
-	else:
-		#Draw vertical lines
-		for i in LEVEL_SIZE.x * 16:
-			draw_line(
-				Vector2(16 * i, 0),
-				Vector2(16 * i, SCREEN_SIZE.y * LEVEL_SIZE.y),
-				GRID_TILE_COLOR,
-				GRID_TILE_LINE_WIDTH
-			)
-		#Draw horizontal lines
-		for i in LEVEL_SIZE.y * 14:
-			draw_line(
-				Vector2(0, 16 * i),
-				Vector2(SCREEN_SIZE.x * LEVEL_SIZE.x, 16 * i),
-				GRID_TILE_COLOR,
-				GRID_TILE_LINE_WIDTH
-			)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -94,6 +53,25 @@ func _draw() -> void:
 #      Public Methods
 #-------------------------------------------------
 
+func zoom_in():
+	_zoom_to_mouse_pos()
+	if current_zoom.x <= MIN_ZOOM:
+		return 
+	
+	current_zoom /= 1.5
+	_tween_zoom()
+
+func zoom_out():
+	if current_zoom.x >= MAX_ZOOM:
+		return 
+	
+	current_zoom *= 1.5
+	_tween_zoom()
+
+func reset_zoom():
+	current_zoom = Vector2.ONE
+	_tween_zoom()
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
@@ -101,6 +79,21 @@ func _draw() -> void:
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _tween_zoom():
+	tween.interpolate_property(
+		self,
+		"zoom",
+		self.zoom,
+		current_zoom,
+		0.25,
+		Tween.TRANS_EXPO,
+		Tween.EASE_OUT
+	)
+	tween.start()
+
+func _zoom_to_mouse_pos():
+	position = get_global_mouse_position()
 
 #-------------------------------------------------
 #      Setters & Getters

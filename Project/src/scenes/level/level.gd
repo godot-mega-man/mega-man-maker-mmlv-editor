@@ -59,6 +59,15 @@ export (Array) var data_bosses
 export (PoolVector2Array) var disconnected_hscreens
 export (PoolVector2Array) var disconnected_vscreens
 
+onready var game_bg_tile = $GameBgTileDrawer
+onready var game_tilemap = $GameTileMapDrawer
+onready var game_ladder_tile = $GameLadderTileDrawer
+onready var game_spike_tile = $GameSpikeTileDrawer
+onready var game_objects = $Objects
+onready var game_grid = $GameGrid
+onready var game_tile_grid = $GameTileGrid
+onready var game_active_screens = $GameActiveScreenTileDrawer
+
 var game_data_builder : GameDataBuilder
 
 #-------------------------------------------------
@@ -303,6 +312,23 @@ func get_save() -> String:
 	txt_pool.invert()
 	
 	return txt_pool.join("\n")
+
+func toggle_screen_grid():
+	game_grid.visible = !game_grid.visible
+func toggle_tile_grid():
+	game_tile_grid.visible = !game_tile_grid.visible
+func toggle_game_tile():
+	game_tilemap.visible = !game_tilemap.visible
+func toggle_game_bg_tile():
+	game_bg_tile.visible = !game_bg_tile.visible
+func toggle_game_objects():
+	game_objects.visible = !game_objects.visible
+func toggle_game_active_screens():
+	game_active_screens.visible = !game_active_screens.visible
+func toggle_game_spike_tile():
+	game_spike_tile.visible = !game_spike_tile.visible
+func toggle_game_ladder_tile():
+	game_ladder_tile.visible = !game_ladder_tile.visible
 
 #-------------------------------------------------
 #      Connections
