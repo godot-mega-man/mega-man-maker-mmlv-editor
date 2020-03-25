@@ -32,7 +32,9 @@ const DEFAULT_INSPECTOR_LEFT_MARGIN = 0
 onready var panel_open = $PanelOpen
 onready var panel_close = $PanelClose
 onready var inspector_show_btn = $PanelClose/InspectorShowBtn
-onready var inspector_hide_btn = $PanelOpen/ContentVBox/InspectorHideBtn
+onready var inspector_hide_btn = $PanelOpen/ContentVBox/TitleHBox/InspectorHideBtn
+onready var view_code_button = $PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn
+onready var tab_container = $PanelOpen/ContentVBox/TabContainer
 
 var resize_dragging = false
 
@@ -80,6 +82,14 @@ func _on_InspectorHideBtn_pressed() -> void:
 func _on_InspectorShowBtn_pressed() -> void:
 	show_inspector()
 
+func _on_ViewCodeBtn_pressed() -> void:
+	for i in tab_container.get_children():
+		if i is MainInspectorTab:
+			if view_code_button.is_pressed():
+				i.show_codes()
+			else:
+				i.show_properties()
+
 func _on_ResizeHandler_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		resize_dragging = event.is_pressed()
@@ -97,4 +107,3 @@ func _on_ResizeHandler_gui_input(event: InputEvent) -> void:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-

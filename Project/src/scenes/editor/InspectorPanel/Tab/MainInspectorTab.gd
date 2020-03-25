@@ -1,9 +1,9 @@
-# AtbHBox
+# MainInspectorTab
 # Written by: First
 
-extends HBoxContainer
+extends Tabs
 
-class_name AtbHBox
+class_name MainInspectorTab
 
 """
 	Enter desc here.
@@ -25,16 +25,9 @@ class_name AtbHBox
 #      Properties
 #-------------------------------------------------
 
-export (String) var property_name
-export (String) var code
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	$PropertyLabel.text = property_name
-	$CodeLabel.text = code
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -48,13 +41,15 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func show_code():
-	$CodeLabel.visible = true
-	$PropertyLabel.visible = false
+func show_codes():
+	for i in $ScrollContainer/Vbox.get_children():
+		if i is AtbHBox:
+			i.show_code()
 
-func show_property():
-	$PropertyLabel.visible = true
-	$CodeLabel.visible = false
+func show_properties():
+	for i in $ScrollContainer/Vbox.get_children():
+		if i is AtbHBox:
+			i.show_property()
 
 #-------------------------------------------------
 #      Connections

@@ -27,24 +27,34 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.00002
+margin_right = -8.0
 margin_bottom = -8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox"]
-margin_right = 271.0
+[node name="TitleHBox" type="HBoxContainer" parent="PanelOpen/ContentVBox"]
+margin_right = 272.0
+margin_bottom = 22.0
+
+[node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox/TitleHBox"]
+margin_right = 173.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Inspector"
 align = 0
 
+[node name="ViewCodeBtn" type="Button" parent="PanelOpen/ContentVBox/TitleHBox"]
+margin_left = 177.0
+margin_right = 272.0
+margin_bottom = 22.0
+toggle_mode = true
+text = "View as code"
+
 [node name="TabContainer" type="TabContainer" parent="PanelOpen/ContentVBox"]
 margin_top = 26.0
-margin_right = 271.0
-margin_bottom = 584.0
+margin_right = 272.0
+margin_bottom = 592.0
 size_flags_vertical = 3
 tabs_visible = false
 
@@ -106,6 +116,7 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="PanelOpen/ContentVBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
+[connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
+[connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn" to="." method="_on_ViewCodeBtn_pressed"]
 [connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]
 [connection signal="pressed" from="PanelClose/InspectorShowBtn" to="." method="_on_InspectorShowBtn_pressed"]

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "AtbHBox",
+"language": "GDScript",
+"path": "res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.gd"
+}, {
 "base": "Reference",
 "class": "DataGameBg",
 "language": "GDScript",
@@ -84,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/game_database/database/game_tileset_data.gd"
 }, {
+"base": "Tabs",
+"class": "MainInspectorTab",
+"language": "GDScript",
+"path": "res://src/scenes/editor/InspectorPanel/Tab/MainInspectorTab.gd"
+}, {
 "base": "Panel",
 "class": "MenuBar",
 "language": "GDScript",
@@ -100,6 +110,7 @@ _global_script_classes=[ {
 "path": "res://src/gameobj/preview_object/preview_object.gd"
 } ]
 _global_script_class_icons={
+"AtbHBox": "",
 "DataGameBg": "",
 "DataGameBoss": "",
 "DataGameLadder": "",
@@ -115,6 +126,7 @@ _global_script_class_icons={
 "GameSpikeData": "",
 "GameSpikeTileDrawer": "",
 "GameTileSetData": "",
+"MainInspectorTab": "",
 "MenuBar": "",
 "PreviewGameObject": "",
 "PreviewObject": ""
