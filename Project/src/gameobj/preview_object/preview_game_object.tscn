@@ -7,14 +7,23 @@
 "PreviewGameObject",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-obj_vector_x = 1.#QNAN
-obj_vector_y = 1.#QNAN
-obj_type = 1.#QNAN
-obj_id = 1.#QNAN
-obj_appearance = 1.#QNAN
-obj_direction = 1.#QNAN
-obj_timer = 1.#QNAN
-obj_tex_h_offset = 1.#QNAN
-obj_tex_v_offset = 1.#QNAN
-obj_destination_x = 1.#QNAN
-obj_destination_y = 1.#QNAN
+obj_vector_x = 1.0
+
+[node name="Sprite" parent="." index="0"]
+self_modulate = Color( 1, 1, 1, 0.505882 )
+vframes = 2
+hframes = 5
+region_enabled = false
+
+[node name="ObjIDLabel" type="Label" parent="Sprite" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 5.0
+margin_right = 16.0
+margin_bottom = 5.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.5, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

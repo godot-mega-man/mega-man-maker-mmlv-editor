@@ -35,7 +35,7 @@ export (float) var obj_vector_y = DataGameObject.MISSING_DATA
 export (float) var obj_type = DataGameObject.MISSING_DATA
 
 #e
-export (float) var obj_id = DataGameObject.MISSING_DATA
+export (float) var obj_id = DataGameObject.MISSING_DATA setget set_obj_id
 
 #f
 export (float) var obj_appearance = DataGameObject.MISSING_DATA
@@ -85,6 +85,25 @@ export (float) var obj_option = DataGameObject.MISSING_DATA
 #      Private Methods
 #-------------------------------------------------
 
+func _update_obj_id_appearance():
+	#Label
+	if obj_id == DataGameObject.MISSING_DATA:
+		$Sprite/ObjIDLabel.text = "0"
+	else:
+		$Sprite/ObjIDLabel.text = str(obj_id)
+	
+	#Appearance
+	if obj_type == DataGameObject.MISSING_DATA:
+		$Sprite.frame = 0
+	else:
+		$Sprite.frame = int(obj_type)
+	
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+func set_obj_id(val : float):
+	obj_id = val
+	
+	_update_obj_id_appearance()
