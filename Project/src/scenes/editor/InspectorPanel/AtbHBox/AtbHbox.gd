@@ -1,7 +1,7 @@
-# LevelTab
+# AtbHBox
 # Written by: First
 
-extends Tabs
+extends HBoxContainer
 
 #class_name optional
 
@@ -25,9 +25,14 @@ extends Tabs
 #      Properties
 #-------------------------------------------------
 
+export (String) var property_name
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
+
+func _ready() -> void:
+	$Label.text = property_name
 
 #-------------------------------------------------
 #      Virtual Methods

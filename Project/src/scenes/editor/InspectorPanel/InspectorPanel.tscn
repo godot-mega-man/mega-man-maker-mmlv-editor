@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.gd" type="Script" id=1]
-[ext_resource path="res://src/scenes/editor/InspectorPanel/LevelTab/LevelTab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/LevelTab/LevelTab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/BackgroundTab/BackgroundTab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/LadderTab/LadderTab.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/SpikeTab/SpikeTab.tscn" type="PackedScene" id=7]
 
 [node name="InspectorPanel" type="Control"]
 margin_right = 288.0
@@ -43,7 +48,22 @@ margin_bottom = 584.0
 size_flags_vertical = 3
 tabs_visible = false
 
-[node name="LevelTabs" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 2 )]
+[node name="LevelTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 3 )]
+
+[node name="ObjectTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="TilemapTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 2 )]
+visible = false
+
+[node name="BackgroundTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="LadderTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 5 )]
+visible = false
+
+[node name="SpikeTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 7 )]
+visible = false
 
 [node name="ResizeHandler" type="Control" parent="PanelOpen"]
 anchor_bottom = 1.0
