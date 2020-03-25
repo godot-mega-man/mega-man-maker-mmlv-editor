@@ -25,7 +25,7 @@
 [node name="ToolBar" type="Panel"]
 self_modulate = Color( 0, 0.505882, 1, 0.752941 )
 anchor_right = 1.0
-margin_bottom = 40.0
+margin_bottom = 56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,18 +35,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
 margin_right = -8.0
-custom_constants/separation = 12
+custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AddBtn" type="TextureButton" parent="HBoxContainer"]
-margin_right = 32.0
-margin_bottom = 40.0
+[node name="ObjVBox" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+size_flags_vertical = 0
+
+[node name="CategoryLabel" type="Label" parent="HBoxContainer/ObjVBox"]
+margin_right = 50.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Objects"
+
+[node name="AddBtn" type="TextureButton" parent="HBoxContainer/ObjVBox"]
+margin_top = 18.0
+margin_right = 50.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Insert New Object
 
 Add a new game object with customizable properties."
+size_flags_vertical = 3
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 2 )
@@ -57,14 +70,31 @@ __meta__ = {
 }
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-margin_left = 44.0
-margin_right = 48.0
-margin_bottom = 40.0
+margin_left = 58.0
+margin_right = 62.0
+margin_bottom = 56.0
 
-[node name="ObjectBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 60.0
-margin_right = 92.0
-margin_bottom = 40.0
+[node name="EditModeVBox" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 70.0
+margin_right = 322.0
+margin_bottom = 50.0
+size_flags_vertical = 0
+
+[node name="CategoryLabel" type="Label" parent="HBoxContainer/EditModeVBox"]
+margin_right = 252.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Edit Mode"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/EditModeVBox"]
+margin_top = 18.0
+margin_right = 252.0
+margin_bottom = 50.0
+custom_constants/separation = 12
+
+[node name="ObjectBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Object Edit Mode"
 texture_normal = ExtResource( 8 )
@@ -76,10 +106,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TileMapBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 40.0
+[node name="TileMapBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_left = 44.0
+margin_right = 76.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Tile Edit Mode"
 texture_normal = ExtResource( 6 )
@@ -91,10 +121,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BgBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 148.0
-margin_right = 180.0
-margin_bottom = 40.0
+[node name="BgBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_left = 88.0
+margin_right = 120.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Background Edit Mode"
 texture_normal = ExtResource( 11 )
@@ -106,10 +136,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ActiveScreenBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 192.0
-margin_right = 224.0
-margin_bottom = 40.0
+[node name="ActiveScreenBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_left = 132.0
+margin_right = 164.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Active Screen Edit Mode"
 texture_normal = ExtResource( 16 )
@@ -122,10 +152,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="LadderBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 236.0
-margin_right = 268.0
-margin_bottom = 40.0
+[node name="LadderBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_left = 176.0
+margin_right = 208.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Ladder Edit Mode"
 texture_normal = ExtResource( 15 )
@@ -138,10 +168,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="SpikeBtn" type="TextureButton" parent="HBoxContainer"]
-margin_left = 280.0
-margin_right = 312.0
-margin_bottom = 40.0
+[node name="SpikeBtn" type="TextureButton" parent="HBoxContainer/EditModeVBox/HBoxContainer"]
+margin_left = 220.0
+margin_right = 252.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Spike Edit Mode"
 texture_normal = ExtResource( 17 )

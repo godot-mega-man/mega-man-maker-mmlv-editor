@@ -32,7 +32,7 @@ mouse_filter = 2
 
 [node name="ToolBar" parent="CanvasLayer/Control" instance=ExtResource( 7 )]
 margin_top = 32.0
-margin_bottom = 72.0
+margin_bottom = 96.0
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="exiting" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_exiting"]
 [connection signal="new_file" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_new_file"]
