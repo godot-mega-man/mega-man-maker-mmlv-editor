@@ -39,7 +39,6 @@ __meta__ = {
 mouse_filter = 2
 
 [node name="ToolBar" parent="CanvasLayer/Control" instance=ExtResource( 7 )]
-self_modulate = Color( 0, 0.505882, 1, 0.752941 )
 margin_top = 32.0
 margin_bottom = 96.0
 size_flags_horizontal = 3

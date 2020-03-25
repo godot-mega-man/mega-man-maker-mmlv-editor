@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/LevelTab/LevelTab.tscn" type="PackedScene" id=2]
 
 [node name="InspectorPanel" type="Control"]
-margin_right = 160.0
-margin_bottom = 184.0
+margin_right = 288.0
+margin_bottom = 600.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -17,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelOpen"]
+[node name="ContentVBox" type="VBoxContainer" parent="PanelOpen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -28,26 +29,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/VBoxContainer"]
-margin_right = 143.0
+[node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox"]
+margin_right = 271.0
 margin_bottom = 22.0
+size_flags_horizontal = 3
 text = "Inspector"
 align = 0
 
-[node name="TabContainer" type="TabContainer" parent="PanelOpen/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="PanelOpen/ContentVBox"]
 margin_top = 26.0
-margin_right = 143.0
-margin_bottom = 168.0
+margin_right = 271.0
+margin_bottom = 584.0
 size_flags_vertical = 3
 tabs_visible = false
 
-[node name="Tabs" type="Tabs" parent="PanelOpen/VBoxContainer/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+[node name="LevelTabs" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 2 )]
 
 [node name="ResizeHandler" type="Control" parent="PanelOpen"]
 anchor_bottom = 1.0
@@ -90,6 +86,6 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="PanelOpen/VBoxContainer/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
+[connection signal="pressed" from="PanelOpen/ContentVBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
 [connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]
 [connection signal="pressed" from="PanelClose/InspectorShowBtn" to="." method="_on_InspectorShowBtn_pressed"]
