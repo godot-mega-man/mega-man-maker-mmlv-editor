@@ -42,15 +42,19 @@ mouse_filter = 2
 self_modulate = Color( 0, 0.505882, 1, 0.752941 )
 margin_top = 32.0
 margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="InspectorPanel" parent="CanvasLayer/Control" instance=ExtResource( 8 )]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -224.0
+margin_left = -280.0
 margin_top = 32.0
 margin_right = 0.0
 margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
 [connection signal="exiting" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_exiting"]

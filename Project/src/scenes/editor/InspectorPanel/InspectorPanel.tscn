@@ -3,7 +3,7 @@
 [ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.gd" type="Script" id=1]
 
 [node name="InspectorPanel" type="Control"]
-margin_right = 168.0
+margin_right = 160.0
 margin_bottom = 184.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -22,21 +22,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 8.0
-margin_right = -8.0
+margin_right = -8.00002
 margin_bottom = -8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/VBoxContainer"]
-margin_right = 152.0
+margin_right = 143.0
 margin_bottom = 22.0
 text = "Inspector"
 align = 0
 
 [node name="TabContainer" type="TabContainer" parent="PanelOpen/VBoxContainer"]
 margin_top = 26.0
-margin_right = 152.0
+margin_right = 143.0
 margin_bottom = 168.0
 size_flags_vertical = 3
 tabs_visible = false
@@ -48,6 +48,25 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
+
+[node name="ResizeHandler" type="Control" parent="PanelOpen"]
+anchor_bottom = 1.0
+margin_right = 8.0
+mouse_default_cursor_shape = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelOpen/ResizeHandler"]
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_right = 5.0
+text = "|"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PanelClose" type="Panel" parent="."]
 visible = false
@@ -63,13 +82,14 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 margin_top = 8.0
-margin_right = 73.0
+margin_right = 592.0
 margin_bottom = 30.0
 rect_rotation = 90.0
-text = "Inspector (click to show)"
-align = 2
+text = "Inspector"
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="PanelOpen/VBoxContainer/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
+[connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]
 [connection signal="pressed" from="PanelClose/InspectorShowBtn" to="." method="_on_InspectorShowBtn_pressed"]
