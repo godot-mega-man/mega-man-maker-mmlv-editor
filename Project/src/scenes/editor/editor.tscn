@@ -34,6 +34,10 @@ mouse_filter = 2
 [node name="ToolBar" parent="CanvasLayer/Control" instance=ExtResource( 7 )]
 margin_top = 32.0
 margin_bottom = 96.0
+
+[node name="Scroll2PlayerPosDelayTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="exiting" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_exiting"]
 [connection signal="new_file" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_new_file"]
@@ -55,3 +59,4 @@ margin_bottom = 96.0
 [connection signal="zoom_out" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_zoom_out"]
 [connection signal="opened_file" from="CanvasLayer/Control/FileAccessCtrl" to="." method="_on_FileAccessCtrl_opened_file"]
 [connection signal="saved_file" from="CanvasLayer/Control/FileAccessCtrl" to="." method="_on_FileAccessCtrl_saved_file"]
+[connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]

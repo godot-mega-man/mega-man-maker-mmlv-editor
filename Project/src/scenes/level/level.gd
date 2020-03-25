@@ -330,6 +330,14 @@ func toggle_game_spike_tile():
 func toggle_game_ladder_tile():
 	game_ladder_tile.visible = !game_ladder_tile.visible
 
+func get_player_position() -> Vector2:
+	for i in $Objects.get_children():
+		if i is PreviewGameObject:
+			if i.obj_type == 4:
+				return i.global_position
+	
+	return Vector2.ZERO
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------

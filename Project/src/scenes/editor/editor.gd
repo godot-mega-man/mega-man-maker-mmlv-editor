@@ -46,6 +46,13 @@ onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
 #      Public Methods
 #-------------------------------------------------
 
+func scroll_to_player_pos():
+	var pos = level.get_player_position()
+	
+	if pos != Vector2.ZERO:
+		main_camera.global_position = pos
+		main_camera.reset_zoom()
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
@@ -93,6 +100,8 @@ func _on_FileAccessCtrl_opened_file(dir, path) -> void:
 	
 	if load_result == OK:
 		file_access_ctrl.update_current_level_path(dir, path)
+	
+	$Scroll2PlayerPosDelayTimer.start()
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
@@ -127,6 +136,9 @@ func _on_MenuPanel_view_menu_about_to_show() -> void:
 		MenuBar.ID_MENU_VIEW_SPIKES, level.game_spike_tile.is_visible()
 	)
 
+func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
+	scroll_to_player_pos()
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
@@ -134,4 +146,7 @@ func _on_MenuPanel_view_menu_about_to_show() -> void:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+
+
 
