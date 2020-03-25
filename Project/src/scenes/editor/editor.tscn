@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/scenes/level/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/scenes/editor/FileAccessCtrl/FileAccessCtrl.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/editor/MainCamera/MainCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/editor/ToolBar/ToolBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.tscn" type="PackedScene" id=8]
 
 [node name="Editor" type="Node"]
 script = ExtResource( 4 )
@@ -16,6 +17,10 @@ script = ExtResource( 4 )
 [node name="MainCamera" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3340, 3060 )
 
+[node name="Scroll2PlayerPosDelayTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -23,6 +28,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 __meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -34,11 +41,21 @@ mouse_filter = 2
 [node name="ToolBar" parent="CanvasLayer/Control" instance=ExtResource( 7 )]
 margin_top = 32.0
 margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
-[node name="Scroll2PlayerPosDelayTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
+[node name="InspectorPanel" parent="CanvasLayer/Control" instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -280.0
+margin_top = 32.0
+margin_right = 0.0
+margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
+[connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
 [connection signal="exiting" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_exiting"]
 [connection signal="new_file" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_new_file"]
 [connection signal="normal_zoom" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_normal_zoom"]
@@ -59,4 +76,3 @@ one_shot = true
 [connection signal="zoom_out" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_zoom_out"]
 [connection signal="opened_file" from="CanvasLayer/Control/FileAccessCtrl" to="." method="_on_FileAccessCtrl_opened_file"]
 [connection signal="saved_file" from="CanvasLayer/Control/FileAccessCtrl" to="." method="_on_FileAccessCtrl_saved_file"]
-[connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]

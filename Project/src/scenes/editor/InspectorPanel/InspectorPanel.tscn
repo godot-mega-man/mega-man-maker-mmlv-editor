@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/LevelTab/LevelTab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/BackgroundTab/BackgroundTab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/LadderTab/LadderTab.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/SpikeTab/SpikeTab.tscn" type="PackedScene" id=7]
+
+[node name="InspectorPanel" type="Control"]
+margin_right = 288.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelOpen" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentVBox" type="VBoxContainer" parent="PanelOpen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleHBox" type="HBoxContainer" parent="PanelOpen/ContentVBox"]
+margin_right = 272.0
+margin_bottom = 22.0
+
+[node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox/TitleHBox"]
+margin_right = 173.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "Inspector"
+align = 0
+
+[node name="ViewCodeBtn" type="Button" parent="PanelOpen/ContentVBox/TitleHBox"]
+margin_left = 177.0
+margin_right = 272.0
+margin_bottom = 22.0
+toggle_mode = true
+text = "View as code"
+
+[node name="TabContainer" type="TabContainer" parent="PanelOpen/ContentVBox"]
+margin_top = 26.0
+margin_right = 272.0
+margin_bottom = 592.0
+size_flags_vertical = 3
+tabs_visible = false
+
+[node name="LevelTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 3 )]
+
+[node name="ObjectTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="TilemapTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 2 )]
+visible = false
+
+[node name="BackgroundTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="LadderTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 5 )]
+visible = false
+
+[node name="SpikeTab" parent="PanelOpen/ContentVBox/TabContainer" instance=ExtResource( 7 )]
+visible = false
+
+[node name="ResizeHandler" type="Control" parent="PanelOpen"]
+anchor_bottom = 1.0
+margin_right = 8.0
+mouse_default_cursor_shape = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelOpen/ResizeHandler"]
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_right = 5.0
+text = "|"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelClose" type="Panel" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InspectorShowBtn" type="ToolButton" parent="PanelClose"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_top = 8.0
+margin_right = 592.0
+margin_bottom = 30.0
+rect_rotation = 90.0
+text = "Inspector"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
+[connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn" to="." method="_on_ViewCodeBtn_pressed"]
+[connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]
+[connection signal="pressed" from="PanelClose/InspectorShowBtn" to="." method="_on_InspectorShowBtn_pressed"]

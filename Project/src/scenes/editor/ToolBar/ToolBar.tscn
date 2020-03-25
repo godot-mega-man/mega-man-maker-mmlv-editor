@@ -26,6 +26,7 @@
 self_modulate = Color( 0, 0.505882, 1, 0.752941 )
 anchor_right = 1.0
 margin_bottom = 56.0
+rect_min_size = Vector2( 0, 64 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,7 +73,7 @@ __meta__ = {
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 margin_left = 58.0
 margin_right = 62.0
-margin_bottom = 56.0
+margin_bottom = 64.0
 
 [node name="EditModeVBox" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 70.0

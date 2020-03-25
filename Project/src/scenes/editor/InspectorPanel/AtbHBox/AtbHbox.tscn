@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.gd" type="Script" id=1]
+
+[node name="AtbHbox" type="HBoxContainer"]
+margin_right = 792.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PropertyLabel" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 394.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Property"
+clip_text = true
+
+[node name="CodeLabel" type="Label" parent="."]
+visible = false
+margin_left = 265.0
+margin_top = 5.0
+margin_right = 526.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Property"
+clip_text = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 398.0
+margin_right = 792.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
