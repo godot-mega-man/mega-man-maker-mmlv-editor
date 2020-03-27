@@ -4,9 +4,15 @@ Mega Man Maker MMLV Editor is a work-in-progress software tool used to edit .mml
 
 # Project Installation
 
+> **Note:** The most stable version of editor (engine level) is 0.2. Please download the source code by this link instead:
+> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/tag/v0.2
+
 ```git
 git clone https://github.com/Firstject/mega-man-maker-mmlv-editor.git
 ```
+
+Minimum version requirement of Godot Engine: v3.2
+https://godotengine.org/
 
 # About
 
@@ -24,12 +30,8 @@ Below is a list of possibilities what can be edited and saved (from what we have
 - Screen connections
   - _Still tedious to edit_
 
-And these which are currently possible but might not save correctly:
-- Opening new active screens won't save some part of newly created tiles. To fix this, the user must save all active screens through Mega Man Maker first.
-- Bosses data may be glitched when saved through mmlv editor. Please add the bosses last in Mega Man Maker.
-- Weapon slot ids might be shifted when there are any open slot with 'Nothing' (empty slot).
-
-> **NOTE:** Currently the program is not ready for editing. However, you can try playing around with the code by downloading [Godot engine](https://godotengine.org/) and open this project to edit levels.
+**Follow up progress on trello:**
+https://trello.com/b/vuDpFyE6/mmlv-editor
 
 # All MMM Data
 https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz84g/edit?usp=drivesdk
