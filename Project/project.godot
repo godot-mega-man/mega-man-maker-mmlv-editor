@@ -142,6 +142,10 @@ config/icon="res://icon.png"
 
 window/size/width=800
 
+[editor_plugins]
+
+enabled=PoolStringArray( "welcome_dialog" )
+
 [importer_defaults]
 
 texture={
