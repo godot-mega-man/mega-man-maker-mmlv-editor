@@ -4,8 +4,8 @@ Mega Man Maker MMLV Editor is a work-in-progress software tool used to edit .mml
 
 # Project Installation
 
-> **Note:** The most stable version of editor (engine level) is 0.2. Please download the source code by this link instead:
-> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/tag/v0.2
+> **Note:** The most stable version of editor (engine level) is. Please download the source code by this link instead:
+> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/latest
 
 ```git
 git clone https://github.com/Firstject/mega-man-maker-mmlv-editor.git
