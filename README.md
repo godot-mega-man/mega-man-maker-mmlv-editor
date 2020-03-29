@@ -1,11 +1,13 @@
 # mega-man-maker-level-editor
 
+[![GitHub version](https://badge.fury.io/gh/Firstject%2Fmega-man-maker-mmlv-editor.svg)](https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/latest)
+
 Mega Man Maker MMLV Editor is a work-in-progress software tool used to edit .mmlv files. It allows to modify level in the game that can bypass the Mega Man Maker limitations.
 
 # Project Installation
 
-> **Note:** The most stable version of editor (engine level) is. Please download the source code by this link instead:
-> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/latest
+> **Note:** The most stable version of editor (engine level) is 0.2.1. Please download the source code by this link instead:
+> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/0.2.1
 
 ```git
 git clone https://github.com/Firstject/mega-man-maker-mmlv-editor.git
