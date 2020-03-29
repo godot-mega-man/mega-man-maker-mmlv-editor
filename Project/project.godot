@@ -138,6 +138,10 @@ config/name="MMLV Editor"
 run/main_scene="res://src/scenes/editor/editor.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EditorLogBox="*res://src/scenes/editor/MessageLogBox/EditorLogBox.tscn"
+
 [display]
 
 window/size/width=800

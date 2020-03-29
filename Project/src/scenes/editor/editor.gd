@@ -100,11 +100,16 @@ func _on_FileAccessCtrl_opened_file(dir, path) -> void:
 	
 	if load_result == OK:
 		file_access_ctrl.update_current_level_path(dir, path)
+	else:
+		EditorLogBox.add_message("Load failed. Returned " + str(load_result), true)
+		return
 	
 	$Scroll2PlayerPosDelayTimer.start()
+	EditorLogBox.add_message("Loaded " + path)
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
+	EditorLogBox.add_message("Level saved at " + path)
 
 #New level
 func _on_Level_cleared_level() -> void:
