@@ -1,4 +1,4 @@
-# mega-man-maker-level-editor
+# Mega Man Maker Level Editor
 
 [![GitHub version](https://badge.fury.io/gh/Firstject%2Fmega-man-maker-mmlv-editor.svg)](https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/latest)
 
