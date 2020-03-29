@@ -11,6 +11,40 @@
 [node name="Level" type="Node"]
 script = ExtResource( 1 )
 
+[node name="HowToUse_PLS_READ_THIS" type="Node" parent="."]
+process_priority = -1
+__meta__ = {
+"_editor_description_": "How to use editor in Godot Engine
+
+... This box seems small. You might want to expand it to see entire description
+(or you can actually hover on this node to see the tooltip).
+----------------------------------------------------------------------
+
+# NOTE:
+If you're new to Godot Engine entirely, we recommended you to get used to understanding the basics of the Godot's interface through official Godot Docs.
+
+# Introduction
+The project of this version intended to work on the editor instead of running on the project. Due to this, we implemented the requirement of the systems to make sure saving and loading a level is possible without any issues. I think this is already clear.
+
+# Loading an Existing Level
+To load a level, change the following properties of a root node:
+- Level Path: Path to Mega Man Maker Level
+- Level File: Name of the level you wish to load, without file extension
+- Load File: This will cause the editor to initialize your level when checked. You might need to scroll the scene as the camera won't automatically update the position.
+
+# Saving a Level
+- Save: Save your level. A popup will appear, notifying you that the save completed.
+
+# Adding and Deleting Objects
+Adding a new object is possible, but you need to know and understand the object's id and type. Deleting objects is simple. Just select the objects you wish to delete and press Delete.
+
+# Modifying the Level Tile, Backgrounds, Active Screens, Ladders, and Spikes
+Select a TileMap node and do whatever you want.
+
+# Saving Workspace
+In case saving the level fail to work, you might want to save the scene file and reload the project."
+}
+
 [node name="Bg" type="ColorRect" parent="."]
 margin_right = 12800.0
 margin_bottom = 4480.0
