@@ -11,6 +11,7 @@
 [node name="InspectorPanel" type="Control"]
 margin_right = 288.0
 margin_bottom = 600.0
+mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

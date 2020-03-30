@@ -41,6 +41,9 @@ var current_zoom := Vector2(1, 1)
 #      Notifications
 #-------------------------------------------------
 
+func _process(delta: float) -> void:
+	_clamp_position_within_limit()
+
 #-------------------------------------------------
 #      Virtual Methods
 #-------------------------------------------------
@@ -54,7 +57,6 @@ var current_zoom := Vector2(1, 1)
 #-------------------------------------------------
 
 func zoom_in():
-	_zoom_to_mouse_pos()
 	if current_zoom.x <= MIN_ZOOM:
 		return 
 	
@@ -66,6 +68,20 @@ func zoom_out():
 		return 
 	
 	current_zoom *= 1.5
+	_tween_zoom()
+
+func zoom_in_mini():
+	if current_zoom.x <= MIN_ZOOM:
+		return
+	
+	current_zoom /= 1.1
+	_tween_zoom()
+
+func zoom_out_mini():
+	if current_zoom.x >= MAX_ZOOM:
+		return
+	
+	current_zoom *= 1.1
 	_tween_zoom()
 
 func reset_zoom():
@@ -80,6 +96,21 @@ func reset_zoom():
 #      Private Methods
 #-------------------------------------------------
 
+func _clamp_position_within_limit():
+	var window_size : Vector2 = OS.window_size
+	var window_size_half : Vector2 = OS.window_size / 2
+	
+	position.x = clamp(
+		position.x,
+		limit_left + (window_size_half.x * zoom.x),
+		limit_right - (window_size_half.x * zoom.x)
+	)
+	position.y = clamp(
+		position.y,
+		limit_top + (window_size_half.y * zoom.y),
+		limit_bottom - (window_size_half.y * zoom.y)
+	)
+
 func _tween_zoom():
 	tween.interpolate_property(
 		self,
@@ -91,9 +122,6 @@ func _tween_zoom():
 		Tween.EASE_OUT
 	)
 	tween.start()
-
-func _zoom_to_mouse_pos():
-	position = get_global_mouse_position()
 
 #-------------------------------------------------
 #      Setters & Getters

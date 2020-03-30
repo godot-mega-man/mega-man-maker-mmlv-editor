@@ -145,14 +145,32 @@ func _on_MenuPanel_view_menu_about_to_show() -> void:
 func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
 	scroll_to_player_pos()
 
+func _on_ViewportScrollRect_gui_input(event: InputEvent) -> void:
+	_control_viewport_by_gui_input(event)
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
 
+var is_scroll_mode : bool
+func _control_viewport_by_gui_input(event : InputEvent):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_MIDDLE:
+			is_scroll_mode = event.is_pressed()
+		
+		#Zoom in/out by mouse wheel
+		if event.button_index == BUTTON_WHEEL_UP:
+			main_camera.zoom_in_mini()
+		if event.button_index == BUTTON_WHEEL_DOWN:
+			main_camera.zoom_out_mini()
+	if event is InputEventKey:
+		if event.scancode == KEY_SPACE:
+			is_scroll_mode = event.is_pressed()
+	
+	if is_scroll_mode:
+		if event is InputEventMouseMotion:
+			main_camera.position -= event.relative * main_camera.zoom
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-
-
-
-
