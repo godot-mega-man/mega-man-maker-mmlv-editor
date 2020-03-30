@@ -135,7 +135,8 @@ _global_script_class_icons={
 [application]
 
 config/name="MMLV Editor"
-run/main_scene="res://src/scenes/editor/editor.tscn"
+run/main_scene="res://src/scenes/editor_splash/EditorSplash.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
 [autoload]
