@@ -63,7 +63,7 @@ func save_file():
 		$SaveFileDialog.popup()
 		return
 	
-	emit_signal("saved_file", save_file_dialog.current_dir, save_file_dialog.current_path)
+	emit_signal("saved_file", save_file_dialog.current_dir, current_level_path)
 
 func save_file_as():
 	$SaveFileDialog.popup()

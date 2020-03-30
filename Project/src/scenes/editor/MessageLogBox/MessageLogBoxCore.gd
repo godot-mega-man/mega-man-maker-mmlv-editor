@@ -21,7 +21,7 @@ extends CanvasLayer
 #      Constants
 #-------------------------------------------------
 
-const MSG_ERR_COLOR = Color.firebrick
+const MSG_ERR_COLOR = Color.indianred
 
 #-------------------------------------------------
 #      Properties

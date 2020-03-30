@@ -89,13 +89,11 @@ var game_data_builder : GameDataBuilder
 func load_level(level_dir : String, level_file_path : String) -> int:
 	#Check if file is .mmlv
 	if not level_file_path.get_extension() == "mmlv":
-		OS.alert("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", "File Open Failure")
 		return ERR_FILE_UNRECOGNIZED
 	
 	var dir = Directory.new()
 	var dir_result = dir.open(level_dir)
 	if dir_result != OK:
-		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
 		return dir_result
 	
 	var f = File.new()
@@ -103,12 +101,10 @@ func load_level(level_dir : String, level_file_path : String) -> int:
 	
 	if open_result == OK:
 		construct_level(f.get_as_text())
-	else:
-		OS.alert("Could not open the file. Returned " + str(open_result), "File open failed!")
 	
 	f.close()
 	
-	return OK
+	return open_result
 
 func save_level(level_dir : String, level_file_path : String) -> void:
 	var dir = Directory.new()

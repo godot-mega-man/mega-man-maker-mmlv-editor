@@ -83,79 +83,79 @@ scancode = 80
 [sub_resource type="ShortCut" id=20]
 shortcut = SubResource( 19 )
 
-[sub_resource type="InputEventKey" id=43]
+[sub_resource type="InputEventKey" id=21]
 control = true
 command = true
 scancode = 68
-
-[sub_resource type="ShortCut" id=44]
-shortcut = SubResource( 43 )
-
-[sub_resource type="InputEventKey" id=21]
-scancode = 16777224
 
 [sub_resource type="ShortCut" id=22]
 shortcut = SubResource( 21 )
 
 [sub_resource type="InputEventKey" id=23]
-scancode = 61
+scancode = 16777224
 
 [sub_resource type="ShortCut" id=24]
 shortcut = SubResource( 23 )
 
 [sub_resource type="InputEventKey" id=25]
-scancode = 45
+scancode = 61
 
 [sub_resource type="ShortCut" id=26]
 shortcut = SubResource( 25 )
 
 [sub_resource type="InputEventKey" id=27]
-scancode = 48
+scancode = 45
 
 [sub_resource type="ShortCut" id=28]
 shortcut = SubResource( 27 )
 
 [sub_resource type="InputEventKey" id=29]
-scancode = 71
+scancode = 48
 
 [sub_resource type="ShortCut" id=30]
 shortcut = SubResource( 29 )
 
 [sub_resource type="InputEventKey" id=31]
-scancode = 49
+scancode = 71
 
 [sub_resource type="ShortCut" id=32]
 shortcut = SubResource( 31 )
 
 [sub_resource type="InputEventKey" id=33]
-scancode = 50
+scancode = 49
 
 [sub_resource type="ShortCut" id=34]
 shortcut = SubResource( 33 )
 
 [sub_resource type="InputEventKey" id=35]
-scancode = 51
+scancode = 50
 
 [sub_resource type="ShortCut" id=36]
 shortcut = SubResource( 35 )
 
 [sub_resource type="InputEventKey" id=37]
-scancode = 52
+scancode = 51
 
 [sub_resource type="ShortCut" id=38]
 shortcut = SubResource( 37 )
 
 [sub_resource type="InputEventKey" id=39]
-scancode = 53
+scancode = 52
 
 [sub_resource type="ShortCut" id=40]
 shortcut = SubResource( 39 )
 
 [sub_resource type="InputEventKey" id=41]
-scancode = 54
+scancode = 53
 
 [sub_resource type="ShortCut" id=42]
 shortcut = SubResource( 41 )
+
+[sub_resource type="InputEventKey" id=43]
+scancode = 54
+
+[sub_resource type="ShortCut" id=44]
+shortcut = SubResource( 43 )
 
 [node name="MenuBarPanel" type="Panel"]
 anchor_right = 1.0
@@ -174,18 +174,18 @@ shortcut_edit_redo = SubResource( 14 )
 shortcut_edit_cut = SubResource( 16 )
 shortcut_edit_copy = SubResource( 18 )
 shortcut_edit_paste = SubResource( 20 )
-shortcut_edit_duplicate = SubResource( 44 )
-shortcut_edit_delete = SubResource( 22 )
-shortcut_view_zoom_in = SubResource( 24 )
-shortcut_view_zoom_out = SubResource( 26 )
-shortcut_view_zoom_reset = SubResource( 28 )
-shortcut_view_tile_grid = SubResource( 30 )
-shortcut_view_tiles = SubResource( 32 )
-shortcut_view_backgrounds = SubResource( 34 )
-shortcut_view_objects = SubResource( 36 )
-shortcut_view_active_screens = SubResource( 38 )
-shortcut_view_ladders = SubResource( 40 )
-shortcut_view_spikes = SubResource( 42 )
+shortcut_edit_duplicate = SubResource( 22 )
+shortcut_edit_delete = SubResource( 24 )
+shortcut_view_zoom_in = SubResource( 26 )
+shortcut_view_zoom_out = SubResource( 28 )
+shortcut_view_zoom_reset = SubResource( 30 )
+shortcut_view_tile_grid = SubResource( 32 )
+shortcut_view_tiles = SubResource( 34 )
+shortcut_view_backgrounds = SubResource( 36 )
+shortcut_view_objects = SubResource( 38 )
+shortcut_view_active_screens = SubResource( 40 )
+shortcut_view_ladders = SubResource( 42 )
+shortcut_view_spikes = SubResource( 44 )
 
 [node name="MenuBarHBox" type="HBoxContainer" parent="."]
 anchor_right = 1.0

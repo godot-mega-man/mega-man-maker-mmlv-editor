@@ -98,11 +98,13 @@ func _on_MenuPanel_normal_zoom() -> void:
 func _on_FileAccessCtrl_opened_file(dir, path) -> void:
 	var load_result = level.load_level(dir, path)
 	
-	if load_result == OK:
-		file_access_ctrl.update_current_level_path(dir, path)
-	else:
-		EditorLogBox.add_message("Load failed. Returned " + str(load_result), true)
-		return
+	match load_result:
+		OK:
+			file_access_ctrl.update_current_level_path(dir, path)
+		ERR_FILE_UNRECOGNIZED:
+			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
+			return
+		
 	
 	$Scroll2PlayerPosDelayTimer.start()
 	EditorLogBox.add_message("Loaded " + path)
