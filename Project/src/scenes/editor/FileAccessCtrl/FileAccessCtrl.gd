@@ -85,6 +85,7 @@ func _on_OpenFileDialog_file_selected(path: String) -> void:
 
 func _on_SaveFileDialog_file_selected(path: String) -> void:
 	emit_signal("saved_file", save_file_dialog.current_dir, path)
+	update_current_level_path(open_file_dialog.current_dir, path)
 
 #-------------------------------------------------
 #      Private Methods

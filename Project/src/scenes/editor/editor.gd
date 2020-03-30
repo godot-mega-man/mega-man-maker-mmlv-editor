@@ -100,14 +100,13 @@ func _on_FileAccessCtrl_opened_file(dir, path) -> void:
 	
 	match load_result:
 		OK:
+			$Scroll2PlayerPosDelayTimer.start()
+			EditorLogBox.add_message("Loaded " + path)
 			file_access_ctrl.update_current_level_path(dir, path)
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
-			return
 		
 	
-	$Scroll2PlayerPosDelayTimer.start()
-	EditorLogBox.add_message("Loaded " + path)
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
