@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scenes/editor_splash/EditorSplash.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=2]
@@ -73,6 +73,34 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 0.5, 1 ),
 "update": 0,
 "values": [ 128, 128, 16 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_constants/separation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 0.5, -2, 1 ),
+"update": 0,
+"values": [ -256, -256, 16, -2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="EditorSplash" type="CanvasLayer"]
@@ -153,6 +181,98 @@ size_flags_horizontal = 4
 [node name="AppearAnim" type="AnimationPlayer" parent="Panel/LoadingVbox"]
 autoplay = "Appear"
 anims/Appear = SubResource( 3 )
+
+[node name="WatermarkHBox" type="HBoxContainer" parent="Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_bottom = -10.0
+custom_constants/separation = -2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelOpen" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 303.0
+margin_right = 321.0
+margin_bottom = 22.0
+text = "--"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelProjName" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 319.0
+margin_right = 410.0
+margin_bottom = 22.0
+text = "ProjectName"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelProjVersion" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 408.0
+margin_right = 442.0
+margin_bottom = 22.0
+text = "v1.x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelSeparation" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 440.0
+margin_right = 453.0
+margin_bottom = 22.0
+text = "-"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelCreatorPrefix" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 451.0
+margin_right = 474.0
+margin_bottom = 22.0
+text = "by"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelCreator" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 472.0
+margin_right = 480.0
+margin_bottom = 22.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WatermarkLabelClose" type="Label" parent="Panel/WatermarkHBox"]
+margin_left = 478.0
+margin_right = 496.0
+margin_bottom = 22.0
+text = "--"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowAnim" type="AnimationPlayer" parent="Panel/WatermarkHBox"]
+autoplay = "Anim"
+anims/Anim = SubResource( 4 )
 
 [node name="LoadDoneCheckTimer" type="Timer" parent="."]
 wait_time = 0.05

@@ -35,6 +35,10 @@ var thread : Thread
 onready var loading_label = $Panel/LoadingVbox/LoadingLabel
 onready var progress_bar = $Panel/LoadingVbox/ProgressBar
 
+onready var watermark_hbox = $Panel/WatermarkHBox
+onready var watermark_label_proj_name = $Panel/WatermarkHBox/WatermarkLabelProjName
+onready var watermark_label_proj_version = $Panel/WatermarkHBox/WatermarkLabelProjVersion
+onready var watermark_label_creator = $Panel/WatermarkHBox/WatermarkLabelCreator
 
 #-------------------------------------------------
 #      Notifications
@@ -44,6 +48,7 @@ func _ready() -> void:
 	thread = Thread.new()
 	
 	_update_loading_message()
+	_update_watermark()
 	res_iloader = ResourceLoader.load_interactive("res://src/scenes/editor/editor.tscn")
 
 #-------------------------------------------------
@@ -119,6 +124,14 @@ func _update_loading_message():
 	
 	f.close()
 
+func _update_watermark():
+	watermark_label_proj_name.text = ProjectSettings.get_setting("application/config/name")
+	watermark_label_proj_version.text = "v" + ProjectSettings.get_setting("application/config/version")
+	watermark_label_creator.text = ProjectSettings.get_setting("application/config/project_creator")
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+
+

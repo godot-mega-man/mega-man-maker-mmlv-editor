@@ -140,6 +140,7 @@ boot_splash/image="res://assets/images/splash/SplashScreen.png"
 boot_splash/bg_color=Color( 0.921569, 0.921569, 0.921569, 1 )
 config/icon="res://icon.png"
 config/version="0.5"
+config/project_creator="Firstject (Snowflakes)"
 
 [autoload]
 
