@@ -45,6 +45,9 @@ signal zoom_out
 signal normal_zoom
 
 signal readme
+signal release_notes
+signal req_feature
+signal report_bug
 signal about
 
 #Generic signals
@@ -254,7 +257,7 @@ func _init_help_menus():
 	
 	help_menu.get_popup().add_separator()
 	
-	help_menu.get_popup().add_item("Propose New Feature", ID_MENU_HELP_REQUEST_FEATURE)
+	help_menu.get_popup().add_item("Propose a New Feature", ID_MENU_HELP_REQUEST_FEATURE)
 	
 	help_menu.get_popup().add_item("Send Bug Report", ID_MENU_HELP_REPORT_BUG)
 	
@@ -313,10 +316,6 @@ func _on_view_menu_popup_pressed(id : int) -> void:
 		ID_MENU_VIEW_NORMAL_ZOOM:
 			emit_signal("normal_zoom")
 
-#Connected from _init_view_menu()
-func _on_view_menu_popup_about_to_show():
-	emit_signal("view_menu_about_to_show")
-
 #Connected from _init_help_menu()
 func _on_help_menu_popup_pressed(id : int) -> void:
 	match id:
@@ -324,6 +323,12 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 			OS.shell_open(ISSUE_URL)
 		ID_MENU_HELP_REQUEST_FEATURE:
 			OS.shell_open(ISSUE_URL)
+		ID_MENU_HELP_ABOUT:
+			emit_signal("about")
+
+#Connected from _init_view_menu()
+func _on_view_menu_popup_about_to_show():
+	emit_signal("view_menu_about_to_show")
 
 #-------------------------------------------------
 #      Private Methods

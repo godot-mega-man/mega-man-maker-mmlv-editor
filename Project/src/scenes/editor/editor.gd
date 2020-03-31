@@ -30,6 +30,9 @@ onready var main_camera = $MainCamera
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
 
+onready var popups = $CanvasLayer/Control/Popups
+onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -95,6 +98,9 @@ func _on_MenuPanel_zoom_out() -> void:
 	main_camera.zoom_out()
 func _on_MenuPanel_normal_zoom() -> void:
 	main_camera.reset_zoom()
+
+func _on_MenuPanel_about() -> void:
+	about_popup_dialog.popup()
 
 # ---
 
@@ -183,3 +189,4 @@ func _update_window_title_by_level_path(path : String):
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
