@@ -34,6 +34,9 @@ onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
 #      Notifications
 #-------------------------------------------------
 
+func _ready() -> void:
+	_update_window_title_by_level_path("")
+
 #-------------------------------------------------
 #      Virtual Methods
 #-------------------------------------------------
@@ -95,13 +98,14 @@ func _on_MenuPanel_normal_zoom() -> void:
 
 # ---
 
-func _on_FileAccessCtrl_opened_file(dir, path) -> void:
+func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 	var load_result = level.load_level(dir, path)
 	
 	match load_result:
 		OK:
 			$Scroll2PlayerPosDelayTimer.start()
 			EditorLogBox.add_message("Loaded " + path)
+			_update_window_title_by_level_path(path)
 			file_access_ctrl.update_current_level_path(dir, path)
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
@@ -110,10 +114,12 @@ func _on_FileAccessCtrl_opened_file(dir, path) -> void:
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
+	_update_window_title_by_level_path(path)
 	EditorLogBox.add_message("Level saved at " + path)
 
 #New level
 func _on_Level_cleared_level() -> void:
+	_update_window_title_by_level_path("")
 	file_access_ctrl.clear_current_level_path()
 
 func _on_MenuPanel_view_menu_about_to_show() -> void:
@@ -170,6 +176,9 @@ func _control_viewport_by_gui_input(event : InputEvent):
 	if is_scroll_mode:
 		if event is InputEventMouseMotion:
 			main_camera.position -= event.relative * main_camera.zoom
+
+func _update_window_title_by_level_path(path : String):
+	WindowTitleUpdater.current_level_file_path = path
 
 #-------------------------------------------------
 #      Setters & Getters
