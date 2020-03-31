@@ -82,7 +82,12 @@ const ID_MENU_VIEW_ZOOM_OUT = 11
 const ID_MENU_VIEW_NORMAL_ZOOM = 12
 
 const ID_MENU_HELP_README = 0
-const ID_MENU_HELP_ABOUT = 1
+const ID_MENU_HELP_RELEASE_NOTES = 1
+const ID_MENU_HELP_REQUEST_FEATURE = 3
+const ID_MENU_HELP_REPORT_BUG = 4
+const ID_MENU_HELP_ABOUT = 6
+
+const ISSUE_URL = "https://github.com/Firstject/mega-man-maker-mmlv-editor/issues/new/choose"
 
 #-------------------------------------------------
 #      Properties
@@ -245,11 +250,18 @@ func _init_help_menus():
 	help_menu.get_popup().connect("id_pressed", self, "_on_help_menu_popup_pressed")
 	help_menu.get_popup().add_item("Read Me", ID_MENU_HELP_README)
 	
+	help_menu.get_popup().add_item("Release Notes", ID_MENU_HELP_RELEASE_NOTES)
+	
+	help_menu.get_popup().add_separator()
+	
+	help_menu.get_popup().add_item("Propose New Feature", ID_MENU_HELP_REQUEST_FEATURE)
+	
+	help_menu.get_popup().add_item("Send Bug Report", ID_MENU_HELP_REPORT_BUG)
+	
 	help_menu.get_popup().add_separator()
 	
 	help_menu.get_popup().add_item("About", ID_MENU_HELP_ABOUT)
 	
-
 
 #-------------------------------------------------
 #      Connections
@@ -307,7 +319,11 @@ func _on_view_menu_popup_about_to_show():
 
 #Connected from _init_help_menu()
 func _on_help_menu_popup_pressed(id : int) -> void:
-	pass
+	match id:
+		ID_MENU_HELP_REPORT_BUG:
+			OS.shell_open(ISSUE_URL)
+		ID_MENU_HELP_REQUEST_FEATURE:
+			OS.shell_open(ISSUE_URL)
 
 #-------------------------------------------------
 #      Private Methods
