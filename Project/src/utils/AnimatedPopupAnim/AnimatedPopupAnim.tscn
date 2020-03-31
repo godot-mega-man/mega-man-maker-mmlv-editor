@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Popup"
+length = 0.18
+step = 0.06
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.06, 0.12, 0.18 ),
+"transitions": PoolRealArray( 2, 0.5, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.05, 1.05 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[node name="AnimatedPopupAnim" type="AnimationPlayer"]
+anims/Popup = SubResource( 1 )
+script = ExtResource( 1 )

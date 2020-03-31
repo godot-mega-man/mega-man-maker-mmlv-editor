@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://src/scenes/editor/MenuBar/MenuBar.gd" type="Script" id=1]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -204,6 +205,8 @@ button_mask = 7
 text = "File"
 switch_on_hover = true
 
+[node name="AnimatedPopupAnim" parent="MenuBarHBox/FileMenu" instance=ExtResource( 2 )]
+
 [node name="EditMenu" type="MenuButton" parent="MenuBarHBox"]
 margin_left = 43.0
 margin_right = 79.0
@@ -212,6 +215,8 @@ size_flags_horizontal = 0
 button_mask = 7
 text = "Edit"
 switch_on_hover = true
+
+[node name="AnimatedPopupAnim" parent="MenuBarHBox/EditMenu" instance=ExtResource( 2 )]
 
 [node name="ViewMenu" type="MenuButton" parent="MenuBarHBox"]
 margin_left = 87.0
@@ -222,6 +227,8 @@ button_mask = 7
 text = "View"
 switch_on_hover = true
 
+[node name="AnimatedPopupAnim" parent="MenuBarHBox/ViewMenu" instance=ExtResource( 2 )]
+
 [node name="HelpMenu" type="MenuButton" parent="MenuBarHBox"]
 margin_left = 137.0
 margin_right = 179.0
@@ -230,3 +237,5 @@ size_flags_horizontal = 0
 button_mask = 7
 text = "Help"
 switch_on_hover = true
+
+[node name="AnimatedPopupAnim" parent="MenuBarHBox/HelpMenu" instance=ExtResource( 2 )]
