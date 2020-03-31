@@ -160,6 +160,7 @@ func _init_file_menus():
 	file_menu.get_popup().add_separator()
 	
 	file_menu.get_popup().add_item("Preferences...", ID_MENU_FILE_PREFERENCES)
+	file_menu.get_popup().set_item_disabled(ID_MENU_FILE_PREFERENCES, true) #TODO:ImplementThis
 	
 	file_menu.get_popup().add_separator()
 	
@@ -171,23 +172,29 @@ func _init_edit_menus():
 	
 	edit_menu.get_popup().add_item("Undo", ID_MENU_EDIT_UNDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_UNDO, shortcut_edit_undo, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_UNDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Redo", ID_MENU_EDIT_REDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_REDO, shortcut_edit_redo, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_REDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_separator()
 	
 	edit_menu.get_popup().add_item("Cut", ID_MENU_EDIT_CUT)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_CUT, shortcut_edit_cut, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_CUT, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Copy", ID_MENU_EDIT_COPY)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_COPY, shortcut_edit_copy, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_COPY, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Paste", ID_MENU_EDIT_PASTE)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_PASTE, shortcut_edit_paste, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_PASTE, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Duplicate", ID_MENU_EDIT_DUPLICATE)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_DUPLICATE, shortcut_edit_duplicate, true)
+	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_DUPLICATE, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_separator()
 	
