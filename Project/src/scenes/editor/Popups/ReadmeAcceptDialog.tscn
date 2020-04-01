@@ -1,0 +1,380 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/editor/Popups/ReadmeAcceptDialog.gd" type="Script" id=1]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
+
+[node name="ReadmeAcceptDialog" type="AcceptDialog"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.0
+margin_top = -220.0
+margin_right = 264.0
+margin_bottom = 220.0
+window_title = "Readme"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 2 )]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -38.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 500.0
+margin_bottom = 810.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 14.0
+text = "Mega Man Maker MMLV Editor"
+autowrap = true
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 22.0
+
+[node name="IntroContentVBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 500.0
+margin_bottom = 77.0
+
+[node name="ContentLabel" type="Label" parent="ScrollContainer/VBoxContainer/IntroContentVBox"]
+margin_right = 500.0
+margin_bottom = 31.0
+text = "MMLV Editor is a program, level editor tool for Mega Man Maker to change any object's properties in a level file (.MMLV file format)"
+autowrap = true
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IntroContentVBox"]
+margin_top = 35.0
+margin_right = 500.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="IntroContentVBox2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 500.0
+margin_bottom = 252.0
+
+[node name="TitleSep" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/IntroContentVBox2"]
+margin_right = 500.0
+margin_bottom = 14.0
+
+[node name="HSeparatorBegin" type="HSeparator" parent="ScrollContainer/VBoxContainer/IntroContentVBox2/TitleSep"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/IntroContentVBox2/TitleSep"]
+margin_left = 12.0
+margin_right = 91.0
+margin_bottom = 14.0
+text = "Introduction"
+
+[node name="HSeparatorEnd" type="HSeparator" parent="ScrollContainer/VBoxContainer/IntroContentVBox2/TitleSep"]
+margin_left = 95.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="ContentLabel" type="Label" parent="ScrollContainer/VBoxContainer/IntroContentVBox2"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 151.0
+text = "Nowadays, text-editing Mega Man Maker level is becoming more frequent and tedious process which led to time-consuming. There are users which do not wish to create level provided by the limitations of the gameplay itself.
+
+This editor allows a level file (.mmlv) to be modified or a new level to be created. The tilesets, objects, ladders, spikes, backgrounds, active screens, and level properties can be edited visually which gives the user more control over the limitations."
+autowrap = true
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IntroContentVBox2"]
+margin_top = 155.0
+margin_right = 500.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="AboutContentVBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 256.0
+margin_right = 500.0
+margin_bottom = 444.0
+
+[node name="AboutSep" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AboutContentVBox"]
+margin_right = 500.0
+margin_bottom = 14.0
+
+[node name="HSeparatorBegin" type="HSeparator" parent="ScrollContainer/VBoxContainer/AboutContentVBox/AboutSep"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AboutContentVBox/AboutSep"]
+margin_left = 12.0
+margin_right = 50.0
+margin_bottom = 14.0
+text = "About"
+
+[node name="HSeparatorEnd" type="HSeparator" parent="ScrollContainer/VBoxContainer/AboutContentVBox/AboutSep"]
+margin_left = 54.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="ContentLabel" type="Label" parent="ScrollContainer/VBoxContainer/AboutContentVBox"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 168.0
+text = "MMLV Editor is an external level editor tool for Mega Man Maker. It's main features are:
+- Manual tiling, allowing the user to have more level creation possibilities
+- Object editing. For example, a 0.25-second laser beam which is not possible to make in the actual game.
+- Manual disabling or enabling active screens. Useful for making empty rooms without having to put any object on the screen to activate.
+- View your level visually.
+- Save/Load level."
+autowrap = true
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/AboutContentVBox"]
+margin_top = 172.0
+margin_right = 500.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="IssueContentVBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 448.0
+margin_right = 500.0
+margin_bottom = 591.0
+
+[node name="IssuesSep" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_right = 500.0
+margin_bottom = 14.0
+
+[node name="HSeparatorBegin" type="HSeparator" parent="ScrollContainer/VBoxContainer/IssueContentVBox/IssuesSep"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/IssueContentVBox/IssuesSep"]
+margin_left = 12.0
+margin_right = 54.0
+margin_bottom = 14.0
+text = "Issues"
+
+[node name="HSeparatorEnd" type="HSeparator" parent="ScrollContainer/VBoxContainer/IssueContentVBox/IssuesSep"]
+margin_left = 58.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="ContentLabel" type="Label" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 49.0
+text = "There is a list of known issues (things to be fixed or that aren't yet implemented)."
+autowrap = true
+
+[node name="LinkIssues" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 53.0
+margin_right = 500.0
+margin_bottom = 67.0
+
+[node name="Empty" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IssueContentVBox/LinkIssues"]
+margin_bottom = 14.0
+
+[node name="LinkBtnIssues" type="LinkButton" parent="ScrollContainer/VBoxContainer/IssueContentVBox/LinkIssues"]
+margin_left = 4.0
+margin_right = 133.0
+margin_bottom = 14.0
+custom_colors/font_color_hover = Color( 0.0941176, 0.701961, 1, 1 )
+text = "List of known issues"
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 71.0
+margin_right = 500.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="ContentLabel2" type="Label" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 91.0
+margin_right = 500.0
+margin_bottom = 105.0
+text = "If you found a bug or have a feature for the program, you can report them."
+autowrap = true
+
+[node name="LinkReport" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 109.0
+margin_right = 500.0
+margin_bottom = 123.0
+
+[node name="Empty" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IssueContentVBox/LinkReport"]
+margin_bottom = 14.0
+
+[node name="LinkBtnReport" type="LinkButton" parent="ScrollContainer/VBoxContainer/IssueContentVBox/LinkReport"]
+margin_left = 4.0
+margin_right = 80.0
+margin_bottom = 14.0
+custom_colors/font_color_hover = Color( 0.0941176, 0.701961, 1, 1 )
+text = "Report bugs"
+
+[node name="EmptyBox2" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/IssueContentVBox"]
+margin_top = 127.0
+margin_right = 500.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="AuthorsContentVBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 595.0
+margin_right = 500.0
+margin_bottom = 647.0
+
+[node name="AuthorsSep" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox"]
+margin_right = 500.0
+margin_bottom = 14.0
+
+[node name="HSeparatorBegin" type="HSeparator" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorsSep"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorsSep"]
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 14.0
+text = "Authors"
+
+[node name="HSeparatorEnd" type="HSeparator" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorsSep"]
+margin_left = 66.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="AuthorHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 32.0
+
+[node name="Author" type="Label" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorHBox"]
+margin_right = 243.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
+text = "name"
+
+[node name="Hyphen" type="Label" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorHBox"]
+margin_left = 247.0
+margin_right = 252.0
+margin_bottom = 14.0
+text = "-"
+
+[node name="Role" type="Label" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox/AuthorHBox"]
+margin_left = 256.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Lead Developer"
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/AuthorsContentVBox"]
+margin_top = 36.0
+margin_right = 500.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="CreditsContentVBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 651.0
+margin_right = 500.0
+margin_bottom = 774.0
+
+[node name="CreditsSep" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_right = 500.0
+margin_bottom = 14.0
+
+[node name="HSeparatorBegin" type="HSeparator" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/CreditsSep"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/CreditsSep"]
+margin_left = 12.0
+margin_right = 57.0
+margin_bottom = 14.0
+text = "Credits"
+
+[node name="HSeparatorEnd" type="HSeparator" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/CreditsSep"]
+margin_left = 61.0
+margin_right = 500.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="ToolbarIconsCredits" type="Label" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 32.0
+text = "- Toolbar icons by Google"
+autowrap = true
+
+[node name="Credits" type="Label" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_top = 36.0
+margin_right = 500.0
+margin_bottom = 67.0
+text = "Thanks to open source game engine, to contributors, and all the people who have contributed feature requests, bugs report, and help me to develop "
+autowrap = true
+
+[node name="EmptyBox" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_top = 71.0
+margin_right = 500.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="LinkGodot" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_top = 91.0
+margin_right = 500.0
+margin_bottom = 105.0
+
+[node name="Empty" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkGodot"]
+margin_bottom = 14.0
+
+[node name="LinkBtnGodot" type="LinkButton" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkGodot"]
+margin_left = 4.0
+margin_right = 90.0
+margin_bottom = 14.0
+custom_colors/font_color_hover = Color( 0.0941176, 0.701961, 1, 1 )
+text = "Godot engine"
+
+[node name="LinkContributors" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/CreditsContentVBox"]
+margin_top = 109.0
+margin_right = 500.0
+margin_bottom = 123.0
+
+[node name="Empty" type="ReferenceRect" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkContributors"]
+margin_bottom = 14.0
+
+[node name="LinkBtnContributorsList" type="LinkButton" parent="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkContributors"]
+margin_left = 4.0
+margin_right = 125.0
+margin_bottom = 14.0
+custom_colors/font_color_hover = Color( 0.0941176, 0.701961, 1, 1 )
+text = "List of contributors"
+
+[node name="LargeMarginBottom" type="ReferenceRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 778.0
+margin_right = 500.0
+margin_bottom = 810.0
+rect_min_size = Vector2( 0, 32 )
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/IssueContentVBox/LinkIssues/LinkBtnIssues" to="." method="_on_LinkBtnIssues_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/IssueContentVBox/LinkReport/LinkBtnReport" to="." method="_on_LinkBtnReport_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkGodot/LinkBtnGodot" to="." method="_on_LinkBtnGodot_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CreditsContentVBox/LinkContributors/LinkBtnContributorsList" to="." method="_on_LinkBtnContributorsList_pressed"]

@@ -319,6 +319,8 @@ func _on_view_menu_popup_pressed(id : int) -> void:
 #Connected from _init_help_menu()
 func _on_help_menu_popup_pressed(id : int) -> void:
 	match id:
+		ID_MENU_HELP_README:
+			emit_signal("readme")
 		ID_MENU_HELP_REPORT_BUG:
 			OS.shell_open(ISSUE_URL)
 		ID_MENU_HELP_REQUEST_FEATURE:

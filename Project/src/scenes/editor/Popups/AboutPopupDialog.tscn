@@ -9,9 +9,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -179.0
-margin_top = -178.0
+margin_top = -132.0
 margin_right = 179.0
-margin_bottom = 178.0
+margin_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource( 1 )
@@ -34,128 +34,93 @@ __meta__ = {
 
 [node name="ProjectTitleLabel" type="Label" parent="VBoxContainer"]
 margin_right = 342.0
-margin_bottom = 22.0
+margin_bottom = 14.0
 text = "MMLV Editor"
 align = 1
 
 [node name="ProjectDescLabel" type="Label" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0.584314 )
-margin_top = 26.0
+margin_top = 18.0
 margin_right = 342.0
-margin_bottom = 48.0
+margin_bottom = 32.0
 text = "Mega Man Maker - level editor tool"
 align = 1
 
 [node name="ProjDetail" type="Label" parent="VBoxContainer"]
-margin_top = 52.0
+margin_top = 36.0
 margin_right = 342.0
-margin_bottom = 91.0
+margin_bottom = 67.0
 text = "MMLV Editor is a non-profit software tool made with Godot Engine"
 autowrap = true
 
 [node name="AuthorHSep" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 95.0
+margin_top = 71.0
 margin_right = 342.0
-margin_bottom = 117.0
+margin_bottom = 85.0
 
 [node name="HSeparatorBegin" type="HSeparator" parent="VBoxContainer/AuthorHSep"]
 margin_right = 8.0
-margin_bottom = 22.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 8, 0 )
 
 [node name="Label" type="Label" parent="VBoxContainer/AuthorHSep"]
 margin_left = 12.0
-margin_right = 70.0
-margin_bottom = 22.0
+margin_right = 62.0
+margin_bottom = 14.0
 text = "Authors"
 
 [node name="HSeparatorEnd" type="HSeparator" parent="VBoxContainer/AuthorHSep"]
-margin_left = 74.0
+margin_left = 66.0
 margin_right = 342.0
-margin_bottom = 22.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 
 [node name="AuthorHBox" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 121.0
+margin_top = 89.0
 margin_right = 342.0
-margin_bottom = 143.0
+margin_bottom = 103.0
 
 [node name="Author" type="Label" parent="VBoxContainer/AuthorHBox"]
-margin_right = 160.0
-margin_bottom = 22.0
+margin_right = 164.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
 text = "name"
 
 [node name="Hyphen" type="Label" parent="VBoxContainer/AuthorHBox"]
-margin_left = 164.0
-margin_right = 177.0
-margin_bottom = 22.0
+margin_left = 168.0
+margin_right = 173.0
+margin_bottom = 14.0
 text = "-"
 
 [node name="Role" type="Label" parent="VBoxContainer/AuthorHBox"]
-margin_left = 181.0
+margin_left = 177.0
 margin_right = 342.0
-margin_bottom = 22.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
-text = "Programmer"
-
-[node name="ContributorHSep" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 147.0
-margin_right = 342.0
-margin_bottom = 169.0
-
-[node name="HSeparatorBegin" type="HSeparator" parent="VBoxContainer/ContributorHSep"]
-margin_right = 8.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 8, 0 )
-
-[node name="Label" type="Label" parent="VBoxContainer/ContributorHSep"]
-margin_left = 12.0
-margin_right = 99.0
-margin_bottom = 22.0
-text = "Contributors"
-
-[node name="HSeparatorEnd" type="HSeparator" parent="VBoxContainer/ContributorHSep"]
-margin_left = 103.0
-margin_right = 342.0
-margin_bottom = 22.0
-size_flags_horizontal = 3
-
-[node name="ContributorHBox" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 173.0
-margin_right = 342.0
-margin_bottom = 212.0
-
-[node name="Author" type="Label" parent="VBoxContainer/ContributorHBox"]
-margin_right = 342.0
-margin_bottom = 39.0
-size_flags_horizontal = 3
-text = "--insert your name who helped us contribute the project through github here--"
-align = 1
-autowrap = true
+text = "Lead Developer"
 
 [node name="EmptyBox2" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 216.0
+margin_top = 107.0
 margin_right = 342.0
-margin_bottom = 266.0
+margin_bottom = 176.0
 rect_min_size = Vector2( 0, 16 )
 size_flags_vertical = 3
 
 [node name="SourceButton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 81.0
-margin_top = 270.0
+margin_top = 180.0
 margin_right = 260.0
-margin_bottom = 284.0
+margin_bottom = 194.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "View source code on Github"
 
 [node name="RoadmapButton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 127.0
-margin_top = 288.0
+margin_top = 198.0
 margin_right = 214.0
-margin_bottom = 302.0
+margin_bottom = 212.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "Our Roadmap"
@@ -163,24 +128,24 @@ text = "Our Roadmap"
 [node name="ContributeGuideButton" type="LinkButton" parent="VBoxContainer"]
 visible = false
 margin_left = 137.0
-margin_top = 288.0
+margin_top = 198.0
 margin_right = 204.0
-margin_bottom = 302.0
+margin_bottom = 212.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "Contribute"
 
 [node name="EmptyFixBox" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 306.0
+margin_top = 216.0
 margin_right = 342.0
-margin_bottom = 314.0
+margin_bottom = 224.0
 rect_min_size = Vector2( 0, 8 )
 
 [node name="OkButton" type="Button" parent="VBoxContainer"]
 margin_left = 155.0
-margin_top = 318.0
+margin_top = 228.0
 margin_right = 186.0
-margin_bottom = 340.0
+margin_bottom = 248.0
 size_flags_horizontal = 4
 text = "OK"
 __meta__ = {
