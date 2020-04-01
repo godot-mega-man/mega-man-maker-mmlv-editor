@@ -9,7 +9,7 @@ popup_exclusive = true
 window_title = "Welcome, Dev?"
 dialog_text = "Welcome to Mega Man Maker MMLV Editor!
 
-First of all, thank you for trying out the source code. This seems to be your first time on the project, so let's get started by opening a scene 'Level.tscn' (can be found in the directory \"res://src/scenes/level/level.tscn\").
+First of all, thank you for trying out the source code. This seems to be your first time on the project, so we assumes that you have some experience with Godot interface already. If you’re new to game engine entirely, we recommend you to visit the tutorials on official Godot docs.
 
 As a reminder, make a backup of your level first before saving the level! There is no insurance here, so if anything wrong happened to your level, we have no responsibility to recover your level file.
 
