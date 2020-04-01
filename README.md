@@ -1,53 +1,55 @@
+
 # Mega Man Maker Level Editor
 
 [![GitHub version](https://badge.fury.io/gh/Firstject%2Fmega-man-maker-mmlv-editor.svg)](https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/latest)
 
-Mega Man Maker MMLV Editor is a work-in-progress software tool used to edit .mmlv files. It allows to modify level in the game that can bypass the Mega Man Maker limitations.
+MMLV Editor is a program, level editor tool for Mega Man Maker to change any object's properties in a level file (.MMLV file format)
+
+# Introduction
+
+Nowadays, text-editing Mega Man Maker level is becoming more frequent and tedious process which led to time-consuming. There are users which do not wish to create level provided by the limitations of the gameplay itself.
+
+This editor allows a level file (.mmlv) to be modified or a new level to be created. The tilesets, objects, ladders, spikes, backgrounds, active screens, and level properties can be edited visually which gives the user more control over the limitations.
+
+# About
+
+MMLV Editor is an external level editor tool for Mega Man Maker. It's main features are:  
+- Manual tiling, allowing the user to have more level creation possibilities
+- Object editing. For example, a 0.25-second laser beam which is not possible to make in the actual game.
+- Manual disabling or enabling active screens. Useful for making empty rooms without having to put any object on the screen to activate.
+- View your level visually.
+- Save/Load level.
 
 # Project Installation
 
-> **Note:** The most stable version of editor (engine level) is 0.2.1. Please download the source code by this link instead:
-> https://github.com/Firstject/mega-man-maker-mmlv-editor/releases/0.2.1
+**Note: This is compatible only with Godot 3.2 or later.**
+
+Simply download or clone this repository and open the project with [Godot Engine](https://godotengine.org/)
 
 ```git
 git clone https://github.com/Firstject/mega-man-maker-mmlv-editor.git
 ```
 
-Minimum version requirement of Godot Engine: v3.2
-https://godotengine.org/
+# Contribution Guidelines
 
-# About
+First of all, thank you for being a part of the contributors, which helps our project become a better MMLV editor ever. If you'd like to contribute, please wait until further notice as we have not yet planned ways to contribute.
 
-Nowadays, text-editing level is becoming more frequent and tedious process which led to time-consuming. There are users which do not wish to create level provided by the limitations of the gameplay itself.
+# Other links
 
-This editor allows a level file (.mmlv) to be modified or a new level to be created visually. The tilesets, objects, ladders, spikes, backgrounds, active screens, and level properties can be edited manually which gives the user more control over the limitations.
+### Follow up our roadmap and current progress on Trello.
 
-Below is a list of possibilities what can be edited and saved (from what we have tested):
-- Tilemap
-- Game objects
-- Ladders
-- Spikes
-  - _Mega Man Maker will change the spike direction in the editor automatically, but not when directly playtesting the level._
-- Level properties
-- Screen connections
-  - _Still tedious to edit_
+[Trello: MMLV Editor](https://trello.com/b/vuDpFyE6/mmlv-editor)
 
-**Follow up progress on trello:**
-https://trello.com/b/vuDpFyE6/mmlv-editor
+### All MMM Data
 
-# All MMM Data
-https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz84g/edit?usp=drivesdk
+[Mega Man Maker Data](https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz84g/edit?usp=drivesdk)
 
-# Example Levels Made With MMLV Editor
+### Example Levels Made With MMLV Editor
 
-**Against the Ruined Pressure**
-https://megamanmaker.com/?level=385754
+[Against the Ruined Pressure](https://megamanmaker.com/?level=385754)
 
-**Minecraft Man**
-https://megamanmaker.com/?level=386668
+[Minecraft Man](https://megamanmaker.com/?level=386668)
 
-**Yoku Man**
-https://megamanmaker.com/?level=386428
+[Yoku Man](https://megamanmaker.com/?level=386428)
 
-**Impregnable Fortress**
-https://megamanmaker.com/?level=387336
+[Impregnable Fortress](https://megamanmaker.com/?level=387336)
