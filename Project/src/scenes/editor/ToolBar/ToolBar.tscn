@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/images/editor_ui/ToolBar/AddPressed.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/AddHover.png" type="Texture" id=2]
@@ -22,12 +22,14 @@
 [ext_resource path="res://assets/images/editor_ui/ToolBar/LadderPressed.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/LadderHover.png" type="Texture" id=21]
 [ext_resource path="res://src/utils/ButtonsToggler/ButtonsToggler.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/scenes/editor/ToolBar/ToolBar.gd" type="Script" id=23]
 
 [node name="ToolBar" type="Panel"]
 self_modulate = Color( 0, 0.505882, 1, 0.752941 )
 anchor_right = 1.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 0, 64 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -206,3 +208,9 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ObjectBtn" to="." method="_on_ObjectBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/TileMapBtn" to="." method="_on_TileMapBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/BgBtn" to="." method="_on_BgBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ActiveScreenBtn" to="." method="_on_ActiveScreenBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/LadderBtn" to="." method="_on_LadderBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/SpikeBtn" to="." method="_on_SpikeBtn_pressed"]
