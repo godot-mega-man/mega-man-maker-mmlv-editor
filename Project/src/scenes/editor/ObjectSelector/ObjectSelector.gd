@@ -64,7 +64,7 @@ func process_input(event : InputEvent):
 		
 		highlight_rect.visible = selecting
 	
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and selecting:
 		var rect : Rect2
 		
 		# Set rect position
