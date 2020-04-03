@@ -27,9 +27,10 @@ extends Node
 
 onready var level = $Level
 onready var main_camera = $MainCamera
+onready var object_selector = $ObjectSelector
+
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
-
 onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
@@ -162,6 +163,7 @@ func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
 
 func _on_EditAreaRect_gui_input(event: InputEvent) -> void:
 	_control_viewport_by_gui_input(event)
+	_control_object_selection_by_gui_input(event)
 
 #-------------------------------------------------
 #      Private Methods
@@ -185,6 +187,9 @@ func _control_viewport_by_gui_input(event : InputEvent):
 	if is_scroll_mode:
 		if event is InputEventMouseMotion:
 			main_camera.position -= event.relative * main_camera.zoom
+
+func _control_object_selection_by_gui_input(event : InputEvent):
+	object_selector.process_input(event)
 
 func _update_window_title_by_level_path(path : String):
 	WindowTitleUpdater.current_level_file_path = path

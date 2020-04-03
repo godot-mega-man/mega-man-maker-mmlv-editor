@@ -34,9 +34,6 @@ var select_begin_pos : Vector2
 #      Notifications
 #-------------------------------------------------
 
-func _input(event: InputEvent) -> void:
-	_process_input(event)
-
 #-------------------------------------------------
 #      Virtual Methods
 #-------------------------------------------------
@@ -57,7 +54,7 @@ func _input(event: InputEvent) -> void:
 #      Private Methods
 #-------------------------------------------------
 
-func _process_input(event : InputEvent):
+func process_input(event : InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			selecting = event.is_pressed()
