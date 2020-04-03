@@ -160,7 +160,7 @@ func _on_MenuPanel_view_menu_about_to_show() -> void:
 func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
 	scroll_to_player_pos()
 
-func _on_ViewportScrollRect_gui_input(event: InputEvent) -> void:
+func _on_EditAreaRect_gui_input(event: InputEvent) -> void:
 	_control_viewport_by_gui_input(event)
 
 #-------------------------------------------------
@@ -192,3 +192,4 @@ func _update_window_title_by_level_path(path : String):
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
