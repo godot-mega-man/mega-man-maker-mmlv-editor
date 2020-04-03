@@ -47,7 +47,6 @@ onready var watermark_label_creator = $Panel/WatermarkHBox/WatermarkLabelCreator
 func _ready() -> void:
 	thread = Thread.new()
 	
-	_update_loading_message()
 	_update_watermark()
 	res_iloader = ResourceLoader.load_interactive("res://src/scenes/editor/editor.tscn")
 
@@ -110,19 +109,6 @@ func _update_progress():
 func _set_new_scene(resource : PackedScene):
 	current_scene = resource.instance()
 	get_node("/root").add_child(current_scene)
-
-func _update_loading_message():
-	var f = File.new()
-	var f_open_result = f.open(LOADING_MESSAGE_JSON_FILE_PATH, File.READ)
-	
-	if f_open_result == OK:
-		var text = f.get_as_text()
-		var json_data = parse_json(text)
-		
-		randomize()
-		loading_label.set_text(json_data.data[randi() % json_data.data.size() - 1])
-	
-	f.close()
 
 func _update_watermark():
 	watermark_label_proj_name.text = ProjectSettings.get_setting("application/config/name")
