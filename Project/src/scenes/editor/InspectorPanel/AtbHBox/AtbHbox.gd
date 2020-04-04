@@ -48,7 +48,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			$LineEdit.release_focus()
 			_on_LineEdit_text_entered($LineEdit.text)
 
 #-------------------------------------------------
@@ -99,6 +98,7 @@ func is_placeholder_empty():
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	emit_signal("value_entered")
+	$LineEdit.release_focus()
 
 #-------------------------------------------------
 #      Private Methods
