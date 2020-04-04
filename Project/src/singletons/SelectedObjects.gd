@@ -15,8 +15,10 @@ extends Node
 #      Signals
 #-------------------------------------------------
 
-signal selected
-signal deselected
+signal selected()
+signal selected_obj(obj)
+signal deselected()
+signal deselected_obj(obj)
 
 #-------------------------------------------------
 #      Constants
@@ -46,15 +48,16 @@ export (Array) var selected_objects : Array
 
 func add_object(object : Object):
 	selected_objects.append(object)
-	emit_signal("selected")
+	emit_signal("selected_obj", object)
 
 func add_objects(objects : Array):
 	selected_objects += objects
 	emit_signal("selected")
 
 func remove(idx : int):
+	var object = selected_objects[idx]
 	selected_objects.remove(idx)
-	emit_signal("deselected")
+	emit_signal("deselected_obj", object)
 
 func remove_all():
 	selected_objects.clear()

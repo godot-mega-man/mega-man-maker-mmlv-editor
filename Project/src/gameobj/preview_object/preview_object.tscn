@@ -1,8 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/gameobj/preview_object/preview_object.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/previews/preview_tileset.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/previews/highlighter.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite/HighlightContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Highlight"
@@ -18,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 0.353553, 1 ),
 "update": 0,
-"values": [ -128, 0 ]
+"values": [ -64, 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite/HighlightContainer:custom_constants/margin_top")
@@ -30,7 +45,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 0.353553, 1 ),
 "update": 0,
-"values": [ -128, 0 ]
+"values": [ -64, 0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite/HighlightContainer:custom_constants/margin_left")
@@ -42,7 +57,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 0.353553, 1 ),
 "update": 0,
-"values": [ -128, 0 ]
+"values": [ -64, 0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite/HighlightContainer:custom_constants/margin_bottom")
@@ -54,7 +69,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 0.353553, 1 ),
 "update": 0,
-"values": [ -128, 0 ]
+"values": [ -64, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/HighlightContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="PreviewObject" type="Node2D" groups=[
@@ -67,19 +94,6 @@ texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 16, 16, 16, 16 )
-
-[node name="ObjIDLabel" type="Label" parent="Sprite"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 5.0
-margin_right = 16.0
-margin_bottom = 5.0
-grow_horizontal = 2
-rect_scale = Vector2( 0.5, 0.5 )
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HighlightContainer" type="MarginContainer" parent="Sprite"]
 anchor_right = 1.0
@@ -113,4 +127,6 @@ __meta__ = {
 }
 
 [node name="HighlightAnim" type="AnimationPlayer" parent="."]
+autoplay = "Hide"
+anims/Hide = SubResource( 2 )
 anims/Highlight = SubResource( 1 )
