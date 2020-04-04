@@ -7,156 +7,157 @@
 [node name="LevelTab" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Vbox" parent="ScrollContainer" index="0"]
-margin_right = 780.0
-margin_bottom = 602.0
-
 [node name="TitleLabel" parent="ScrollContainer/Vbox" index="0"]
-margin_right = 780.0
 text = "Level Properties"
 
 [node name="AtbHboxVersion" parent="ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
 margin_top = 18.0
-margin_right = 780.0
 margin_bottom = 42.0
+missing_value_enabled = false
 property_name = "Version"
 code = "0a"
 
 [node name="AtbHboxLevelName" parent="ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
 margin_top = 46.0
-margin_right = 780.0
 margin_bottom = 70.0
+missing_value_enabled = false
 property_name = "Level Name"
 code = "1a"
 
 [node name="AtbHboxUsername" parent="ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
 margin_top = 74.0
-margin_right = 780.0
 margin_bottom = 98.0
+missing_value_enabled = false
 property_name = "Username"
 code = "4a"
 
 [node name="AtbHboxUserPortrait" parent="ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
 margin_top = 102.0
-margin_right = 780.0
 margin_bottom = 126.0
+missing_value_enabled = false
 property_name = "User Portrait ID"
 code = "4b"
 
 [node name="AtbHboxSliding" parent="ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
 margin_top = 130.0
-margin_right = 780.0
 margin_bottom = 154.0
+missing_value_enabled = false
 property_name = "Sliding Enabled"
 code = "1b"
 
 [node name="AtbHboxCShotOn" parent="ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
 margin_top = 158.0
-margin_right = 780.0
 margin_bottom = 182.0
+missing_value_enabled = false
 property_name = "Charge Shot Enabled"
 code = "1c"
 
 [node name="AtbHboxDblDmg" parent="ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
 margin_top = 186.0
-margin_right = 780.0
 margin_bottom = 210.0
+missing_value_enabled = false
 property_name = "Double Damage Enabled"
 code = "1ba"
 
 [node name="AtbHboxProtoStrike" parent="ScrollContainer/Vbox" index="8" instance=ExtResource( 2 )]
 margin_top = 214.0
-margin_right = 780.0
 margin_bottom = 238.0
+missing_value_enabled = false
 property_name = "Proto Strike Enabled"
 code = "1ca"
 
 [node name="AtbHboxDblJump" parent="ScrollContainer/Vbox" index="9" instance=ExtResource( 2 )]
 margin_top = 242.0
-margin_right = 780.0
 margin_bottom = 266.0
+missing_value_enabled = false
 property_name = "Double Jump Enabled"
 code = "1bb"
 
 [node name="AtbHboxCShotType" parent="ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
 margin_top = 270.0
-margin_right = 780.0
 margin_bottom = 294.0
+missing_value_enabled = false
 property_name = "Charge Shot Type"
 code = "1d"
 
 [node name="AtbHboxBgColorID" parent="ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
 margin_top = 298.0
-margin_right = 780.0
 margin_bottom = 322.0
+missing_value_enabled = false
 property_name = "Background Color ID"
 code = "1e"
 
 [node name="AtbHboxBossPortrait" parent="ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
 margin_top = 326.0
-margin_right = 780.0
 margin_bottom = 350.0
+missing_value_enabled = false
 property_name = "Boss Portrait ID"
 code = "1f"
 
 [node name="AtbHboxBossCount" parent="ScrollContainer/Vbox" index="13" instance=ExtResource( 2 )]
 margin_top = 354.0
-margin_right = 780.0
 margin_bottom = 378.0
+missing_value_enabled = false
 property_name = "Number of Bosses"
 code = "1bc"
 
-[node name="AtbHboxBosses" parent="ScrollContainer/Vbox" index="14" instance=ExtResource( 2 )]
+[node name="AtbHboxLvlTrackID" parent="ScrollContainer/Vbox" index="14" instance=ExtResource( 2 )]
 margin_top = 382.0
-margin_right = 780.0
 margin_bottom = 406.0
-property_name = "Bosses Data"
-
-[node name="AtbHboxWeaponSlots" parent="ScrollContainer/Vbox" index="15" instance=ExtResource( 2 )]
-margin_top = 410.0
-margin_right = 780.0
-margin_bottom = 434.0
-property_name = "Weapon Slots"
-code = "1k*"
-
-[node name="AtbHboxLvlTrackID" parent="ScrollContainer/Vbox" index="16" instance=ExtResource( 2 )]
-margin_top = 438.0
-margin_right = 780.0
-margin_bottom = 462.0
+missing_value_enabled = false
 property_name = "Track ID"
 code = "1l"
 
-[node name="AtbHboxLvlMusicNumber" parent="ScrollContainer/Vbox" index="17" instance=ExtResource( 2 )]
-margin_top = 466.0
-margin_right = 780.0
-margin_bottom = 490.0
+[node name="AtbHboxLvlMusicNumber" parent="ScrollContainer/Vbox" index="15" instance=ExtResource( 2 )]
+margin_top = 410.0
+margin_bottom = 434.0
+missing_value_enabled = false
 property_name = "Music Number"
 code = "1m"
 
-[node name="AtbHboxAreaP" parent="ScrollContainer/Vbox" index="18" instance=ExtResource( 2 )]
-margin_top = 494.0
-margin_right = 780.0
-margin_bottom = 518.0
+[node name="AtbHboxAreaP" parent="ScrollContainer/Vbox" index="16" instance=ExtResource( 2 )]
+margin_top = 438.0
+margin_bottom = 462.0
+missing_value_enabled = false
 property_name = "Area P"
 code = "1p"
 
-[node name="AtbHboxAreaQ" parent="ScrollContainer/Vbox" index="19" instance=ExtResource( 2 )]
-margin_top = 522.0
-margin_right = 780.0
-margin_bottom = 546.0
+[node name="AtbHboxAreaQ" parent="ScrollContainer/Vbox" index="17" instance=ExtResource( 2 )]
+margin_top = 466.0
+margin_bottom = 490.0
+missing_value_enabled = false
 property_name = "Area Q"
 code = "1q"
 
-[node name="AtbHboxAreaR" parent="ScrollContainer/Vbox" index="20" instance=ExtResource( 2 )]
-margin_top = 550.0
-margin_right = 780.0
-margin_bottom = 574.0
+[node name="AtbHboxAreaR" parent="ScrollContainer/Vbox" index="18" instance=ExtResource( 2 )]
+margin_top = 494.0
+margin_bottom = 518.0
+missing_value_enabled = false
 property_name = "Area R"
 code = "1r"
 
-[node name="AtbHboxAreaS" parent="ScrollContainer/Vbox" index="21" instance=ExtResource( 2 )]
-margin_top = 578.0
-margin_right = 780.0
-margin_bottom = 602.0
+[node name="AtbHboxAreaS" parent="ScrollContainer/Vbox" index="19" instance=ExtResource( 2 )]
+margin_top = 522.0
+margin_bottom = 546.0
+missing_value_enabled = false
 property_name = "Area S"
 code = "1s"
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxVersion" to="." method="_on_AtbHboxVersion_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxLevelName" to="." method="_on_AtbHboxLevelName_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxUsername" to="." method="_on_AtbHboxUsername_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxUserPortrait" to="." method="_on_AtbHboxUserPortrait_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxSliding" to="." method="_on_AtbHboxSliding_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxCShotOn" to="." method="_on_AtbHboxCShotOn_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxDblDmg" to="." method="_on_AtbHboxDblDmg_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxProtoStrike" to="." method="_on_AtbHboxProtoStrike_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxDblJump" to="." method="_on_AtbHboxDblJump_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxCShotType" to="." method="_on_AtbHboxCShotType_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxBgColorID" to="." method="_on_AtbHboxBgColorID_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxBossPortrait" to="." method="_on_AtbHboxBossPortrait_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxBossCount" to="." method="_on_AtbHboxBossCount_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxLvlTrackID" to="." method="_on_AtbHboxLvlTrackID_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxLvlMusicNumber" to="." method="_on_AtbHboxLvlMusicNumber_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxAreaP" to="." method="_on_AtbHboxAreaP_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxAreaQ" to="." method="_on_AtbHboxAreaQ_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxAreaR" to="." method="_on_AtbHboxAreaR_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxAreaS" to="." method="_on_AtbHboxAreaS_value_entered"]

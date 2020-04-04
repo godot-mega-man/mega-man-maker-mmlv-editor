@@ -31,6 +31,7 @@ onready var object_selector = $ObjectSelector
 
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
+onready var inspector_panel = $CanvasLayer/Control/InspectorPanel
 onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
@@ -41,6 +42,7 @@ onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
 
 func _ready() -> void:
 	_update_window_title_by_level_path("")
+	inspector_panel.load_level_config()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -117,6 +119,7 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 			EditorLogBox.add_message("Loaded " + path)
 			_update_window_title_by_level_path(path)
 			file_access_ctrl.update_current_level_path(dir, path)
+			inspector_panel.load_level_config()
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
 		
@@ -131,6 +134,7 @@ func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 func _on_Level_cleared_level() -> void:
 	_update_window_title_by_level_path("")
 	file_access_ctrl.clear_current_level_path()
+	inspector_panel.load_level_config()
 
 func _on_MenuPanel_view_menu_about_to_show() -> void:
 	menu_bar.view_menu.get_popup().set_item_checked(

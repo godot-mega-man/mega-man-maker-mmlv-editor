@@ -72,7 +72,7 @@ func show_property():
 	$CodeLabel.visible = false
 
 func set_value(val):
-	if val == DataGameObject.MISSING_DATA:
+	if float(val) == DataGameObject.MISSING_DATA:
 		return
 	
 	$LineEdit.text = str(val)

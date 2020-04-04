@@ -39,6 +39,8 @@ onready var inspector_hide_btn = $PanelOpen/ContentVBox/TitleHBox/InspectorHideB
 onready var view_code_button = $PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn
 onready var tab_container = $PanelOpen/ContentVBox/TabContainer
 
+onready var level_tab = $PanelOpen/ContentVBox/TabContainer/LevelTab
+
 var resize_dragging = false
 
 #-------------------------------------------------
@@ -76,6 +78,9 @@ func resize_drag_ended():
 		hide_inspector()
 	if panel_open.margin_left < INSPECTOR_MIN_LEFT_MARGIN:
 		panel_open.margin_left = INSPECTOR_MIN_LEFT_MARGIN
+
+func load_level_config():
+	level_tab.load_properties_from_level()
 
 #-------------------------------------------------
 #      Connections
