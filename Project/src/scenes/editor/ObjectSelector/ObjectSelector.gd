@@ -122,6 +122,7 @@ func select_highlighted(group_name : String):
 	var nodes_2d = get_tree().get_nodes_in_group(group_name)
 	var highlighted_rect := Rect2(highlight_rect.rect_position, highlight_rect.rect_size)
 	var picked_nodes_2d : Array = Node2DInRectPicker.pick_node2d_within_rect(nodes_2d, highlighted_rect, single_select)
+	
 	SelectedObjects.add_objects(picked_nodes_2d)
 
 

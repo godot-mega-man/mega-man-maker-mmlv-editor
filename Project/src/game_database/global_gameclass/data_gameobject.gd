@@ -21,7 +21,7 @@ class_name DataGameObject
 #      Constants
 #-------------------------------------------------
 
-const MISSING_DATA = -999
+const MISSING_DATA : float = -999.0
 
 #-------------------------------------------------
 #      Properties

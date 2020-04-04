@@ -35,4 +35,5 @@ margin_right = 792.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 [connection signal="focus_entered" from="LineEdit" to="." method="_on_LineEdit_focus_entered"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
