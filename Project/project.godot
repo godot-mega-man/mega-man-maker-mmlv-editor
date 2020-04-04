@@ -149,6 +149,7 @@ config/project_creator="Firstject (Snowflakes)"
 EditorLogBox="*res://src/scenes/editor/MessageLogBox/EditorLogBox.tscn"
 WindowTitleUpdater="*res://src/singletons/WindowTitleUpdater.tscn"
 EditMode="*res://src/singletons/EditMode.tscn"
+SelectedObjects="*res://src/singletons/SelectedObjects.gd"
 
 [display]
 
