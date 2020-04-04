@@ -23,8 +23,8 @@ signal value_entered
 #      Constants
 #-------------------------------------------------
 
-const PLACEHOLDER_EMPTY = ""
-const PLACEHOLDER_MULTI_VALUES = "Multivalues"
+const PLACEHOLDER_EMPTY = "Empty"
+const PLACEHOLDER_MULTI_VALUES = "Various"
 
 #-------------------------------------------------
 #      Properties
@@ -104,9 +104,11 @@ func lineedit_release_focus():
 func _on_LineEdit_text_changed(new_text: String) -> void:
 	if missing_value_enabled and new_text == "":
 		$LineEdit.text = str(DataGameObject.MISSING_DATA)
+		emit_signal("value_entered")
+		$LineEdit.text = new_text
+		return
 	
 	emit_signal("value_entered")
-	$LineEdit.text = new_text
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	lineedit_release_focus()
