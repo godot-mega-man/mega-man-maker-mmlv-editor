@@ -25,6 +25,8 @@ signal cleared_level
 
 const PREVIEW_GAME_OBJ = preload("res://src/gameobj/preview_object/preview_game_object.tscn")
 
+const SHIFT_POS = Vector2(8, 8)
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -243,10 +245,10 @@ func get_save() -> String:
 		txt_pool.append(_combine_code_line_text("2d", cell_id, map_to_world_pos))
 	
 	#Save all objects (not including tile, ladder, and spikes)
-	for i in get_tree().get_nodes_in_group("PreviewGameObject"):
+	for i in get_tree().get_nodes_in_group("PreviewObject"):
 		i = i as PreviewGameObject
 		
-		txt_pool.append(_combine_code_line_text("a", 1, i.position))
+		txt_pool.append(_combine_code_line_text("a", 1, i.position - SHIFT_POS))
 		if i.obj_vector_x != DataGameObject.MISSING_DATA:
 			txt_pool.append(_combine_code_line_text("b", i.obj_vector_x, i.position))
 		if i.obj_vector_y != DataGameObject.MISSING_DATA:
