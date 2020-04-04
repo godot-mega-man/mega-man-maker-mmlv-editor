@@ -25,6 +25,9 @@ const INSPECTOR_MIN_LEFT_MARGIN = -160
 const INSPECTOR_MAX_LEFT_MARGIN = 200 #Margin at which the inspector will automatically hide
 const DEFAULT_INSPECTOR_LEFT_MARGIN = 0
 
+const TAB_IDX_LEVEL_CONFIG = 0
+const TAB_IDX_OBJECTS = 1
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -45,6 +48,7 @@ var resize_dragging = false
 func _ready() -> void:
 	hide_inspector()
 	_connect_edit_mode()
+	_connect_selected_objects()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -103,6 +107,19 @@ func _on_ResizeHandler_gui_input(event: InputEvent) -> void:
 
 func _on_EditMode_changed(mode : int):
 	tab_container.set_current_tab(mode)
+	
+	if mode == EditMode.Mode.OBJECT:
+		tab_container.set_current_tab(TAB_IDX_LEVEL_CONFIG)
+
+func _on_SelectedObjects_selected():
+	# Check whether there is no selected object, we set
+	# current tab to level configuration instead.
+	if SelectedObjects.is_empty():
+		tab_container.set_current_tab(TAB_IDX_LEVEL_CONFIG)
+	else:
+		tab_container.set_current_tab(TAB_IDX_OBJECTS)
+
+
 
 #-------------------------------------------------
 #      Private Methods
@@ -110,6 +127,9 @@ func _on_EditMode_changed(mode : int):
 
 func _connect_edit_mode():
 	EditMode.connect("changed", self, "_on_EditMode_changed")
+
+func _connect_selected_objects():
+	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
 
 #-------------------------------------------------
 #      Setters & Getters
