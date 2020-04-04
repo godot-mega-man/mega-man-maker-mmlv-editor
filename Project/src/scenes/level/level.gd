@@ -3,7 +3,7 @@
 
 extends Node
 
-#class_name optional
+class_name Level
 
 """
 	Enter desc here.
@@ -451,6 +451,6 @@ func set_copy_save_data(val : bool) -> void:
 	OS.set_clipboard(get_save())
 	OS.alert("Save data copied to clipboard.", "Message")
 
-func set_default_background_color(val : float) -> void:
-	default_background_color = val
+func set_default_background_color(val) -> void:
+	default_background_color = float(val)
 	_update_bg_color()

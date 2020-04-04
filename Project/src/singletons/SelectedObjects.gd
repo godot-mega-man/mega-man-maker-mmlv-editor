@@ -63,6 +63,9 @@ func remove_all():
 	selected_objects.clear()
 	emit_signal("deselected")
 
+func is_empty() -> bool:
+	return selected_objects.empty()
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------

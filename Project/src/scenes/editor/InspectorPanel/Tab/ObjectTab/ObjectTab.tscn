@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.gd" type="Script" id=3]
 
 [node name="ObjectTab" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="AtbHboxObjVecX" parent="ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
 margin_top = 18.0
@@ -76,3 +78,15 @@ margin_top = 326.0
 margin_bottom = 350.0
 property_name = "Option"
 code = "o"
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecX" to="." method="_on_AtbHboxObjVecX_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecY" to="." method="_on_AtbHboxObjVecY_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjType" to="." method="_on_AtbHboxObjType_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjID" to="." method="_on_AtbHboxObjID_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjAppearance" to="." method="_on_AtbHboxObjAppearance_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDirection" to="." method="_on_AtbHboxObjDirection_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTimer" to="." method="_on_AtbHboxObjTimer_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTexH" to="." method="_on_AtbHboxObjTexH_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTexV" to="." method="_on_AtbHboxObjTexV_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDestX" to="." method="_on_AtbHboxObjDestX_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDestY" to="." method="_on_AtbHboxObjDestY_value_entered"]
+[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjOption" to="." method="_on_AtbHboxObjOption_value_entered"]

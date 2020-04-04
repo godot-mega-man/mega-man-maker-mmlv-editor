@@ -25,6 +25,8 @@ class_name MainInspectorTab
 #      Properties
 #-------------------------------------------------
 
+onready var vbox = $ScrollContainer/Vbox
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -50,6 +52,11 @@ func show_properties():
 	for i in $ScrollContainer/Vbox.get_children():
 		if i is AtbHBox:
 			i.show_property()
+
+func clear_all_properties():
+	for i in vbox.get_children():
+		if i is AtbHBox:
+			i.clear_property()
 
 #-------------------------------------------------
 #      Connections

@@ -17,6 +17,8 @@ extends Node
 #      Signals
 #-------------------------------------------------
 
+signal pressed
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -79,6 +81,7 @@ func get_pressed_button() -> BaseButton:
 #-------------------------------------------------
 
 func _on_any_button_pressed():
+	emit_signal("pressed")
 	update_current_button_state()
 
 #-------------------------------------------------

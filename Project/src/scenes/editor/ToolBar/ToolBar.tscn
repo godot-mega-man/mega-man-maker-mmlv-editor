@@ -208,6 +208,7 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+[connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ButtonsToggler" to="." method="_on_ButtonsToggler_pressed"]
 [connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ObjectBtn" to="." method="_on_ObjectBtn_pressed"]
 [connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/TileMapBtn" to="." method="_on_TileMapBtn_pressed"]
 [connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/BgBtn" to="." method="_on_BgBtn_pressed"]
