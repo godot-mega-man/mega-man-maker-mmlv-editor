@@ -37,6 +37,7 @@ class Node2DInRectPicker:
 #-------------------------------------------------
 
 const GROUP_PREVIEW_OBJECT = "PreviewObject"
+const HIGHLIGHT_MIN_DEADZONE = Vector2(4, 4)
 
 #-------------------------------------------------
 #      Properties
@@ -112,9 +113,9 @@ func _on_left_mouse_down():
 func select_highlighted(group_name : String):
 	var single_select = false
 	
-	#If the size of highlighted rect is zero,
+	#If the size of highlighted rect is small (deadzone),
 	#increase it, and select only just one.
-	if highlight_rect.rect_size == Vector2.ZERO:
+	if highlight_rect.rect_size.x < HIGHLIGHT_MIN_DEADZONE.x and highlight_rect.rect_size.y < HIGHLIGHT_MIN_DEADZONE.y:
 		highlight_rect.rect_position = get_global_mouse_position() - Vector2(8, 8)
 		highlight_rect.rect_size = Vector2(16, 16)
 		single_select = true
