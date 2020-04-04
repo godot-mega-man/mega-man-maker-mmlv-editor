@@ -248,31 +248,33 @@ func get_save() -> String:
 	for i in get_tree().get_nodes_in_group("PreviewObject"):
 		i = i as PreviewGameObject
 		
-		txt_pool.append(_combine_code_line_text("a", 1, i.position - SHIFT_POS))
+		var obj_pos = i.position - SHIFT_POS
+		
+		txt_pool.append(_combine_code_line_text("a", 1, obj_pos))
 		if i.obj_vector_x != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("b", i.obj_vector_x, i.position))
+			txt_pool.append(_combine_code_line_text("b", i.obj_vector_x, obj_pos))
 		if i.obj_vector_y != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("c", i.obj_vector_y, i.position))
+			txt_pool.append(_combine_code_line_text("c", i.obj_vector_y, obj_pos))
 		if i.obj_type != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("d", i.obj_type, i.position))
+			txt_pool.append(_combine_code_line_text("d", i.obj_type, obj_pos))
 		if i.obj_id != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("e", i.obj_id, i.position))
+			txt_pool.append(_combine_code_line_text("e", i.obj_id, obj_pos))
 		if i.obj_appearance != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("f", i.obj_appearance, i.position))
+			txt_pool.append(_combine_code_line_text("f", i.obj_appearance, obj_pos))
 		if i.obj_direction != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("g", i.obj_direction, i.position))
+			txt_pool.append(_combine_code_line_text("g", i.obj_direction, obj_pos))
 		if i.obj_timer != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("h", i.obj_timer, i.position))
+			txt_pool.append(_combine_code_line_text("h", i.obj_timer, obj_pos))
 		if i.obj_tex_h_offset != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("j", i.obj_tex_h_offset, i.position))
+			txt_pool.append(_combine_code_line_text("j", i.obj_tex_h_offset, obj_pos))
 		if i.obj_tex_v_offset != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("k", i.obj_tex_v_offset, i.position))
+			txt_pool.append(_combine_code_line_text("k", i.obj_tex_v_offset, obj_pos))
 		if i.obj_destination_x != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("m", i.obj_destination_x, i.position))
+			txt_pool.append(_combine_code_line_text("m", i.obj_destination_x, obj_pos))
 		if i.obj_destination_y != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("n", i.obj_destination_y, i.position))
+			txt_pool.append(_combine_code_line_text("n", i.obj_destination_y, obj_pos))
 		if i.obj_option != DataGameObject.MISSING_DATA:
-			txt_pool.append(_combine_code_line_text("o", i.obj_option, i.position))
+			txt_pool.append(_combine_code_line_text("o", i.obj_option, obj_pos))
 	
 	#Save Tiles
 	for i in $GameTileMapDrawer.get_used_cells():
