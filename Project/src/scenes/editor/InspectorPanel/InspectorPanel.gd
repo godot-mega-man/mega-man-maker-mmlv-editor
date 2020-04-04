@@ -48,7 +48,7 @@ var resize_dragging = false
 #-------------------------------------------------
 
 func _ready() -> void:
-	hide_inspector()
+	show_inspector()
 	_connect_edit_mode()
 	_connect_selected_objects()
 
