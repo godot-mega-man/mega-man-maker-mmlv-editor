@@ -14,15 +14,19 @@ extends Node2D
 #-------------------------------------------------
 
 class Node2DInRectPicker:
-	static func pick_node2d_within_rect(nodes_2d : Array, rect : Rect2) -> Array:
+	static func pick_node2d_within_rect(nodes_2d : Array, rect : Rect2, single = false) -> Array:
 		var picked_nodes_2d : Array
 		
 		# Iterate through nodes_2d
 		for i in nodes_2d:
 			if i is Node2D and rect.has_point(i.position):
 				picked_nodes_2d.append(i)
+				
+				if single:
+					return picked_nodes_2d
 		
 		return picked_nodes_2d
+	
 
 #-------------------------------------------------
 #      Signals
@@ -106,9 +110,18 @@ func _on_left_mouse_down():
 	SelectedObjects.remove_all()
 
 func select_highlighted(group_name : String):
+	var single_select = false
+	
+	#If the size of highlighted rect is zero,
+	#increase it, and select only just one.
+	if highlight_rect.rect_size == Vector2.ZERO:
+		highlight_rect.rect_position = get_global_mouse_position() - Vector2(8, 8)
+		highlight_rect.rect_size = Vector2(16, 16)
+		single_select = true
+	
 	var nodes_2d = get_tree().get_nodes_in_group(group_name)
 	var highlighted_rect := Rect2(highlight_rect.rect_position, highlight_rect.rect_size)
-	var picked_nodes_2d : Array = Node2DInRectPicker.pick_node2d_within_rect(nodes_2d, highlighted_rect)
+	var picked_nodes_2d : Array = Node2DInRectPicker.pick_node2d_within_rect(nodes_2d, highlighted_rect, single_select)
 	SelectedObjects.add_objects(picked_nodes_2d)
 
 
