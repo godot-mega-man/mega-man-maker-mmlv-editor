@@ -1,9 +1,9 @@
-# AtbHBox
+# LevelTab
 # Written by: First
 
-extends HBoxContainer
+extends MainInspectorTab
 
-class_name AtbHBox
+#class_name optional
 
 """
 	Enter desc here.
@@ -17,39 +17,17 @@ class_name AtbHBox
 #      Signals
 #-------------------------------------------------
 
-signal value_entered
-
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
-
-const PLACEHOLDER_EMPTY = "Empty"
-const PLACEHOLDER_MULTI_VALUES = "Multivalues"
 
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-export (String) var property_name
-export (String) var code
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	$PropertyLabel.text = property_name
-	$CodeLabel.text = code
-	
-	$LineEdit.placeholder_text = PLACEHOLDER_EMPTY
-
-#When the mouse button is clicked elsewhere, LineEdit automatically
-#loses focus.
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			$LineEdit.release_focus()
-			_on_LineEdit_text_entered($LineEdit.text)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -63,42 +41,9 @@ func _input(event: InputEvent) -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func show_code():
-	$CodeLabel.visible = true
-	$PropertyLabel.visible = false
-
-func show_property():
-	$PropertyLabel.visible = true
-	$CodeLabel.visible = false
-
-func set_value(val):
-	if val == DataGameObject.MISSING_DATA:
-		return
-	
-	$LineEdit.text = str(val)
-
-func get_value() -> String:
-	return $LineEdit.text
-
-func clear_property():
-	$LineEdit.text = ""
-	set_placeholder_empty()
-
-func set_placeholder_empty():
-	$LineEdit.placeholder_text = PLACEHOLDER_EMPTY
-
-func set_placeholder_multivalues():
-	$LineEdit.placeholder_text = PLACEHOLDER_MULTI_VALUES
-
-func is_placeholder_empty():
-	return $LineEdit.placeholder_text == PLACEHOLDER_EMPTY
-
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_LineEdit_text_entered(new_text: String) -> void:
-	emit_signal("value_entered")
 
 #-------------------------------------------------
 #      Private Methods

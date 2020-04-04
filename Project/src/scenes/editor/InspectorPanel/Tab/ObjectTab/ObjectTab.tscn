@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.gd" type="Script" id=3]
 
 [node name="ObjectTab" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="AtbHboxObjVecX" parent="ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
 margin_top = 18.0
