@@ -63,6 +63,9 @@ func _on_LadderBtn_pressed() -> void:
 func _on_SpikeBtn_pressed() -> void:
 	EditMode.set_mode(EditMode.Mode.SPIKE)
 
+func _on_ButtonsToggler_pressed() -> void:
+	SelectedObjects.remove_all()
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
@@ -70,3 +73,5 @@ func _on_SpikeBtn_pressed() -> void:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+
