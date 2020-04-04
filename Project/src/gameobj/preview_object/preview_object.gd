@@ -21,6 +21,8 @@ class_name PreviewObject
 #      Constants
 #-------------------------------------------------
 
+const SHIFT_POS = Vector2(8, 8)
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -47,13 +49,16 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
+func shift_pos():
+	position += SHIFT_POS
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
 func _on_SelectedObjects_selected():
 	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight")
+		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
 
 func _on_SelectedObjects_deselected():
 	highlight_anim.play("Hide")
