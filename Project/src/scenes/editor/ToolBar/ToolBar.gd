@@ -1,9 +1,9 @@
-# PreviewObject
-# Written by: First
+# Script_Name_Here
+# Written by: 
 
-extends Node2D
+extends Panel
 
-class_name PreviewObject
+#class_name optional
 
 """
 	Enter desc here.
@@ -21,21 +21,13 @@ class_name PreviewObject
 #      Constants
 #-------------------------------------------------
 
-const SHIFT_POS = Vector2(8, 8)
-
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-onready var highlight_anim = $HighlightAnim
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
-	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -49,19 +41,27 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func shift_pos():
-	position += SHIFT_POS
-
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
-func _on_SelectedObjects_selected():
-	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
+func _on_ObjectBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.OBJECT)
 
-func _on_SelectedObjects_deselected():
-	highlight_anim.play("Hide")
+func _on_TileMapBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.TILE)
+
+func _on_BgBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.BACKGROUND)
+
+func _on_ActiveScreenBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.ACTIVE_SCREEN)
+
+func _on_LadderBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.LADDER)
+
+func _on_SpikeBtn_pressed() -> void:
+	EditMode.set_mode(EditMode.Mode.SPIKE)
 
 #-------------------------------------------------
 #      Private Methods

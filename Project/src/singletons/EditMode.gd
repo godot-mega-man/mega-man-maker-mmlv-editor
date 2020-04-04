@@ -1,12 +1,12 @@
-# PreviewObject
+# EditMode
 # Written by: First
 
-extends Node2D
+extends Node
 
-class_name PreviewObject
+#class_name optional
 
 """
-	Enter desc here.
+	A notifier node.
 """
 
 #-------------------------------------------------
@@ -17,25 +17,31 @@ class_name PreviewObject
 #      Signals
 #-------------------------------------------------
 
+signal changed(mode)
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
 
-const SHIFT_POS = Vector2(8, 8)
+enum Mode {
+	LEVEL,
+	OBJECT,
+	TILE,
+	BACKGROUND,
+	ACTIVE_SCREEN,
+	LADDER,
+	SPIKE
+}
 
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-onready var highlight_anim = $HighlightAnim
+export (Mode) var mode setget set_mode
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
-	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -49,19 +55,9 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func shift_pos():
-	position += SHIFT_POS
-
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_SelectedObjects_selected():
-	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
-
-func _on_SelectedObjects_deselected():
-	highlight_anim.play("Hide")
 
 #-------------------------------------------------
 #      Private Methods
@@ -70,3 +66,7 @@ func _on_SelectedObjects_deselected():
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+func set_mode(val : int):
+	mode = val
+	emit_signal("changed", val)

@@ -1,9 +1,7 @@
-# PreviewObject
+# SelectedObjects
 # Written by: First
 
-extends Node2D
-
-class_name PreviewObject
+extends Node
 
 """
 	Enter desc here.
@@ -17,25 +15,24 @@ class_name PreviewObject
 #      Signals
 #-------------------------------------------------
 
+signal selected()
+signal selected_obj(obj)
+signal deselected()
+signal deselected_obj(obj)
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
-
-const SHIFT_POS = Vector2(8, 8)
 
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-onready var highlight_anim = $HighlightAnim
+export (Array) var selected_objects : Array
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
-	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -49,19 +46,26 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func shift_pos():
-	position += SHIFT_POS
+func add_object(object : Object):
+	selected_objects.append(object)
+	emit_signal("selected_obj", object)
+
+func add_objects(objects : Array):
+	selected_objects += objects
+	emit_signal("selected")
+
+func remove(idx : int):
+	var object = selected_objects[idx]
+	selected_objects.remove(idx)
+	emit_signal("deselected_obj", object)
+
+func remove_all():
+	selected_objects.clear()
+	emit_signal("deselected")
 
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_SelectedObjects_selected():
-	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
-
-func _on_SelectedObjects_deselected():
-	highlight_anim.play("Hide")
 
 #-------------------------------------------------
 #      Private Methods

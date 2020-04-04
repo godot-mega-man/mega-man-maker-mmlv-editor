@@ -44,6 +44,7 @@ var resize_dragging = false
 
 func _ready() -> void:
 	hide_inspector()
+	_connect_edit_mode()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -100,9 +101,15 @@ func _on_ResizeHandler_gui_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			panel_open.margin_left += event.relative.x
 
+func _on_EditMode_changed(mode : int):
+	tab_container.set_current_tab(mode)
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _connect_edit_mode():
+	EditMode.connect("changed", self, "_on_EditMode_changed")
 
 #-------------------------------------------------
 #      Setters & Getters

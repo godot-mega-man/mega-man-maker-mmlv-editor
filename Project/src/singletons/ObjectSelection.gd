@@ -1,9 +1,9 @@
-# PreviewObject
-# Written by: First
+# Script_Name_Here
+# Written by: 
 
-extends Node2D
+extends Node
 
-class_name PreviewObject
+#class_name optional
 
 """
 	Enter desc here.
@@ -21,21 +21,13 @@ class_name PreviewObject
 #      Constants
 #-------------------------------------------------
 
-const SHIFT_POS = Vector2(8, 8)
-
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-onready var highlight_anim = $HighlightAnim
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
-
-func _ready() -> void:
-	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
-	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -49,19 +41,9 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func shift_pos():
-	position += SHIFT_POS
-
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_SelectedObjects_selected():
-	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
-
-func _on_SelectedObjects_deselected():
-	highlight_anim.play("Hide")
 
 #-------------------------------------------------
 #      Private Methods

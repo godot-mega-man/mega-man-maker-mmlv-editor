@@ -407,6 +407,7 @@ func _generate_objects():
 		prev_obj.obj_destination_y = i.obj_destination_y
 		prev_obj.obj_option = i.obj_option
 		prev_obj.set_owner(get_tree().edited_scene_root)
+		prev_obj.shift_pos()
 
 func _generate_tilemap():
 	var _tile_data : Array = game_data_builder.get_data_tiles()
