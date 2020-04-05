@@ -125,7 +125,8 @@ func _on_SelectedObjects_selected():
 		tab_container.set_current_tab(TAB_IDX_OBJECTS)
 
 func _on_SelectedObjects_deselected():
-	tab_container.set_current_tab(TAB_IDX_LEVEL_CONFIG)
+	if EditMode.mode == EditMode.Mode.OBJECT:
+		tab_container.set_current_tab(TAB_IDX_LEVEL_CONFIG)
 
 #-------------------------------------------------
 #      Private Methods
