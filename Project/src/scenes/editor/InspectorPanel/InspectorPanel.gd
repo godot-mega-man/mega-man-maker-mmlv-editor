@@ -124,7 +124,8 @@ func _on_SelectedObjects_selected():
 	else:
 		tab_container.set_current_tab(TAB_IDX_OBJECTS)
 
-
+func _on_SelectedObjects_deselected():
+	tab_container.set_current_tab(TAB_IDX_LEVEL_CONFIG)
 
 #-------------------------------------------------
 #      Private Methods
@@ -135,6 +136,7 @@ func _connect_edit_mode():
 
 func _connect_selected_objects():
 	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
+	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
 
 #-------------------------------------------------
 #      Setters & Getters

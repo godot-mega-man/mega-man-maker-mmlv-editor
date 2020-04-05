@@ -288,7 +288,9 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 
 #Connected from _init_edit_menu()
 func _on_edit_menu_popup_pressed(id : int) -> void:
-	pass
+	match id:
+		ID_MENU_EDIT_DELETE:
+			emit_signal("delete")
 
 #Connected from _init_view_menu()
 func _on_view_menu_popup_pressed(id : int) -> void:

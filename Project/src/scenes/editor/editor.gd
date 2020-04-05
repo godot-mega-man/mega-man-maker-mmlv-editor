@@ -28,6 +28,7 @@ extends Node
 onready var level = $Level
 onready var main_camera = $MainCamera
 onready var object_selector = $ObjectSelector
+onready var object_deleter = $ObjectDeleter
 
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
@@ -79,6 +80,9 @@ func _on_MenuPanel_opening_preferences() -> void:
 	pass # Replace with function body.
 func _on_MenuPanel_exiting() -> void:
 	get_tree().quit()
+
+func _on_MenuPanel_delete() -> void:
+	object_deleter.delete()
 
 func _on_MenuPanel_toggle_screen_grid() -> void:
 	level.toggle_screen_grid()
@@ -201,4 +205,3 @@ func _update_window_title_by_level_path(path : String):
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-
