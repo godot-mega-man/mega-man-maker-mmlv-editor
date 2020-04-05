@@ -40,10 +40,6 @@ First of all, thank you for being a part of the contributors, which helps our pr
 
 [Trello: MMLV Editor](https://trello.com/b/vuDpFyE6/mmlv-editor)
 
-### All MMM Data
-
-[Mega Man Maker Data](https://docs.google.com/spreadsheets/d/1o_g1xckhSDx2NvyNrRFvDFh-b8bGlAUE3ay_zKcz84g/edit?usp=drivesdk)
-
 ### Example Levels Made With MMLV Editor
 
 [Against the Ruined Pressure](https://megamanmaker.com/?level=385754)
