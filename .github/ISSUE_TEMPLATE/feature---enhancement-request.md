@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+<!--
+IMPORTANT, PLEASE READ THIS BEFORE PROPOSING A NEW FEATURE FOR VERSION 0.x !!!
+It's a good idea to check for existing features that we've already implemented by the following link:
+https://trello.com/b/vuDpFyE6/mmlv-editor
+-->
+
 **Is your feature request related to a problem? Please describe.**
 <!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
 

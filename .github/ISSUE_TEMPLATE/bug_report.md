@@ -27,5 +27,8 @@ The golden rule is to always open one issue for one bug. If you notice several b
 **Screenshots**
 <!--If applicable, add screenshots to help explain your problem.-->
 
+**Version number**
+<!--Version number of your program. Can be found in menu bar Help > About. Ex: 1.0.1-->
+
 **Additional context**
 <!--Add any other context about the problem here.-->
