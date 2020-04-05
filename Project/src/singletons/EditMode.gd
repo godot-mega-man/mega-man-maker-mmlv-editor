@@ -24,7 +24,6 @@ signal changed(mode)
 #-------------------------------------------------
 
 enum Mode {
-	LEVEL,
 	OBJECT,
 	TILE,
 	BACKGROUND,
