@@ -6,7 +6,7 @@ extends Node2D
 #class_name optional
 
 """
-	A node that has a operation to delete selected objects
+	A node that has a operation to delete selected preview-objects
 	in the editor.
 """
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/scenes/level/level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://src/scenes/editor/Popups/ReadmeAcceptDialog.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/editor/ObjectSelector/ObjectSelector.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/editor/ObjectDeleter/ObjectDeleter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scenes/editor/ObjectAdder/ObjectAdder.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/gameobj/preview_object/preview_game_object.tscn" type="PackedScene" id=14]
 
 [sub_resource type="GDScript" id=1]
 script/source = "# EditAreaRect (Built-in)
@@ -192,11 +194,16 @@ visible = false
 
 [node name="ObjectDeleter" parent="." instance=ExtResource( 12 )]
 
+[node name="ObjectAdder" parent="." instance=ExtResource( 13 )]
+obj_to_add = ExtResource( 14 )
+add_target_path = NodePath("../Level/Objects")
+
 [node name="EditorInitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Anim"
 anims/Anim = SubResource( 2 )
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
+[connection signal="add_object_pressed" from="CanvasLayer/Control/ToolBar" to="." method="_on_ToolBar_add_object_pressed"]
 [connection signal="about" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_about"]
 [connection signal="delete" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_delete"]
 [connection signal="exiting" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_exiting"]
@@ -223,3 +230,5 @@ anims/Anim = SubResource( 2 )
 [connection signal="gui_input" from="CanvasLayer/Control/EditAreaRect" to="." method="_on_EditAreaRect_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_exited"]
+
+[editable path="Level"]

@@ -29,6 +29,7 @@ onready var level = $Level
 onready var main_camera = $MainCamera
 onready var object_selector = $ObjectSelector
 onready var object_deleter = $ObjectDeleter
+onready var object_adder = $ObjectAdder
 
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
@@ -172,6 +173,9 @@ func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
 func _on_EditAreaRect_gui_input(event: InputEvent) -> void:
 	_control_viewport_by_gui_input(event)
 	_control_object_selection_by_gui_input(event)
+
+func _on_ToolBar_add_object_pressed() -> void:
+	object_adder.add_object()
 
 #-------------------------------------------------
 #      Private Methods
