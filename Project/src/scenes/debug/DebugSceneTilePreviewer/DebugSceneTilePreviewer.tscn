@@ -1,0 +1,2626 @@
+[gd_scene load_steps=350 format=2]
+
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless5.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/tilesets/TstMM5Crystal1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/tilesets/TstMM4Pharaoh2.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless6.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/tilesets/TstMM9Jewel.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless10.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless4Alt.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/tilesets/TstMM5Star2Alt.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/tilesets/TstMM6Flame3.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX2-2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/tilesets/TstMM2Flash.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/tilesets/TstMM3Needle2.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless8.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/tilesets/TstMM9Tornado2.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/tilesets/TstMM6Centaur2Alt.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily5-4Animated1.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wind3.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily3Animated1.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless2.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless2Alt2.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily1.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/tilesets/TstMM9FakeAnimated1.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless4.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily2Animated1.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge2AltAnimated1.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk4.png" type="Texture" id=27]
+[ext_resource path="res://assets/images/tilesets/TstMM11Block.png" type="Texture" id=28]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless29.png" type="Texture" id=29]
+[ext_resource path="res://assets/images/tilesets/TstMM7Burst3Alt.png" type="Texture" id=30]
+[ext_resource path="res://assets/images/tilesets/TstMM11Acid.png" type="Texture" id=31]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless2Alt.png" type="Texture" id=32]
+[ext_resource path="res://assets/images/tilesets/TstMM4Pharaoh3.png" type="Texture" id=33]
+[ext_resource path="res://assets/images/tilesets/TstMM6Knight2Alt.png" type="Texture" id=34]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily4Animated1.png" type="Texture" id=35]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack4-2.png" type="Texture" id=36]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack3-2.png" type="Texture" id=37]
+[ext_resource path="res://assets/images/tilesets/TstMM5Star3.png" type="Texture" id=38]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge1AltAnimated1.png" type="Texture" id=39]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk4Alt.png" type="Texture" id=40]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily2Alt1.png" type="Texture" id=41]
+[ext_resource path="res://assets/images/tilesets/TstMM7Burst3.png" type="Texture" id=42]
+[ext_resource path="res://assets/images/tilesets/TstMM7Turbo4.png" type="Texture" id=43]
+[ext_resource path="res://assets/images/tilesets/TstMM6Knight2.png" type="Texture" id=44]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless3.png" type="Texture" id=45]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless3Alt.png" type="Texture" id=46]
+[ext_resource path="res://assets/images/tilesets/TstMM5Charge2.png" type="Texture" id=47]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless8Alt.png" type="Texture" id=48]
+[ext_resource path="res://assets/images/tilesets/TstMM7Shade2.png" type="Texture" id=49]
+[ext_resource path="res://assets/images/tilesets/TstMM7Spring.png" type="Texture" id=50]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily4Alt1.png" type="Texture" id=51]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily2.png" type="Texture" id=52]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless7.png" type="Texture" id=53]
+[ext_resource path="res://assets/images/tilesets/TstMM7Turbo.png" type="Texture" id=54]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack3.png" type="Texture" id=55]
+[ext_resource path="res://assets/images/tilesets/TstMM2Flash2.png" type="Texture" id=56]
+[ext_resource path="res://assets/images/tilesets/TstMM7Freeze.png" type="Texture" id=57]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily5.png" type="Texture" id=58]
+[ext_resource path="res://assets/images/tilesets/TstMM3Top2.png" type="Texture" id=59]
+[ext_resource path="res://assets/images/tilesets/TstMM9MagmaTile.png" type="Texture" id=60]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark4.png" type="Texture" id=61]
+[ext_resource path="res://assets/images/tilesets/TstMM1Wily1.png" type="Texture" id=62]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless9.png" type="Texture" id=63]
+[ext_resource path="res://assets/images/tilesets/TstMM3Snake2.png" type="Texture" id=64]
+[ext_resource path="res://assets/images/tilesets/TstMM9Endless9Alt.png" type="Texture" id=65]
+[ext_resource path="res://assets/images/tilesets/TstMM7Burst.png" type="Texture" id=66]
+[ext_resource path="res://assets/images/tilesets/TstMM5Star2.png" type="Texture" id=67]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini2.png" type="Texture" id=68]
+[ext_resource path="res://assets/images/tilesets/TstMM6Centaur2.png" type="Texture" id=69]
+[ext_resource path="res://assets/images/tilesets/TstMM2Flash2Animated1.png" type="Texture" id=70]
+[ext_resource path="res://assets/images/tilesets/TstMM7Slash.png" type="Texture" id=71]
+[ext_resource path="res://assets/images/tilesets/TstMM4Wily2.png" type="Texture" id=72]
+[ext_resource path="res://assets/images/tilesets/TstMM1Wily4.png" type="Texture" id=73]
+[ext_resource path="res://assets/images/tilesets/TstMM7Shade.png" type="Texture" id=74]
+[ext_resource path="res://assets/images/tilesets/TstMM7Cloud.png" type="Texture" id=75]
+[ext_resource path="res://assets/images/tilesets/TstMM9Concrete2.png" type="Texture" id=76]
+[ext_resource path="res://assets/images/tilesets/TstMM2Flash3Animated1.png" type="Texture" id=77]
+[ext_resource path="res://assets/images/tilesets/TstMM2FlashAnimated1.png" type="Texture" id=78]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark3-2.png" type="Texture" id=79]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily4.png" type="Texture" id=80]
+[ext_resource path="res://assets/images/tilesets/TstMM6Flame2.png" type="Texture" id=81]
+[ext_resource path="res://assets/images/tilesets/TstMM5Stone.png" type="Texture" id=82]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark1.png" type="Texture" id=83]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark3.png" type="Texture" id=84]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily4.png" type="Texture" id=85]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily4-2.png" type="Texture" id=86]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily2Alt.png" type="Texture" id=87]
+[ext_resource path="res://assets/images/tilesets/TstMM6Blizzard2.png" type="Texture" id=88]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily2Alt.png" type="Texture" id=89]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack1-2.png" type="Texture" id=90]
+[ext_resource path="res://assets/images/tilesets/TstMM4Wily1.png" type="Texture" id=91]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark2.png" type="Texture" id=92]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily1.png" type="Texture" id=93]
+[ext_resource path="res://assets/images/tilesets/TstMM4Toad.png" type="Texture" id=94]
+[ext_resource path="res://assets/images/tilesets/TstMM7Junk.png" type="Texture" id=95]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX2.png" type="Texture" id=96]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily6.png" type="Texture" id=97]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily2.png" type="Texture" id=98]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wind2.png" type="Texture" id=99]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily3.png" type="Texture" id=100]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily1-2.png" type="Texture" id=101]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily1.png" type="Texture" id=102]
+[ext_resource path="res://assets/images/tilesets/TstMM1Wily3.png" type="Texture" id=103]
+[ext_resource path="res://assets/images/tilesets/TstMM1Wily2.png" type="Texture" id=104]
+[ext_resource path="res://assets/images/tilesets/TstMM4DiveAlt.png" type="Texture" id=105]
+[ext_resource path="res://assets/images/tilesets/TstMM3Shadow.png" type="Texture" id=106]
+[ext_resource path="res://assets/images/tilesets/TstMM6Flame.png" type="Texture" id=107]
+[ext_resource path="res://assets/images/tilesets/TstMM7Wily1.png" type="Texture" id=108]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily3.png" type="Texture" id=109]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily1.png" type="Texture" id=110]
+[ext_resource path="res://assets/images/tilesets/TstMM4Wily4.png" type="Texture" id=111]
+[ext_resource path="res://assets/images/tilesets/TstMM2BubbleAlt.png" type="Texture" id=112]
+[ext_resource path="res://assets/images/tilesets/TstMM9Tornado.png" type="Texture" id=113]
+[ext_resource path="res://assets/images/tilesets/TstMM4Dust2.png" type="Texture" id=114]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato2Alt.png" type="Texture" id=115]
+[ext_resource path="res://assets/images/tilesets/TstMM6KnightAlt.png" type="Texture" id=116]
+[ext_resource path="res://assets/images/tilesets/TstMM5Napalm2.png" type="Texture" id=117]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack2.png" type="Texture" id=118]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily1.png" type="Texture" id=119]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily4.png" type="Texture" id=120]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX1-2.png" type="Texture" id=121]
+[ext_resource path="res://assets/images/tilesets/TstMM9Concrete.png" type="Texture" id=122]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX1.png" type="Texture" id=123]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily5.png" type="Texture" id=124]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily3Alt.png" type="Texture" id=125]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily3.png" type="Texture" id=126]
+[ext_resource path="res://assets/images/tilesets/TstMM9Plug.png" type="Texture" id=127]
+[ext_resource path="res://assets/images/tilesets/TstMM2QuickAlt.png" type="Texture" id=128]
+[ext_resource path="res://assets/images/tilesets/TstMM4Drill2.png" type="Texture" id=129]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack4.png" type="Texture" id=130]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato3.png" type="Texture" id=131]
+[ext_resource path="res://assets/images/tilesets/TstMM6Plant.png" type="Texture" id=132]
+[ext_resource path="res://assets/images/tilesets/TstMM6CentaurAlt.png" type="Texture" id=133]
+[ext_resource path="res://assets/images/tilesets/TstMM5Dark2-2.png" type="Texture" id=134]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX3.png" type="Texture" id=135]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily1-3Alt.png" type="Texture" id=136]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk2Alt.png" type="Texture" id=137]
+[ext_resource path="res://assets/images/tilesets/TstMM4Wily3.png" type="Texture" id=138]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wave1.png" type="Texture" id=139]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato3Alt.png" type="Texture" id=140]
+[ext_resource path="res://assets/images/tilesets/TstMM4Cossack1.png" type="Texture" id=141]
+[ext_resource path="res://assets/images/tilesets/TstMM9Splash1.png" type="Texture" id=142]
+[ext_resource path="res://assets/images/tilesets/TstMM9Galaxy.png" type="Texture" id=143]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato2.png" type="Texture" id=144]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk2.png" type="Texture" id=145]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX4.png" type="Texture" id=146]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato5Alt.png" type="Texture" id=147]
+[ext_resource path="res://assets/images/tilesets/TstMM9Hornet.png" type="Texture" id=148]
+[ext_resource path="res://assets/images/tilesets/TstMM9Magma.png" type="Texture" id=149]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato5.png" type="Texture" id=150]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato4.png" type="Texture" id=151]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato4Alt.png" type="Texture" id=152]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk3.png" type="Texture" id=153]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wily1Alt.png" type="Texture" id=154]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk3Alt.png" type="Texture" id=155]
+[ext_resource path="res://assets/images/tilesets/TstMM6YamatoAlt.png" type="Texture" id=156]
+[ext_resource path="res://assets/images/tilesets/TstMM6TomahawkAlt.png" type="Texture" id=157]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless30.png" type="Texture" id=158]
+[ext_resource path="res://assets/images/tilesets/TstMM4Drill.png" type="Texture" id=159]
+[ext_resource path="res://assets/images/tilesets/TstMM11Torch1.png" type="Texture" id=160]
+[ext_resource path="res://assets/images/tilesets/TstMM11Fuse2Animated1.png" type="Texture" id=161]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily1-4.png" type="Texture" id=162]
+[ext_resource path="res://assets/images/tilesets/TstMM1Oil.png" type="Texture" id=163]
+[ext_resource path="res://assets/images/tilesets/TstMM1Wily1-2.png" type="Texture" id=164]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless22.png" type="Texture" id=165]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless22Alt.png" type="Texture" id=166]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless25.png" type="Texture" id=167]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless18.png" type="Texture" id=168]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless18Alt.png" type="Texture" id=169]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily1-2Animated1.png" type="Texture" id=170]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless25Alt.png" type="Texture" id=171]
+[ext_resource path="res://assets/images/tilesets/TstMM11Impact.png" type="Texture" id=172]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless20.png" type="Texture" id=173]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless21Alt.png" type="Texture" id=174]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless.png" type="Texture" id=175]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless24.png" type="Texture" id=176]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless7.png" type="Texture" id=177]
+[ext_resource path="res://assets/images/tilesets/TstMM10Punk.png" type="Texture" id=178]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless21.png" type="Texture" id=179]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily1Animated1.png" type="Texture" id=180]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily2Animated1.png" type="Texture" id=181]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily2Alt3Animated1.png" type="Texture" id=182]
+[ext_resource path="res://assets/images/tilesets/TstMM11Fuse.png" type="Texture" id=183]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless19.png" type="Texture" id=184]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless23.png" type="Texture" id=185]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily2Alt2Animated1.png" type="Texture" id=186]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless26.png" type="Texture" id=187]
+[ext_resource path="res://assets/images/tilesets/TstMM11Wily2AltAnimated1.png" type="Texture" id=188]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily3.png" type="Texture" id=189]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless27.png" type="Texture" id=190]
+[ext_resource path="res://assets/images/tilesets/TstMM8Astro.png" type="Texture" id=191]
+[ext_resource path="res://assets/images/tilesets/TstMM8Clown.png" type="Texture" id=192]
+[ext_resource path="res://assets/images/tilesets/TstMM8FrostAlt.png" type="Texture" id=193]
+[ext_resource path="res://assets/images/tilesets/TstMM1TimeAlt.png" type="Texture" id=194]
+[ext_resource path="res://assets/images/tilesets/TstMM8Astro2Alt.png" type="Texture" id=195]
+[ext_resource path="res://assets/images/tilesets/TstMM6MrX3Alt.png" type="Texture" id=196]
+[ext_resource path="res://assets/images/tilesets/TstMM7Turbo2.png" type="Texture" id=197]
+[ext_resource path="res://assets/images/tilesets/TstMM3Magnet2.png" type="Texture" id=198]
+[ext_resource path="res://assets/images/tilesets/TstMM11Bounce1.png" type="Texture" id=199]
+[ext_resource path="res://assets/images/tilesets/TstMM11Blast.png" type="Texture" id=200]
+[ext_resource path="res://assets/images/tilesets/TstMM7Turbo3.png" type="Texture" id=201]
+[ext_resource path="res://assets/images/tilesets/TstMM7Burst2.png" type="Texture" id=202]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge1Animated1.png" type="Texture" id=203]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge3.png" type="Texture" id=204]
+[ext_resource path="res://assets/images/tilesets/TstMM11Tundra.png" type="Texture" id=205]
+[ext_resource path="res://assets/images/tilesets/TstMM8Sword.png" type="Texture" id=206]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless28.png" type="Texture" id=207]
+[ext_resource path="res://assets/images/tilesets/TstMM5CrystalAlt1.png" type="Texture" id=208]
+[ext_resource path="res://assets/images/tilesets/TstMM10Difficulty.png" type="Texture" id=209]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini4Animated1.png" type="Texture" id=210]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge2Animated1.png" type="Texture" id=211]
+[ext_resource path="res://assets/images/tilesets/TstMM7Wily4.png" type="Texture" id=212]
+[ext_resource path="res://assets/images/tilesets/TstMM10Challenge1Alt2Animated1.png" type="Texture" id=213]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily1-2Alt.png" type="Texture" id=214]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily5-2Animated1.png" type="Texture" id=215]
+[ext_resource path="res://assets/images/tilesets/TstMM7Wily3.png" type="Texture" id=216]
+[ext_resource path="res://assets/images/tilesets/TstMM8Grenade.png" type="Texture" id=217]
+[ext_resource path="res://assets/images/tilesets/TstMM8Search.png" type="Texture" id=218]
+[ext_resource path="res://assets/images/tilesets/TstMM8Frost.png" type="Texture" id=219]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini2Animated1.png" type="Texture" id=220]
+[ext_resource path="res://assets/images/tilesets/TstMM8Tengu.png" type="Texture" id=221]
+[ext_resource path="res://assets/images/tilesets/TstMM9Fake2Animated1.png" type="Texture" id=222]
+[ext_resource path="res://assets/images/tilesets/TstMM8Wily2Alt.png" type="Texture" id=223]
+[ext_resource path="res://assets/images/tilesets/TstMM7Shade2Alt.png" type="Texture" id=224]
+[ext_resource path="res://assets/images/tilesets/TstMM8Wily1.png" type="Texture" id=225]
+[ext_resource path="res://assets/images/tilesets/TstMM7Wily2.png" type="Texture" id=226]
+[ext_resource path="res://assets/images/tilesets/TstMM8Astro2.png" type="Texture" id=227]
+[ext_resource path="res://assets/images/tilesets/TstMM10Sheep1.png" type="Texture" id=228]
+[ext_resource path="res://assets/images/tilesets/TstMM10Chill2.png" type="Texture" id=229]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily3.png" type="Texture" id=230]
+[ext_resource path="res://assets/images/tilesets/TstMM10Blade2.png" type="Texture" id=231]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini4.png" type="Texture" id=232]
+[ext_resource path="res://assets/images/tilesets/TstMM10Strike.png" type="Texture" id=233]
+[ext_resource path="res://assets/images/tilesets/TstMM5Wily1-2.png" type="Texture" id=234]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily3-2Alt.png" type="Texture" id=235]
+[ext_resource path="res://assets/images/tilesets/TstMM4Wily3-2.png" type="Texture" id=236]
+[ext_resource path="res://assets/images/tilesets/TstMM10Pump2Alt.png" type="Texture" id=237]
+[ext_resource path="res://assets/images/tilesets/TstMM10Pump2.png" type="Texture" id=238]
+[ext_resource path="res://assets/images/tilesets/TstMM8Wily2.png" type="Texture" id=239]
+[ext_resource path="res://assets/images/tilesets/TstMM1Elec2Animated1.png" type="Texture" id=240]
+[ext_resource path="res://assets/images/tilesets/TstMM8Aqua.png" type="Texture" id=241]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini3.png" type="Texture" id=242]
+[ext_resource path="res://assets/images/tilesets/TstMM7Spring2.png" type="Texture" id=243]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily1-2.png" type="Texture" id=244]
+[ext_resource path="res://assets/images/tilesets/TstMM10Nitro.png" type="Texture" id=245]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily3Alt.png" type="Texture" id=246]
+[ext_resource path="res://assets/images/tilesets/TstMM10Commando.png" type="Texture" id=247]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily2-3.png" type="Texture" id=248]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily3-2.png" type="Texture" id=249]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily1-2.png" type="Texture" id=250]
+[ext_resource path="res://assets/images/tilesets/TstMM10SolarAnimated1.png" type="Texture" id=251]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini3Animated1.png" type="Texture" id=252]
+[ext_resource path="res://assets/images/tilesets/TstMM9Wily1-2.png" type="Texture" id=253]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless16.png" type="Texture" id=254]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker3.png" type="Texture" id=255]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily5-3Animated1.png" type="Texture" id=256]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless13.png" type="Texture" id=257]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily1.png" type="Texture" id=258]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily1-3.png" type="Texture" id=259]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless2.png" type="Texture" id=260]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless15.png" type="Texture" id=261]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker4.png" type="Texture" id=262]
+[ext_resource path="res://assets/images/tilesets/TstMM10Pump.png" type="Texture" id=263]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily5Animated1.png" type="Texture" id=264]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily4.png" type="Texture" id=265]
+[ext_resource path="res://assets/images/tilesets/TstMM10Strike2.png" type="Texture" id=266]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker2.png" type="Texture" id=267]
+[ext_resource path="res://assets/images/tilesets/TstMM10Ballade2.png" type="Texture" id=268]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless12.png" type="Texture" id=269]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless10.png" type="Texture" id=270]
+[ext_resource path="res://assets/images/tilesets/TstMM10Punk4Animated1.png" type="Texture" id=271]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless8.png" type="Texture" id=272]
+[ext_resource path="res://assets/images/tilesets/TstMM10Solar2Animated1.png" type="Texture" id=273]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker5.png" type="Texture" id=274]
+[ext_resource path="res://assets/images/tilesets/TstMM10Solar3Animated1.png" type="Texture" id=275]
+[ext_resource path="res://assets/images/tilesets/TstMM10Nitro2.png" type="Texture" id=276]
+[ext_resource path="res://assets/images/tilesets/TstMM10ChillAnimated1.png" type="Texture" id=277]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily2.png" type="Texture" id=278]
+[ext_resource path="res://assets/images/tilesets/TstMM10PumpAlt.png" type="Texture" id=279]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless9.png" type="Texture" id=280]
+[ext_resource path="res://assets/images/tilesets/TstMM10Blade.png" type="Texture" id=281]
+[ext_resource path="res://assets/images/tilesets/TstMM9Concrete3.png" type="Texture" id=282]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily4Alt.png" type="Texture" id=283]
+[ext_resource path="res://assets/images/tilesets/TstMM10Wily2-2.png" type="Texture" id=284]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless11Animated1.png" type="Texture" id=285]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker.png" type="Texture" id=286]
+[ext_resource path="res://assets/images/tilesets/TstMM10Enker6.png" type="Texture" id=287]
+[ext_resource path="res://assets/images/tilesets/TstMM10Punk2.png" type="Texture" id=288]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless6.png" type="Texture" id=289]
+[ext_resource path="res://assets/images/tilesets/TstMM10Ballade.png" type="Texture" id=290]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless4.png" type="Texture" id=291]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless6Alt.png" type="Texture" id=292]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless3Alt.png" type="Texture" id=293]
+[ext_resource path="res://assets/images/tilesets/TstMM10Punk3.png" type="Texture" id=294]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless17.png" type="Texture" id=295]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless14.png" type="Texture" id=296]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless3.png" type="Texture" id=297]
+[ext_resource path="res://assets/images/tilesets/TstMM10Endless5.png" type="Texture" id=298]
+[ext_resource path="res://assets/images/tilesets/TstMM4Skull.png" type="Texture" id=299]
+[ext_resource path="res://assets/images/tilesets/TstMM3Magnet.png" type="Texture" id=300]
+[ext_resource path="res://assets/images/tilesets/TstMM1Time.png" type="Texture" id=301]
+[ext_resource path="res://assets/images/tilesets/TstMM3Hard.png" type="Texture" id=302]
+[ext_resource path="res://assets/images/tilesets/TstMM1Fire.png" type="Texture" id=303]
+[ext_resource path="res://assets/images/tilesets/TstMM3Top.png" type="Texture" id=304]
+[ext_resource path="res://assets/images/tilesets/TstMM4Toad2.png" type="Texture" id=305]
+[ext_resource path="res://assets/images/tilesets/TstMM2Bubble.png" type="Texture" id=306]
+[ext_resource path="res://assets/images/tilesets/TstMM6Yamato.png" type="Texture" id=307]
+[ext_resource path="res://assets/images/tilesets/TstMM4Pharaoh.png" type="Texture" id=308]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily1-3.png" type="Texture" id=309]
+[ext_resource path="res://assets/images/tilesets/TstMM4Bright1.png" type="Texture" id=310]
+[ext_resource path="res://assets/images/tilesets/TstMM5Charge.png" type="Texture" id=311]
+[ext_resource path="res://assets/images/tilesets/TstMM3Gemini.png" type="Texture" id=312]
+[ext_resource path="res://assets/images/tilesets/TstMM6Knight.png" type="Texture" id=313]
+[ext_resource path="res://assets/images/tilesets/TstMM6Wind.png" type="Texture" id=314]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily4.png" type="Texture" id=315]
+[ext_resource path="res://assets/images/tilesets/TstMM5Gravity.png" type="Texture" id=316]
+[ext_resource path="res://assets/images/tilesets/TstMM5Napalm.png" type="Texture" id=317]
+[ext_resource path="res://assets/images/tilesets/TstMM2Quick.png" type="Texture" id=318]
+[ext_resource path="res://assets/images/tilesets/TstMM6Centaur.png" type="Texture" id=319]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily2.png" type="Texture" id=320]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wily6.png" type="Texture" id=321]
+[ext_resource path="res://assets/images/tilesets/TstMM4Dust.png" type="Texture" id=322]
+[ext_resource path="res://assets/images/tilesets/TstMM4Ring.png" type="Texture" id=323]
+[ext_resource path="res://assets/images/tilesets/TstMM6Blizzard.png" type="Texture" id=324]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily1-3.png" type="Texture" id=325]
+[ext_resource path="res://assets/images/tilesets/TstMM5Gyro.png" type="Texture" id=326]
+[ext_resource path="res://assets/images/tilesets/TstMM4Dive.png" type="Texture" id=327]
+[ext_resource path="res://assets/images/tilesets/TstMM5Star.png" type="Texture" id=328]
+[ext_resource path="res://assets/images/tilesets/TstMM3Wily2.png" type="Texture" id=329]
+[ext_resource path="res://assets/images/tilesets/TstMM5Stone2.png" type="Texture" id=330]
+[ext_resource path="res://assets/images/tilesets/TstMM3Needle.png" type="Texture" id=331]
+[ext_resource path="res://assets/images/tilesets/TstMM1Ice.png" type="Texture" id=332]
+[ext_resource path="res://assets/images/tilesets/TstMM1Cut.png" type="Texture" id=333]
+[ext_resource path="res://assets/images/tilesets/TstMM2Heat.png" type="Texture" id=334]
+[ext_resource path="res://assets/images/tilesets/TstMM2Metal.png" type="Texture" id=335]
+[ext_resource path="res://assets/images/tilesets/TstMM1Bomb.png" type="Texture" id=336]
+[ext_resource path="res://assets/images/tilesets/TstMM2Air.png" type="Texture" id=337]
+[ext_resource path="res://assets/images/tilesets/TstMM2Crash.png" type="Texture" id=338]
+[ext_resource path="res://assets/images/tilesets/TstMM6Tomahawk.png" type="Texture" id=339]
+[ext_resource path="res://assets/images/tilesets/TstMM2Wood.png" type="Texture" id=340]
+[ext_resource path="res://assets/images/tilesets/TstMM1Elec.png" type="Texture" id=341]
+[ext_resource path="res://assets/images/tilesets/TstMM3Snake.png" type="Texture" id=342]
+[ext_resource path="res://assets/images/tilesets/TstMM3Spark1.png" type="Texture" id=343]
+[ext_resource path="res://assets/images/tilesets/TstMM1Guts.png" type="Texture" id=344]
+[ext_resource path="res://src/scenes/debug/DebugSceneTilePreviewer/DebugSceneTilePreviewer.gd" type="Script" id=345]
+
+[sub_resource type="InputEventKey" id=1]
+scancode = 65
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventKey" id=3]
+scancode = 68
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[node name="DebugSceneTilePreviewer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 345 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tiles" type="Control" parent="."]
+margin_left = 240.0
+margin_top = 128.0
+margin_right = 280.0
+margin_bottom = 168.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TstMM1Bomb" type="TextureRect" parent="Tiles"]
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 336 )
+
+[node name="TstMM1Cut" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TstMM1Elec2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 240 )
+
+[node name="TstMM1Elec" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 341 )
+
+[node name="TstMM1Fire" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 303 )
+
+[node name="TstMM1Guts" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 344 )
+
+[node name="TstMM1Ice" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 332 )
+
+[node name="TstMM1Oil" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 163 )
+
+[node name="TstMM1Time" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 301 )
+
+[node name="TstMM1TimeAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 194 )
+
+[node name="TstMM1Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 164 )
+
+[node name="TstMM1Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 62 )
+
+[node name="TstMM1Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 104 )
+
+[node name="TstMM1Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 103 )
+
+[node name="TstMM1Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 73 )
+
+[node name="TstMM2Air" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 337 )
+
+[node name="TstMM2Bubble" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 306 )
+
+[node name="TstMM2BubbleAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 112 )
+
+[node name="TstMM2Crash" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 338 )
+
+[node name="TstMM2Flash2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 56 )
+
+[node name="TstMM2Flash2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 70 )
+
+[node name="TstMM2Flash3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 77 )
+
+[node name="TstMM2Flash" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 11 )
+
+[node name="TstMM2FlashAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 78 )
+
+[node name="TstMM2Heat" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 334 )
+
+[node name="TstMM2Metal" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 335 )
+
+[node name="TstMM2Quick" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 318 )
+
+[node name="TstMM2QuickAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 128 )
+
+[node name="TstMM2Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 250 )
+
+[node name="TstMM2Wily1-3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 309 )
+
+[node name="TstMM2Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 119 )
+
+[node name="TstMM2Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 320 )
+
+[node name="TstMM2Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 100 )
+
+[node name="TstMM2Wily3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 125 )
+
+[node name="TstMM2Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 315 )
+
+[node name="TstMM2Wily5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 124 )
+
+[node name="TstMM2Wily6" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 321 )
+
+[node name="TstMM2Wood" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 340 )
+
+[node name="TstMM3Gemini2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 68 )
+
+[node name="TstMM3Gemini2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 220 )
+
+[node name="TstMM3Gemini3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 242 )
+
+[node name="TstMM3Gemini3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 252 )
+
+[node name="TstMM3Gemini4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 232 )
+
+[node name="TstMM3Gemini4Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 210 )
+
+[node name="TstMM3Gemini" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 312 )
+
+[node name="TstMM3Hard" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 302 )
+
+[node name="TstMM3Magnet2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 198 )
+
+[node name="TstMM3Magnet" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 300 )
+
+[node name="TstMM3Needle2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 12 )
+
+[node name="TstMM3Needle" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 331 )
+
+[node name="TstMM3Shadow" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 106 )
+
+[node name="TstMM3Snake2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 64 )
+
+[node name="TstMM3Snake" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 342 )
+
+[node name="TstMM3Spark1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 343 )
+
+[node name="TstMM3Top2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 59 )
+
+[node name="TstMM3Top" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 304 )
+
+[node name="TstMM3Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 101 )
+
+[node name="TstMM3Wily1-3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 325 )
+
+[node name="TstMM3Wily1-3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 136 )
+
+[node name="TstMM3Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 102 )
+
+[node name="TstMM3Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 329 )
+
+[node name="TstMM3Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 189 )
+
+[node name="TstMM3Wily4-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 86 )
+
+[node name="TstMM3Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 85 )
+
+[node name="TstMM3Wily5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 58 )
+
+[node name="TstMM3Wily6" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 97 )
+
+[node name="TstMM4Bright1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 310 )
+
+[node name="TstMM4Cossack1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 90 )
+
+[node name="TstMM4Cossack1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 141 )
+
+[node name="TstMM4Cossack2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 118 )
+
+[node name="TstMM4Cossack3-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 37 )
+
+[node name="TstMM4Cossack3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 55 )
+
+[node name="TstMM4Cossack4-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 36 )
+
+[node name="TstMM4Cossack4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 130 )
+
+[node name="TstMM4Dive" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 327 )
+
+[node name="TstMM4DiveAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 105 )
+
+[node name="TstMM4Drill2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 129 )
+
+[node name="TstMM4Drill" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 159 )
+
+[node name="TstMM4Dust2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 114 )
+
+[node name="TstMM4Dust" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 322 )
+
+[node name="TstMM4Pharaoh2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 3 )
+
+[node name="TstMM4Pharaoh3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 33 )
+
+[node name="TstMM4Pharaoh" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 308 )
+
+[node name="TstMM4Ring" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 323 )
+
+[node name="TstMM4Skull" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 299 )
+
+[node name="TstMM4Toad2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 305 )
+
+[node name="TstMM4Toad" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 94 )
+
+[node name="TstMM4Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 91 )
+
+[node name="TstMM4Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 72 )
+
+[node name="TstMM4Wily3-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 236 )
+
+[node name="TstMM4Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 138 )
+
+[node name="TstMM4Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 111 )
+
+[node name="TstMM5Charge2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 47 )
+
+[node name="TstMM5Charge" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 311 )
+
+[node name="TstMM5Crystal1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 2 )
+
+[node name="TstMM5CrystalAlt1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 208 )
+
+[node name="TstMM5Dark1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 83 )
+
+[node name="TstMM5Dark2-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 134 )
+
+[node name="TstMM5Dark2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 92 )
+
+[node name="TstMM5Dark3-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 79 )
+
+[node name="TstMM5Dark3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 84 )
+
+[node name="TstMM5Dark4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 61 )
+
+[node name="TstMM5Gravity" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 316 )
+
+[node name="TstMM5Gyro" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 326 )
+
+[node name="TstMM5Napalm2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 117 )
+
+[node name="TstMM5Napalm" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 317 )
+
+[node name="TstMM5Star2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 67 )
+
+[node name="TstMM5Star2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 8 )
+
+[node name="TstMM5Star3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 38 )
+
+[node name="TstMM5Star" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 328 )
+
+[node name="TstMM5Stone2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 330 )
+
+[node name="TstMM5Stone" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 82 )
+
+[node name="TstMM5Wave1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 139 )
+
+[node name="TstMM5Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 234 )
+
+[node name="TstMM5Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 93 )
+
+[node name="TstMM5Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 98 )
+
+[node name="TstMM5Wily2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 89 )
+
+[node name="TstMM5Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 126 )
+
+[node name="TstMM5Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 80 )
+
+[node name="TstMM6Blizzard2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 88 )
+
+[node name="TstMM6Blizzard" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 324 )
+
+[node name="TstMM6Centaur2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 69 )
+
+[node name="TstMM6Centaur2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 15 )
+
+[node name="TstMM6Centaur" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 319 )
+
+[node name="TstMM6CentaurAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 133 )
+
+[node name="TstMM6Flame2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 81 )
+
+[node name="TstMM6Flame3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 9 )
+
+[node name="TstMM6Flame" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 107 )
+
+[node name="TstMM6Knight2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 44 )
+
+[node name="TstMM6Knight2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 34 )
+
+[node name="TstMM6Knight" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 313 )
+
+[node name="TstMM6KnightAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 116 )
+
+[node name="TstMM6MrX1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 121 )
+
+[node name="TstMM6MrX1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 123 )
+
+[node name="TstMM6MrX2-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 10 )
+
+[node name="TstMM6MrX2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 96 )
+
+[node name="TstMM6MrX3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 135 )
+
+[node name="TstMM6MrX3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 196 )
+
+[node name="TstMM6MrX4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 146 )
+
+[node name="TstMM6Plant" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 132 )
+
+[node name="TstMM6Tomahawk2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 145 )
+
+[node name="TstMM6Tomahawk2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 137 )
+
+[node name="TstMM6Tomahawk3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 153 )
+
+[node name="TstMM6Tomahawk3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 155 )
+
+[node name="TstMM6Tomahawk4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 27 )
+
+[node name="TstMM6Tomahawk4Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 40 )
+
+[node name="TstMM6Tomahawk" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 339 )
+
+[node name="TstMM6TomahawkAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 157 )
+
+[node name="TstMM6Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 110 )
+
+[node name="TstMM6Wily1Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 154 )
+
+[node name="TstMM6Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 52 )
+
+[node name="TstMM6Wily2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 87 )
+
+[node name="TstMM6Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 109 )
+
+[node name="TstMM6Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 120 )
+
+[node name="TstMM6Wind2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 99 )
+
+[node name="TstMM6Wind3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 18 )
+
+[node name="TstMM6Wind" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 314 )
+
+[node name="TstMM6Yamato2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 144 )
+
+[node name="TstMM6Yamato2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 115 )
+
+[node name="TstMM6Yamato3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 131 )
+
+[node name="TstMM6Yamato3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 140 )
+
+[node name="TstMM6Yamato4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 151 )
+
+[node name="TstMM6Yamato4Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 152 )
+
+[node name="TstMM6Yamato5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 150 )
+
+[node name="TstMM6Yamato5Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 147 )
+
+[node name="TstMM6Yamato" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 307 )
+
+[node name="TstMM6YamatoAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 156 )
+
+[node name="TstMM7Burst2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 202 )
+
+[node name="TstMM7Burst3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 42 )
+
+[node name="TstMM7Burst3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 30 )
+
+[node name="TstMM7Burst" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 66 )
+
+[node name="TstMM7Cloud" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 75 )
+
+[node name="TstMM7Freeze" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 57 )
+
+[node name="TstMM7Junk" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 95 )
+
+[node name="TstMM7Shade2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 49 )
+
+[node name="TstMM7Shade2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 224 )
+
+[node name="TstMM7Shade" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 74 )
+
+[node name="TstMM7Slash" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 71 )
+
+[node name="TstMM7Spring2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 243 )
+
+[node name="TstMM7Spring" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 50 )
+
+[node name="TstMM7Turbo2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 197 )
+
+[node name="TstMM7Turbo3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 201 )
+
+[node name="TstMM7Turbo4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 43 )
+
+[node name="TstMM7Turbo" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 54 )
+
+[node name="TstMM7Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 108 )
+
+[node name="TstMM7Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 226 )
+
+[node name="TstMM7Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 216 )
+
+[node name="TstMM7Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 212 )
+
+[node name="TstMM8Aqua" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 241 )
+
+[node name="TstMM8Astro2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 227 )
+
+[node name="TstMM8Astro2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 195 )
+
+[node name="TstMM8Astro" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 191 )
+
+[node name="TstMM8Clown" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 192 )
+
+[node name="TstMM8Frost" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 219 )
+
+[node name="TstMM8FrostAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 193 )
+
+[node name="TstMM8Grenade" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 217 )
+
+[node name="TstMM8Search" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 218 )
+
+[node name="TstMM8Sword" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 206 )
+
+[node name="TstMM8Tengu" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 221 )
+
+[node name="TstMM8Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 225 )
+
+[node name="TstMM8Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 239 )
+
+[node name="TstMM8Wily2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 223 )
+
+[node name="TstMM9Concrete2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 76 )
+
+[node name="TstMM9Concrete3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 282 )
+
+[node name="TstMM9Concrete" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 122 )
+
+[node name="TstMM9Endless2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 20 )
+
+[node name="TstMM9Endless2Alt2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 21 )
+
+[node name="TstMM9Endless2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 32 )
+
+[node name="TstMM9Endless3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 45 )
+
+[node name="TstMM9Endless3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 46 )
+
+[node name="TstMM9Endless4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 24 )
+
+[node name="TstMM9Endless4Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 7 )
+
+[node name="TstMM9Endless5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 1 )
+
+[node name="TstMM9Endless6" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 4 )
+
+[node name="TstMM9Endless7" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 53 )
+
+[node name="TstMM9Endless8" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 13 )
+
+[node name="TstMM9Endless8Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 48 )
+
+[node name="TstMM9Endless9" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 63 )
+
+[node name="TstMM9Endless9Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 65 )
+
+[node name="TstMM9Endless10" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 6 )
+
+[node name="TstMM9Endless" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 16 )
+
+[node name="TstMM9Fake2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 222 )
+
+[node name="TstMM9FakeAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 23 )
+
+[node name="TstMM9Galaxy" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 143 )
+
+[node name="TstMM9Hornet" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 148 )
+
+[node name="TstMM9Jewel" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 5 )
+
+[node name="TstMM9Magma" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 149 )
+
+[node name="TstMM9MagmaTile" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 60 )
+
+[node name="TstMM9Plug" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 127 )
+
+[node name="TstMM9Splash1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 142 )
+
+[node name="TstMM9Tornado2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 14 )
+
+[node name="TstMM9Tornado" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 113 )
+
+[node name="TstMM9Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 253 )
+
+[node name="TstMM9Wily1-2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 214 )
+
+[node name="TstMM9Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 22 )
+
+[node name="TstMM9Wily2Alt1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 41 )
+
+[node name="TstMM9Wily2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 25 )
+
+[node name="TstMM9Wily3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 19 )
+
+[node name="TstMM9Wily4Alt1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 51 )
+
+[node name="TstMM9Wily4Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 35 )
+
+[node name="TstMM10Ballade2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 268 )
+
+[node name="TstMM10Ballade" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 290 )
+
+[node name="TstMM10Blade2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 231 )
+
+[node name="TstMM10Blade" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 281 )
+
+[node name="TstMM10Challenge1Alt2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 213 )
+
+[node name="TstMM10Challenge1AltAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 39 )
+
+[node name="TstMM10Challenge1Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 203 )
+
+[node name="TstMM10Challenge2AltAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 26 )
+
+[node name="TstMM10Challenge2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 211 )
+
+[node name="TstMM10Challenge3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 204 )
+
+[node name="TstMM10Chill2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 229 )
+
+[node name="TstMM10ChillAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 277 )
+
+[node name="TstMM10Commando" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 247 )
+
+[node name="TstMM10Difficulty" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 209 )
+
+[node name="TstMM10Endless2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 260 )
+
+[node name="TstMM10Endless3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 297 )
+
+[node name="TstMM10Endless3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 293 )
+
+[node name="TstMM10Endless4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 291 )
+
+[node name="TstMM10Endless5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 298 )
+
+[node name="TstMM10Endless6" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 289 )
+
+[node name="TstMM10Endless6Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 292 )
+
+[node name="TstMM10Endless7" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 177 )
+
+[node name="TstMM10Endless8" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 272 )
+
+[node name="TstMM10Endless9" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 280 )
+
+[node name="TstMM10Endless10" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 270 )
+
+[node name="TstMM10Endless11Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 285 )
+
+[node name="TstMM10Endless12" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 269 )
+
+[node name="TstMM10Endless13" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 257 )
+
+[node name="TstMM10Endless14" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 296 )
+
+[node name="TstMM10Endless15" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 261 )
+
+[node name="TstMM10Endless16" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 254 )
+
+[node name="TstMM10Endless17" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 295 )
+
+[node name="TstMM10Endless18" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 168 )
+
+[node name="TstMM10Endless18Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 169 )
+
+[node name="TstMM10Endless19" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 184 )
+
+[node name="TstMM10Endless20" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 173 )
+
+[node name="TstMM10Endless21" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 179 )
+
+[node name="TstMM10Endless21Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 174 )
+
+[node name="TstMM10Endless22" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 165 )
+
+[node name="TstMM10Endless22Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 166 )
+
+[node name="TstMM10Endless23" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 185 )
+
+[node name="TstMM10Endless24" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 176 )
+
+[node name="TstMM10Endless25" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 167 )
+
+[node name="TstMM10Endless25Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 171 )
+
+[node name="TstMM10Endless26" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 187 )
+
+[node name="TstMM10Endless27" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 190 )
+
+[node name="TstMM10Endless28" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 207 )
+
+[node name="TstMM10Endless29" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 29 )
+
+[node name="TstMM10Endless30" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 158 )
+
+[node name="TstMM10Endless" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 175 )
+
+[node name="TstMM10Enker2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 267 )
+
+[node name="TstMM10Enker3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 255 )
+
+[node name="TstMM10Enker4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 262 )
+
+[node name="TstMM10Enker5" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 274 )
+
+[node name="TstMM10Enker6" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 287 )
+
+[node name="TstMM10Enker" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 286 )
+
+[node name="TstMM10Nitro2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 276 )
+
+[node name="TstMM10Nitro" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 245 )
+
+[node name="TstMM10Pump2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 238 )
+
+[node name="TstMM10Pump2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 237 )
+
+[node name="TstMM10Pump" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 263 )
+
+[node name="TstMM10PumpAlt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 279 )
+
+[node name="TstMM10Punk2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 288 )
+
+[node name="TstMM10Punk3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 294 )
+
+[node name="TstMM10Punk4Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 271 )
+
+[node name="TstMM10Punk" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 178 )
+
+[node name="TstMM10Sheep1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 228 )
+
+[node name="TstMM10Solar2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 273 )
+
+[node name="TstMM10Solar3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 275 )
+
+[node name="TstMM10SolarAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 251 )
+
+[node name="TstMM10Strike2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 266 )
+
+[node name="TstMM10Strike" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 233 )
+
+[node name="TstMM10Wily1-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 244 )
+
+[node name="TstMM10Wily1-3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 259 )
+
+[node name="TstMM10Wily1-4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 162 )
+
+[node name="TstMM10Wily1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 258 )
+
+[node name="TstMM10Wily2-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 284 )
+
+[node name="TstMM10Wily2-3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 248 )
+
+[node name="TstMM10Wily2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 278 )
+
+[node name="TstMM10Wily3-2" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 249 )
+
+[node name="TstMM10Wily3-2Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 235 )
+
+[node name="TstMM10Wily3" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 230 )
+
+[node name="TstMM10Wily3Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 246 )
+
+[node name="TstMM10Wily4" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 265 )
+
+[node name="TstMM10Wily4Alt" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 283 )
+
+[node name="TstMM10Wily5-2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 215 )
+
+[node name="TstMM10Wily5-3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 256 )
+
+[node name="TstMM10Wily5-4Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 17 )
+
+[node name="TstMM10Wily5Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 264 )
+
+[node name="TstMM11Acid" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 31 )
+
+[node name="TstMM11Blast" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 200 )
+
+[node name="TstMM11Block" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 173.0
+margin_bottom = 173.0
+texture = ExtResource( 28 )
+
+[node name="TstMM11Bounce1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 199 )
+
+[node name="TstMM11Fuse2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 161 )
+
+[node name="TstMM11Fuse" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 183 )
+
+[node name="TstMM11Impact" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 172 )
+
+[node name="TstMM11Torch1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 160 )
+
+[node name="TstMM11Tundra" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 205 )
+
+[node name="TstMM11Wily1-2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 170 )
+
+[node name="TstMM11Wily1Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 180 )
+
+[node name="TstMM11Wily2Alt2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 186 )
+
+[node name="TstMM11Wily2Alt3Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 182 )
+
+[node name="TstMM11Wily2AltAnimated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 188 )
+
+[node name="TstMM11Wily2Animated1" type="TextureRect" parent="Tiles"]
+visible = false
+margin_right = 175.0
+margin_bottom = 175.0
+texture = ExtResource( 181 )
+
+[node name="IDLabel" type="Control" parent="."]
+margin_left = 104.0
+margin_right = 144.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="IDLabel"]
+margin_left = 56.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 78.0
+text = "0"
+
+[node name="Label2" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 83.0
+margin_right = 74.0
+margin_bottom = 97.0
+text = "10"
+
+[node name="Label3" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 102.0
+margin_right = 74.0
+margin_bottom = 116.0
+text = "20"
+
+[node name="Label4" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 120.0
+margin_right = 74.0
+margin_bottom = 134.0
+text = "30"
+
+[node name="Label15" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 136.0
+margin_right = 74.0
+margin_bottom = 150.0
+text = "40"
+
+[node name="Label16" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 152.0
+margin_right = 74.0
+margin_bottom = 166.0
+text = "49"
+
+[node name="Label17" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 168.0
+margin_right = 74.0
+margin_bottom = 182.0
+text = "57"
+
+[node name="Label18" type="Label" parent="IDLabel"]
+margin_left = 48.0
+margin_top = 184.0
+margin_right = 74.0
+margin_bottom = 198.0
+text = "65"
+
+[node name="Label8" type="Label" parent="IDLabel"]
+margin_left = 248.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 78.0
+text = "9"
+
+[node name="Label7" type="Label" parent="IDLabel"]
+margin_left = 248.0
+margin_top = 83.0
+margin_right = 274.0
+margin_bottom = 97.0
+text = "19"
+
+[node name="Label6" type="Label" parent="IDLabel"]
+margin_left = 248.0
+margin_top = 102.0
+margin_right = 274.0
+margin_bottom = 116.0
+text = "29"
+
+[node name="Label5" type="Label" parent="IDLabel"]
+margin_left = 248.0
+margin_top = 120.0
+margin_right = 274.0
+margin_bottom = 134.0
+text = "39"
+
+[node name="Label9" type="Label" parent="IDLabel"]
+margin_left = 232.0
+margin_top = 136.0
+margin_right = 258.0
+margin_bottom = 150.0
+text = "48"
+
+[node name="Label10" type="Label" parent="IDLabel"]
+margin_left = 216.0
+margin_top = 152.0
+margin_right = 242.0
+margin_bottom = 166.0
+text = "56"
+
+[node name="Label11" type="Label" parent="IDLabel"]
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 242.0
+margin_bottom = 182.0
+text = "64"
+
+[node name="Label12" type="Label" parent="IDLabel"]
+margin_left = 216.0
+margin_top = 184.0
+margin_right = 242.0
+margin_bottom = 198.0
+text = "72"
+
+[node name="Label13" type="Label" parent="IDLabel"]
+margin_left = 216.0
+margin_top = 208.0
+margin_right = 242.0
+margin_bottom = 222.0
+text = "74"
+
+[node name="Label14" type="Label" parent="IDLabel"]
+margin_left = 216.0
+margin_top = 224.0
+margin_right = 242.0
+margin_bottom = 238.0
+text = "76"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -224.0
+margin_top = -80.0
+margin_right = 224.0
+margin_bottom = -40.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrevButton" type="Button" parent="HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 40.0
+focus_mode = 0
+shortcut = SubResource( 2 )
+text = "< Prev [A]"
+
+[node name="TilesetName" type="Label" parent="HBoxContainer"]
+margin_left = 77.0
+margin_top = 13.0
+margin_right = 333.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 256, 0 )
+
+[node name="NextButton" type="Button" parent="HBoxContainer"]
+margin_left = 337.0
+margin_right = 413.0
+margin_bottom = 40.0
+focus_mode = 0
+shortcut = SubResource( 4 )
+text = "Next > [D]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileNumSpinBox" type="SpinBox" parent="HBoxContainer"]
+margin_left = 417.0
+margin_right = 491.0
+margin_bottom = 40.0
+max_value = 9999.0
+[connection signal="button_down" from="HBoxContainer/PrevButton" to="." method="_on_PrevButton_button_down"]
+[connection signal="button_down" from="HBoxContainer/NextButton" to="." method="_on_NextButton_button_down"]
+[connection signal="value_changed" from="HBoxContainer/TileNumSpinBox" to="." method="_on_SpinBox_value_changed"]
