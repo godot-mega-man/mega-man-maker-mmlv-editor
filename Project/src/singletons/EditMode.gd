@@ -24,6 +24,7 @@ signal changed(mode)
 #-------------------------------------------------
 
 enum Mode {
+	LEVEL,
 	OBJECT,
 	TILE,
 	BACKGROUND,
@@ -36,7 +37,7 @@ enum Mode {
 #      Properties
 #-------------------------------------------------
 
-export (Mode) var mode setget set_mode
+export (Mode) var mode = Mode.OBJECT setget set_mode
 
 #-------------------------------------------------
 #      Notifications
