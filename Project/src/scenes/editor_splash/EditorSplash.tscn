@@ -191,9 +191,8 @@ __meta__ = {
 }
 
 [node name="TitleLabel" type="Label" parent="Panel/LoadingVbox"]
-margin_top = 296.0
-margin_right = 256.0
-margin_bottom = 318.0
+margin_right = 128.0
+margin_bottom = 22.0
 text = "Please wait..."
 align = 1
 valign = 1
@@ -202,10 +201,10 @@ __meta__ = {
 }
 
 [node name="ProgressBox" type="ColorRect" parent="Panel/LoadingVbox"]
-margin_left = 112.0
-margin_top = 334.0
-margin_right = 144.0
-margin_bottom = 366.0
+margin_left = 48.0
+margin_top = 38.0
+margin_right = 80.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 32, 32 )
 rect_pivot_offset = Vector2( 16, 16 )
 size_flags_horizontal = 4
@@ -217,9 +216,9 @@ autoplay = "Spin"
 anims/Spin = SubResource( 2 )
 
 [node name="LoadingLabel" type="Label" parent="Panel/LoadingVbox"]
-margin_top = 382.0
-margin_right = 256.0
-margin_bottom = 404.0
+margin_top = 86.0
+margin_right = 128.0
+margin_bottom = 108.0
 text = "Loading..."
 align = 1
 valign = 1
@@ -232,10 +231,9 @@ autoplay = "Blinking"
 anims/Blinking = SubResource( 3 )
 
 [node name="ProgressBar" type="ProgressBar" parent="Panel/LoadingVbox"]
-margin_left = 64.0
-margin_top = 420.0
-margin_right = 192.0
-margin_bottom = 434.0
+margin_top = 124.0
+margin_right = 128.0
+margin_bottom = 138.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_horizontal = 4
 
@@ -336,6 +334,6 @@ autoplay = "Anim"
 anims/Anim = SubResource( 5 )
 
 [node name="LoadDoneCheckTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.001
 autostart = true
 [connection signal="timeout" from="LoadDoneCheckTimer" to="." method="_on_LoadDoneCheckTimer_timeout"]
