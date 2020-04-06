@@ -71,10 +71,6 @@ var select_begin_pos : Vector2
 #-------------------------------------------------
 
 func process_input(event : InputEvent):
-	#Only work if current edit mode is OBJECTS
-	if not EditMode.mode == EditMode.Mode.OBJECT:
-		return
-	
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.is_pressed(): 
 			# Before re-selecting objects (by clicking outslide from

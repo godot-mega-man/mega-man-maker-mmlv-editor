@@ -1,7 +1,7 @@
-# Script_Name_Here
-# Written by: 
+# TilePainter
+# Written by: First
 
-extends Panel
+extends Node2D
 
 #class_name optional
 
@@ -17,10 +17,6 @@ extends Panel
 #      Signals
 #-------------------------------------------------
 
-signal add_object_pressed
-
-signal pressed
-
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -29,9 +25,20 @@ signal pressed
 #      Properties
 #-------------------------------------------------
 
+var left_mouse_down : bool = false
+var right_mouse_down : bool = false
+
+var follow_mouse_pointer : bool setget set_follow_mouse_pointer
+var tilemap : TileMap setget set_tilemap
+var current_tile_id : int setget set_current_tile_id 
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
+
+func _process(delta: float) -> void:
+	if follow_mouse_pointer:
+		set_global_position(get_global_mouse_position())
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -45,40 +52,30 @@ signal pressed
 #      Public Methods
 #-------------------------------------------------
 
+func process_input(event : InputEvent):
+	#Set mouse being pressed or not
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			left_mouse_down = event.is_pressed()
+		if event.button_index == BUTTON_RIGHT:
+			right_mouse_down = event.is_pressed()
+	
+	if left_mouse_down: #Set tile by current tile id
+		set_tile(current_tile_id)
+	if right_mouse_down: #Remove
+		set_tile(-1)
+
+#Set tile to a tilemap.
+#If nodepath to tilemap is not specified, nothing will happen.
+func set_tile(tile_id : int):
+	if tilemap == null:
+		return
+	
+	tilemap.set_cellv(tilemap.world_to_map(self.get_global_position()), tile_id)
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_AddBtn_pressed() -> void:
-	emit_signal("add_object_pressed")
-
-
-func _on_ObjectBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.OBJECT)
-	emit_signal("pressed")
-
-func _on_TileMapBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.TILE)
-	emit_signal("pressed")
-
-func _on_BgBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.BACKGROUND)
-	emit_signal("pressed")
-
-func _on_ActiveScreenBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.ACTIVE_SCREEN)
-	emit_signal("pressed")
-
-func _on_LadderBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.LADDER)
-	emit_signal("pressed")
-
-func _on_SpikeBtn_pressed() -> void:
-	EditMode.set_mode(EditMode.Mode.SPIKE)
-	emit_signal("pressed")
-
-func _on_ButtonsToggler_pressed() -> void:
-	SelectedObjects.remove_all()
 
 #-------------------------------------------------
 #      Private Methods
@@ -87,3 +84,13 @@ func _on_ButtonsToggler_pressed() -> void:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
+func set_follow_mouse_pointer(val):
+	follow_mouse_pointer = val
+	set_process(val)
+
+func set_tilemap(val):
+	tilemap = val
+
+func set_current_tile_id(val):
+	current_tile_id = val

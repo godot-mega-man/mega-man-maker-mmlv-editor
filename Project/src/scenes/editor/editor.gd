@@ -21,6 +21,12 @@ extends Node
 #      Constants
 #-------------------------------------------------
 
+const TILESET_TILE = preload("res://assets/tilesets/tileset_v1_6_0.tres")
+const TILESET_BG = preload("res://assets/tilesets/bg_tileset_v1_6_0.tres")
+const TILESET_LADDER = preload("res://assets/tilesets/ladder_tileset_v1_6_0.tres")
+const TILESET_SPIKE = preload("res://assets/tilesets/spike_tileset_v1_6_0.tres")
+const TILESET_ACTIVE_SCREEN = preload("res://assets/tilesets/active_screen_tileset.tres")
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -30,6 +36,7 @@ onready var main_camera = $MainCamera
 onready var object_selector = $ObjectSelector
 onready var object_deleter = $ObjectDeleter
 onready var object_adder = $ObjectAdder
+onready var tile_painter = $TilePainter
 
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
@@ -173,9 +180,32 @@ func _on_Scroll2PlayerPosDelayTimer_timeout() -> void:
 func _on_EditAreaRect_gui_input(event: InputEvent) -> void:
 	_control_viewport_by_gui_input(event)
 	_control_object_selection_by_gui_input(event)
+	_control_tilemap_by_gui_input(event)
+	
 
 func _on_ToolBar_add_object_pressed() -> void:
 	object_adder.add_object()
+
+func _on_ToolBar_pressed() -> void:
+	match EditMode.mode:
+		EditMode.Mode.OBJECT:
+			tile_painter.set_follow_mouse_pointer(false)
+		EditMode.Mode.TILE:
+			tile_painter.tilemap = $Level/GameTileMapDrawer
+			tile_painter.set_follow_mouse_pointer(true)
+		EditMode.Mode.BACKGROUND:
+			tile_painter.tilemap = $Level/GameBgTileDrawer
+			tile_painter.set_follow_mouse_pointer(true)
+		EditMode.Mode.ACTIVE_SCREEN:
+			tile_painter.tilemap = $Level/GameActiveScreenTileDrawer
+			tile_painter.set_follow_mouse_pointer(true)
+			tile_painter.current_tile_id = 0
+		EditMode.Mode.LADDER:
+			tile_painter.tilemap = $Level/GameLadderTileDrawer
+			tile_painter.set_follow_mouse_pointer(true)
+		EditMode.Mode.SPIKE:
+			tile_painter.tilemap = $Level/GameSpikeTileDrawer
+			tile_painter.set_follow_mouse_pointer(true)
 
 #-------------------------------------------------
 #      Private Methods
@@ -201,7 +231,19 @@ func _control_viewport_by_gui_input(event : InputEvent):
 			main_camera.position -= event.relative * main_camera.zoom
 
 func _control_object_selection_by_gui_input(event : InputEvent):
-	object_selector.process_input(event)
+	#Only work if current edit mode is OBJECTS
+	if EditMode.mode == EditMode.Mode.OBJECT:
+		object_selector.process_input(event)
+
+func _control_tilemap_by_gui_input(event : InputEvent):
+	if (
+		EditMode.mode == EditMode.Mode.TILE or
+		EditMode.mode == EditMode.Mode.BACKGROUND or
+		EditMode.mode == EditMode.Mode.ACTIVE_SCREEN or
+		EditMode.mode == EditMode.Mode.LADDER or
+		EditMode.mode == EditMode.Mode.SPIKE
+	):
+		tile_painter.process_input(event)
 
 func _update_window_title_by_level_path(path : String):
 	WindowTitleUpdater.current_level_file_path = path
