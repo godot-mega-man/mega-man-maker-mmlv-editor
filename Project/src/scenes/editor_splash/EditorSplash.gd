@@ -82,7 +82,6 @@ func _poll_finished():
 	
 	if err == ERR_FILE_EOF: # Finished loading.
 		var resource = res_iloader.get_resource()
-		res_iloader = null
 		_set_new_scene(resource)
 		queue_free()
 		return
