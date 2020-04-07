@@ -18,7 +18,7 @@ class_name TileTextureButton
 #-------------------------------------------------
 
 signal pressed_id(tile_id)
-signal mouse_entered_btn(texture)
+signal mouse_entered_btn(texture, tileset_name)
 signal mouse_exited_btn(texture)
 
 #-------------------------------------------------
@@ -30,6 +30,7 @@ signal mouse_exited_btn(texture)
 #-------------------------------------------------
 
 var tile_id : int
+var tileset_name : String
 
 #-------------------------------------------------
 #      Notifications
@@ -59,7 +60,7 @@ func _pressed() -> void:
 #-------------------------------------------------
 
 func _on_mouse_entered():
-	emit_signal("mouse_entered_btn", _get_texture_from_atlas(texture_normal))
+	emit_signal("mouse_entered_btn", _get_texture_from_atlas(texture_normal), tileset_name)
 
 func _on_mouse_exited():
 	emit_signal("mouse_exited_btn", _get_texture_from_atlas(texture_normal))

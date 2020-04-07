@@ -37,6 +37,7 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
+onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
 
 var current_selected_tile_id : int
 
@@ -67,9 +68,10 @@ func _on_tile_btn_pressed_id(tile_id : int):
 	current_selected_tile_id = tile_id * GameTileSetData.TILE_COUNT
 	emit_signal("tile_selected", current_selected_tile_id)
 
-func _on_tile_btn_mouse_entered_btn(texture : Texture):
+func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String):
 	preview_texture_rect.texture = texture
 	preview_tex_anim.play("Show")
+	preview_tex_label.text = tileset_name
 
 func _on_tile_btn_mouse_exited_btn(texture):
 	preview_tex_anim.play("Hide")
@@ -103,11 +105,12 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	tex_btn.texture_normal = atlas_tex
 	tex_btn.rect_min_size = BUTTON_SIZE
 	tex_btn.hint_tooltip = file_name
-	tex_btn.tile_id = tile_id
 	tex_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	tex_btn.connect("pressed_id", self, "_on_tile_btn_pressed_id")
 	tex_btn.connect("mouse_entered_btn", self, "_on_tile_btn_mouse_entered_btn")
 	tex_btn.connect("mouse_exited_btn", self, "_on_tile_btn_mouse_exited_btn")
+	tex_btn.tile_id = tile_id
+	tex_btn.tileset_name = file_name
 
 func _create_grid_containters():
 	var game_ids : Dictionary

@@ -93,14 +93,14 @@ __meta__ = {
 }
 
 [node name="PreviewTextureRect" type="TextureRect" parent="." index="2"]
-margin_left = -188.0
-margin_top = 16.0
+margin_left = -364.0
+margin_top = 8.0
 margin_right = -12.0
-margin_bottom = 200.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 184, 0 )
+margin_bottom = 384.0
 mouse_filter = 2
 texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -120,6 +120,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="1"]
+[node name="TilesetNameLabel" type="Label" parent="PreviewTextureRect" index="1"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -24.0
+margin_bottom = -2.0
+grow_vertical = 0
+text = "TilesetName"
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
 anims/Hide = SubResource( 1 )
 anims/Show = SubResource( 2 )
