@@ -32,6 +32,8 @@ var res_iloader : ResourceInteractiveLoader
 var current_scene 
 var thread : Thread
 
+var load_finished : bool = false #Avoid duplicate instancing on GPU processor
+
 onready var loading_label = $Panel/LoadingVbox/LoadingLabel
 onready var progress_bar = $Panel/LoadingVbox/ProgressBar
 
@@ -79,12 +81,14 @@ func _poll_finished():
 		return 
 	if res_iloader == null:
 		return
+	if load_finished:
+		return
 	
 	if err == ERR_FILE_EOF: # Finished loading.
 		var resource = res_iloader.get_resource()
 		_set_new_scene(resource)
-		queue_free()
-		return
+		call_deferred("queue_free")
+		load_finished = true
 	elif err == OK:
 		_update_progress()
 	else: #Error during loading

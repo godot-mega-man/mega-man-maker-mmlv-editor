@@ -166,6 +166,7 @@ SelectedObjects="*res://src/singletons/SelectedObjects.gd"
 [display]
 
 window/size/width=800
+window/energy_saving/keep_screen_on=false
 
 [editor_plugins]
 
@@ -200,5 +201,7 @@ limits/message_queue/max_size_kb=2048
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
+quality/intended_usage/framebuffer_allocation=1
 quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
