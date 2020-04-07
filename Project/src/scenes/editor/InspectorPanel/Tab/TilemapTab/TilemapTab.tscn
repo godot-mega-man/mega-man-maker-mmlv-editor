@@ -1,208 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapPressed.png" type="Texture" id=2]
-[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/UIGenerator/UIGenerator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://src/utils/GridContainerAutoResizer/GridContainerAutoResizer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.gd" type="Script" id=4]
 
 [node name="TilemapTab" instance=ExtResource( 1 )]
-
-[node name="UIGenerator" parent="." index="0" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
 
 [node name="TitleLabel" parent="ScrollContainer/Vbox" index="0"]
 text = "Tilemap"
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer/Vbox" index="1"]
-margin_top = 18.0
-margin_right = 792.0
-margin_bottom = 158.0
-columns = 7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainerAutoResizer" parent="ScrollContainer/Vbox/GridContainer" index="0" instance=ExtResource( 5 )]
-resize_notify_node = NodePath("../../../..")
-
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="1"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="2"]
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="3"]
-margin_left = 72.0
-margin_right = 104.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="4"]
-margin_left = 108.0
-margin_right = 140.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect5" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="5"]
-margin_left = 144.0
-margin_right = 176.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect6" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="6"]
-margin_left = 180.0
-margin_right = 212.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect7" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="7"]
-margin_left = 216.0
-margin_right = 248.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="8"]
-margin_top = 36.0
-margin_right = 32.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect9" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="9"]
-margin_left = 36.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect10" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="10"]
-margin_left = 72.0
-margin_top = 36.0
-margin_right = 104.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect11" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="11"]
-margin_left = 108.0
-margin_top = 36.0
-margin_right = 140.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect12" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="12"]
-margin_left = 144.0
-margin_top = 36.0
-margin_right = 176.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect13" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="13"]
-margin_left = 180.0
-margin_top = 36.0
-margin_right = 212.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect14" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="14"]
-margin_left = 216.0
-margin_top = 36.0
-margin_right = 248.0
-margin_bottom = 68.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect15" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="15"]
-margin_top = 72.0
-margin_right = 32.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect16" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="16"]
-margin_left = 36.0
-margin_top = 72.0
-margin_right = 68.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect17" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="17"]
-margin_left = 72.0
-margin_top = 72.0
-margin_right = 104.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect18" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="18"]
-margin_left = 108.0
-margin_top = 72.0
-margin_right = 140.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect19" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="19"]
-margin_left = 144.0
-margin_top = 72.0
-margin_right = 176.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect20" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="20"]
-margin_left = 180.0
-margin_top = 72.0
-margin_right = 212.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect21" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="21"]
-margin_left = 216.0
-margin_top = 72.0
-margin_right = 248.0
-margin_bottom = 104.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect22" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="22"]
-margin_top = 108.0
-margin_right = 32.0
-margin_bottom = 140.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect23" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="23"]
-margin_left = 36.0
-margin_top = 108.0
-margin_right = 68.0
-margin_bottom = 140.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect24" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="24"]
-margin_left = 72.0
-margin_top = 108.0
-margin_right = 104.0
-margin_bottom = 140.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect25" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="25"]
-margin_left = 108.0
-margin_top = 108.0
-margin_right = 140.0
-margin_bottom = 140.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect26" type="TextureRect" parent="ScrollContainer/Vbox/GridContainer" index="26"]
-margin_left = 144.0
-margin_top = 108.0
-margin_right = 176.0
-margin_bottom = 140.0
-texture = ExtResource( 4 )
-
-[node name="SubTilePanel" type="Panel" parent="." index="2"]
+[node name="SubTilePanel" type="Panel" parent="." index="1"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
+margin_left = -4.0
 margin_top = -52.0
-margin_right = -4.0
+margin_right = 4.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

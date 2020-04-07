@@ -113,6 +113,11 @@ _global_script_classes=[ {
 "class": "PreviewObject",
 "language": "GDScript",
 "path": "res://src/gameobj/preview_object/preview_object.gd"
+}, {
+"base": "TextureButton",
+"class": "TileTextureButton",
+"language": "GDScript",
+"path": "res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TileTextureButton.gd"
 } ]
 _global_script_class_icons={
 "AtbHBox": "",
@@ -135,7 +140,8 @@ _global_script_class_icons={
 "MainInspectorTab": "",
 "MenuBar": "",
 "PreviewGameObject": "",
-"PreviewObject": ""
+"PreviewObject": "",
+"TileTextureButton": ""
 }
 
 [application]

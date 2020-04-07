@@ -1,9 +1,9 @@
-# UIGenerator
+# TileTextureButton
 # Written by: First
 
-extends Control
+extends TextureButton
 
-#class_name optional
+class_name TileTextureButton
 
 """
 	Enter desc here.
@@ -17,6 +17,8 @@ extends Control
 #      Signals
 #-------------------------------------------------
 
+signal pressed_id(tile_id)
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -25,11 +27,14 @@ extends Control
 #      Properties
 #-------------------------------------------------
 
-export var root_node : NodePath = "./.."
+var tile_id : int
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
+
+func _pressed() -> void:
+	emit_signal("pressed_id", tile_id)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -42,12 +47,6 @@ export var root_node : NodePath = "./.."
 #-------------------------------------------------
 #      Public Methods
 #-------------------------------------------------
-
-func generate():
-	if root_node == null:
-		root_node = get_parent().get_path()
-		push_warning("Root node is empty")
-		
 
 #-------------------------------------------------
 #      Connections
