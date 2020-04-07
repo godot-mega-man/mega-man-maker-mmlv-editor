@@ -86,7 +86,7 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	var atlas_tex = AtlasTexture.new()
 	
 	atlas_tex.atlas = load(IMG_TEXTURE_BEGIN_PATH + file_name + ".png")
-	atlas_tex.region = Rect2(Vector2(), Vector2(16, 16))
+	atlas_tex.region = Rect2(SUBTILE_REGION_POS, Vector2(16, 16))
 	grid_c.add_child(tex_btn)
 	tex_btn.expand = true
 	tex_btn.texture_normal = atlas_tex
