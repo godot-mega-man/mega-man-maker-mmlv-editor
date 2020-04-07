@@ -6,3 +6,12 @@
 
 [node name="TitleLabel" parent="ScrollContainer/Vbox" index="0"]
 text = "Backgrounds"
+
+[node name="ComingSoonLabel" type="Label" parent="ScrollContainer/Vbox" index="1"]
+margin_top = 296.0
+margin_right = 792.0
+margin_bottom = 310.0
+size_flags_vertical = 6
+text = "Coming soon..."
+align = 1
+clip_text = true
