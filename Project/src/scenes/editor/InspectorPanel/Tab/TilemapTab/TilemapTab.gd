@@ -36,6 +36,7 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 #-------------------------------------------------
 
 onready var preview_texture_rect = $PreviewTextureRect
+onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 
 var current_selected_tile_id : int
 
@@ -67,11 +68,11 @@ func _on_tile_btn_pressed_id(tile_id : int):
 	emit_signal("tile_selected", current_selected_tile_id)
 
 func _on_tile_btn_mouse_entered_btn(texture : Texture):
-	preview_texture_rect.show()
 	preview_texture_rect.texture = texture
+	preview_tex_anim.play("Show")
 
 func _on_tile_btn_mouse_exited_btn(texture):
-	preview_texture_rect.hide()
+	preview_tex_anim.play("Hide")
 
 
 #-------------------------------------------------
