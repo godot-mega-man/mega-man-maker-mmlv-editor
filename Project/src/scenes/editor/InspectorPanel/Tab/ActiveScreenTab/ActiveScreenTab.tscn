@@ -12,7 +12,7 @@ margin_top = 287.0
 margin_right = 792.0
 margin_bottom = 318.0
 size_flags_vertical = 6
-text = "Left mouse click to activate.
-Right mouse click to deactivate."
+text = "Right mouse click to enable screen.
+Left mouse click to disable screen."
 align = 1
 clip_text = true
