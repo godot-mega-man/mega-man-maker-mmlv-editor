@@ -1,9 +1,67 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapPressed.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/SubtileSelectPopup/SubtileSelectPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="TilemapTab" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
 
 [node name="TitleLabel" parent="ScrollContainer/Vbox" index="0"]
 text = "Tilemap"
@@ -12,14 +70,14 @@ text = "Tilemap"
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
+margin_left = -4.0
 margin_top = -52.0
-margin_right = -4.0
+margin_right = 4.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="SubTilePanel" index="0"]
+[node name="SubtileButton" type="Button" parent="SubTilePanel" index="0"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -30,6 +88,66 @@ margin_right = -7.0
 margin_bottom = 20.0
 text = "Subtiles"
 icon = ExtResource( 2 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SubtileSelectPopup" parent="." index="2" instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -644.0
+margin_top = -372.0
+margin_right = -278.0
+margin_bottom = -6.0
+
+[node name="PreviewTextureRect" type="TextureRect" parent="." index="3"]
+visible = false
+margin_left = -364.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = 384.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PreviewTextureRect" index="0"]
+self_modulate = Color( 1, 1, 1, 0.807843 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TilesetNameLabel" type="Label" parent="PreviewTextureRect" index="1"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -24.0
+margin_bottom = -2.0
+grow_vertical = 0
+text = "TilesetName"
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
+anims/Hide = SubResource( 1 )
+anims/Show = SubResource( 2 )
+[connection signal="pressed" from="SubTilePanel/SubtileButton" to="." method="_on_SubtileButton_pressed"]
+[connection signal="subtile_selected" from="SubtileSelectPopup" to="." method="_on_SubtileSelectPopup_subtile_selected"]

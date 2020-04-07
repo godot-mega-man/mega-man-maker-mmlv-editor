@@ -178,6 +178,26 @@ margin_bottom = 0.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 
+[node name="TitleHBox" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="0"]
+margin_right = 264.0
+
+[node name="InspectorHideBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="0"]
+margin_right = 165.0
+
+[node name="ViewCodeBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="1"]
+margin_left = 169.0
+margin_right = 264.0
+
+[node name="TabContainer" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="1"]
+margin_right = 264.0
+margin_bottom = 560.0
+
+[node name="LevelTab" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer" index="0"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
 [node name="Popups" type="Control" parent="CanvasLayer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -237,5 +257,8 @@ anims/Anim = SubResource( 2 )
 [connection signal="gui_input" from="CanvasLayer/Control/EditAreaRect" to="." method="_on_EditAreaRect_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_exited"]
+[connection signal="tile_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/TilemapTab" to="." method="_on_TilemapTab_tile_selected"]
 
 [editable path="Level"]
+
+[editable path="CanvasLayer/Control/InspectorPanel"]

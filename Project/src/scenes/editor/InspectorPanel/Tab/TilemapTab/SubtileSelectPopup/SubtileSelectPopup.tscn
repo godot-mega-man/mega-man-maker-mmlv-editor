@@ -1,0 +1,1254 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TileTextureButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/editor_ui/SubtileHighlight/SubtileHighlight.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/editor_ui/SubtileHighlight/SubtileHighlightNone.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/SubtileSelectPopup/SubtileSelectPopup.gd" type="Script" id=5]
+
+[node name="SubtileSelectPopup" type="WindowDialog"]
+visible = true
+margin_right = 366.0
+margin_bottom = 366.0
+grow_vertical = 0
+window_title = "Select a Subtile"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PreviewTextureRect" type="TextureRect" parent="MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 358.0
+margin_bottom = 358.0
+mouse_filter = 2
+expand = true
+
+[node name="TileTextureButton0" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_right = 32.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileTextureButton1" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 34.0
+margin_right = 66.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 1
+
+[node name="TileTextureButton2" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_right = 103.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 2
+
+[node name="TileTextureButton3" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_right = 137.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 3
+
+[node name="TileTextureButton4" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_right = 174.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 4
+
+[node name="TileTextureButton5" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_right = 208.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 5
+
+[node name="TileTextureButton6" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_right = 245.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 6
+
+[node name="TileTextureButton7" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_right = 279.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 7
+
+[node name="TileTextureButton8" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 283.0
+margin_right = 315.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 8
+
+[node name="TileTextureButton9" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 318.0
+margin_right = 350.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 9
+
+[node name="TileTextureButton10" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 1.0
+margin_top = 34.0
+margin_right = 33.0
+margin_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 10
+
+[node name="TileTextureButton11" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 66.0
+margin_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 11
+
+[node name="TileTextureButton12" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 72.0
+margin_top = 34.0
+margin_right = 104.0
+margin_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 12
+
+[node name="TileTextureButton13" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 34.0
+margin_right = 137.0
+margin_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 13
+
+[node name="TileTextureButton14" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 35.0
+margin_right = 174.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 14
+
+[node name="TileTextureButton15" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_top = 35.0
+margin_right = 208.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 15
+
+[node name="TileTextureButton16" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 35.0
+margin_right = 245.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 16
+
+[node name="TileTextureButton17" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 35.0
+margin_right = 279.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 17
+
+[node name="TileTextureButton18" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 283.0
+margin_top = 35.0
+margin_right = 315.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 18
+
+[node name="TileTextureButton19" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 318.0
+margin_top = 35.0
+margin_right = 350.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 19
+
+[node name="TileTextureButton20" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_top = 71.0
+margin_right = 32.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 20
+
+[node name="TileTextureButton21" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 71.0
+margin_right = 67.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 21
+
+[node name="TileTextureButton22" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 71.0
+margin_right = 103.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 22
+
+[node name="TileTextureButton23" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 71.0
+margin_right = 137.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 23
+
+[node name="TileTextureButton24" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 71.0
+margin_right = 174.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 24
+
+[node name="TileTextureButton25" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_top = 71.0
+margin_right = 208.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 25
+
+[node name="TileTextureButton26" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 71.0
+margin_right = 245.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 26
+
+[node name="TileTextureButton27" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 71.0
+margin_right = 279.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 27
+
+[node name="TileTextureButton28" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 284.0
+margin_top = 71.0
+margin_right = 316.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 28
+
+[node name="TileTextureButton29" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 318.0
+margin_top = 71.0
+margin_right = 350.0
+margin_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 29
+
+[node name="TileTextureButton30" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 1.0
+margin_top = 105.0
+margin_right = 33.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 30
+
+[node name="TileTextureButton31" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 105.0
+margin_right = 67.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 31
+
+[node name="TileTextureButton32" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 105.0
+margin_right = 103.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 32
+
+[node name="TileTextureButton33" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 105.0
+margin_right = 137.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 33
+
+[node name="TileTextureButton34" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 105.0
+margin_right = 174.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 34
+
+[node name="TileTextureButton35" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_top = 105.0
+margin_right = 208.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 35
+
+[node name="TileTextureButton36" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 212.0
+margin_top = 105.0
+margin_right = 244.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 36
+
+[node name="TileTextureButton37" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 105.0
+margin_right = 279.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 37
+
+[node name="TileTextureButton38" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 284.0
+margin_top = 105.0
+margin_right = 316.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 38
+
+[node name="TileTextureButton39" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 318.0
+margin_top = 106.0
+margin_right = 350.0
+margin_bottom = 138.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 39
+
+[node name="TileTextureButton40" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 1.0
+margin_top = 141.0
+margin_right = 33.0
+margin_bottom = 173.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 40
+
+[node name="TileTextureButton41" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 141.0
+margin_right = 67.0
+margin_bottom = 173.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 41
+
+[node name="TileTextureButton42" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 141.0
+margin_right = 103.0
+margin_bottom = 173.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 42
+
+[node name="TileTextureButton43" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 141.0
+margin_right = 137.0
+margin_bottom = 173.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 43
+
+[node name="TileTextureButton44" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 141.0
+margin_right = 174.0
+margin_bottom = 173.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 44
+
+[node name="TileTextureButton45" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_top = 142.0
+margin_right = 208.0
+margin_bottom = 174.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 45
+
+[node name="TileTextureButton46" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 212.0
+margin_top = 142.0
+margin_right = 244.0
+margin_bottom = 174.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 46
+
+[node name="TileTextureButton47" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 142.0
+margin_right = 279.0
+margin_bottom = 174.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 47
+
+[node name="TileTextureButton48" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 284.0
+margin_top = 142.0
+margin_right = 316.0
+margin_bottom = 174.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 48
+
+[node name="TileTextureButton49" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_top = 177.0
+margin_right = 32.0
+margin_bottom = 209.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 49
+
+[node name="TileTextureButton50" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 176.0
+margin_right = 67.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 50
+
+[node name="TileTextureButton51" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 176.0
+margin_right = 103.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 51
+
+[node name="TileTextureButton52" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 106.0
+margin_top = 176.0
+margin_right = 138.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 52
+
+[node name="TileTextureButton53" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 176.0
+margin_right = 174.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 53
+
+[node name="TileTextureButton54" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 177.0
+margin_top = 176.0
+margin_right = 209.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 54
+
+[node name="TileTextureButton55" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 176.0
+margin_right = 245.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 55
+
+[node name="TileTextureButton56" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 176.0
+margin_right = 279.0
+margin_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 56
+
+[node name="TileTextureButton57" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 1.0
+margin_top = 212.0
+margin_right = 33.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 57
+
+[node name="TileTextureButton58" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 213.0
+margin_right = 67.0
+margin_bottom = 245.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 58
+
+[node name="TileTextureButton59" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 212.0
+margin_right = 103.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 59
+
+[node name="TileTextureButton60" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 212.0
+margin_right = 137.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 60
+
+[node name="TileTextureButton61" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 141.0
+margin_top = 212.0
+margin_right = 173.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 61
+
+[node name="TileTextureButton62" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 177.0
+margin_top = 212.0
+margin_right = 209.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 62
+
+[node name="TileTextureButton63" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 212.0
+margin_right = 245.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 63
+
+[node name="TileTextureButton64" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 212.0
+margin_right = 279.0
+margin_bottom = 244.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 64
+
+[node name="TileTextureButton65" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_top = 247.0
+margin_right = 32.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 65
+
+[node name="TileTextureButton66" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 35.0
+margin_top = 247.0
+margin_right = 67.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 66
+
+[node name="TileTextureButton67" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 71.0
+margin_top = 247.0
+margin_right = 103.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 67
+
+[node name="TileTextureButton68" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 105.0
+margin_top = 246.0
+margin_right = 137.0
+margin_bottom = 278.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 68
+
+[node name="TileTextureButton69" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 142.0
+margin_top = 247.0
+margin_right = 174.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 69
+
+[node name="TileTextureButton70" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 176.0
+margin_top = 247.0
+margin_right = 208.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 70
+
+[node name="TileTextureButton71" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 247.0
+margin_right = 245.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 71
+
+[node name="TileTextureButton72" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 247.0
+margin_right = 279.0
+margin_bottom = 279.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 72
+
+[node name="TileTextureButton73" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 283.0
+margin_right = 245.0
+margin_bottom = 315.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 73
+
+[node name="TileTextureButton74" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 283.0
+margin_right = 279.0
+margin_bottom = 315.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 74
+
+[node name="TileTextureButton75" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 213.0
+margin_top = 318.0
+margin_right = 245.0
+margin_bottom = 350.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 75
+
+[node name="TileTextureButton76" type="TextureButton" parent="MarginContainer/PreviewTextureRect"]
+modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 247.0
+margin_top = 318.0
+margin_right = 279.0
+margin_bottom = 350.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+tile_id = 76

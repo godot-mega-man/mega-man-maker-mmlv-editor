@@ -25,6 +25,8 @@ extends Node2D
 #      Properties
 #-------------------------------------------------
 
+onready var tilemap_preview = $TileMapPreview
+
 var left_mouse_down : bool = false
 var right_mouse_down : bool = false
 
@@ -38,7 +40,12 @@ var current_tile_id : int setget set_current_tile_id
 
 func _process(delta: float) -> void:
 	if follow_mouse_pointer:
-		set_global_position(get_global_mouse_position())
+		global_position = get_global_mouse_position()
+		
+		#Snap position to the tilemap (if possible)
+		if tilemap != null:
+			position -= (tilemap.cell_size * 0.5)
+			position = position.snapped(tilemap.cell_size)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -81,6 +88,14 @@ func set_tile(tile_id : int):
 #      Private Methods
 #-------------------------------------------------
 
+func _update_tilemap_preview():
+	if tilemap == null:
+		return
+	
+	tilemap_preview.tile_set = tilemap.tile_set
+	tilemap_preview.set_cellv(Vector2(0, 0), current_tile_id)
+	tilemap_preview.cell_size = tilemap.cell_size
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
@@ -91,6 +106,8 @@ func set_follow_mouse_pointer(val):
 
 func set_tilemap(val):
 	tilemap = val
+	_update_tilemap_preview()
 
 func set_current_tile_id(val):
 	current_tile_id = val
+	_update_tilemap_preview()

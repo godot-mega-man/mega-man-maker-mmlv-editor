@@ -207,6 +207,9 @@ func _on_ToolBar_pressed() -> void:
 			tile_painter.tilemap = $Level/GameSpikeTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
 
+func _on_TilemapTab_tile_selected(tile_id) -> void:
+	tile_painter.current_tile_id = tile_id
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
