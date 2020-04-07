@@ -1,9 +1,9 @@
-# TileTextureButton
+# SubtileSelectPopup
 # Written by: First
 
-extends TextureButton
+extends WindowDialog
 
-class_name TileTextureButton
+#class_name optional
 
 """
 	Enter desc here.
@@ -17,9 +17,7 @@ class_name TileTextureButton
 #      Signals
 #-------------------------------------------------
 
-signal pressed_id(tile_id, tile_texture)
-signal mouse_entered_btn(texture, tileset_name)
-signal mouse_exited_btn(texture)
+signal subtile_selected(tile_id)
 
 #-------------------------------------------------
 #      Constants
@@ -29,19 +27,15 @@ signal mouse_exited_btn(texture)
 #      Properties
 #-------------------------------------------------
 
-export var tile_id : int
-var tileset_name : String
-
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
 
 func _ready() -> void:
-	connect("mouse_entered", self, "_on_mouse_entered")
-	connect("mouse_exited", self, "_on_mouse_exited")
-
-func _pressed() -> void:
-	emit_signal("pressed_id", tile_id, texture_normal)
+	#Connect all buttons
+	for i in $MarginContainer/PreviewTextureRect.get_children():
+		if i is TileTextureButton:
+			i.connect("pressed_id", self, "_on_btn_pressed_id")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -55,15 +49,16 @@ func _pressed() -> void:
 #      Public Methods
 #-------------------------------------------------
 
+func set_preview_texture(texture : Texture):
+	$MarginContainer/PreviewTextureRect.texture = texture
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
-func _on_mouse_entered():
-	emit_signal("mouse_entered_btn", texture_normal, tileset_name)
-
-func _on_mouse_exited():
-	emit_signal("mouse_exited_btn", texture_normal)
+func _on_btn_pressed_id(id : int, texture : Texture):
+	emit_signal("subtile_selected", id)
+	hide()
 
 #-------------------------------------------------
 #      Private Methods

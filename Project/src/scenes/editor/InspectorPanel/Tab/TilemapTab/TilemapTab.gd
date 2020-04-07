@@ -38,8 +38,11 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
+onready var subtile_button = $SubTilePanel/SubtileButton
+onready var subtile_select_popup = $SubtileSelectPopup
 
 var current_selected_tile_id : int
+var current_subtile_id : int
 
 #-------------------------------------------------
 #      Notifications
@@ -64,18 +67,33 @@ func _ready() -> void:
 #      Connections
 #-------------------------------------------------
 
-func _on_tile_btn_pressed_id(tile_id : int): 
+func _on_tile_btn_pressed_id(tile_id : int, tile_texture : Texture): 
 	current_selected_tile_id = tile_id * GameTileSetData.TILE_COUNT
-	emit_signal("tile_selected", current_selected_tile_id)
+	current_subtile_id = 0
+	emit_signal("tile_selected", current_selected_tile_id + current_subtile_id)
+	
+	#Set subtile button texture
+	subtile_button.icon = tile_texture
+	
+	#Set subtile preview texture
+	if tile_texture is AtlasTexture:
+		subtile_select_popup.set_preview_texture(tile_texture.atlas)
 
 func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String):
-	preview_texture_rect.texture = texture
 	preview_tex_anim.play("Show")
 	preview_tex_label.text = tileset_name
+	if texture is AtlasTexture:
+		preview_texture_rect.texture = texture.atlas
 
 func _on_tile_btn_mouse_exited_btn(texture):
 	preview_tex_anim.play("Hide")
 
+func _on_SubtileButton_pressed() -> void:
+	subtile_select_popup.popup()
+
+func _on_SubtileSelectPopup_subtile_selected(tile_id) -> void:
+	current_subtile_id = tile_id
+	emit_signal("tile_selected", current_selected_tile_id + current_subtile_id)
 
 #-------------------------------------------------
 #      Private Methods
