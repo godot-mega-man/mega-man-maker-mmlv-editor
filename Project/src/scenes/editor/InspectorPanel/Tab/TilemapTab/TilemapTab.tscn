@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapPressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/tilesets/TstMM6Plant.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.gd" type="Script" id=4]
 
 [node name="TilemapTab" instance=ExtResource( 1 )]
@@ -32,6 +33,31 @@ margin_right = -7.0
 margin_bottom = 20.0
 text = "Subtiles"
 icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PreviewTextureRect" type="TextureRect" parent="." index="2"]
+margin_left = -188.0
+margin_top = 16.0
+margin_right = -12.0
+margin_bottom = 200.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 184, 0 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PreviewTextureRect" index="0"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
