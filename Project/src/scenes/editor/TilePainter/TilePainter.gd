@@ -21,6 +21,8 @@ extends Node2D
 #      Constants
 #-------------------------------------------------
 
+const EYEDROP_MODIFIER_KEY = KEY_ALT
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -67,8 +69,13 @@ func process_input(event : InputEvent):
 		if event.button_index == BUTTON_RIGHT:
 			right_mouse_down = event.is_pressed()
 	
-	if left_mouse_down: #Set tile by current tile id
-		set_tile(current_tile_id)
+	if left_mouse_down:
+		if Input.is_key_pressed(EYEDROP_MODIFIER_KEY):
+			#Eyedropper
+			eyedrop()
+		else:
+			#Set tile by current tile id
+			set_tile(current_tile_id)
 	if right_mouse_down: #Remove
 		set_tile(-1)
 
@@ -79,6 +86,11 @@ func set_tile(tile_id : int):
 		return
 	
 	tilemap.set_cellv(tilemap.world_to_map(self.get_global_position()), tile_id)
+
+#Pick and update current tile from current mouse position.
+func eyedrop():
+	current_tile_id = tilemap.get_cellv(tilemap.world_to_map(self.get_global_position()))
+	_update_tilemap_preview()
 
 #-------------------------------------------------
 #      Connections

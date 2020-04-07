@@ -152,7 +152,7 @@ boot_splash/image="res://assets/images/splash/SplashScreen.png"
 boot_splash/bg_color=Color( 0.921569, 0.921569, 0.921569, 1 )
 config/icon="res://icon128.png"
 config/windows_native_icon="res://icon256.ico"
-config/version="0.5-dev"
+config/version="0.5"
 config/year="2020"
 config/project_creator="Firstject (Snowflakes)"
 
