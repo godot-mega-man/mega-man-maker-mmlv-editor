@@ -212,7 +212,6 @@ __meta__ = {
 visible = false
 
 [node name="VersionZeroWarningDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 16 )]
-visible = false
 
 [node name="ObjectSelector" parent="." instance=ExtResource( 11 )]
 

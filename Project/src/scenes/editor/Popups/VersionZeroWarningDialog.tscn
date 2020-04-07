@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/editor/Popups/VersionZeroWarningDialog.gd" type="Script" id=1]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
 
 [node name="VersionZeroWarningDialog" type="AcceptDialog"]
 anchor_left = 0.5
@@ -13,7 +14,6 @@ margin_right = 178.5
 margin_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
-popup_exclusive = true
 window_title = "Version 0.x Alert"
 dialog_text = "IMPORTANT!
 
@@ -23,4 +23,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 2 )]
 [connection signal="popup_hide" from="." to="." method="_on_VersionZeroWarningDialog_popup_hide"]

@@ -34,9 +34,11 @@ func _ready() -> void:
 	if not is_version_zero():
 		queue_free()
 		return
+	if self.is_visible():
+		return
 	
 	#Popup a warning
-	popup_centered()
+	call_deferred("popup_centered")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -67,5 +69,4 @@ func _on_VersionZeroWarningDialog_popup_hide() -> void:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-
 
