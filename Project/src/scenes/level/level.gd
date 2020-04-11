@@ -338,9 +338,22 @@ func get_player_position() -> Vector2:
 	
 	return Vector2.ZERO
 
+#Update used rect in level config by GameTileMap
+func _update_used_rect():
+	var used_rect = $GameTileMapDrawer.get_used_rect()
+	
+	#p = left, q = right, r = top, t = bottom
+	val_p = used_rect.position.x * $GameTileMapDrawer.cell_size.x
+	val_q = (used_rect.position.x + used_rect.size.x) * $GameTileMapDrawer.cell_size.x
+	val_r = used_rect.position.y * $GameTileMapDrawer.cell_size.y
+	val_s = (used_rect.position.y + used_rect.size.y) * $GameTileMapDrawer.cell_size.y
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
+
+func _on_GameTileMapDrawer_draw() -> void:
+	_update_used_rect()
 
 #-------------------------------------------------
 #      Private Methods
