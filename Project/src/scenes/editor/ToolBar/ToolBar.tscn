@@ -69,6 +69,7 @@ rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Insert New Object
 
 Add a new game object with customizable properties."
+focus_mode = 0
 size_flags_vertical = 3
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 3 )
