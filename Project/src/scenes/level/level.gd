@@ -216,6 +216,7 @@ func get_save() -> String:
 	#Level (cont.)
 	txt_pool.append(_combine_code_line_text("1l", music_track_id))
 	txt_pool.append(_combine_code_line_text("1m", music_game_id))
+	_update_used_rect() #Val p, q, r, and s respectively
 	txt_pool.append(_combine_code_line_text("1p", val_p))
 	txt_pool.append(_combine_code_line_text("1q", val_q))
 	txt_pool.append(_combine_code_line_text("1r", val_r))
@@ -348,12 +349,10 @@ func _update_used_rect():
 	val_r = used_rect.position.y * $GameTileMapDrawer.cell_size.y
 	val_s = (used_rect.position.y + used_rect.size.y) * $GameTileMapDrawer.cell_size.y
 
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
-
-func _on_GameTileMapDrawer_draw() -> void:
-	_update_used_rect()
 
 #-------------------------------------------------
 #      Private Methods
