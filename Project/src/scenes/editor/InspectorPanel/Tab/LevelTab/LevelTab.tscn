@@ -116,6 +116,7 @@ property_name = "Music Number"
 code = "1m"
 
 [node name="AtbHboxAreaP" parent="ScrollContainer/Vbox" index="16" instance=ExtResource( 2 )]
+visible = false
 margin_top = 438.0
 margin_bottom = 462.0
 missing_value_enabled = false
@@ -123,6 +124,7 @@ property_name = "Area P"
 code = "1p"
 
 [node name="AtbHboxAreaQ" parent="ScrollContainer/Vbox" index="17" instance=ExtResource( 2 )]
+visible = false
 margin_top = 466.0
 margin_bottom = 490.0
 missing_value_enabled = false
@@ -130,6 +132,7 @@ property_name = "Area Q"
 code = "1q"
 
 [node name="AtbHboxAreaR" parent="ScrollContainer/Vbox" index="18" instance=ExtResource( 2 )]
+visible = false
 margin_top = 494.0
 margin_bottom = 518.0
 missing_value_enabled = false
@@ -137,6 +140,7 @@ property_name = "Area R"
 code = "1r"
 
 [node name="AtbHboxAreaS" parent="ScrollContainer/Vbox" index="19" instance=ExtResource( 2 )]
+visible = false
 margin_top = 522.0
 margin_bottom = 546.0
 missing_value_enabled = false
