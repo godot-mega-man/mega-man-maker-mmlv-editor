@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjDeselectEscKeyCtrler.gd" type="Script" id=4]
+
+[sub_resource type="InputEventKey" id=1]
+scancode = 16777217
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
 [node name="ObjectTab" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -80,6 +87,21 @@ margin_top = 270.0
 margin_bottom = 294.0
 property_name = "Option"
 code = "o"
+
+[node name="ObjDeselectEscKeyCtrler" type="Button" parent="." index="1"]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_clip_content = true
+focus_mode = 0
+shortcut = SubResource( 2 )
+text = "5"
+flat = true
+clip_text = true
+expand_icon = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecX" to="." method="_on_AtbHboxObjVecX_value_entered"]
 [connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecY" to="." method="_on_AtbHboxObjVecY_value_entered"]
 [connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjType" to="." method="_on_AtbHboxObjType_value_entered"]
