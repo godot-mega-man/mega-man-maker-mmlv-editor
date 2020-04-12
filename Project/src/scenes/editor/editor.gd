@@ -80,6 +80,8 @@ func _on_MenuPanel_new_file() -> void:
 	level.clear_level()
 func _on_MenuPanel_opening_file() -> void:
 	file_access_ctrl.open_file()
+func _on_MenuPanel_opening_containing_folder() -> void:
+	file_access_ctrl.open_containing_folder()
 func _on_MenuPanel_saving_file() -> void:
 	file_access_ctrl.save_file()
 func _on_MenuPanel_saving_file_as() -> void:

@@ -19,6 +19,7 @@ class_name MenuBar
 
 signal new_file
 signal opening_file
+signal opening_containing_folder
 signal saving_file
 signal saving_file_as
 signal opening_preferences
@@ -59,10 +60,11 @@ signal view_menu_about_to_show
 
 const ID_MENU_FILE_NEW = 0
 const ID_MENU_FILE_OPEN = 1
-const ID_MENU_FILE_SAVE = 3
-const ID_MENU_FILE_SAVE_AS = 4
-const ID_MENU_FILE_PREFERENCES = 6
-const ID_MENU_FILE_EXIT = 8
+const ID_MENU_FILE_OPEN_CONTAINING_FOLDER = 2
+const ID_MENU_FILE_SAVE = 4
+const ID_MENU_FILE_SAVE_AS = 5
+const ID_MENU_FILE_PREFERENCES = 7
+const ID_MENU_FILE_EXIT = 9
 
 const ID_MENU_EDIT_UNDO = 0
 const ID_MENU_EDIT_REDO = 1
@@ -156,6 +158,8 @@ func _init_file_menus():
 	
 	file_menu.get_popup().add_item("Open...", ID_MENU_FILE_OPEN)
 	file_menu.get_popup().set_item_shortcut(ID_MENU_FILE_OPEN, shortcut_file_open, true)
+	
+	file_menu.get_popup().add_item("Open Containing Folder", ID_MENU_FILE_OPEN_CONTAINING_FOLDER)
 	
 	file_menu.get_popup().add_separator()
 	
@@ -277,6 +281,8 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 			emit_signal("new_file")
 		ID_MENU_FILE_OPEN:
 			emit_signal("opening_file")
+		ID_MENU_FILE_OPEN_CONTAINING_FOLDER:
+			emit_signal("opening_containing_folder")
 		ID_MENU_FILE_SAVE:
 			emit_signal("saving_file")
 		ID_MENU_FILE_SAVE_AS:

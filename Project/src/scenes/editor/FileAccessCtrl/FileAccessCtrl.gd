@@ -58,6 +58,9 @@ func _ready() -> void:
 func open_file():
 	$OpenFileDialog.popup()
 
+func open_containing_folder():
+	OS.shell_open(_get_mega_maker_path())
+
 func save_file():
 	if current_level_dir.empty() or current_level_path.empty():
 		$SaveFileDialog.popup()
