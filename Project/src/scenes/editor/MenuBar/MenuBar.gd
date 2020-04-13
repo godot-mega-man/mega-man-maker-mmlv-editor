@@ -52,6 +52,7 @@ signal report_bug
 signal about
 
 #Generic signals
+signal edit_menu_about_to_show
 signal view_menu_about_to_show
 
 #-------------------------------------------------
@@ -181,6 +182,7 @@ func _init_file_menus():
 
 func _init_edit_menus():
 	edit_menu.get_popup().connect("id_pressed", self, "_on_edit_menu_popup_pressed")
+	edit_menu.get_popup().connect("about_to_show", self, "_on_edit_menu_popup_about_to_show")
 	
 	edit_menu.get_popup().add_item("Undo", ID_MENU_EDIT_UNDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_UNDO, shortcut_edit_undo, true)
@@ -337,6 +339,10 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 			OS.shell_open(ISSUE_URL)
 		ID_MENU_HELP_ABOUT:
 			emit_signal("about")
+
+#Connected from _init_edit_menu()
+func _on_edit_menu_popup_about_to_show():
+	emit_signal("edit_menu_about_to_show")
 
 #Connected from _init_view_menu()
 func _on_view_menu_popup_about_to_show():

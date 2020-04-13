@@ -154,6 +154,14 @@ func _on_Level_cleared_level() -> void:
 	file_access_ctrl.clear_current_level_path()
 	inspector_panel.load_level_config()
 
+func _on_MenuPanel_edit_menu_about_to_show() -> void:
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_UNDO, not LevelUndo.get_undo_redo().has_undo()
+	)
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_REDO, not LevelUndo.get_undo_redo().has_redo()
+	)
+
 func _on_MenuPanel_view_menu_about_to_show() -> void:
 	menu_bar.view_menu.get_popup().set_item_checked(
 		MenuBar.ID_MENU_VIEW_SCREEN_GRID, level.game_grid.is_visible()
