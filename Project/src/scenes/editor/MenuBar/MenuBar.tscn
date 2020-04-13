@@ -53,9 +53,10 @@ scancode = 90
 shortcut = SubResource( 11 )
 
 [sub_resource type="InputEventKey" id=13]
+shift = true
 control = true
 command = true
-scancode = 89
+scancode = 90
 
 [sub_resource type="ShortCut" id=14]
 shortcut = SubResource( 13 )
