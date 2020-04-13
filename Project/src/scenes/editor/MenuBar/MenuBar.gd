@@ -293,6 +293,10 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 #Connected from _init_edit_menu()
 func _on_edit_menu_popup_pressed(id : int) -> void:
 	match id:
+		ID_MENU_EDIT_UNDO:
+			emit_signal("undo")
+		ID_MENU_EDIT_REDO:
+			emit_signal("redo")
 		ID_MENU_EDIT_DELETE:
 			emit_signal("delete")
 

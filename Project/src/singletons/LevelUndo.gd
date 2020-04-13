@@ -25,7 +25,7 @@ extends Node
 #      Properties
 #-------------------------------------------------
 
-var undo_redo : UndoRedo setget , get_undo_redo
+var undo_redo := UndoRedo.new() setget , get_undo_redo
 
 #-------------------------------------------------
 #      Notifications
