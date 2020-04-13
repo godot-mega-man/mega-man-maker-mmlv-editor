@@ -22,6 +22,7 @@ extends Node2D
 #-------------------------------------------------
 
 const EYEDROP_MODIFIER_KEY = KEY_ALT
+const UNDO_PAINT_TILE_ACTION_NAME = "Paint Tilemap"
 
 #-------------------------------------------------
 #      Properties
@@ -31,6 +32,7 @@ onready var tilemap_preview = $TileMapPreview
 
 var left_mouse_down : bool = false
 var right_mouse_down : bool = false
+var was_eyedrop_modifier_key_pressed : bool = false
 
 var follow_mouse_pointer : bool setget set_follow_mouse_pointer
 var tilemap : TileMap setget set_tilemap
@@ -66,8 +68,18 @@ func process_input(event : InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			left_mouse_down = event.is_pressed()
+			
+			if event.is_pressed():
+				_register_undo_start()
+			else:
+				_register_undo_end()
 		if event.button_index == BUTTON_RIGHT:
 			right_mouse_down = event.is_pressed()
+			
+			if event.is_pressed():
+				_register_undo_start()
+			else:
+				_register_undo_end()
 	
 	if left_mouse_down:
 		if Input.is_key_pressed(EYEDROP_MODIFIER_KEY):
@@ -85,7 +97,16 @@ func set_tile(tile_id : int):
 	if tilemap == null:
 		return
 	
-	tilemap.set_cellv(tilemap.world_to_map(self.get_global_position()), tile_id)
+	var cell_position = tilemap.world_to_map(self.get_global_position())
+	var cell_tile_id_set = tile_id
+	var cell_tile_id_undo = tilemap.get_cellv(cell_position)
+	
+	if cell_tile_id_set == cell_tile_id_undo:
+		return
+	
+	LevelUndo.get_undo_redo().add_do_method(tilemap, "set_cellv", cell_position, cell_tile_id_set)
+	LevelUndo.get_undo_redo().add_undo_method(tilemap, "set_cellv", cell_position, cell_tile_id_undo)
+	tilemap.set_cellv(cell_position, cell_tile_id_set)
 
 #Pick and update current tile from current mouse position.
 func eyedrop():
@@ -107,6 +128,19 @@ func _update_tilemap_preview():
 	tilemap_preview.tile_set = tilemap.tile_set
 	tilemap_preview.set_cellv(Vector2(0, 0), current_tile_id)
 	tilemap_preview.cell_size = tilemap.cell_size
+
+func _register_undo_start():
+	was_eyedrop_modifier_key_pressed = Input.is_key_pressed(EYEDROP_MODIFIER_KEY)
+	if was_eyedrop_modifier_key_pressed:
+		return
+	
+	LevelUndo.get_undo_redo().create_action(UNDO_PAINT_TILE_ACTION_NAME)
+
+func _register_undo_end():
+	if was_eyedrop_modifier_key_pressed:
+		return
+	
+	LevelUndo.get_undo_redo().commit_action()
 
 #-------------------------------------------------
 #      Setters & Getters
