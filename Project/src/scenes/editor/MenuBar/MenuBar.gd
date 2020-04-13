@@ -52,6 +52,7 @@ signal report_bug
 signal about
 
 #Generic signals
+signal edit_menu_about_to_show
 signal view_menu_about_to_show
 
 #-------------------------------------------------
@@ -181,14 +182,13 @@ func _init_file_menus():
 
 func _init_edit_menus():
 	edit_menu.get_popup().connect("id_pressed", self, "_on_edit_menu_popup_pressed")
+	edit_menu.get_popup().connect("about_to_show", self, "_on_edit_menu_popup_about_to_show")
 	
 	edit_menu.get_popup().add_item("Undo", ID_MENU_EDIT_UNDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_UNDO, shortcut_edit_undo, true)
-	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_UNDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Redo", ID_MENU_EDIT_REDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_REDO, shortcut_edit_redo, true)
-	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_REDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_separator()
 	
@@ -295,6 +295,10 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 #Connected from _init_edit_menu()
 func _on_edit_menu_popup_pressed(id : int) -> void:
 	match id:
+		ID_MENU_EDIT_UNDO:
+			emit_signal("undo")
+		ID_MENU_EDIT_REDO:
+			emit_signal("redo")
 		ID_MENU_EDIT_DELETE:
 			emit_signal("delete")
 
@@ -335,6 +339,10 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 			OS.shell_open(ISSUE_URL)
 		ID_MENU_HELP_ABOUT:
 			emit_signal("about")
+
+#Connected from _init_edit_menu()
+func _on_edit_menu_popup_about_to_show():
+	emit_signal("edit_menu_about_to_show")
 
 #Connected from _init_view_menu()
 func _on_view_menu_popup_about_to_show():

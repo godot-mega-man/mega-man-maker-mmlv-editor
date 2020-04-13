@@ -91,6 +91,10 @@ func _on_MenuPanel_opening_preferences() -> void:
 func _on_MenuPanel_exiting() -> void:
 	get_tree().quit()
 
+func _on_MenuPanel_undo() -> void:
+	LevelUndo.get_undo_redo().undo()
+func _on_MenuPanel_redo() -> void:
+	LevelUndo.get_undo_redo().redo()
 func _on_MenuPanel_delete() -> void:
 	object_deleter.delete()
 
@@ -149,6 +153,14 @@ func _on_Level_cleared_level() -> void:
 	_update_window_title_by_level_path("")
 	file_access_ctrl.clear_current_level_path()
 	inspector_panel.load_level_config()
+
+func _on_MenuPanel_edit_menu_about_to_show() -> void:
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_UNDO, not LevelUndo.get_undo_redo().has_undo()
+	)
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_REDO, not LevelUndo.get_undo_redo().has_redo()
+	)
 
 func _on_MenuPanel_view_menu_about_to_show() -> void:
 	menu_bar.view_menu.get_popup().set_item_checked(
