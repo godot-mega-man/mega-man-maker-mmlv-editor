@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/editor/Popups/ExitUnsavedDialog/ExitUnsavedDialog.gd" type="Script" id=1]
+
+[node name="ExitUnsavedDialog" type="ConfirmationDialog"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -35.0
+margin_right = 100.0
+margin_bottom = 35.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
