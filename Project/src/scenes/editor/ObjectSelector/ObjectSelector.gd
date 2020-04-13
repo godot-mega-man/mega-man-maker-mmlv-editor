@@ -54,6 +54,8 @@ onready var highlight_rect = $HighlightRect
 var select_mode : int # Enum of SelectMode
 var select_begin_pos : Vector2
 
+var moving_prev_position : PoolVector2Array #Used in UndoRedo operation with node positions
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -79,12 +81,14 @@ func process_input(event : InputEvent):
 			# Otherwise, select mode become 'moving selected objects'.
 			if has_selected_object_under_cursor():
 				select_mode = SelectMode.MOVING
+				_moving_objects_start()
 			else:
 				select_mode = SelectMode.SELECTING
 		else:
 			#Check if previous mode is MOVING after the mouse button is released.
 			if select_mode == SelectMode.MOVING:
 				set_deferred("select_mode", SelectMode.NONE)
+				_moving_objects_end()
 			else:
 				select_mode = SelectMode.NONE
 		_left_mouse_press_event(event)
@@ -189,6 +193,26 @@ func _mouse_motion_event(event : InputEvent):
 				i.position += get_snapped_grid_mouse_pos() - select_begin_pos
 		
 		select_begin_pos = get_snapped_grid_mouse_pos()
+
+func _moving_objects_start():
+	LevelUndo.get_undo_redo().create_action("Move Objects")
+	moving_prev_position = PoolVector2Array()
+	
+	for i in SelectedObjects.selected_objects:
+		if i is Node2D: #Safe call
+			moving_prev_position.append(i.position)
+
+func _moving_objects_end():
+	var idx : int
+	
+	for i in SelectedObjects.selected_objects:
+		if i is Node2D: #Safe call
+			LevelUndo.get_undo_redo().add_do_property(i, "position", i.position)
+			LevelUndo.get_undo_redo().add_undo_property(i, "position", moving_prev_position[idx])
+		
+		idx += 1
+	
+	LevelUndo.get_undo_redo().commit_action()
 
 #-------------------------------------------------
 #      Setters & Getters
