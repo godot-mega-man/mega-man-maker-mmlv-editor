@@ -162,7 +162,7 @@ EditorLogBox="*res://src/scenes/editor/MessageLogBox/EditorLogBox.tscn"
 WindowTitleUpdater="*res://src/singletons/WindowTitleUpdater.tscn"
 EditMode="*res://src/singletons/EditMode.tscn"
 SelectedObjects="*res://src/singletons/SelectedObjects.gd"
-LevelUndoRedo="*res://src/singletons/LevelUndoRedo.gd"
+LevelUndo="*res://src/singletons/LevelUndo.gd"
 
 [display]
 
