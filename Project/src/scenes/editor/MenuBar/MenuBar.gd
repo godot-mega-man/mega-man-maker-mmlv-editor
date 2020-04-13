@@ -184,11 +184,9 @@ func _init_edit_menus():
 	
 	edit_menu.get_popup().add_item("Undo", ID_MENU_EDIT_UNDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_UNDO, shortcut_edit_undo, true)
-	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_UNDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_item("Redo", ID_MENU_EDIT_REDO)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_REDO, shortcut_edit_redo, true)
-	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_REDO, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_separator()
 	
