@@ -226,8 +226,6 @@ add_target_path = NodePath("../Level/Objects")
 
 [node name="TilePainter" parent="." instance=ExtResource( 15 )]
 
-[node name="ExitHandler" type="Node" parent="."]
-
 [node name="EditorInitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Anim"
 anims/Anim = SubResource( 2 )

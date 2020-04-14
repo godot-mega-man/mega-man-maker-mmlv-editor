@@ -3,7 +3,6 @@
 [ext_resource path="res://src/scenes/editor/Popups/ExitUnsavedDialog/ExitUnsavedDialog.gd" type="Script" id=1]
 
 [node name="ExitUnsavedDialog" type="ConfirmationDialog"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

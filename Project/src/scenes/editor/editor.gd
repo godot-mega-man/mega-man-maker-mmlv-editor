@@ -140,19 +140,20 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 			inspector_panel.load_level_config()
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
-		
-	
+			
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
 	_update_window_title_by_level_path(path)
 	EditorLogBox.add_message("Level saved at " + path)
+	UnsaveChanges.set_activated(false)
 
 #New level
 func _on_Level_cleared_level() -> void:
 	_update_window_title_by_level_path("")
 	file_access_ctrl.clear_current_level_path()
 	inspector_panel.load_level_config()
+	UnsaveChanges.set_activated(false)
 
 func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	menu_bar.edit_menu.get_popup().set_item_disabled(

@@ -170,6 +170,7 @@ WindowTitleUpdater="*res://src/singletons/WindowTitleUpdater.tscn"
 EditMode="*res://src/singletons/EditMode.tscn"
 SelectedObjects="*res://src/singletons/SelectedObjects.gd"
 LevelUndo="*res://src/singletons/LevelUndo.gd"
+UnsaveChanges="*res://src/singletons/UnsaveChanges.gd"
 
 [display]
 

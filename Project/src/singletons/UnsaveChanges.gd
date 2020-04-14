@@ -1,4 +1,4 @@
-# WindowTitleUpdater
+# UnsaveChanges
 # Written by: First
 
 extends Node
@@ -21,15 +21,11 @@ extends Node
 #      Constants
 #-------------------------------------------------
 
-const NEW_LEVEL_TITLE_NAME = "Untitled"
-const UNSAVE_CHANGES_SYMBOL = "(*)"
-
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-export (String) var current_level_file_path = "" setget set_current_level_file_path
-export (bool) var has_unsave_changes
+var activated : bool setget set_activated, is_activated
 
 #-------------------------------------------------
 #      Notifications
@@ -55,35 +51,14 @@ export (bool) var has_unsave_changes
 #      Private Methods
 #-------------------------------------------------
 
-func _update_title():
-	var title : String
-	
-	if current_level_file_path.empty():
-		title += NEW_LEVEL_TITLE_NAME
-	else:
-		title += _get_filename_from_path(current_level_file_path)
-	
-	title += str(
-		" - ",
-		ProjectSettings.get_setting("application/config/name"),
-		" ",
-		"v",
-		ProjectSettings.get_setting("application/config/version")
-	)
-	
-	if has_unsave_changes:
-		title += " "
-		title += UNSAVE_CHANGES_SYMBOL
-	
-	OS.set_window_title(title)
-
-func _get_filename_from_path(path : String):
-	return (path.split("/") as Array).back()
-
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
 
-func set_current_level_file_path(val : String) -> void:
-	current_level_file_path = val
-	_update_title()
+func set_activated(set : bool) -> void:
+	activated = set
+	
+	WindowTitleUpdater.has_unsave_changes = set
+
+func is_activated() -> bool:
+	return activated
