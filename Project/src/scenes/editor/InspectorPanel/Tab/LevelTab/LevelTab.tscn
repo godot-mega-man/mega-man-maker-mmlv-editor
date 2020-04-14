@@ -120,7 +120,7 @@ visible = false
 margin_top = 438.0
 margin_bottom = 462.0
 missing_value_enabled = false
-property_name = "Area P"
+property_name = "Left Most Position Geometry"
 code = "1p"
 
 [node name="AtbHboxAreaQ" parent="ScrollContainer/Vbox" index="17" instance=ExtResource( 2 )]
@@ -128,7 +128,7 @@ visible = false
 margin_top = 466.0
 margin_bottom = 490.0
 missing_value_enabled = false
-property_name = "Area Q"
+property_name = "Right Most Position Geometry"
 code = "1q"
 
 [node name="AtbHboxAreaR" parent="ScrollContainer/Vbox" index="18" instance=ExtResource( 2 )]
@@ -136,7 +136,7 @@ visible = false
 margin_top = 494.0
 margin_bottom = 518.0
 missing_value_enabled = false
-property_name = "Area R"
+property_name = "Top Most Position Geometry"
 code = "1r"
 
 [node name="AtbHboxAreaS" parent="ScrollContainer/Vbox" index="19" instance=ExtResource( 2 )]
@@ -144,7 +144,7 @@ visible = false
 margin_top = 522.0
 margin_bottom = 546.0
 missing_value_enabled = false
-property_name = "Area S"
+property_name = "Bottom Most Position Geometry"
 code = "1s"
 [connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxVersion" to="." method="_on_AtbHboxVersion_value_entered"]
 [connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxLevelName" to="." method="_on_AtbHboxLevelName_value_entered"]

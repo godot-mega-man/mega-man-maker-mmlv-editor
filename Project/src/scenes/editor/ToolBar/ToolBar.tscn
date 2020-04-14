@@ -69,6 +69,7 @@ rect_min_size = Vector2( 32, 32 )
 hint_tooltip = "Insert New Object
 
 Add a new game object with customizable properties."
+focus_mode = 0
 size_flags_vertical = 3
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 3 )
@@ -109,7 +110,8 @@ custom_constants/separation = 12
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Object Edit Mode"
+hint_tooltip = "Object Edit Tool:
+* Left Button: Add to current selection or move selected object."
 focus_mode = 0
 toggle_mode = true
 pressed = true
@@ -128,7 +130,10 @@ margin_left = 44.0
 margin_right = 76.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Tile Edit Mode"
+hint_tooltip = "Tile Edit Tool:
+* Left Button: Place tile.
+* Right Button: Remove tile.
+* Alt + Left Button: Pick a tile from the position of the cursor."
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -146,7 +151,10 @@ margin_left = 88.0
 margin_right = 120.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Background Edit Mode"
+hint_tooltip = "Background Edit Tool:
+* Left Button: Place tile.
+* Right Button: Remove tile.
+* Alt + Left Button: Pick a tile from the position of the cursor."
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -164,7 +172,9 @@ margin_left = 132.0
 margin_right = 164.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Active Screen Edit Mode"
+hint_tooltip = "Active Screen Edit Tool:
+* Left Button: Place tile.
+* Right Button: Remove tile."
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -183,7 +193,10 @@ margin_left = 176.0
 margin_right = 208.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Ladder Edit Mode"
+hint_tooltip = "Ladder Edit Tool:
+* Left Button: Place tile.
+* Right Button: Remove tile.
+* Alt + Left Button: Pick a tile from the position of the cursor."
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -202,7 +215,10 @@ margin_left = 220.0
 margin_right = 252.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Spike Edit Mode"
+hint_tooltip = "Spike Edit Tool:
+* Left Button: Place tile.
+* Right Button: Remove tile.
+* Alt + Left Button: Pick a tile from the position of the cursor."
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0

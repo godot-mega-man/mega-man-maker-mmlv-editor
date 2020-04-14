@@ -182,6 +182,10 @@ window/energy_saving/keep_screen_on=false
 
 enabled=PoolStringArray( "welcome_dialog" )
 
+[gui]
+
+timers/tooltip_delay_sec=0.3
+
 [importer_defaults]
 
 texture={

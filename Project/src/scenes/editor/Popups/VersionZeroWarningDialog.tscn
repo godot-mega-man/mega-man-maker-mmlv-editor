@@ -14,10 +14,11 @@ margin_right = 178.5
 margin_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
+popup_exclusive = true
 window_title = "Version 0.x Alert"
 dialog_text = "IMPORTANT!
 
-This is a 0.x build, which means that it is not suitable for use in making levels. Always make a backup of your level first before attempting to edit a level."
+This is a 0.x build, which means that it is not yet suitable for use in making levels. Always make a backup of your level first before saving a level."
 dialog_autowrap = true
 script = ExtResource( 1 )
 __meta__ = {
