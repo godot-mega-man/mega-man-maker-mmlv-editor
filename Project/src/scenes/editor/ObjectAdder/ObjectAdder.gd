@@ -70,6 +70,8 @@ func add_object():
 	if obj is PreviewGameObject:
 		obj.obj_id = 0
 		obj.obj_type = 0
+	
+	UnsaveChanges.set_activated()
 
 #-------------------------------------------------
 #      Connections

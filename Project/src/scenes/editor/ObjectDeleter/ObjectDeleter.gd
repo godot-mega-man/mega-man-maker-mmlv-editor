@@ -52,6 +52,7 @@ func delete():
 			i.queue_free()
 	
 	SelectedObjects.remove_all()
+	UnsaveChanges.set_activated()
 
 #-------------------------------------------------
 #      Connections

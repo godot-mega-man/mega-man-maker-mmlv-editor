@@ -21,6 +21,12 @@ class_name ExitUnsavedDialog
 #      Constants
 #-------------------------------------------------
 
+enum PendingRequest {
+	NEW_FILE,
+	OPEN,
+	EXIT_APP
+}
+
 const ACTION_SAVE_EXIT = "saveexit"
 const ACTION_NOSAVE = "nosave"
 
@@ -32,6 +38,8 @@ const SAVE_DIALOG = "Save changes to level?"
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
+
+export (PendingRequest) var pending_request
 
 #-------------------------------------------------
 #      Notifications

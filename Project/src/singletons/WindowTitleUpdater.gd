@@ -29,7 +29,7 @@ const UNSAVE_CHANGES_SYMBOL = "(*)"
 #-------------------------------------------------
 
 export (String) var current_level_file_path = "" setget set_current_level_file_path
-export (bool) var has_unsave_changes
+export (bool) var unsave_changes setget set_unsave_changes, has_unsave_changes
 
 #-------------------------------------------------
 #      Notifications
@@ -71,7 +71,7 @@ func _update_title():
 		ProjectSettings.get_setting("application/config/version")
 	)
 	
-	if has_unsave_changes:
+	if has_unsave_changes():
 		title += " "
 		title += UNSAVE_CHANGES_SYMBOL
 	
@@ -87,3 +87,10 @@ func _get_filename_from_path(path : String):
 func set_current_level_file_path(val : String) -> void:
 	current_level_file_path = val
 	_update_title()
+
+func set_unsave_changes(val : bool) -> void:
+	unsave_changes = val
+	_update_title()
+
+func has_unsave_changes() -> bool:
+	return unsave_changes

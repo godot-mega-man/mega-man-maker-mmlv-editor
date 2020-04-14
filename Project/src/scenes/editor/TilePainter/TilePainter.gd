@@ -107,6 +107,8 @@ func set_tile(tile_id : int):
 	LevelUndo.get_undo_redo().add_do_method(tilemap, "set_cellv", cell_position, cell_tile_id_set)
 	LevelUndo.get_undo_redo().add_undo_method(tilemap, "set_cellv", cell_position, cell_tile_id_undo)
 	tilemap.set_cellv(cell_position, cell_tile_id_set)
+	
+	UnsaveChanges.set_activated()
 
 #Pick and update current tile from current mouse position.
 func eyedrop():

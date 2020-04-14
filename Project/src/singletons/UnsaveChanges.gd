@@ -55,10 +55,10 @@ var activated : bool setget set_activated, is_activated
 #      Setters & Getters
 #-------------------------------------------------
 
-func set_activated(set : bool) -> void:
+func set_activated(set : bool = true) -> void:
 	activated = set
 	
-	WindowTitleUpdater.has_unsave_changes = set
+	WindowTitleUpdater.set_unsave_changes(set)
 
 func is_activated() -> bool:
 	return activated
