@@ -45,6 +45,7 @@ onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
 onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
+onready var reload_level_dialog = $CanvasLayer/Control/Popups/ReloadLevelDialog
 
 #-------------------------------------------------
 #      Notifications
@@ -261,6 +262,14 @@ func _on_ExitUnsavedDialog_custom_action(action: String) -> void:
 	if action == ExitUnsavedDialog.ACTION_NOSAVE:
 		_do_unsaved_changes_pending_request()
 
+func _on_FileAccessCtrl_file_update_detected() -> void:
+	reload_level_dialog.set_dialog_text_file_path(file_access_ctrl.current_level_path)
+	reload_level_dialog.set_unsaved_changes(UnsaveChanges.is_activated())
+	reload_level_dialog.popup_centered()
+
+func _on_ReloadLevelDialog_confirmed() -> void:
+	file_access_ctrl.reload()
+
 #Connect from _connect_ExitHandler()
 func _on_ExitHandler_quit_requested():
 	exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.EXIT_APP
@@ -322,4 +331,3 @@ func _do_unsaved_changes_pending_request():
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-

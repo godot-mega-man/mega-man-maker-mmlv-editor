@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/editor/FileAccessCtrl/FileAccessCtrl.gd" type="Script" id=1]
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/editor/FileAccessCtrl/FileUpdateChecker.tscn" type="PackedScene" id=3]
 
 [node name="FileAccessCtrl" type="Control"]
 anchor_right = 1.0
@@ -53,5 +54,8 @@ __meta__ = {
 }
 
 [node name="AnimatedPopupAnim" parent="SaveFileDialog" instance=ExtResource( 2 )]
+
+[node name="FileUpdateChecker" parent="." instance=ExtResource( 3 )]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
+[connection signal="detected" from="FileUpdateChecker" to="." method="_on_FileUpdateChecker_detected"]

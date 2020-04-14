@@ -21,6 +21,8 @@ signal opened_file(dir, path)
 
 signal saved_file(dir, path)
 
+signal file_update_detected
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -31,6 +33,7 @@ signal saved_file(dir, path)
 
 onready var open_file_dialog = $OpenFileDialog
 onready var save_file_dialog = $SaveFileDialog
+onready var file_update_checker = $FileUpdateChecker
 
 var current_level_dir : String
 var current_level_path : String
@@ -67,9 +70,14 @@ func save_file():
 		return
 	
 	emit_signal("saved_file", save_file_dialog.current_dir, current_level_path)
+	update_file_checker_data()
 
 func save_file_as():
 	$SaveFileDialog.popup()
+
+func reload():
+	emit_signal("opened_file", current_level_dir, current_level_path)
+	update_file_checker_data()
 
 func update_current_level_path(dir : String, path : String) -> void:
 	current_level_dir = dir
@@ -78,6 +86,13 @@ func update_current_level_path(dir : String, path : String) -> void:
 func clear_current_level_path():
 	current_level_dir = ""
 	current_level_path = ""
+	
+	file_update_checker.clear_data()
+
+func update_file_checker_data():
+	file_update_checker.set_current_file_path(current_level_path)
+	file_update_checker.set_current_file_directory(current_level_dir)
+	file_update_checker.update_current_modified_time()
 
 func is_new_file() -> bool:
 	return current_level_dir.empty() or current_level_path.empty()
@@ -88,10 +103,16 @@ func is_new_file() -> bool:
 
 func _on_OpenFileDialog_file_selected(path: String) -> void:
 	emit_signal("opened_file", open_file_dialog.current_dir, path)
+	update_current_level_path(open_file_dialog.current_dir, path)
+	update_file_checker_data()
 
 func _on_SaveFileDialog_file_selected(path: String) -> void:
 	emit_signal("saved_file", save_file_dialog.current_dir, path)
 	update_current_level_path(open_file_dialog.current_dir, path)
+	update_file_checker_data()
+
+func _on_FileUpdateChecker_detected() -> void:
+	emit_signal("file_update_detected")
 
 #-------------------------------------------------
 #      Private Methods
@@ -105,4 +126,3 @@ func _get_mega_maker_path() -> String:
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-

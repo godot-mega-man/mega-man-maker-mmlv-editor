@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/editor/Popups/ReloadLevelDialog.gd" type="Script" id=2]
+
+[node name="ReloadLevelDialog" type="ConfirmationDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -169.0
+margin_top = -37.5
+margin_right = 169.0
+margin_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+popup_exclusive = true
+window_title = "Reload"
+dialog_text = "This file has been modified by another program.
+Do you want to reload it?"
+dialog_autowrap = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 1 )]
+[connection signal="about_to_show" from="." to="." method="_on_ReloadLevelDialog_about_to_show"]
