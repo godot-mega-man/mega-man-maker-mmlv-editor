@@ -246,6 +246,9 @@ func _on_ToolBar_pressed() -> void:
 func _on_TilemapTab_tile_selected(tile_id) -> void:
 	tile_painter.current_tile_id = tile_id
 
+func _on_ViewportEventKeyScroller_moving(velocity) -> void:
+	main_camera.position += velocity * main_camera.zoom.x
+
 func _on_ExitUnsavedDialog_confirmed_save() -> void:
 	if file_access_ctrl.is_new_file():
 		file_access_ctrl.save_file_as()
@@ -319,3 +322,4 @@ func _do_unsaved_changes_pending_request():
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
+
