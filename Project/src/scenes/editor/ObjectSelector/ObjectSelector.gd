@@ -213,6 +213,8 @@ func _moving_objects_end():
 		idx += 1
 	
 	LevelUndo.get_undo_redo().commit_action()
+	
+	UnsaveChanges.set_activated()
 
 #-------------------------------------------------
 #      Setters & Getters

@@ -1,12 +1,12 @@
-# ObjectAdder
+# ExitUnsavedDialog
 # Written by: First
 
-extends Node2D
+extends AcceptDialog
 
-#class_name optional
+class_name ExitUnsavedDialog
 
 """
-	A node that has the operation to add a preview-object to the editor.
+	Enter desc here.
 """
 
 #-------------------------------------------------
@@ -21,17 +21,38 @@ extends Node2D
 #      Constants
 #-------------------------------------------------
 
+enum PendingRequest {
+	NEW_FILE,
+	OPEN,
+	EXIT_APP
+}
+
+const ACTION_SAVE_EXIT = "saveexit"
+const ACTION_NOSAVE = "nosave"
+const ACTION_CANCEL = "cancel"
+
+const TEXT_SAVEEXIT = "Yes"
+const TEXT_NOSAVE = "No"
+const TEXT_CANCEL = "Cancel"
+
+const SAVE_DIALOG = "Save changes to level?"
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
 
-export var obj_to_add : PackedScene
-
-export var add_target_path : NodePath
+export (PendingRequest) var pending_request
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
+
+func _ready() -> void:
+	_set_title()
+	_set_save_exit_button()
+	_add_dont_save_btn()
+	_add_cancel_btn()
+	connect("custom_action", self, "_on_custom_action")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -45,48 +66,31 @@ export var add_target_path : NodePath
 #      Public Methods
 #-------------------------------------------------
 
-func add_object():
-	if obj_to_add == null:
-		push_warning("obj_to_add == null. Can't add object to the editor.'")
-		return
-	if add_target_path.is_empty():
-		push_warning("Can't add obj_to_add to target path. No path specified.")
-		return
-	
-	var obj = obj_to_add.instance()
-	get_node(add_target_path).add_child(obj)
-	
-	#Move newly created object to the center of the editor.
-	#This will also snap the position to 16x16 grid.
-	if obj is Node2D:
-		obj.global_position = _get_camera_center()
-		
-		#Snap to a grid of 16x16 px
-		obj.global_position = obj.global_position.snapped(Vector2(16, 16))
-		
-		#Shift -8x8 px
-		obj.global_position -= Level.SHIFT_POS
-	
-	if obj is PreviewGameObject:
-		obj.obj_id = 0
-		obj.obj_type = 0
-	
-	UnsaveChanges.set_activated()
-
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
+
+#Connect from _ready()
+func _on_custom_action(action : String):
+	hide()
 
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
 
-func _get_camera_center() -> Vector2:
-	var vtrans = get_canvas_transform()
-	var top_left = -vtrans.get_origin() / vtrans.get_scale()
-	var vsize = get_viewport_rect().size
-	
-	return top_left + 0.5*vsize/vtrans.get_scale()
+func _set_title():
+	dialog_text = SAVE_DIALOG
+
+func _set_save_exit_button():
+	get_ok().text = TEXT_SAVEEXIT
+	get_ok().grab_focus()
+
+func _add_dont_save_btn():
+	add_button(TEXT_NOSAVE, true, ACTION_NOSAVE)
+
+func _add_cancel_btn():
+	add_button(TEXT_CANCEL, true, ACTION_CANCEL)
+
 
 #-------------------------------------------------
 #      Setters & Getters

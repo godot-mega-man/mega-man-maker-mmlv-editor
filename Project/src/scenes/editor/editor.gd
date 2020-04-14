@@ -44,12 +44,14 @@ onready var inspector_panel = $CanvasLayer/Control/InspectorPanel
 onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
+onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
 
 func _ready() -> void:
+	_connect_ExitHandler()
 	_update_window_title_by_level_path("")
 	inspector_panel.load_level_config()
 
@@ -72,13 +74,29 @@ func scroll_to_player_pos():
 		main_camera.global_position = pos
 		main_camera.reset_zoom()
 
+func new_level():
+	_update_window_title_by_level_path("")
+	file_access_ctrl.clear_current_level_path()
+	inspector_panel.load_level_config()
+	UnsaveChanges.set_activated(false)
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
 func _on_MenuPanel_new_file() -> void:
+	#Check if there are unsaved changes
+	if UnsaveChanges.is_activated():
+		exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.NEW_FILE
+		exit_unsaved_dialog.popup_centered()
+		return
 	level.clear_level()
 func _on_MenuPanel_opening_file() -> void:
+	#Check if there are unsaved changes
+	if UnsaveChanges.is_activated():
+		exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.OPEN
+		exit_unsaved_dialog.popup_centered()
+		return
 	file_access_ctrl.open_file()
 func _on_MenuPanel_opening_containing_folder() -> void:
 	file_access_ctrl.open_containing_folder()
@@ -89,6 +107,11 @@ func _on_MenuPanel_saving_file_as() -> void:
 func _on_MenuPanel_opening_preferences() -> void:
 	pass # Replace with function body.
 func _on_MenuPanel_exiting() -> void:
+	#Check if there are unsaved changes
+	if UnsaveChanges.is_activated():
+		exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.EXIT_APP
+		exit_unsaved_dialog.popup_centered()
+		return
 	get_tree().quit()
 
 func _on_MenuPanel_undo() -> void:
@@ -140,19 +163,17 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 			inspector_panel.load_level_config()
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
-		
-	
+			
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
 	_update_window_title_by_level_path(path)
 	EditorLogBox.add_message("Level saved at " + path)
+	UnsaveChanges.set_activated(false)
 
 #New level
 func _on_Level_cleared_level() -> void:
-	_update_window_title_by_level_path("")
-	file_access_ctrl.clear_current_level_path()
-	inspector_panel.load_level_config()
+	new_level()
 
 func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	menu_bar.edit_menu.get_popup().set_item_disabled(
@@ -224,9 +245,29 @@ func _on_ToolBar_pressed() -> void:
 func _on_TilemapTab_tile_selected(tile_id) -> void:
 	tile_painter.current_tile_id = tile_id
 
+func _on_ExitUnsavedDialog_confirmed_save() -> void:
+	if file_access_ctrl.is_new_file():
+		file_access_ctrl.save_file_as()
+		return
+	
+	file_access_ctrl.save_file()
+	_do_unsaved_changes_pending_request()
+
+func _on_ExitUnsavedDialog_custom_action(action: String) -> void:
+	if action == ExitUnsavedDialog.ACTION_NOSAVE:
+		_do_unsaved_changes_pending_request()
+
+#Connect from _connect_ExitHandler()
+func _on_ExitHandler_quit_requested():
+	exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.EXIT_APP
+	exit_unsaved_dialog.popup_centered()
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _connect_ExitHandler():
+	ExitHandler.connect("quit_requested", self, "_on_ExitHandler_quit_requested")
 
 var is_scroll_mode : bool
 func _control_viewport_by_gui_input(event : InputEvent):
@@ -264,6 +305,15 @@ func _control_tilemap_by_gui_input(event : InputEvent):
 
 func _update_window_title_by_level_path(path : String):
 	WindowTitleUpdater.current_level_file_path = path
+
+func _do_unsaved_changes_pending_request():
+	match exit_unsaved_dialog.pending_request:
+		exit_unsaved_dialog.PendingRequest.NEW_FILE:
+			level.clear_level()
+		exit_unsaved_dialog.PendingRequest.OPEN:
+			file_access_ctrl.open_file()
+		exit_unsaved_dialog.PendingRequest.EXIT_APP:
+			get_tree().quit()
 
 #-------------------------------------------------
 #      Setters & Getters

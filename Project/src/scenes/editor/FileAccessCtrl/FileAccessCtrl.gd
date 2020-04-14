@@ -62,7 +62,7 @@ func open_containing_folder():
 	OS.shell_open(_get_mega_maker_path())
 
 func save_file():
-	if current_level_dir.empty() or current_level_path.empty():
+	if is_new_file():
 		$SaveFileDialog.popup()
 		return
 	
@@ -78,6 +78,9 @@ func update_current_level_path(dir : String, path : String) -> void:
 func clear_current_level_path():
 	current_level_dir = ""
 	current_level_path = ""
+
+func is_new_file() -> bool:
+	return current_level_dir.empty() or current_level_path.empty()
 
 #-------------------------------------------------
 #      Connections

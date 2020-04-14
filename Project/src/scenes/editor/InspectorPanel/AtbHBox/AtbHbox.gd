@@ -102,6 +102,8 @@ func lineedit_release_focus():
 #-------------------------------------------------
 
 func _on_LineEdit_text_changed(new_text: String) -> void:
+	UnsaveChanges.set_activated()
+	
 	if missing_value_enabled and new_text == "":
 		$LineEdit.text = str(DataGameObject.MISSING_DATA)
 		emit_signal("value_entered")
