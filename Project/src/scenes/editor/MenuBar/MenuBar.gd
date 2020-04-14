@@ -93,7 +93,8 @@ const ID_MENU_HELP_REQUEST_FEATURE = 3
 const ID_MENU_HELP_REPORT_BUG = 4
 const ID_MENU_HELP_ABOUT = 6
 
-const ISSUE_URL = "https://github.com/Firstject/mega-man-maker-mmlv-editor/issues/new/choose"
+const ISSUE_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/issues/new/choose"
+const RELEASE_NOTES_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/releases"
 
 #-------------------------------------------------
 #      Properties
@@ -333,6 +334,8 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 	match id:
 		ID_MENU_HELP_README:
 			emit_signal("readme")
+		ID_MENU_HELP_RELEASE_NOTES:
+			OS.shell_open(RELEASE_NOTES_URL)
 		ID_MENU_HELP_REPORT_BUG:
 			OS.shell_open(ISSUE_URL)
 		ID_MENU_HELP_REQUEST_FEATURE:
