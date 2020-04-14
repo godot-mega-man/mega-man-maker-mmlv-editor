@@ -79,6 +79,7 @@ func new_level():
 	file_access_ctrl.clear_current_level_path()
 	inspector_panel.load_level_config()
 	UnsaveChanges.set_activated(false)
+	LevelUndo.get_undo_redo().clear_history()
 
 #-------------------------------------------------
 #      Connections
