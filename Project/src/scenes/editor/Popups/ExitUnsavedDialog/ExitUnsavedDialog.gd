@@ -1,7 +1,7 @@
 # ExitUnsavedDialog
 # Written by: First
 
-extends ConfirmationDialog
+extends AcceptDialog
 
 class_name ExitUnsavedDialog
 
@@ -29,9 +29,11 @@ enum PendingRequest {
 
 const ACTION_SAVE_EXIT = "saveexit"
 const ACTION_NOSAVE = "nosave"
+const ACTION_CANCEL = "cancel"
 
-const TEXT_SAVEEXIT = "Save & Close"
-const TEXT_NOSAVE = "Don\'t Save"
+const TEXT_SAVEEXIT = "Yes"
+const TEXT_NOSAVE = "No"
+const TEXT_CANCEL = "Cancel"
 
 const SAVE_DIALOG = "Save changes to level?"
 
@@ -49,6 +51,8 @@ func _ready() -> void:
 	_set_title()
 	_set_save_exit_button()
 	_add_dont_save_btn()
+	_add_cancel_btn()
+	connect("custom_action", self, "_on_custom_action")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -66,11 +70,9 @@ func _ready() -> void:
 #      Connections
 #-------------------------------------------------
 
-#Connect from _add_dont_save_btn()
+#Connect from _ready()
 func _on_custom_action(action : String):
-	match action:
-		ACTION_NOSAVE:
-			hide()
+	hide()
 
 #-------------------------------------------------
 #      Private Methods
@@ -85,7 +87,10 @@ func _set_save_exit_button():
 
 func _add_dont_save_btn():
 	add_button(TEXT_NOSAVE, true, ACTION_NOSAVE)
-	connect("custom_action", self, "_on_custom_action")
+
+func _add_cancel_btn():
+	add_button(TEXT_CANCEL, true, ACTION_CANCEL)
+
 
 #-------------------------------------------------
 #      Setters & Getters

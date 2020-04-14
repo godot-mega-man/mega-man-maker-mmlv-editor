@@ -254,7 +254,8 @@ func _on_ExitUnsavedDialog_confirmed_save() -> void:
 	_do_unsaved_changes_pending_request()
 
 func _on_ExitUnsavedDialog_custom_action(action: String) -> void:
-	_do_unsaved_changes_pending_request()
+	if action == ExitUnsavedDialog.ACTION_NOSAVE:
+		_do_unsaved_changes_pending_request()
 
 #Connect from _connect_ExitHandler()
 func _on_ExitHandler_quit_requested():

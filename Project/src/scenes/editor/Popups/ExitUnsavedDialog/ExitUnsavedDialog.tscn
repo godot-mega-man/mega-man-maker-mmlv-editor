@@ -3,7 +3,7 @@
 [ext_resource path="res://src/scenes/editor/Popups/ExitUnsavedDialog/ExitUnsavedDialog.gd" type="Script" id=1]
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
 
-[node name="ExitUnsavedDialog" type="ConfirmationDialog"]
+[node name="ExitUnsavedDialog" type="AcceptDialog"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -12,9 +12,7 @@ margin_left = -100.0
 margin_top = -35.0
 margin_right = 100.0
 margin_bottom = 35.0
+window_title = "Please Confirm..."
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedPopupAnim" parent="." instance=ExtResource( 2 )]
