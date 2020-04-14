@@ -44,12 +44,14 @@ onready var inspector_panel = $CanvasLayer/Control/InspectorPanel
 onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
+onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
 
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
 
 func _ready() -> void:
+	_connect_ExitHandler()
 	_update_window_title_by_level_path("")
 	inspector_panel.load_level_config()
 
@@ -225,9 +227,16 @@ func _on_ToolBar_pressed() -> void:
 func _on_TilemapTab_tile_selected(tile_id) -> void:
 	tile_painter.current_tile_id = tile_id
 
+#Connect from _connect_ExitHandler()
+func _on_ExitHandler_quit_requested():
+	exit_unsaved_dialog.popup_centered()
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _connect_ExitHandler():
+	ExitHandler.connect("quit_requested", self, "_on_ExitHandler_quit_requested")
 
 var is_scroll_mode : bool
 func _control_viewport_by_gui_input(event : InputEvent):

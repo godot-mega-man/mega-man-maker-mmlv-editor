@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/editor/Popups/ExitUnsavedDialog/ExitUnsavedDialog.gd" type="Script" id=1]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
 
 [node name="ExitUnsavedDialog" type="ConfirmationDialog"]
 anchor_left = 0.5
@@ -15,3 +16,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 2 )]
