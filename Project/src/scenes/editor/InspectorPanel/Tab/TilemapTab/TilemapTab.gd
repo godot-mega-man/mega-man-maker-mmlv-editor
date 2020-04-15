@@ -23,6 +23,7 @@ signal tile_selected(tile_id)
 #      Constants
 #-------------------------------------------------
 
+const BUTTON_PRESS_EFFECT = preload("res://src/utils/ButtonFx/PressFx/ButtonPressFx.tscn")
 const GRID_C_AUTO_RESIZER = preload("res://src/utils/GridContainerAutoResizer/GridContainerAutoResizer.tscn")
 const GRID_C_NAME_PREFIX = "GridGameID"
 const GAME_ID_LABEL_PREFIX = "MM"
@@ -136,6 +137,9 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	tex_btn.connect("gui_input", self, "_on_tile_btn_gui_input") # Use for double click event
 	tex_btn.tile_id = tile_id
 	tex_btn.tileset_name = file_name
+	# Add button click effect.
+	var button_eff = BUTTON_PRESS_EFFECT.instance()
+	tex_btn.add_child(button_eff)
 
 func _create_grid_containters():
 	var game_ids : Dictionary

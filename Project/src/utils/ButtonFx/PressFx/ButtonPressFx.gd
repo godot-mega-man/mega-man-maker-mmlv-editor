@@ -62,7 +62,7 @@ func _on_parent_pressed():
 func _connect_parent_button():
 	var parent = get_parent()
 	
-	if parent is Button:
+	if parent is BaseButton:
 		parent.connect("pressed", self, "_on_parent_pressed")
 
 func _play_flash_animation():
