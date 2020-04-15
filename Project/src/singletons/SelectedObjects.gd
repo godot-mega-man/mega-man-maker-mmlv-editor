@@ -47,11 +47,20 @@ export (Array) var selected_objects : Array
 #-------------------------------------------------
 
 func add_object(object : Object):
+	if selected_objects.has(object):
+		return
+	
 	selected_objects.append(object)
 	emit_signal("selected_obj", object)
 
 func add_objects(objects : Array):
-	selected_objects += objects
+	# Exclude duplicated objects
+	for i in objects:
+		if selected_objects.has(i):
+			continue
+		
+		selected_objects += objects
+	
 	emit_signal("selected")
 
 func remove(idx : int):
