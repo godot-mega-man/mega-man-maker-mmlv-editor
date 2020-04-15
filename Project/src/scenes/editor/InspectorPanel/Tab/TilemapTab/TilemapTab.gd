@@ -38,7 +38,7 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
-onready var subtile_button = $SubTilePanel/SubtileButton
+onready var subtile_button = $SubtileButton
 onready var subtile_select_popup = $SubtileSelectPopup
 
 var current_selected_tile_id : int
@@ -88,6 +88,12 @@ func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String):
 func _on_tile_btn_mouse_exited_btn(texture):
 	preview_tex_anim.play("Hide")
 
+func _on_tile_btn_gui_input(event : InputEvent):
+	# Check for double click event
+	if event is InputEventMouseButton:
+		if event.doubleclick:
+			subtile_select_popup.popup()
+
 func _on_SubtileButton_pressed() -> void:
 	subtile_select_popup.popup()
 
@@ -127,6 +133,7 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	tex_btn.connect("pressed_id", self, "_on_tile_btn_pressed_id")
 	tex_btn.connect("mouse_entered_btn", self, "_on_tile_btn_mouse_entered_btn")
 	tex_btn.connect("mouse_exited_btn", self, "_on_tile_btn_mouse_exited_btn")
+	tex_btn.connect("gui_input", self, "_on_tile_btn_gui_input") # Use for double click event
 	tex_btn.tile_id = tile_id
 	tex_btn.tileset_name = file_name
 
