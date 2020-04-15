@@ -35,7 +35,9 @@ onready var highlight_anim = $HighlightAnim
 
 func _ready() -> void:
 	SelectedObjects.connect("selected", self, "_on_SelectedObjects_selected")
+	SelectedObjects.connect("selected_obj", self, "_on_SelectedObjects_selected_obj")
 	SelectedObjects.connect("deselected", self, "_on_SelectedObjects_deselected")
+	SelectedObjects.connect("deselected_obj", self, "_on_SelectedObjects_deselected_obj")
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -52,16 +54,30 @@ func _ready() -> void:
 func shift_pos():
 	position += SHIFT_POS
 
+func play_highlight_anim():
+	highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
+
+func play_hide_anim():
+	highlight_anim.play("Hide")
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
 func _on_SelectedObjects_selected():
 	if SelectedObjects.selected_objects.has(self):
-		highlight_anim.play("Highlight", -1, rand_range(0.5, 1.5))
+		play_highlight_anim()
+
+func _on_SelectedObjects_selected_obj(obj):
+	if obj == self:
+		play_highlight_anim()
+
+func _on_SelectedObjects_deselected_obj(obj):
+	if obj == self:
+		play_hide_anim()
 
 func _on_SelectedObjects_deselected():
-	highlight_anim.play("Hide")
+	play_hide_anim()
 
 #-------------------------------------------------
 #      Private Methods

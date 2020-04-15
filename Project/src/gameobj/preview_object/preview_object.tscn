@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/images/previews/preview_tileset.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/previews/highlighter.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Hide"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite/HighlightContainer:visible")
@@ -19,8 +19,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Highlight"
+[sub_resource type="Animation" id=2]
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
@@ -143,5 +142,5 @@ __meta__ = {
 
 [node name="HighlightAnim" type="AnimationPlayer" parent="."]
 autoplay = "Hide"
-anims/Hide = SubResource( 2 )
-anims/Highlight = SubResource( 1 )
+anims/Hide = SubResource( 1 )
+anims/Highlight = SubResource( 2 )

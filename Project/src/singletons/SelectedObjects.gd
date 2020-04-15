@@ -68,6 +68,10 @@ func remove(idx : int):
 	selected_objects.remove(idx)
 	emit_signal("deselected_obj", object)
 
+func remove_obj(object):
+	selected_objects.erase(object)
+	emit_signal("deselected_obj", object)
+
 func remove_all():
 	selected_objects.clear()
 	emit_signal("deselected")

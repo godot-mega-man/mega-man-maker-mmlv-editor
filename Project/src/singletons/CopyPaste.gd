@@ -25,6 +25,9 @@ extends Node
 #      Constants
 #-------------------------------------------------
 
+#Newly created obj use this
+const SHIFT_POSITION_ADD = Vector2(16, 16)
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -46,9 +49,21 @@ extends Node
 #-------------------------------------------------
 
 func duplicate_selection():
-	for i in SelectedObjects.selected_objects:
+	#Duplicate an array holding references
+	var _selected_objects = SelectedObjects.selected_objects.duplicate()
+	
+	for i in _selected_objects:
+		var duplicated_obj : Node
 		if i is Node:
-			_duplicate_node_in_place(i)
+			duplicated_obj = _duplicate_node_in_place(i)
+			
+			if i is Node2D:
+				_shift_node2d_by_vec2(duplicated_obj, SHIFT_POSITION_ADD)
+			
+			SelectedObjects.add_object(duplicated_obj)
+		SelectedObjects.remove_obj(i)
+	
+	UnsaveChanges.set_activated()
 
 #-------------------------------------------------
 #      Connections
@@ -58,9 +73,13 @@ func duplicate_selection():
 #      Private Methods
 #-------------------------------------------------
 
-func _duplicate_node_in_place(node_to_duplicate : Node):
+func _duplicate_node_in_place(node_to_duplicate : Node) -> Node:
 	var duplicated_obj = node_to_duplicate.duplicate()
 	node_to_duplicate.get_parent().add_child(duplicated_obj)
+	return duplicated_obj
+
+func _shift_node2d_by_vec2(node2d : Node2D, vec2 : Vector2):
+	node2d.position += vec2
 
 #-------------------------------------------------
 #      Setters & Getters
