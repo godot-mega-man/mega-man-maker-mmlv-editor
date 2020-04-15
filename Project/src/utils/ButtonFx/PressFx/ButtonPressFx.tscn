@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/utils/ButtonFx/PressFx/ButtonPressFx.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flash Ease-In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="ButtonPressFx" type="ColorRect"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Flash Ease-In" = SubResource( 1 )

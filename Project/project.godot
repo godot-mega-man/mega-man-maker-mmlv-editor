@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.gd"
 }, {
+"base": "ColorRect",
+"class": "ButtonPressFx",
+"language": "GDScript",
+"path": "res://src/utils/ButtonFx/PressFx/ButtonPressFx.gd"
+}, {
 "base": "Reference",
 "class": "DataGameBg",
 "language": "GDScript",
@@ -126,6 +131,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AtbHBox": "",
+"ButtonPressFx": "",
 "DataGameBg": "",
 "DataGameBoss": "",
 "DataGameLadder": "",
