@@ -38,7 +38,7 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
-onready var subtile_button = $SubTilePanel/SubtileButton
+onready var subtile_button = $SubtileButton
 onready var subtile_select_popup = $SubtileSelectPopup
 
 var current_selected_tile_id : int
