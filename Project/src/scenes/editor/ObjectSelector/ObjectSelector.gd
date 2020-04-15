@@ -44,6 +44,7 @@ enum SelectMode {
 
 const GROUP_PREVIEW_OBJECT = "PreviewObject"
 const HIGHLIGHT_MIN_DEADZONE = Vector2(4, 4)
+const KEY_MODIFIER_SELECT_ADD = KEY_SHIFT
 
 #-------------------------------------------------
 #      Properties
@@ -153,7 +154,14 @@ func _left_mouse_press_event(event : InputEvent):
 		if event.is_pressed():
 			select_begin_pos = get_global_mouse_position()
 			highlight_rect.rect_size = Vector2.ZERO
-			SelectedObjects.remove_all()
+			
+			# Deselecting all objects.
+			# Determine whether to select additional objects
+			# with a modifier key or not.
+			if Input.is_key_pressed(KEY_MODIFIER_SELECT_ADD):
+				pass
+			else:
+				SelectedObjects.remove_all()
 		else:
 			select_highlighted(GROUP_PREVIEW_OBJECT)
 		
