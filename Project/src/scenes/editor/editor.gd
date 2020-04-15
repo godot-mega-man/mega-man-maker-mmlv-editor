@@ -184,6 +184,9 @@ func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	menu_bar.edit_menu.get_popup().set_item_disabled(
 		MenuBar.ID_MENU_EDIT_REDO, not LevelUndo.get_undo_redo().has_redo()
 	)
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_DELETE, SelectedObjects.selected_objects.empty()
+	)
 
 func _on_MenuPanel_view_menu_about_to_show() -> void:
 	menu_bar.view_menu.get_popup().set_item_checked(
