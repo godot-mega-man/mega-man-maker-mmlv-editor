@@ -207,7 +207,6 @@ func _init_edit_menus():
 	
 	edit_menu.get_popup().add_item("Duplicate", ID_MENU_EDIT_DUPLICATE)
 	edit_menu.get_popup().set_item_shortcut(ID_MENU_EDIT_DUPLICATE, shortcut_edit_duplicate, true)
-	edit_menu.get_popup().set_item_disabled(ID_MENU_EDIT_DUPLICATE, true) #TODO:ImplementThis
 	
 	edit_menu.get_popup().add_separator()
 	
@@ -300,6 +299,8 @@ func _on_edit_menu_popup_pressed(id : int) -> void:
 			emit_signal("undo")
 		ID_MENU_EDIT_REDO:
 			emit_signal("redo")
+		ID_MENU_EDIT_DUPLICATE:
+			emit_signal("duplicate")
 		ID_MENU_EDIT_DELETE:
 			emit_signal("delete")
 

@@ -1,10 +1,16 @@
-# SelectedObjects
-# Written by: First
+# CopyPaste
+# Written by: HeartCode 
 
 extends Node
 
+#class_name optional
+
 """
-	Enter desc here.
+	A singleton class that copy all currently selected objects
+	and paste them into the scene at any time.
+	
+	Duplication of nodes is also implemented to be used
+	as an alternate of copy & paste.
 """
 
 #-------------------------------------------------
@@ -15,20 +21,16 @@ extends Node
 #      Signals
 #-------------------------------------------------
 
-signal selected()
-signal selected_obj(obj)
-signal deselected()
-signal deselected_obj(obj)
-
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
 
+#Newly created obj use this
+const SHIFT_POSITION_ADD = Vector2(16, 16)
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
-
-export (Array) var selected_objects : Array
 
 #-------------------------------------------------
 #      Notifications
@@ -46,38 +48,22 @@ export (Array) var selected_objects : Array
 #      Public Methods
 #-------------------------------------------------
 
-func add_object(object : Object):
-	if selected_objects.has(object):
-		return
+func duplicate_selection():
+	#Duplicate an array holding references
+	var _selected_objects = SelectedObjects.selected_objects.duplicate()
 	
-	selected_objects.append(object)
-	emit_signal("selected_obj", object)
-
-func add_objects(objects : Array):
-	# Exclude duplicated objects
-	for i in objects:
-		if selected_objects.has(i):
-			continue
-		
-		selected_objects += objects
+	for i in _selected_objects:
+		var duplicated_obj : Node
+		if i is Node:
+			duplicated_obj = _duplicate_node_in_place(i)
+			
+			if i is Node2D:
+				_shift_node2d_by_vec2(duplicated_obj, SHIFT_POSITION_ADD)
+			
+			SelectedObjects.add_object(duplicated_obj)
+		SelectedObjects.remove_obj(i)
 	
-	emit_signal("selected")
-
-func remove(idx : int):
-	var object = selected_objects[idx]
-	selected_objects.remove(idx)
-	emit_signal("deselected_obj", object)
-
-func remove_obj(object):
-	selected_objects.erase(object)
-	emit_signal("deselected_obj", object)
-
-func remove_all():
-	selected_objects.clear()
-	emit_signal("deselected")
-
-func is_empty() -> bool:
-	return selected_objects.empty()
+	UnsaveChanges.set_activated()
 
 #-------------------------------------------------
 #      Connections
@@ -86,6 +72,14 @@ func is_empty() -> bool:
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
+
+func _duplicate_node_in_place(node_to_duplicate : Node) -> Node:
+	var duplicated_obj = node_to_duplicate.duplicate()
+	node_to_duplicate.get_parent().add_child(duplicated_obj)
+	return duplicated_obj
+
+func _shift_node2d_by_vec2(node2d : Node2D, vec2 : Vector2):
+	node2d.position += vec2
 
 #-------------------------------------------------
 #      Setters & Getters

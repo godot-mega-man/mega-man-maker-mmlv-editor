@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/singletons/CopyPaste.gd" type="Script" id=1]
+
+[node name="CopyPaste" type="Node"]
+script = ExtResource( 1 )

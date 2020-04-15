@@ -120,6 +120,8 @@ func _on_MenuPanel_undo() -> void:
 	LevelUndo.get_undo_redo().undo()
 func _on_MenuPanel_redo() -> void:
 	LevelUndo.get_undo_redo().redo()
+func _on_MenuPanel_duplicate() -> void:
+	CopyPaste.duplicate_selection()
 func _on_MenuPanel_delete() -> void:
 	object_deleter.delete()
 
@@ -183,6 +185,9 @@ func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	)
 	menu_bar.edit_menu.get_popup().set_item_disabled(
 		MenuBar.ID_MENU_EDIT_REDO, not LevelUndo.get_undo_redo().has_redo()
+	)
+	menu_bar.edit_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_EDIT_DUPLICATE, SelectedObjects.selected_objects.empty()
 	)
 	menu_bar.edit_menu.get_popup().set_item_disabled(
 		MenuBar.ID_MENU_EDIT_DELETE, SelectedObjects.selected_objects.empty()
