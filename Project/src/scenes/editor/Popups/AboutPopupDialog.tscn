@@ -4,7 +4,6 @@
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=3]
 
 [node name="AboutPopupDialog" type="PopupDialog"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -146,7 +145,7 @@ margin_left = 228.0
 margin_right = 443.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
-text = "Programmer & Bux Fixing"
+text = "Developer"
 
 [node name="EmptyBox2" type="ReferenceRect" parent="VBoxContainer"]
 margin_top = 126.0
