@@ -47,8 +47,7 @@ signal normal_zoom
 
 signal readme
 signal release_notes
-signal req_feature
-signal report_bug
+signal send_feedback
 signal about
 
 #Generic signals
@@ -89,11 +88,10 @@ const ID_MENU_VIEW_NORMAL_ZOOM = 12
 
 const ID_MENU_HELP_README = 0
 const ID_MENU_HELP_RELEASE_NOTES = 1
-const ID_MENU_HELP_REQUEST_FEATURE = 3
-const ID_MENU_HELP_REPORT_BUG = 4
-const ID_MENU_HELP_ABOUT = 6
+const ID_MENU_HELP_SEND_FEEDBACK = 3
+const ID_MENU_HELP_ABOUT = 5
 
-const ISSUE_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/issues/new/choose"
+const FEEDBACK_URL = "https://forms.gle/wrFpgn6S6FcHCV2i8"
 const RELEASE_NOTES_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/releases"
 
 #-------------------------------------------------
@@ -261,9 +259,7 @@ func _init_help_menus():
 	
 	help_menu.get_popup().add_separator()
 	
-	help_menu.get_popup().add_item("Propose a New Feature", ID_MENU_HELP_REQUEST_FEATURE)
-	
-	help_menu.get_popup().add_item("Send Bug Report", ID_MENU_HELP_REPORT_BUG)
+	help_menu.get_popup().add_item("Send Us Feedback", ID_MENU_HELP_SEND_FEEDBACK)
 	
 	help_menu.get_popup().add_separator()
 	
@@ -337,10 +333,8 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 			emit_signal("readme")
 		ID_MENU_HELP_RELEASE_NOTES:
 			OS.shell_open(RELEASE_NOTES_URL)
-		ID_MENU_HELP_REPORT_BUG:
-			OS.shell_open(ISSUE_URL)
-		ID_MENU_HELP_REQUEST_FEATURE:
-			OS.shell_open(ISSUE_URL)
+		ID_MENU_HELP_SEND_FEEDBACK:
+			OS.shell_open(FEEDBACK_URL)
 		ID_MENU_HELP_ABOUT:
 			emit_signal("about")
 
