@@ -42,6 +42,7 @@ margin_bottom = 22.0
 [node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox/TitleHBox"]
 margin_right = 173.0
 margin_bottom = 22.0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Inspector"
 align = 0
@@ -116,7 +117,8 @@ margin_top = 8.0
 margin_right = 592.0
 margin_bottom = 30.0
 rect_rotation = 90.0
-text = "Inspector"
+mouse_default_cursor_shape = 2
+text = "Inspector (click to show)"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
