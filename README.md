@@ -13,7 +13,7 @@ This editor allows a level file (.mmlv) to be modified or a new level to be crea
 
 # About
 
-MMLV Editor is an external level editor tool for Mega Man Maker. It's main features are:  
+MMLV Editor is an external level editor tool for Mega Man Maker. Its main features are:  
 - Manual tiling, allowing the user to have more level creation possibilities
 - Object editing. For example, a 0.25-second laser beam which is not possible to make in the actual game.
 - Manual disabling or enabling active screens. Useful for making empty rooms without having to put any object on the screen to activate.
