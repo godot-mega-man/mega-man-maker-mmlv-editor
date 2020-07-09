@@ -34,8 +34,8 @@ var thread : Thread
 
 var load_finished : bool = false #Avoid duplicate instancing on GPU processor
 
-onready var loading_label = $Panel/LoadingVbox/LoadingLabel
-onready var progress_bar = $Panel/LoadingVbox/ProgressBar
+onready var loading_label = $Panel/IconSplash/LoadingVbox/LoadingLabel
+onready var progress_bar = $Panel/IconSplash/LoadingVbox/ProgressBar
 
 onready var watermark_hbox = $Panel/WatermarkHBox
 onready var watermark_label_proj_name = $Panel/WatermarkHBox/WatermarkLabelProjName

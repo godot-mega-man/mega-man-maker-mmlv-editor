@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/editor_splash/EditorSplash.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=2]
@@ -26,10 +26,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.8, 1.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:visible")
@@ -43,32 +43,17 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false, true ]
 }
-
-[sub_resource type="Animation" id=2]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( -2, 1 ),
-"update": 0,
-"values": [ 0.0, 360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5 ),
+tracks/3/type = "value"
+tracks/3/path = NodePath("LoadingVbox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -87,33 +72,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 0.5, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:custom_constants/separation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 0.5, 1 ),
-"update": 0,
-"values": [ 128, 128, 16 ]
-}
-
 [sub_resource type="Animation" id=5]
 length = 4.0
 tracks/0/type = "value"
@@ -123,10 +81,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.3, 3.7, 4 ),
+"times": PoolRealArray( 0, 0.7, 1, 1.2 ),
 "transitions": PoolRealArray( 1, 0.5, -2, 1 ),
 "update": 0,
-"values": [ -256, -256, 16, -2 ]
+"values": [ -256, -256, 16, 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:modulate")
@@ -135,7 +93,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3.3, 3.7 ),
+"times": PoolRealArray( 0, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -151,7 +109,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -170,7 +128,6 @@ __meta__ = {
 }
 
 [node name="IconSplash" type="TextureRect" parent="Panel"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -189,15 +146,15 @@ __meta__ = {
 autoplay = "Show"
 anims/Show = SubResource( 1 )
 
-[node name="LoadingVbox" type="VBoxContainer" parent="Panel"]
+[node name="LoadingVbox" type="VBoxContainer" parent="Panel/IconSplash"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -64.0
-margin_top = -35.0
+margin_top = 52.0
 margin_right = 64.0
-margin_bottom = 35.0
+margin_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_constants/separation = 16
@@ -206,35 +163,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleLabel" type="Label" parent="Panel/LoadingVbox"]
+[node name="LoadingLabel" type="Label" parent="Panel/IconSplash/LoadingVbox"]
+margin_top = 19.0
 margin_right = 128.0
-margin_bottom = 22.0
-text = "Please wait..."
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ProgressBox" type="ColorRect" parent="Panel/LoadingVbox"]
-margin_left = 48.0
-margin_top = 38.0
-margin_right = 80.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 16, 16 )
-size_flags_horizontal = 4
-size_flags_vertical = 0
-color = Color( 0.545098, 0.545098, 0.545098, 1 )
-
-[node name="SpinAnim" type="AnimationPlayer" parent="Panel/LoadingVbox/ProgressBox"]
-autoplay = "Spin"
-anims/Spin = SubResource( 2 )
-
-[node name="LoadingLabel" type="Label" parent="Panel/LoadingVbox"]
-margin_top = 86.0
-margin_right = 128.0
-margin_bottom = 108.0
+margin_bottom = 41.0
 text = "Loading..."
 align = 1
 valign = 1
@@ -242,20 +174,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlinkingAnim" type="AnimationPlayer" parent="Panel/LoadingVbox/LoadingLabel"]
+[node name="BlinkingAnim" type="AnimationPlayer" parent="Panel/IconSplash/LoadingVbox/LoadingLabel"]
 autoplay = "Blinking"
 anims/Blinking = SubResource( 3 )
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel/LoadingVbox"]
-margin_top = 124.0
+[node name="ProgressBar" type="ProgressBar" parent="Panel/IconSplash/LoadingVbox"]
+margin_top = 57.0
 margin_right = 128.0
-margin_bottom = 138.0
+margin_bottom = 71.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_horizontal = 4
-
-[node name="AppearAnim" type="AnimationPlayer" parent="Panel/LoadingVbox"]
-autoplay = "Appear"
-anims/Appear = SubResource( 4 )
 
 [node name="WatermarkHBox" type="HBoxContainer" parent="Panel"]
 anchor_top = 1.0
@@ -263,15 +191,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -48.0
 margin_bottom = -26.0
-custom_constants/separation = -2
+custom_constants/separation = 0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WatermarkLabelOpen" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 303.0
-margin_right = 321.0
+margin_left = 297.0
+margin_right = 315.0
 margin_bottom = 22.0
 text = "--"
 align = 1
@@ -281,8 +209,8 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelProjName" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 319.0
-margin_right = 410.0
+margin_left = 315.0
+margin_right = 406.0
 margin_bottom = 22.0
 text = "ProjectName"
 align = 1
@@ -292,8 +220,8 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelProjVersion" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 408.0
-margin_right = 442.0
+margin_left = 406.0
+margin_right = 440.0
 margin_bottom = 22.0
 text = "v1.x"
 align = 1
@@ -314,8 +242,8 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelCreatorPrefix" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 451.0
-margin_right = 474.0
+margin_left = 453.0
+margin_right = 476.0
 margin_bottom = 22.0
 text = "by"
 align = 1
@@ -325,8 +253,8 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelCreator" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 472.0
-margin_right = 480.0
+margin_left = 476.0
+margin_right = 484.0
 margin_bottom = 22.0
 align = 1
 valign = 1
@@ -335,8 +263,8 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelClose" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 478.0
-margin_right = 496.0
+margin_left = 484.0
+margin_right = 502.0
 margin_bottom = 22.0
 text = "--"
 align = 1
