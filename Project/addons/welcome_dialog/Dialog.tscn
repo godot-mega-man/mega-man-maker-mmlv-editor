@@ -3,17 +3,16 @@
 [ext_resource path="res://addons/welcome_dialog/Dialog.gd" type="Script" id=1]
 
 [node name="Dialog" type="AcceptDialog"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 popup_exclusive = true
 window_title = "Welcome, Dev?"
 dialog_text = "Welcome to Mega Man Maker MMLV Editor!
 
-First of all, thank you for trying out the source code. This seems to be your first time on the project, so we assumes that you have some experience with Godot interface already. If you’re new to game engine entirely, we recommend you to visit the tutorials on official Godot docs.
+First of all, thank you for trying out the source code. If you're looking for a compiled program, please download the release build version in the GitHub release section instead.
 
-As a reminder, make a backup of your level first before saving the level! There is no insurance here, so if anything wrong happened to your level, we have no responsibility to recover your level file.
-
-Hang on a moment so you can close this window after (Re)importing assets process is finished..."
+This dialog was created to avoid confusion as said above."
 dialog_autowrap = true
 script = ExtResource( 1 )
 __meta__ = {
