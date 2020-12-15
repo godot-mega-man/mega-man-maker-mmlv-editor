@@ -72,6 +72,14 @@ func remove_obj(object):
 	selected_objects.erase(object)
 	emit_signal("deselected_obj", object)
 
+func remove_objs(objects : Array):
+	for i in objects:
+		print(i)
+		
+		if selected_objects.has(i):
+			selected_objects.remove(selected_objects.find(i))
+			emit_signal("deselected_obj", i)
+
 func remove_all():
 	selected_objects.clear()
 	emit_signal("deselected")
