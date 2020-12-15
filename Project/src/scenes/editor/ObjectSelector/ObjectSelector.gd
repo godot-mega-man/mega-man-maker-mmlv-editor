@@ -45,6 +45,7 @@ enum SelectMode {
 const GROUP_PREVIEW_OBJECT = "PreviewObject"
 const HIGHLIGHT_MIN_DEADZONE = Vector2(4, 4)
 const KEY_MODIFIER_SELECT_ADD = KEY_SHIFT
+const KEY_MODIFIER_DESELECT = KEY_CONTROL
 
 #-------------------------------------------------
 #      Properties
@@ -80,7 +81,7 @@ func process_input(event : InputEvent):
 			# selected objects).
 			# If there is no object under cursor, select mode is normal.
 			# Otherwise, select mode become 'moving selected objects'.
-			if has_selected_object_under_cursor():
+			if has_selected_object_under_cursor() and not is_key_modifiers_pressed():
 				select_mode = SelectMode.MOVING
 				_moving_objects_start()
 			else:
@@ -103,6 +104,14 @@ func select_highlighted(group_name : String):
 		set_highlight_rect_size_to_mouse_pos()
 	
 	SelectedObjects.add_objects(get_nodes_2d_within_rect(group_name, single_select))
+
+func deselect_highlighted(group_name : String):
+	var single_select = is_highlighted_deadzone_size()
+	
+	if single_select:
+		set_highlight_rect_size_to_mouse_pos()
+	
+	SelectedObjects.remove_objs(get_nodes_2d_within_rect(group_name, single_select))
 
 #If the size of highlighted rect is small (deadzone),
 #increase it.
@@ -139,6 +148,12 @@ func has_selected_object_under_cursor() -> bool:
 func get_snapped_grid_mouse_pos() -> Vector2:
 	return get_global_mouse_position().snapped(Vector2(16, 16)) - Level.SHIFT_POS
 
+func is_key_modifiers_pressed() -> bool:
+	return (
+		Input.is_key_pressed(KEY_MODIFIER_SELECT_ADD) or
+		Input.is_key_pressed(KEY_MODIFIER_DESELECT)
+	)
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
@@ -163,7 +178,10 @@ func _left_mouse_press_event(event : InputEvent):
 			else:
 				SelectedObjects.remove_all()
 		else:
-			select_highlighted(GROUP_PREVIEW_OBJECT)
+			if Input.is_key_pressed(KEY_MODIFIER_DESELECT):
+				deselect_highlighted(GROUP_PREVIEW_OBJECT)
+			else:
+				select_highlighted(GROUP_PREVIEW_OBJECT)
 		
 		highlight_rect.visible = event.is_pressed()
 	
