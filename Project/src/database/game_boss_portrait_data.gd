@@ -17,7 +17,7 @@ const UNKNOWN_ID = -999
 
 const DATA = {
 	UNKNOWN_ID : {
-		"name" : "Not yet mapped in MMLV Editor.",
+		"name" : "Unknown ID; Not mapped in MMLV Editor",
 		"texture" : preload("res://assets/images/boss_portraits/bossportraitUnk.png")
 	},
 	-1 : {
@@ -175,6 +175,11 @@ static func get_data(id) -> Dictionary:
 		return DATA[UNKNOWN_ID]
 	
 	return DATA[id]
+
+static func get_portrait_texture(id) -> StreamTexture:
+	var _data = get_data(id)
+	
+	return _data["texture"]
 
 static func get_portrait_info_text(id) -> String:
 	var _data = get_data(id)
