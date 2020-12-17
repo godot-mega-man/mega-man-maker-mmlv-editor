@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbDropdownButtonBoss.tscn" type="PackedScene" id=2]
 
 [node name="AtbHbox" type="HBoxContainer"]
 margin_right = 792.0
@@ -29,11 +30,26 @@ size_flags_horizontal = 3
 text = "Property"
 clip_text = true
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEditHBox" type="HBoxContainer" parent="."]
 margin_left = 398.0
 margin_right = 792.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
-[connection signal="focus_entered" from="LineEdit" to="." method="_on_LineEdit_focus_entered"]
-[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+
+[node name="LineEdit" type="LineEdit" parent="LineEditHBox"]
+margin_right = 394.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AtbDropdownButtonBoss" parent="LineEditHBox" instance=ExtResource( 2 )]
+visible = false
+margin_left = 370.0
+margin_right = 394.0
+focus_mode = 0
+[connection signal="focus_entered" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_focus_entered"]
+[connection signal="text_changed" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="selected" from="LineEditHBox/AtbDropdownButtonBoss" to="." method="_on_AtbDropdownButtonBoss_selected"]
