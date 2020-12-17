@@ -46,7 +46,7 @@ onready var code_label = $CodeLabel
 onready var lineedit = $LineEditHBox/LineEdit
 onready var atb_dropdown_button_boss = $LineEditHBox/AtbDropdownButtonBoss
 
-var string_value
+var string_value = ""
 
 #-------------------------------------------------
 #      Notifications
@@ -92,7 +92,7 @@ func set_value(val):
 	
 	string_value = val
 	lineedit.text = str(val)
-	atb_dropdown_button_boss.set_curr_tooltip_from_id(int(val))
+	atb_dropdown_button_boss.set_curr_data_from_id(int(val))
 
 func get_value() -> String:
 	return string_value
@@ -128,8 +128,9 @@ func _on_LineEdit_text_changed(new_text: String) -> void:
 		return
 	
 	string_value = new_text
-	
 	emit_signal("value_entered")
+	
+	_update_dropdown_input()
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	lineedit_release_focus()
@@ -139,8 +140,9 @@ func _on_LineEdit_focus_entered() -> void:
 
 func _on_AtbDropdownButtonBoss_selected(id) -> void:
 	UnsaveChanges.set_activated()
-	
 	set_value(id)
+	lineedit.text = str(id)
+	emit_signal("value_entered")
 
 #-------------------------------------------------
 #      Private Methods
@@ -155,6 +157,7 @@ func _update_dropdown_input():
 			atb_dropdown_button_boss.hide()
 		DropdownInput.BOSS_PORTRAITS:
 			atb_dropdown_button_boss.show()
+			atb_dropdown_button_boss.set_curr_data_from_id(int(string_value))
 
 #-------------------------------------------------
 #      Setters & Getters

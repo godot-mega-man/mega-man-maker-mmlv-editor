@@ -6,6 +6,7 @@
 margin_right = 24.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 24, 0 )
+focus_mode = 1
 text = "..."
 script = ExtResource( 1 )
 __meta__ = {

@@ -29,8 +29,10 @@ const BUTTON_RECT_MINSIZE = Vector2(64, 64)
 #      Properties
 #-------------------------------------------------
 
-onready var scroll_container = $PopupPanel/Control/ScrollContainer
-onready var grid_container = $PopupPanel/Control/ScrollContainer/GridContainer
+onready var data_portrait_texture = $PopupPanel/Control/VBox/CurrDataHBox/PortraitTexture
+onready var data_info_label = $PopupPanel/Control/VBox/CurrDataHBox/InfoLabel
+onready var scroll_container = $PopupPanel/Control/VBox/ScrollContainer
+onready var grid_container = $PopupPanel/Control/VBox/ScrollContainer/GridContainer
 
 
 # {
@@ -57,8 +59,10 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
-func set_curr_tooltip_from_id(id):
+func set_curr_data_from_id(id):
 	hint_tooltip = GameBossPortraitData.get_portrait_info_text(id) + "\n\n" + "Click to select a boss portrait."
+	data_portrait_texture.texture = GameBossPortraitData.get_portrait_texture(id)
+	data_info_label.text = GameBossPortraitData.get_portrait_info_text(id)
 
 func reset_popup_vscroll():
 	scroll_container.scroll_vertical = 0
@@ -103,7 +107,7 @@ func _get_id_from_button(button) -> String:
 
 func _button_pressed_from(button):
 	var id = _get_id_from_button(button)
-	set_curr_tooltip_from_id(id)
+	set_curr_data_from_id(id)
 	emit_signal("selected", id)
 	
 	popup_panel.hide()

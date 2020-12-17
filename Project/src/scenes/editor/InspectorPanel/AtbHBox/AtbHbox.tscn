@@ -48,6 +48,7 @@ __meta__ = {
 visible = false
 margin_left = 370.0
 margin_right = 394.0
+focus_mode = 0
 [connection signal="focus_entered" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_focus_entered"]
 [connection signal="text_changed" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="LineEditHBox/LineEdit" to="." method="_on_LineEdit_text_entered"]
