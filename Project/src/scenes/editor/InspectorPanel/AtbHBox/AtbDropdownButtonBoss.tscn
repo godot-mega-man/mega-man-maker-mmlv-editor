@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbDropdownButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbDropdownButtonBoss.gd" type="Script" id=2]
+
+[node name="AtbDropdownButtonBoss" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PopupPanel" parent="." index="0"]
+margin_right = 448.0
+margin_bottom = 336.0
+
+[node name="Control" type="Control" parent="PopupPanel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PopupPanel/Control" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PopupPanel/Control/ScrollContainer" index="0"]
+columns = 6
+[connection signal="about_to_show" from="PopupPanel" to="." method="_on_PopupPanel_about_to_show"]
