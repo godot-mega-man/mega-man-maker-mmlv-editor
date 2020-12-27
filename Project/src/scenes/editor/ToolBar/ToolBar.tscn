@@ -45,6 +45,7 @@ __meta__ = {
 }
 
 [node name="ObjVBox" type="VBoxContainer" parent="HBoxContainer"]
+visible = false
 margin_right = 50.0
 margin_bottom = 50.0
 size_flags_vertical = 0
@@ -75,13 +76,12 @@ __meta__ = {
 }
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-margin_left = 58.0
-margin_right = 62.0
+visible = false
+margin_right = 4.0
 margin_bottom = 64.0
 
 [node name="EditModeVBox" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 70.0
-margin_right = 322.0
+margin_right = 252.0
 margin_bottom = 50.0
 size_flags_vertical = 0
 
