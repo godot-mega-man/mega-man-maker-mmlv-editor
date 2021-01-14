@@ -69,14 +69,15 @@ tracks/1/keys = {
 [node name="TilemapTab" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 
-[node name="SearchLineEdit" type="LineEdit" parent="VBox/ScrollContainer/Vbox" index="0"]
+[node name="SearchLineEdit" type="LineEdit" parent="VBox" index="0"]
 margin_right = 792.0
 margin_bottom = 24.0
+clear_button_enabled = true
 placeholder_text = "Search tilesets"
 
-[node name="ControlAutoUnfocus" parent="VBox/ScrollContainer/Vbox/SearchLineEdit" index="2" instance=ExtResource( 6 )]
+[node name="ControlAutoUnfocus" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 6 )]
 
-[node name="Icon" type="TextureRect" parent="VBox/ScrollContainer/Vbox/SearchLineEdit" index="3"]
+[node name="Icon" type="TextureRect" parent="VBox/SearchLineEdit" index="3"]
 modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
 anchor_left = 1.0
 anchor_right = 1.0
@@ -90,15 +91,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="1"]
+[node name="ScrollContainer" parent="VBox" index="1"]
 margin_top = 28.0
-margin_bottom = 42.0
+
+[node name="Vbox" parent="VBox/ScrollContainer" index="0"]
+margin_bottom = 560.0
+
+[node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 text = "Tileset"
 
-[node name="DescriptionLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="2"]
-margin_top = 46.0
+[node name="DescriptionLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
+margin_top = 18.0
 margin_right = 792.0
-margin_bottom = 60.0
+margin_bottom = 32.0
 text = "Double click on a tile to select sub-tile (shortcut: T)"
 align = 1
 autowrap = true
@@ -177,5 +182,6 @@ __meta__ = {
 anims/Hide = SubResource( 3 )
 anims/Show = SubResource( 4 )
 
+[connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
 [connection signal="subtile_selected" from="SubtileSelectPopup" to="." method="_on_SubtileSelectPopup_subtile_selected"]
 [connection signal="pressed" from="SubtileButton" to="." method="_on_SubtileButton_pressed"]
