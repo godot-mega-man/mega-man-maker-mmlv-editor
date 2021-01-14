@@ -41,6 +41,7 @@ onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
 onready var subtile_button = $SubtileButton
 onready var subtile_select_popup = $SubtileSelectPopup
+onready var search_lineedit = $VBox/ScrollContainer/Vbox/SearchLineEdit
 
 var current_selected_tile_id : int
 var current_subtile_id : int
@@ -119,7 +120,7 @@ func _generate_ui():
 	_add_margin_bottom_box()
 
 func _create_tile_button(file_name : String, game_id : int, tile_id : int):
-	var grid_c = vbox.get_node(GRID_C_NAME_PREFIX + str(game_id))
+	var grid_c = scrl_vbox.get_node(GRID_C_NAME_PREFIX + str(game_id))
 	var tex_btn := TileTextureButton.new()
 	var atlas_tex = AtlasTexture.new()
 	
@@ -157,7 +158,7 @@ func _create_grid_containters():
 		var label_game_id = Label.new()
 		var grid_auto_resizer = GRID_C_AUTO_RESIZER.instance()
 		
-		vbox.add_child(grid_c)
+		scrl_vbox.add_child(grid_c)
 		grid_c.set_name(GRID_C_NAME_PREFIX + str(id))
 		
 		grid_c.add_child(grid_auto_resizer)
@@ -168,7 +169,7 @@ func _create_grid_containters():
 
 func _add_margin_bottom_box():
 	var ref_rect = ReferenceRect.new()
-	vbox.add_child(ref_rect)
+	scrl_vbox.add_child(ref_rect)
 	ref_rect.rect_min_size = MARGIN_BOTTOM_BOX_MIN_SIZE
 
 #-------------------------------------------------

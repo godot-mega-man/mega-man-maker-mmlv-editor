@@ -25,18 +25,18 @@ extends MainInspectorTab
 #      Properties
 #-------------------------------------------------
 
-onready var atb_hbox_obj_vec_x = $ScrollContainer/Vbox/AtbHboxObjVecX
-onready var atb_hbox_obj_vec_y = $ScrollContainer/Vbox/AtbHboxObjVecY
-onready var atb_hbox_obj_type = $ScrollContainer/Vbox/AtbHboxObjType
-onready var atb_hbox_obj_id = $ScrollContainer/Vbox/AtbHboxObjID
-onready var atb_hbox_obj_appearance = $ScrollContainer/Vbox/AtbHboxObjAppearance
-onready var atb_hbox_obj_direction = $ScrollContainer/Vbox/AtbHboxObjDirection
-onready var atb_hbox_obj_timer = $ScrollContainer/Vbox/AtbHboxObjTimer
-onready var atb_hbox_obj_tex_h = $ScrollContainer/Vbox/AtbHboxObjTexH
-onready var atb_hbox_obj_tex_v = $ScrollContainer/Vbox/AtbHboxObjTexV
-onready var atb_hbox_obj_dest_x = $ScrollContainer/Vbox/AtbHboxObjDestX
-onready var atb_hbox_obj_dest_y = $ScrollContainer/Vbox/AtbHboxObjDestY
-onready var atb_hbox_obj_option = $ScrollContainer/Vbox/AtbHboxObjOption
+onready var atb_hbox_obj_vec_x = $VBox/ScrollContainer/Vbox/AtbHboxObjVecX
+onready var atb_hbox_obj_vec_y = $VBox/ScrollContainer/Vbox/AtbHboxObjVecY
+onready var atb_hbox_obj_type = $VBox/ScrollContainer/Vbox/AtbHboxObjType
+onready var atb_hbox_obj_id = $VBox/ScrollContainer/Vbox/AtbHboxObjID
+onready var atb_hbox_obj_appearance = $VBox/ScrollContainer/Vbox/AtbHboxObjAppearance
+onready var atb_hbox_obj_direction = $VBox/ScrollContainer/Vbox/AtbHboxObjDirection
+onready var atb_hbox_obj_timer = $VBox/ScrollContainer/Vbox/AtbHboxObjTimer
+onready var atb_hbox_obj_tex_h = $VBox/ScrollContainer/Vbox/AtbHboxObjTexH
+onready var atb_hbox_obj_tex_v = $VBox/ScrollContainer/Vbox/AtbHboxObjTexV
+onready var atb_hbox_obj_dest_x = $VBox/ScrollContainer/Vbox/AtbHboxObjDestX
+onready var atb_hbox_obj_dest_y = $VBox/ScrollContainer/Vbox/AtbHboxObjDestY
+onready var atb_hbox_obj_option = $VBox/ScrollContainer/Vbox/AtbHboxObjOption
 
 #-------------------------------------------------
 #      Notifications
