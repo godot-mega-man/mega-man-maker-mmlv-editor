@@ -67,7 +67,6 @@ func open_file():
 func open_file_from_path(file_path : String):
 	var dir : String = _get_dir_from_path(file_path)
 	file_path = _validate_file_path(file_path)
-	
 	emit_signal("opened_file", dir, file_path)
 	update_current_level_path(dir, file_path)
 	update_file_checker_data()

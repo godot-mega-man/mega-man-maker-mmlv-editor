@@ -14,75 +14,75 @@ shortcut = SubResource( 1 )
 [node name="ObjectTab" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="AtbHboxObjVecX" parent="ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
+[node name="AtbHboxObjVecX" parent="VBox/ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
 margin_top = 18.0
 margin_bottom = 42.0
 property_name = "Vector X"
 code = "b"
 
-[node name="AtbHboxObjVecY" parent="ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
+[node name="AtbHboxObjVecY" parent="VBox/ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
 margin_top = 46.0
 margin_bottom = 70.0
 property_name = "Vector Y"
 code = "c"
 
-[node name="AtbHboxObjType" parent="ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
+[node name="AtbHboxObjType" parent="VBox/ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
 margin_top = 74.0
 margin_bottom = 98.0
 property_name = "Type ID"
 code = "d"
 
-[node name="AtbHboxObjID" parent="ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
+[node name="AtbHboxObjID" parent="VBox/ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
 margin_top = 102.0
 margin_bottom = 126.0
 property_name = "Object ID"
 code = "e"
 
-[node name="AtbHboxObjAppearance" parent="ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
+[node name="AtbHboxObjAppearance" parent="VBox/ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
 margin_top = 130.0
 margin_bottom = 154.0
 property_name = "Appearance"
 code = "f"
 
-[node name="AtbHboxObjDirection" parent="ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
+[node name="AtbHboxObjDirection" parent="VBox/ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
 margin_top = 158.0
 margin_bottom = 182.0
 property_name = "Direction"
 code = "g"
 
-[node name="AtbHboxObjTimer" parent="ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
+[node name="AtbHboxObjTimer" parent="VBox/ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
 margin_top = 186.0
 margin_bottom = 210.0
 property_name = "Timer"
 code = "h"
 
-[node name="AtbHboxObjTexH" parent="ScrollContainer/Vbox" index="8" instance=ExtResource( 2 )]
+[node name="AtbHboxObjTexH" parent="VBox/ScrollContainer/Vbox" index="8" instance=ExtResource( 2 )]
 visible = false
 margin_top = 214.0
 margin_bottom = 238.0
 property_name = "Texture H Offset"
 code = "j"
 
-[node name="AtbHboxObjTexV" parent="ScrollContainer/Vbox" index="9" instance=ExtResource( 2 )]
+[node name="AtbHboxObjTexV" parent="VBox/ScrollContainer/Vbox" index="9" instance=ExtResource( 2 )]
 visible = false
 margin_top = 214.0
 margin_bottom = 238.0
 property_name = "Texture V Offset"
 code = "k"
 
-[node name="AtbHboxObjDestX" parent="ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
+[node name="AtbHboxObjDestX" parent="VBox/ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
 margin_top = 214.0
 margin_bottom = 238.0
 property_name = "Destination X"
 code = "m"
 
-[node name="AtbHboxObjDestY" parent="ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
+[node name="AtbHboxObjDestY" parent="VBox/ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
 margin_top = 242.0
 margin_bottom = 266.0
 property_name = "Destination Y"
 code = "n"
 
-[node name="AtbHboxObjOption" parent="ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
+[node name="AtbHboxObjOption" parent="VBox/ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
 margin_top = 270.0
 margin_bottom = 294.0
 property_name = "Option"
@@ -102,15 +102,16 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecX" to="." method="_on_AtbHboxObjVecX_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjVecY" to="." method="_on_AtbHboxObjVecY_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjType" to="." method="_on_AtbHboxObjType_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjID" to="." method="_on_AtbHboxObjID_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjAppearance" to="." method="_on_AtbHboxObjAppearance_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDirection" to="." method="_on_AtbHboxObjDirection_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTimer" to="." method="_on_AtbHboxObjTimer_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTexH" to="." method="_on_AtbHboxObjTexH_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjTexV" to="." method="_on_AtbHboxObjTexV_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDestX" to="." method="_on_AtbHboxObjDestX_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjDestY" to="." method="_on_AtbHboxObjDestY_value_entered"]
-[connection signal="value_entered" from="ScrollContainer/Vbox/AtbHboxObjOption" to="." method="_on_AtbHboxObjOption_value_entered"]
+
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjVecX" to="." method="_on_AtbHboxObjVecX_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjVecY" to="." method="_on_AtbHboxObjVecY_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjType" to="." method="_on_AtbHboxObjType_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjID" to="." method="_on_AtbHboxObjID_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjAppearance" to="." method="_on_AtbHboxObjAppearance_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjDirection" to="." method="_on_AtbHboxObjDirection_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjTimer" to="." method="_on_AtbHboxObjTimer_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjTexH" to="." method="_on_AtbHboxObjTexH_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjTexV" to="." method="_on_AtbHboxObjTexV_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjDestX" to="." method="_on_AtbHboxObjDestX_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjDestY" to="." method="_on_AtbHboxObjDestY_value_entered"]
+[connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxObjOption" to="." method="_on_AtbHboxObjOption_value_entered"]

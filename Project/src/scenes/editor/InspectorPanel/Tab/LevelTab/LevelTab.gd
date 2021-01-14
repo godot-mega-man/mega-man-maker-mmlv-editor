@@ -25,25 +25,25 @@ extends MainInspectorTab
 #      Properties
 #-------------------------------------------------
 
-onready var atb_hbox_version = $ScrollContainer/Vbox/AtbHboxVersion
-onready var atb_hbox_level_name = $ScrollContainer/Vbox/AtbHboxLevelName
-onready var atb_hbox_username = $ScrollContainer/Vbox/AtbHboxUsername
-onready var atb_hbox_user_portrait = $ScrollContainer/Vbox/AtbHboxUserPortrait
-onready var atb_hbox_sliding = $ScrollContainer/Vbox/AtbHboxSliding
-onready var atb_hbox_cshot_on = $ScrollContainer/Vbox/AtbHboxCShotOn
-onready var atb_hbox_dbl_dmg = $ScrollContainer/Vbox/AtbHboxDblDmg
-onready var atb_hbox_proto_strike = $ScrollContainer/Vbox/AtbHboxProtoStrike
-onready var atb_hbox_dbl_jump = $ScrollContainer/Vbox/AtbHboxDblJump
-onready var atb_hbox_cshot_type = $ScrollContainer/Vbox/AtbHboxCShotType
-onready var atb_hbox_bg_color_id = $ScrollContainer/Vbox/AtbHboxBgColorID
-onready var atb_hbox_boss_portrait = $ScrollContainer/Vbox/AtbHboxBossPortrait
-onready var atb_hbox_boss_count = $ScrollContainer/Vbox/AtbHboxBossCount
-onready var atb_hbox_lvl_track_id = $ScrollContainer/Vbox/AtbHboxLvlTrackID
-onready var atb_hbox_lvl_music_number = $ScrollContainer/Vbox/AtbHboxLvlMusicNumber
-onready var atb_hbox_area_p = $ScrollContainer/Vbox/AtbHboxAreaP
-onready var atb_hbox_area_q = $ScrollContainer/Vbox/AtbHboxAreaQ
-onready var atb_hbox_area_r = $ScrollContainer/Vbox/AtbHboxAreaR
-onready var atb_hbox_area_s = $ScrollContainer/Vbox/AtbHboxAreaS
+onready var atb_hbox_version = $VBox/ScrollContainer/Vbox/AtbHboxVersion
+onready var atb_hbox_level_name = $VBox/ScrollContainer/Vbox/AtbHboxLevelName
+onready var atb_hbox_username = $VBox/ScrollContainer/Vbox/AtbHboxUsername
+onready var atb_hbox_user_portrait = $VBox/ScrollContainer/Vbox/AtbHboxUserPortrait
+onready var atb_hbox_sliding = $VBox/ScrollContainer/Vbox/AtbHboxSliding
+onready var atb_hbox_cshot_on = $VBox/ScrollContainer/Vbox/AtbHboxCShotOn
+onready var atb_hbox_dbl_dmg = $VBox/ScrollContainer/Vbox/AtbHboxDblDmg
+onready var atb_hbox_proto_strike = $VBox/ScrollContainer/Vbox/AtbHboxProtoStrike
+onready var atb_hbox_dbl_jump = $VBox/ScrollContainer/Vbox/AtbHboxDblJump
+onready var atb_hbox_cshot_type = $VBox/ScrollContainer/Vbox/AtbHboxCShotType
+onready var atb_hbox_bg_color_id = $VBox/ScrollContainer/Vbox/AtbHboxBgColorID
+onready var atb_hbox_boss_portrait = $VBox/ScrollContainer/Vbox/AtbHboxBossPortrait
+onready var atb_hbox_boss_count = $VBox/ScrollContainer/Vbox/AtbHboxBossCount
+onready var atb_hbox_lvl_track_id = $VBox/ScrollContainer/Vbox/AtbHboxLvlTrackID
+onready var atb_hbox_lvl_music_number = $VBox/ScrollContainer/Vbox/AtbHboxLvlMusicNumber
+onready var atb_hbox_area_p = $VBox/ScrollContainer/Vbox/AtbHboxAreaP
+onready var atb_hbox_area_q = $VBox/ScrollContainer/Vbox/AtbHboxAreaQ
+onready var atb_hbox_area_r = $VBox/ScrollContainer/Vbox/AtbHboxAreaR
+onready var atb_hbox_area_s = $VBox/ScrollContainer/Vbox/AtbHboxAreaS
 
 #-------------------------------------------------
 #      Notifications
