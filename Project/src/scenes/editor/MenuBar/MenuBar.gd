@@ -24,6 +24,7 @@ signal saving_file
 signal saving_file_as
 signal opening_preferences
 signal opening_recent_file(id)
+signal clearing_recent_files
 signal exiting
 
 signal undo
@@ -161,9 +162,12 @@ func update_recent_files(file_paths : PoolStringArray, max_item : int = 7):
 	
 	for f_path in file_paths:
 		file_recent_popup_menu.add_item(f_path)
+	if file_paths.empty():
+		file_recent_popup_menu.add_item("-No Recent Files Found-")
+		file_recent_popup_menu.set_item_disabled(0, true)
 	
 	file_recent_popup_menu.add_separator()
-	file_recent_popup_menu.add_item("Clear", ID_MENU_FILE_RECENT_CLEAR)
+	file_recent_popup_menu.add_item("Clear Recent Files", ID_MENU_FILE_RECENT_CLEAR)
 
 #-------------------------------------------------
 #      Connections
@@ -240,7 +244,11 @@ func _on_help_menu_popup_pressed(id : int) -> void:
 			emit_signal("about")
 
 func _on_file_recent_menu_popup_pressed(id : int) -> void:
-	emit_signal("opening_recent_file", id)
+	match id:
+		ID_MENU_FILE_RECENT_CLEAR:
+			emit_signal("clearing_recent_files")
+		_:
+			emit_signal("opening_recent_file", id)
 
 # Connected from _init_file_menu()
 func _on_file_menu_popup_about_to_show():

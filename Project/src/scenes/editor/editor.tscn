@@ -387,6 +387,7 @@ anims/Anim = SubResource( 2 )
 [connection signal="add_object_pressed" from="CanvasLayer/Control/ToolBar" to="." method="_on_ToolBar_add_object_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ToolBar" to="." method="_on_ToolBar_pressed"]
 [connection signal="about" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_about"]
+[connection signal="clearing_recent_files" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_clearing_recent_files"]
 [connection signal="delete" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_delete"]
 [connection signal="duplicate" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_duplicate"]
 [connection signal="edit_menu_about_to_show" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_edit_menu_about_to_show"]

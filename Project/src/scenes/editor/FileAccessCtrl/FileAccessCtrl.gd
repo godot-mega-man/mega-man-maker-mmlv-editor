@@ -37,6 +37,7 @@ onready var file_update_checker = $FileUpdateChecker
 
 var current_level_dir : String
 var current_level_path : String
+var recent_file_manager : RecentFileManager = RecentFileManager.new()
 
 #-------------------------------------------------
 #      Notifications
@@ -45,6 +46,8 @@ var current_level_path : String
 func _ready() -> void:
 	$OpenFileDialog.set_current_path(_get_mega_maker_path())
 	$SaveFileDialog.set_current_path(_get_mega_maker_path())
+	
+	recent_file_manager.load_init_config()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -105,6 +108,7 @@ func _on_OpenFileDialog_file_selected(path: String) -> void:
 	emit_signal("opened_file", open_file_dialog.current_dir, path)
 	update_current_level_path(open_file_dialog.current_dir, path)
 	update_file_checker_data()
+	recent_file_manager.add(path)
 
 func _on_SaveFileDialog_file_selected(path: String) -> void:
 	emit_signal("saved_file", save_file_dialog.current_dir, path)
