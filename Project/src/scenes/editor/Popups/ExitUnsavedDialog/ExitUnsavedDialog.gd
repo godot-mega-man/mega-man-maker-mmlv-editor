@@ -24,6 +24,7 @@ class_name ExitUnsavedDialog
 enum PendingRequest {
 	NEW_FILE,
 	OPEN,
+	OPEN_FROM_PATH,
 	EXIT_APP
 }
 
@@ -42,6 +43,9 @@ const SAVE_DIALOG = "Save changes to level?"
 #-------------------------------------------------
 
 export (PendingRequest) var pending_request
+
+# The following are used for opening from drag n' dropping files from the OS
+var pool_opening_path : String
 
 #-------------------------------------------------
 #      Notifications

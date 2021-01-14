@@ -64,6 +64,14 @@ func _ready() -> void:
 func open_file():
 	$OpenFileDialog.popup()
 
+func open_file_from_path(file_path : String):
+	var dir : String = _get_dir_from_path(file_path)
+	file_path = _validate_file_path(file_path)
+
+	emit_signal("opened_file", dir, file_path)
+	update_current_level_path(dir, file_path)
+	update_file_checker_data()
+
 func open_containing_folder():
 	OS.shell_open(_get_mega_maker_path())
 
@@ -126,6 +134,27 @@ func _get_mega_maker_path() -> String:
 	var user = OS.get_user_data_dir().split("/")[2]
 	
 	return "C:/Users/" + user + "/AppData/Local/MegaMaker/Levels/"
+
+func _get_dir_from_path(file_path : String) -> String:
+	var dirs : PoolStringArray = file_path.split("\\")
+	var result : String
+	
+	# Replace drive name from the first set such as C: with an empty space
+	dirs.remove(0)
+	dirs.insert(0, " ")
+	
+	# Remove the last elem which is a file name and extension
+	dirs.remove(dirs.size() - 1)
+	
+	result = dirs.join("/")
+	result = result.strip_edges(true, false)
+	
+	result
+	
+	return result
+
+func _validate_file_path(file_path : String) -> String:
+	return file_path.replace("\\", "/")
 
 #-------------------------------------------------
 #      Setters & Getters
