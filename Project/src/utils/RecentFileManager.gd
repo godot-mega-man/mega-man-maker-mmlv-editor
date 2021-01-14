@@ -5,8 +5,8 @@ extends Reference
 class_name RecentFileManager
 
 """
-	Responsible for keeping recent opened files as path, adding new one, and
-	clearing all the history.
+	RecentFileManager is a responsible class for keeping recently opened files
+	as a path, adding a new one, and clearing all the history.
 """
 
 #-------------------------------------------------
