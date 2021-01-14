@@ -161,7 +161,7 @@ func update_recent_files(file_paths : PoolStringArray, max_item : int = 7):
 	file_recent_popup_menu.clear()
 	
 	for f_path in file_paths:
-		file_recent_popup_menu.add_item(f_path)
+		file_recent_popup_menu.add_item((f_path as String).get_file())
 	if file_paths.empty():
 		file_recent_popup_menu.add_item("-No Recent Files Found-")
 		file_recent_popup_menu.set_item_disabled(0, true)

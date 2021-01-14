@@ -24,7 +24,7 @@ const CFG_SECTION_KEY = "list"
 #-------------------------------------------------
 
 var recent_file_paths : Array
-var max_item : int = 4
+var max_item : int = 10
 
 #-------------------------------------------------
 #      Public Methods
