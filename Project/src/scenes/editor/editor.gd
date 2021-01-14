@@ -192,6 +192,15 @@ func _on_FileDropNotifier_files_dropped(files : PoolStringArray, screen : int) -
 		return
 	file_access_ctrl.open_file_from_path(files[0])
 
+func _on_MenuPanel_opening_recent_file(id) -> void:
+	#Check if there are unsaved changes
+	if UnsaveChanges.is_activated():
+		exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.OPEN_FROM_PATH
+		exit_unsaved_dialog.popup_centered()
+		exit_unsaved_dialog.pool_opening_path = file_access_ctrl.recent_file_manager.recent_file_paths[id]
+		return
+	file_access_ctrl.open_file_from_path(file_access_ctrl.recent_file_manager.recent_file_paths[id])
+
 func _on_MenuPanel_file_menu_about_to_show() -> void:
 	menu_bar.update_recent_files(file_access_ctrl.recent_file_manager.get_recent_file_paths())
 

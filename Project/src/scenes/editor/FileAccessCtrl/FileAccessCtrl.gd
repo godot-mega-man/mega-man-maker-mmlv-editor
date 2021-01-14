@@ -67,10 +67,11 @@ func open_file():
 func open_file_from_path(file_path : String):
 	var dir : String = _get_dir_from_path(file_path)
 	file_path = _validate_file_path(file_path)
-
+	
 	emit_signal("opened_file", dir, file_path)
 	update_current_level_path(dir, file_path)
 	update_file_checker_data()
+	recent_file_manager.add(file_path)
 
 func open_containing_folder():
 	OS.shell_open(_get_mega_maker_path())
@@ -136,7 +137,7 @@ func _get_mega_maker_path() -> String:
 	return "C:/Users/" + user + "/AppData/Local/MegaMaker/Levels/"
 
 func _get_dir_from_path(file_path : String) -> String:
-	var dirs : PoolStringArray = file_path.split("\\")
+	var dirs : PoolStringArray = file_path.replace("/", "\\").split("\\")
 	var result : String
 	
 	# Replace drive name from the first set such as C: with an empty space
