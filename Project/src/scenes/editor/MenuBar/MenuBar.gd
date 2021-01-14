@@ -23,6 +23,7 @@ signal opening_containing_folder
 signal saving_file
 signal saving_file_as
 signal opening_preferences
+signal opening_recent_file(id)
 signal exiting
 
 signal undo
@@ -51,6 +52,7 @@ signal send_feedback
 signal about
 
 #Generic signals
+signal file_menu_about_to_show
 signal edit_menu_about_to_show
 signal view_menu_about_to_show
 
@@ -64,7 +66,9 @@ const ID_MENU_FILE_OPEN_CONTAINING_FOLDER = 2
 const ID_MENU_FILE_SAVE = 4
 const ID_MENU_FILE_SAVE_AS = 5
 const ID_MENU_FILE_PREFERENCES = 7
-const ID_MENU_FILE_EXIT = 9
+const ID_MENU_FILE_RECENT = 9
+const ID_MENU_FILE_EXIT = 11
+const ID_MENU_FILE_RECENT_CLEAR = 99
 
 const ID_MENU_EDIT_UNDO = 0
 const ID_MENU_EDIT_REDO = 1
@@ -128,6 +132,8 @@ onready var edit_menu := $MenuBarHBox/EditMenu as MenuButton
 onready var view_menu := $MenuBarHBox/ViewMenu as MenuButton
 onready var help_menu := $MenuBarHBox/HelpMenu as MenuButton
 
+onready var file_recent_popup_menu : PopupMenu
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -150,8 +156,111 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
+func update_recent_files(file_paths : PoolStringArray, max_item : int = 7):
+	file_recent_popup_menu.clear()
+	
+	for f_path in file_paths:
+		file_recent_popup_menu.add_item(f_path)
+	
+	file_recent_popup_menu.add_separator()
+	file_recent_popup_menu.add_item("Clear", ID_MENU_FILE_RECENT_CLEAR)
+
+#-------------------------------------------------
+#      Connections
+#-------------------------------------------------
+
+#Connected from _init_file_menu()
+func _on_file_menu_popup_pressed(id : int) -> void:
+	match id:
+		ID_MENU_FILE_NEW:
+			emit_signal("new_file")
+		ID_MENU_FILE_OPEN:
+			emit_signal("opening_file")
+		ID_MENU_FILE_OPEN_CONTAINING_FOLDER:
+			emit_signal("opening_containing_folder")
+		ID_MENU_FILE_SAVE:
+			emit_signal("saving_file")
+		ID_MENU_FILE_SAVE_AS:
+			emit_signal("saving_file_as")
+		ID_MENU_FILE_PREFERENCES:
+			pass
+		ID_MENU_FILE_RECENT:
+			pass
+		ID_MENU_FILE_EXIT:
+			emit_signal("exiting")
+
+#Connected from _init_edit_menu()
+func _on_edit_menu_popup_pressed(id : int) -> void:
+	match id:
+		ID_MENU_EDIT_UNDO:
+			emit_signal("undo")
+		ID_MENU_EDIT_REDO:
+			emit_signal("redo")
+		ID_MENU_EDIT_DUPLICATE:
+			emit_signal("duplicate")
+		ID_MENU_EDIT_DELETE:
+			emit_signal("delete")
+
+#Connected from _init_view_menu()
+func _on_view_menu_popup_pressed(id : int) -> void:
+	match id:
+		ID_MENU_VIEW_SCREEN_GRID:
+			emit_signal("toggle_screen_grid")
+		ID_MENU_VIEW_TILE_GRID:
+			emit_signal("toggle_tile_grid")
+		ID_MENU_VIEW_TILES:
+			emit_signal("toggle_tiles")
+		ID_MENU_VIEW_BACKGROUNDS:
+			emit_signal("toggle_backgrounds")
+		ID_MENU_VIEW_OBJECTS:
+			emit_signal("toggle_objects")
+		ID_MENU_VIEW_ACTIVE_SCREENS:
+			emit_signal("toggle_active_screens")
+		ID_MENU_VIEW_LADDERS:
+			emit_signal("toggle_ladders")
+		ID_MENU_VIEW_SPIKES:
+			emit_signal("toggle_spikes")
+		ID_MENU_VIEW_ZOOM_IN:
+			emit_signal("zoom_in")
+		ID_MENU_VIEW_ZOOM_OUT:
+			emit_signal("zoom_out")
+		ID_MENU_VIEW_NORMAL_ZOOM:
+			emit_signal("normal_zoom")
+
+#Connected from _init_help_menu()
+func _on_help_menu_popup_pressed(id : int) -> void:
+	match id:
+		ID_MENU_HELP_README:
+			emit_signal("readme")
+		ID_MENU_HELP_RELEASE_NOTES:
+			OS.shell_open(RELEASE_NOTES_URL)
+		ID_MENU_HELP_SEND_FEEDBACK:
+			OS.shell_open(FEEDBACK_URL)
+		ID_MENU_HELP_ABOUT:
+			emit_signal("about")
+
+func _on_file_recent_menu_popup_pressed(id : int) -> void:
+	emit_signal("opening_recent_file", id)
+
+# Connected from _init_file_menu()
+func _on_file_menu_popup_about_to_show():
+	emit_signal("file_menu_about_to_show")
+
+#Connected from _init_edit_menu()
+func _on_edit_menu_popup_about_to_show():
+	emit_signal("edit_menu_about_to_show")
+
+#Connected from _init_view_menu()
+func _on_view_menu_popup_about_to_show():
+	emit_signal("view_menu_about_to_show")
+
+#-------------------------------------------------
+#      Private Methods
+#-------------------------------------------------
+
 func _init_file_menus():
 	file_menu.get_popup().connect("id_pressed", self, "_on_file_menu_popup_pressed")
+	file_menu.get_popup().connect("about_to_show", self, "_on_file_menu_popup_about_to_show")
 	
 	file_menu.get_popup().add_item("New Level", ID_MENU_FILE_NEW)
 	file_menu.get_popup().set_item_shortcut(ID_MENU_FILE_NEW, shortcut_file_new, true)
@@ -173,6 +282,11 @@ func _init_file_menus():
 	
 	file_menu.get_popup().add_item("Preferences...", ID_MENU_FILE_PREFERENCES)
 	file_menu.get_popup().set_item_disabled(ID_MENU_FILE_PREFERENCES, true) #TODO:ImplementThis
+	
+	file_menu.get_popup().add_separator()
+	
+	_create_recent_popup_menu()
+	file_menu.get_popup().add_submenu_item("Recent Files...", "Recent", ID_MENU_FILE_RECENT)
 	
 	file_menu.get_popup().add_separator()
 	
@@ -264,91 +378,13 @@ func _init_help_menus():
 	help_menu.get_popup().add_separator()
 	
 	help_menu.get_popup().add_item("About", ID_MENU_HELP_ABOUT)
-	
 
-#-------------------------------------------------
-#      Connections
-#-------------------------------------------------
-
-#Connected from _init_file_menu()
-func _on_file_menu_popup_pressed(id : int) -> void:
-	match id:
-		ID_MENU_FILE_NEW:
-			emit_signal("new_file")
-		ID_MENU_FILE_OPEN:
-			emit_signal("opening_file")
-		ID_MENU_FILE_OPEN_CONTAINING_FOLDER:
-			emit_signal("opening_containing_folder")
-		ID_MENU_FILE_SAVE:
-			emit_signal("saving_file")
-		ID_MENU_FILE_SAVE_AS:
-			emit_signal("saving_file_as")
-		ID_MENU_FILE_PREFERENCES:
-			pass
-		ID_MENU_FILE_EXIT:
-			emit_signal("exiting")
-
-#Connected from _init_edit_menu()
-func _on_edit_menu_popup_pressed(id : int) -> void:
-	match id:
-		ID_MENU_EDIT_UNDO:
-			emit_signal("undo")
-		ID_MENU_EDIT_REDO:
-			emit_signal("redo")
-		ID_MENU_EDIT_DUPLICATE:
-			emit_signal("duplicate")
-		ID_MENU_EDIT_DELETE:
-			emit_signal("delete")
-
-#Connected from _init_view_menu()
-func _on_view_menu_popup_pressed(id : int) -> void:
-	match id:
-		ID_MENU_VIEW_SCREEN_GRID:
-			emit_signal("toggle_screen_grid")
-		ID_MENU_VIEW_TILE_GRID:
-			emit_signal("toggle_tile_grid")
-		ID_MENU_VIEW_TILES:
-			emit_signal("toggle_tiles")
-		ID_MENU_VIEW_BACKGROUNDS:
-			emit_signal("toggle_backgrounds")
-		ID_MENU_VIEW_OBJECTS:
-			emit_signal("toggle_objects")
-		ID_MENU_VIEW_ACTIVE_SCREENS:
-			emit_signal("toggle_active_screens")
-		ID_MENU_VIEW_LADDERS:
-			emit_signal("toggle_ladders")
-		ID_MENU_VIEW_SPIKES:
-			emit_signal("toggle_spikes")
-		ID_MENU_VIEW_ZOOM_IN:
-			emit_signal("zoom_in")
-		ID_MENU_VIEW_ZOOM_OUT:
-			emit_signal("zoom_out")
-		ID_MENU_VIEW_NORMAL_ZOOM:
-			emit_signal("normal_zoom")
-
-#Connected from _init_help_menu()
-func _on_help_menu_popup_pressed(id : int) -> void:
-	match id:
-		ID_MENU_HELP_README:
-			emit_signal("readme")
-		ID_MENU_HELP_RELEASE_NOTES:
-			OS.shell_open(RELEASE_NOTES_URL)
-		ID_MENU_HELP_SEND_FEEDBACK:
-			OS.shell_open(FEEDBACK_URL)
-		ID_MENU_HELP_ABOUT:
-			emit_signal("about")
-
-#Connected from _init_edit_menu()
-func _on_edit_menu_popup_about_to_show():
-	emit_signal("edit_menu_about_to_show")
-
-#Connected from _init_view_menu()
-func _on_view_menu_popup_about_to_show():
-	emit_signal("view_menu_about_to_show")
-
-#-------------------------------------------------
-#      Private Methods
-#-------------------------------------------------
+func _create_recent_popup_menu():
+	var popup_menu = PopupMenu.new()
+	file_menu.get_popup().add_child(popup_menu)
+	popup_menu.name = "Recent"
+	popup_menu.connect("id_pressed", self, "_on_file_recent_menu_popup_pressed")
+	file_recent_popup_menu = popup_menu
 
 #-------------------------------------------------
 #      Setters & Getters
