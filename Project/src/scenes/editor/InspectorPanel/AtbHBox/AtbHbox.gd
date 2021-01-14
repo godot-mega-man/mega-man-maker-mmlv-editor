@@ -59,13 +59,6 @@ func _ready() -> void:
 	code_label.text = code
 	lineedit.placeholder_text = PLACEHOLDER_EMPTY
 
-#When the mouse button is clicked elsewhere, LineEdit automatically
-#loses focus.
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			lineedit_release_focus()
-
 #-------------------------------------------------
 #      Virtual Methods
 #-------------------------------------------------

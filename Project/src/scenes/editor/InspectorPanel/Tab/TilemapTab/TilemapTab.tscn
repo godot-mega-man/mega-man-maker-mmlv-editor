@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/editor_ui/ToolBar/TileMapPressed.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/SubtileSelectPopup/SubtileSelectPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/editor_ui/MagnifyingGlass.png" type="Texture" id=5]
+[ext_resource path="res://src/utils/ControlAutoUnfocus.tscn" type="PackedScene" id=6]
 
 [sub_resource type="InputEventKey" id=1]
 scancode = 84
@@ -67,10 +69,38 @@ tracks/1/keys = {
 [node name="TilemapTab" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 
-[node name="TitleLabel" parent="ScrollContainer/Vbox" index="0"]
-text = "Tilemap"
+[node name="SearchLineEdit" type="LineEdit" parent="VBox" index="0"]
+margin_right = 792.0
+margin_bottom = 24.0
+clear_button_enabled = true
+placeholder_text = "Search tilesets"
 
-[node name="DescriptionLabel" type="Label" parent="ScrollContainer/Vbox" index="1"]
+[node name="ControlAutoUnfocus" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 6 )]
+
+[node name="Icon" type="TextureRect" parent="VBox/SearchLineEdit" index="3"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_right = -8.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" parent="VBox" index="1"]
+margin_top = 28.0
+
+[node name="Vbox" parent="VBox/ScrollContainer" index="0"]
+margin_bottom = 560.0
+
+[node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
+text = "Tileset"
+
+[node name="DescriptionLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
 margin_top = 18.0
 margin_right = 792.0
 margin_bottom = 32.0
@@ -151,5 +181,7 @@ __meta__ = {
 [node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
 anims/Hide = SubResource( 3 )
 anims/Show = SubResource( 4 )
+
+[connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
 [connection signal="subtile_selected" from="SubtileSelectPopup" to="." method="_on_SubtileSelectPopup_subtile_selected"]
 [connection signal="pressed" from="SubtileButton" to="." method="_on_SubtileButton_pressed"]

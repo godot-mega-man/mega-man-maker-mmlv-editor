@@ -13,6 +13,58 @@ extends MainInspectorTab
 #      Classes
 #-------------------------------------------------
 
+class TilesetButtonMap:
+	extends Reference
+	
+	# Mapped nodes
+	# {
+	#     game_id : {
+	#         title_label : Label,
+	#         buttons : [TileTextureButton, TileTextureButton, TileTextureButton, ...]
+	#     }, ...
+	# }
+	var buttons_map : Dictionary
+	
+	func map_button(button, game_id):
+		game_id = str(game_id) # Casting
+		
+		if not buttons_map.has(game_id):
+			buttons_map[game_id] = {}
+		if not buttons_map[game_id].has("buttons"):
+			buttons_map[game_id]["buttons"] = []
+		
+		(buttons_map[game_id]["buttons"] as Array).append(button)
+	
+	func map_title_label(label, game_id):
+		game_id = str(game_id) # Casting
+		
+		if not buttons_map.has(game_id):
+			buttons_map[game_id] = {}
+		if not buttons_map[game_id].has("title_label"):
+			buttons_map[game_id]["title_label"] = []
+		
+		buttons_map[game_id]["title_label"] = label
+	
+	# Makes node visible/invisible by an expression
+	func filter(expression : String):
+		for game_id in buttons_map.keys():
+			var title_label = buttons_map[game_id]["title_label"]
+			var has_one_visible : bool
+			
+			for btn in buttons_map[game_id]["buttons"]:
+				btn = btn as TileTextureButton
+				
+				if expression.empty() or btn.tileset_name.matchn("*" + expression + "*"):
+					btn.show()
+					has_one_visible = true
+				else:
+					btn.hide()
+			
+			if has_one_visible:
+				title_label.show()
+			else:
+				title_label.hide()
+
 #-------------------------------------------------
 #      Signals
 #-------------------------------------------------
@@ -41,9 +93,13 @@ onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
 onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
 onready var subtile_button = $SubtileButton
 onready var subtile_select_popup = $SubtileSelectPopup
+onready var search_lineedit = $VBox/SearchLineEdit
+onready var search_lineedit_icon = $VBox/SearchLineEdit/Icon
 
 var current_selected_tile_id : int
 var current_subtile_id : int
+
+var tileset_btn_map : TilesetButtonMap = TilesetButtonMap.new()
 
 #-------------------------------------------------
 #      Notifications
@@ -102,6 +158,10 @@ func _on_SubtileSelectPopup_subtile_selected(tile_id) -> void:
 	current_subtile_id = tile_id
 	emit_signal("tile_selected", current_selected_tile_id + current_subtile_id)
 
+func _on_SearchLineEdit_text_changed(new_text: String) -> void:
+	tileset_btn_map.filter(new_text)
+	search_lineedit_icon.visible = new_text.empty()
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
@@ -119,7 +179,7 @@ func _generate_ui():
 	_add_margin_bottom_box()
 
 func _create_tile_button(file_name : String, game_id : int, tile_id : int):
-	var grid_c = vbox.get_node(GRID_C_NAME_PREFIX + str(game_id))
+	var grid_c = scrl_vbox.get_node(GRID_C_NAME_PREFIX + str(game_id))
 	var tex_btn := TileTextureButton.new()
 	var atlas_tex = AtlasTexture.new()
 	
@@ -140,6 +200,9 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	# Add button click effect.
 	var button_eff = BUTTON_PRESS_EFFECT.instance()
 	tex_btn.add_child(button_eff)
+	
+	# Map the newly created button to tileset_btn_mapper
+	tileset_btn_map.map_button(tex_btn, game_id)
 
 func _create_grid_containters():
 	var game_ids : Dictionary
@@ -157,7 +220,7 @@ func _create_grid_containters():
 		var label_game_id = Label.new()
 		var grid_auto_resizer = GRID_C_AUTO_RESIZER.instance()
 		
-		vbox.add_child(grid_c)
+		scrl_vbox.add_child(grid_c)
 		grid_c.set_name(GRID_C_NAME_PREFIX + str(id))
 		
 		grid_c.add_child(grid_auto_resizer)
@@ -165,10 +228,13 @@ func _create_grid_containters():
 		grid_c.get_parent().add_child(label_game_id)
 		grid_c.raise()
 		label_game_id.text = GAME_ID_LABEL_PREFIX + str(id)
+		
+		# Map the newly created title label to tileset_btn_mapper
+		tileset_btn_map.map_title_label(label_game_id, id)
 
 func _add_margin_bottom_box():
 	var ref_rect = ReferenceRect.new()
-	vbox.add_child(ref_rect)
+	scrl_vbox.add_child(ref_rect)
 	ref_rect.rect_min_size = MARGIN_BOTTOM_BOX_MIN_SIZE
 
 #-------------------------------------------------
