@@ -156,7 +156,7 @@ func _on_MenuPanel_about() -> void:
 # ---
 
 func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
-	var load_result = level.load_level(dir, path)
+	var load_result : int = level.load_level(dir, path)
 	
 	match load_result:
 		OK:
@@ -167,6 +167,8 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 			inspector_panel.load_level_config()
 		ERR_FILE_UNRECOGNIZED:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
+		_:
+			EditorLogBox.add_message("Unknown error. Returned err code: %s" % load_result, true)
 			
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
@@ -178,6 +180,15 @@ func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 #New level
 func _on_Level_cleared_level() -> void:
 	new_level()
+
+func _on_FileDropNotifier_files_dropped(files : PoolStringArray, screen : int) -> void:
+	#Check if there are unsaved changes
+	if UnsaveChanges.is_activated():
+		exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.OPEN_FROM_PATH
+		exit_unsaved_dialog.popup_centered()
+		exit_unsaved_dialog.pool_opening_path = files[0]
+		return
+	file_access_ctrl.open_file_from_path(files[0])
 
 func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	menu_bar.edit_menu.get_popup().set_item_disabled(
@@ -333,6 +344,10 @@ func _do_unsaved_changes_pending_request():
 			level.clear_level()
 		exit_unsaved_dialog.PendingRequest.OPEN:
 			file_access_ctrl.open_file()
+		exit_unsaved_dialog.PendingRequest.OPEN_FROM_PATH:
+			file_access_ctrl.open_file_from_path(
+				exit_unsaved_dialog.pool_opening_path
+			)
 		exit_unsaved_dialog.PendingRequest.EXIT_APP:
 			get_tree().quit()
 
