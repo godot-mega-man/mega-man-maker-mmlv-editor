@@ -179,6 +179,9 @@ func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 func _on_Level_cleared_level() -> void:
 	new_level()
 
+func _on_MenuPanel_file_menu_about_to_show() -> void:
+	menu_bar.update_recent_files(file_access_ctrl.recent_file_paths)
+
 func _on_MenuPanel_edit_menu_about_to_show() -> void:
 	menu_bar.edit_menu.get_popup().set_item_disabled(
 		MenuBar.ID_MENU_EDIT_UNDO, not LevelUndo.get_undo_redo().has_undo()
