@@ -46,6 +46,7 @@ onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialo
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
 onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
 onready var reload_level_dialog = $CanvasLayer/Control/Popups/ReloadLevelDialog
+onready var editor_config_dialog = $CanvasLayer/Control/Popups/EditorConfigPopupDialog
 
 #-------------------------------------------------
 #      Notifications
@@ -106,8 +107,8 @@ func _on_MenuPanel_saving_file() -> void:
 	file_access_ctrl.save_file()
 func _on_MenuPanel_saving_file_as() -> void:
 	file_access_ctrl.save_file_as()
-func _on_MenuPanel_opening_preferences() -> void:
-	pass # Replace with function body.
+func _on_MenuPanel_opening_config() -> void:
+	editor_config_dialog.popup_centered()
 func _on_MenuPanel_exiting() -> void:
 	#Check if there are unsaved changes
 	if UnsaveChanges.is_activated():
