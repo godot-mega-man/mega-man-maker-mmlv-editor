@@ -24,8 +24,8 @@ export var auto_check_update : bool = true
 export var reduced_motion : bool
 
 export var camera_smoothness : int = 15
-export var camera_smoothness_min : int = 0
-export var camera_smoothness_max : int = 30
+export var camera_smoothness_min : int = 5
+export var camera_smoothness_max : int = 300
 
 export var max_recent_files : int = 7
 export var max_recent_files_min : int = 3

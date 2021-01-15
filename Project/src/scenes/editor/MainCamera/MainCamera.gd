@@ -43,6 +43,7 @@ var current_zoom := Vector2(1, 1)
 
 func _process(delta: float) -> void:
 	_clamp_position_within_limit()
+	_set_smoothness_from_config()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -122,6 +123,9 @@ func _tween_zoom():
 		Tween.EASE_OUT
 	)
 	tween.start()
+
+func _set_smoothness_from_config():
+	smoothing_speed = EditorConfig.camera_smoothness
 
 #-------------------------------------------------
 #      Setters & Getters
