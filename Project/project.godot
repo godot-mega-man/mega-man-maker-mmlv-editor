@@ -195,6 +195,7 @@ config/project_creator="Firstject (Snowflakes)"
 
 [autoload]
 
+EditorConfig="*res://src/singletons/EditorConfig.gd"
 EditorLogBox="*res://src/scenes/editor/MessageLogBox/EditorLogBox.tscn"
 WindowTitleUpdater="*res://src/singletons/WindowTitleUpdater.tscn"
 EditMode="*res://src/singletons/EditMode.tscn"
