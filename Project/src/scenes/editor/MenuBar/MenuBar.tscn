@@ -124,36 +124,42 @@ scancode = 71
 shortcut = SubResource( 31 )
 
 [sub_resource type="InputEventKey" id=33]
+shift = true
 scancode = 49
 
 [sub_resource type="ShortCut" id=34]
 shortcut = SubResource( 33 )
 
 [sub_resource type="InputEventKey" id=35]
+shift = true
 scancode = 50
 
 [sub_resource type="ShortCut" id=36]
 shortcut = SubResource( 35 )
 
 [sub_resource type="InputEventKey" id=37]
+shift = true
 scancode = 51
 
 [sub_resource type="ShortCut" id=38]
 shortcut = SubResource( 37 )
 
 [sub_resource type="InputEventKey" id=39]
+shift = true
 scancode = 52
 
 [sub_resource type="ShortCut" id=40]
 shortcut = SubResource( 39 )
 
 [sub_resource type="InputEventKey" id=41]
+shift = true
 scancode = 53
 
 [sub_resource type="ShortCut" id=42]
 shortcut = SubResource( 41 )
 
 [sub_resource type="InputEventKey" id=43]
+shift = true
 scancode = 54
 
 [sub_resource type="ShortCut" id=44]
