@@ -22,7 +22,7 @@ signal opening_file
 signal opening_containing_folder
 signal saving_file
 signal saving_file_as
-signal opening_preferences
+signal opening_config
 signal opening_recent_file(id)
 signal clearing_recent_files
 signal exiting
@@ -66,7 +66,7 @@ const ID_MENU_FILE_OPEN = 1
 const ID_MENU_FILE_OPEN_CONTAINING_FOLDER = 2
 const ID_MENU_FILE_SAVE = 4
 const ID_MENU_FILE_SAVE_AS = 5
-const ID_MENU_FILE_PREFERENCES = 7
+const ID_MENU_FILE_CONFIG = 7
 const ID_MENU_FILE_RECENT = 9
 const ID_MENU_FILE_EXIT = 11
 const ID_MENU_FILE_RECENT_CLEAR = 99
@@ -186,8 +186,8 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 			emit_signal("saving_file")
 		ID_MENU_FILE_SAVE_AS:
 			emit_signal("saving_file_as")
-		ID_MENU_FILE_PREFERENCES:
-			pass
+		ID_MENU_FILE_CONFIG:
+			emit_signal("opening_config")
 		ID_MENU_FILE_RECENT:
 			pass
 		ID_MENU_FILE_EXIT:
@@ -288,8 +288,7 @@ func _init_file_menus():
 	
 	file_menu.get_popup().add_separator()
 	
-	file_menu.get_popup().add_item("Preferences...", ID_MENU_FILE_PREFERENCES)
-	file_menu.get_popup().set_item_disabled(ID_MENU_FILE_PREFERENCES, true) #TODO:ImplementThis
+	file_menu.get_popup().add_item("Configuration...", ID_MENU_FILE_CONFIG)
 	
 	file_menu.get_popup().add_separator()
 	
