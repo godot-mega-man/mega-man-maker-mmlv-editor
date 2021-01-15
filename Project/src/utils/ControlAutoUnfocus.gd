@@ -13,6 +13,12 @@ extends Node
 """
 
 #-------------------------------------------------
+#      Signals
+#-------------------------------------------------
+
+signal unfocused
+
+#-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
 
@@ -42,6 +48,8 @@ func _try_release_parent_focus(event : InputEvent):
 	
 	if get_parent() is LineEdit:
 		get_parent().deselect()
+	
+	emit_signal("unfocused")
 
 #-------------------------------------------------
 #      Setters & Getters
