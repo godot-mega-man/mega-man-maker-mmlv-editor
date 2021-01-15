@@ -28,8 +28,8 @@ export var camera_smoothness_min : int = 5
 export var camera_smoothness_max : int = 300
 
 export var max_recent_files : int = 7
-export var max_recent_files_min : int = 3
-export var max_recent_files_max : int = 15
+export var max_recent_files_min : int = 1
+export var max_recent_files_max : int = 999
 
 #-------------------------------------------------
 #      Notifications

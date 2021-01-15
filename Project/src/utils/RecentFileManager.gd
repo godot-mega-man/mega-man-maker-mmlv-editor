@@ -24,7 +24,6 @@ const CFG_SECTION_KEY = "list"
 #-------------------------------------------------
 
 var recent_file_paths : Array
-var max_item : int = 10
 
 #-------------------------------------------------
 #      Public Methods
@@ -57,7 +56,7 @@ func add(path):
 	
 	# Insert at the beginning of the list
 	recent_file_paths.push_front(path)
-	recent_file_paths = recent_file_paths.slice(0, max_item-1, 1, true) # Cap at max n item
+	recent_file_paths = recent_file_paths.slice(0, EditorConfig.max_recent_files, 1, true) # Cap at max n item
 	_save_config()
 
 func clear():
