@@ -1,17 +1,44 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/utils/ControlAutoUnfocus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/editor_ui/MagnifyingGlass.png" type="Texture" id=3]
+[ext_resource path="res://src/utils/ControlAutoUnfocus.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/BackgroundTab/BackgroundTab.gd" type="Script" id=5]
 
 [node name="BackgroundTab" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="SearchLineEdit" type="LineEdit" parent="VBox" index="0"]
+margin_right = 792.0
+margin_bottom = 24.0
+clear_button_enabled = true
+placeholder_text = "Search backgrounds"
+
+[node name="ControlAutoUnfocus" type="Node" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="Icon" type="TextureRect" parent="VBox/SearchLineEdit" index="3"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_right = -8.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" parent="VBox" index="1"]
+margin_top = 28.0
+
+[node name="Vbox" parent="VBox/ScrollContainer" index="0"]
+margin_bottom = 560.0
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 text = "Backgrounds"
 
-[node name="ComingSoonLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 296.0
-margin_right = 792.0
-margin_bottom = 310.0
-size_flags_vertical = 6
-text = "Coming soon..."
-align = 1
-clip_text = true
+[connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
