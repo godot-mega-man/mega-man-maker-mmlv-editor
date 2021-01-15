@@ -62,6 +62,9 @@ func _ready() -> void:
 #-------------------------------------------------
 
 func _on_popup_about_to_show():
+	if EditorConfig.reduced_motion:
+		return
+	
 	play("Popup")
 
 #-------------------------------------------------

@@ -51,6 +51,8 @@ func _ready() -> void:
 	
 	_update_watermark()
 	res_iloader = ResourceLoader.load_interactive("res://src/scenes/editor/editor.tscn")
+	
+	_play_anims()
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -117,6 +119,13 @@ func _update_watermark():
 	watermark_label_proj_name.text = ProjectSettings.get_setting("application/config/name")
 	watermark_label_proj_version.text = "v" + ProjectSettings.get_setting("application/config/version")
 	watermark_label_creator.text = ProjectSettings.get_setting("application/config/project_creator")
+
+func _play_anims():
+	if EditorConfig.reduced_motion:
+		return
+	
+	$Panel/IconSplash/ShowAnim.play("Show")
+	$Panel/WatermarkHBox/ShowAnim.play("Anim")
 
 #-------------------------------------------------
 #      Setters & Getters

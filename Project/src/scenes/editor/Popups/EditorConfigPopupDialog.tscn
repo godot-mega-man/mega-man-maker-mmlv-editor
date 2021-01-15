@@ -96,7 +96,7 @@ margin_top = 1.0
 margin_right = 244.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "Reduced motion"
+text = "Reduced Motion"
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion"]
 margin_left = 248.0
@@ -120,7 +120,7 @@ turn this off."
 margin_right = 244.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
-text = "Camera smoothness"
+text = "Camera Smoothness"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness"]
 margin_left = 248.0
@@ -142,7 +142,7 @@ history displayed in the menu file."
 margin_right = 244.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
-text = "Max recent Files"
+text = "Max Recent Files"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles"]
 margin_left = 248.0

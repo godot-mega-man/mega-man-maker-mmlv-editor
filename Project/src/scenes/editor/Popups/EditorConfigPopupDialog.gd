@@ -45,7 +45,7 @@ onready var max_recent_files_lineedit := $MarginContainer/VBox/ScrollContainer/V
 
 func apply_changes():
 	EditorConfig.auto_check_update = auto_update_checkbox.pressed
-	EditorConfig.reduced_motion = auto_update_checkbox.pressed
+	EditorConfig.reduced_motion = reduced_motion_checkbox.pressed
 	EditorConfig.camera_smoothness = int(camera_smoothness_lineedit.text)
 	EditorConfig.max_recent_files = int(max_recent_files_lineedit.text)
 	
