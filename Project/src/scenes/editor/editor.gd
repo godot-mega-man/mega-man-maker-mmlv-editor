@@ -280,6 +280,9 @@ func _on_ToolBar_pressed() -> void:
 func _on_TilemapTab_tile_selected(tile_id) -> void:
 	tile_painter.current_tile_id = tile_id
 
+func _on_BackgroundTab_bg_selected(id) -> void:
+	tile_painter.current_tile_id = id
+
 func _on_ViewportEventKeyScroller_moving(velocity) -> void:
 	main_camera.position += velocity * main_camera.zoom.x
 

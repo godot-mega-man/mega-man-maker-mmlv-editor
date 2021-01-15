@@ -426,6 +426,7 @@ anims/Anim = SubResource( 3 )
 [connection signal="mouse_entered" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_exited"]
 [connection signal="tile_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/TilemapTab" to="." method="_on_TilemapTab_tile_selected"]
+[connection signal="bg_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/BackgroundTab" to="." method="_on_BackgroundTab_bg_selected"]
 [connection signal="popup_hide" from="CanvasLayer/Control/Popups/VersionZeroWarningDialog" to="CanvasLayer/Control/Popups/NewFeedbackPopup" method="_on_VersionZeroWarningDialog_popup_hide"]
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_confirmed_save"]
 [connection signal="custom_action" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_custom_action"]
