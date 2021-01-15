@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/tilesets/bg_tileset_v1_6_0.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/tilesets/bg_tileset_v1_7_0.tres" type="TileSet" id=1]
 [ext_resource path="res://src/gameobj/game_bgtile_drawer/game_bgtile_drawer.gd" type="Script" id=2]
 
 [node name="GameBgTileDrawer" type="TileMap"]
