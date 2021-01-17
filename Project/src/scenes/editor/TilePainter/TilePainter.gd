@@ -30,9 +30,10 @@ const UNDO_PAINT_TILE_ACTION_NAME = "Paint Tilemap"
 
 onready var tilemap_preview = $TileMapPreview
 
-var left_mouse_down : bool = false
-var right_mouse_down : bool = false
-var was_eyedrop_modifier_key_pressed : bool = false
+var left_mouse_down : bool
+var right_mouse_down : bool
+var was_eyedrop_modifier_key_pressed : bool
+var middle_click_press_moved : bool
 
 var follow_mouse_pointer : bool setget set_follow_mouse_pointer
 var tilemap : TileMap setget set_tilemap
@@ -80,6 +81,15 @@ func process_input(event : InputEvent):
 				_register_undo_start()
 			else:
 				_register_undo_end()
+		if event.button_index == BUTTON_MIDDLE:
+			if event.is_pressed():
+				middle_click_press_moved = false
+			else:
+				if not middle_click_press_moved:
+					eyedrop()
+	
+	if event is InputEventMouseMotion:
+		middle_click_press_moved = true
 	
 	if left_mouse_down:
 		if Input.is_key_pressed(EYEDROP_MODIFIER_KEY):
