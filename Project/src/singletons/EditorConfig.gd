@@ -24,7 +24,7 @@ export var auto_check_update : bool = true
 export var reduced_motion : bool
 
 export var camera_smoothness : int = 15
-export var camera_smoothness_min : int = 5
+export var camera_smoothness_min : int = 0
 export var camera_smoothness_max : int = 300
 
 export var max_recent_files : int = 7
@@ -68,20 +68,8 @@ func _load_init_config():
 	if not cfg.has_section(CFG_SECTION):
 		EditorLogBox.add_message("EditorConfig has section \"%s\" missing. Reverting editor settings to default." + CFG_SECTION, true)
 		return
-	if not cfg.has_section_key(CFG_SECTION, "auto_check_update"):
-		EditorLogBox.add_message("EditorConfig has section key \"%s\" missing." % auto_check_update, true)
-		return
-	if not cfg.has_section_key(CFG_SECTION, "camera_smoothness"):
-		EditorLogBox.add_message("EditorConfig has section key \"%s\" missing." % camera_smoothness, true)
-		return
-	if not cfg.has_section_key(CFG_SECTION, "reduced_motion"):
-		EditorLogBox.add_message("EditorConfig has section key \"%s\" missing." % reduced_motion, true)
-		return
-	if not cfg.has_section_key(CFG_SECTION, "max_recent_files"):
-		EditorLogBox.add_message("EditorConfig has section key \"%s\" missing." % max_recent_files, true)
-		return
 	
-	auto_check_update = cfg.get_value(CFG_SECTION, "auto_check_update")
-	camera_smoothness = cfg.get_value(CFG_SECTION, "camera_smoothness")
-	reduced_motion = cfg.get_value(CFG_SECTION, "reduced_motion")
-	max_recent_files = cfg.get_value(CFG_SECTION, "max_recent_files")
+	auto_check_update = cfg.get_value(CFG_SECTION, "auto_check_update", auto_check_update)
+	camera_smoothness = cfg.get_value(CFG_SECTION, "camera_smoothness", camera_smoothness)
+	reduced_motion = cfg.get_value(CFG_SECTION, "reduced_motion", reduced_motion)
+	max_recent_files = cfg.get_value(CFG_SECTION, "max_recent_files", max_recent_files)

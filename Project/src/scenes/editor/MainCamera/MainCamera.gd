@@ -118,13 +118,14 @@ func _tween_zoom():
 		"zoom",
 		self.zoom,
 		current_zoom,
-		0.25,
+		0.25 if EditorConfig.camera_smoothness != 0 else 0,
 		Tween.TRANS_EXPO,
 		Tween.EASE_OUT
 	)
 	tween.start()
 
 func _set_smoothness_from_config():
+	smoothing_enabled = EditorConfig.camera_smoothness != 0
 	smoothing_speed = EditorConfig.camera_smoothness
 
 #-------------------------------------------------

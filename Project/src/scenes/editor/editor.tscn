@@ -375,6 +375,7 @@ margin_bottom = 24.0
 rect_rotation = -45.0
 
 [node name="EditorConfigPopupDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 22 )]
+visible = false
 
 [node name="ViewportEventKeyScroller" parent="CanvasLayer/Control" instance=ExtResource( 18 )]
 
