@@ -23,8 +23,8 @@ extends Node
 
 const TILESET_TILE = preload("res://assets/tilesets/tileset_v1_7_0.tres")
 const TILESET_BG = preload("res://assets/tilesets/bg_tileset_v1_7_0.tres")
-const TILESET_LADDER = preload("res://assets/tilesets/ladder_tileset_v1_6_0.tres")
-const TILESET_SPIKE = preload("res://assets/tilesets/spike_tileset_v1_6_0.tres")
+const TILESET_LADDER = preload("res://assets/tilesets/ladder_tileset_v1_7_0.tres")
+const TILESET_SPIKE = preload("res://assets/tilesets/spike_tileset_v1_7_0.tres")
 const TILESET_ACTIVE_SCREEN = preload("res://assets/tilesets/active_screen_tileset.tres")
 
 #-------------------------------------------------

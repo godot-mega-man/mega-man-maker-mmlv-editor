@@ -183,7 +183,22 @@ const SPIKE_DATA = {
 	674 : "SpMM1Cut",
 	675 : "SpMM1Cut",
 	676 : "SpMM1Cut",
-	680 : "SpMM1Cut"
+	680 : "SpMM1Cut",
+	723 : "SpMM1Cut",
+	724 : "SpMM1Cut",
+	725 : "SpMM1Cut",
+	726 : "SpMM1Cut",
+	727 : "SpMM1Cut",
+	728 : "SpMM1Cut",
+	729 : "SpMM1Cut",
+	730 : "SpMM1Cut",
+	731 : "SpMM1Cut",
+	732 : "SpMM1Cut",
+	733 : "SpMM1Cut",
+	734 : "SpMM1Cut",
+	735 : "SpMM1Cut",
+	736 : "SpMM1Cut",
+	737 : "SpMM1Cut"
 }
 
 const SUBTILE_ID_POSITIONS = {

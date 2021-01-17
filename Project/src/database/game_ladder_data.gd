@@ -162,7 +162,25 @@ const LADDER_DATA = {
 	666 : "LadMM1Cut",
 	667 : "LadMM1Cut",
 	668 : "LadMM1Cut",
-	669 : "LadMM1Cut"
+	669 : "LadMM1Cut",
+	704 : "LadMM1Cut",
+	705 : "LadMM1Cut",
+	706 : "LadMM1Cut",
+	707 : "LadMM1Cut",
+	708 : "LadMM1Cut",
+	709 : "LadMM1Cut",
+	710 : "LadMM1Cut",
+	711 : "LadMM1Cut",
+	712 : "LadMM1Cut",
+	713 : "LadMM1Cut",
+	714 : "LadMM1Cut",
+	715 : "LadMM1Cut",
+	716 : "LadMM1Cut",
+	717 : "LadMM1Cut",
+	718 : "LadMM1Cut",
+	719 : "LadMM1Cut",
+	720 : "LadMM1Cut",
+	721 : "LadMM1Cut"
 }
 
 #-------------------------------------------------
