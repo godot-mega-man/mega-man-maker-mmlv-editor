@@ -21,7 +21,8 @@ extends PopupDialog
 #      Constants
 #-------------------------------------------------
 
-const SOURCE_CODE_URL = "https://github.com/Firstject/mega-man-maker-mmlv-editor"
+const CONTRIBUTION_CODE_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/#contribution-guidelines"
+const SOURCE_CODE_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor"
 const ROADMAP_URL = "https://trello.com/b/vuDpFyE6/mmlv-editor"
 
 #-------------------------------------------------
@@ -57,6 +58,9 @@ func _ready() -> void:
 
 func _on_OkButton_pressed() -> void:
 	hide()
+
+func _on_ContributionButtton_pressed() -> void:
+	OS.shell_open(CONTRIBUTION_CODE_URL)
 
 func _on_SourceButton_pressed() -> void:
 	OS.shell_open(SOURCE_CODE_URL)

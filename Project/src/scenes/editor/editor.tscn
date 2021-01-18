@@ -283,6 +283,11 @@ __meta__ = {
 }
 
 [node name="AboutPopupDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 9 )]
+visible = false
+margin_left = -229.0
+margin_top = -188.0
+margin_right = 230.0
+margin_bottom = 188.0
 
 [node name="ReadmeAcceptDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 10 )]
 visible = false

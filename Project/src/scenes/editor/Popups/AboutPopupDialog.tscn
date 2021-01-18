@@ -100,10 +100,16 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "Lead Developer & Maintainer"
 
-[node name="ContributorHSep" type="HBoxContainer" parent="VBoxContainer"]
+[node name="EmptyBox3" type="ReferenceRect" parent="VBoxContainer"]
 margin_top = 90.0
 margin_right = 443.0
-margin_bottom = 104.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="ContributorHSep" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 110.0
+margin_right = 443.0
+margin_bottom = 124.0
 
 [node name="HSeparatorBegin" type="HSeparator" parent="VBoxContainer/ContributorHSep"]
 margin_right = 8.0
@@ -122,37 +128,69 @@ margin_right = 443.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
-[node name="AuthorHBox2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 108.0
+[node name="Contributors" type="Label" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.494118 )
+margin_top = 128.0
 margin_right = 443.0
-margin_bottom = 122.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+text = "Special thanks for all the people who had helped this project so far"
 
-[node name="Author" type="Label" parent="VBoxContainer/AuthorHBox2"]
-margin_right = 215.0
+[node name="ContribHBox" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 146.0
+margin_right = 443.0
+margin_bottom = 160.0
+
+[node name="Label" type="Label" parent="VBoxContainer/ContribHBox"]
+margin_right = 219.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
 text = "Heart Code Games"
 
-[node name="Hyphen" type="Label" parent="VBoxContainer/AuthorHBox2"]
-margin_left = 219.0
-margin_right = 224.0
-margin_bottom = 14.0
-text = "-"
-
-[node name="Role" type="Label" parent="VBoxContainer/AuthorHBox2"]
-margin_left = 228.0
+[node name="Label2" type="Label" parent="VBoxContainer/ContribHBox"]
+margin_left = 223.0
 margin_right = 443.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
-text = "Developer"
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
+text = "DocterLumen"
+
+[node name="ContribHBox2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 164.0
+margin_right = 443.0
+margin_bottom = 178.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/ContribHBox2"]
+margin_right = 219.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
+text = "ThanatosZero"
+
+[node name="Label4" type="Label" parent="VBoxContainer/ContribHBox2"]
+margin_left = 223.0
+margin_right = 443.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
+text = "Doriko"
 
 [node name="EmptyBox2" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 126.0
+margin_top = 182.0
 margin_right = 443.0
 margin_bottom = 232.0
 rect_min_size = Vector2( 0, 16 )
 size_flags_vertical = 3
+
+[node name="ContributionButtton" type="LinkButton" parent="VBoxContainer"]
+margin_left = 132.0
+margin_top = 236.0
+margin_right = 311.0
+margin_bottom = 250.0
+size_flags_horizontal = 4
+custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
+text = "Contribution"
 
 [node name="SourceButton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 132.0
@@ -200,6 +238,8 @@ __meta__ = {
 }
 
 [node name="AnimatedPopupAnim" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="VBoxContainer/ContributionButtton" to="." method="_on_ContributionButtton_pressed"]
 [connection signal="pressed" from="VBoxContainer/SourceButton" to="." method="_on_SourceButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/RoadmapButton" to="." method="_on_RoadmapButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OkButton" to="." method="_on_OkButton_pressed"]

@@ -32,7 +32,15 @@ git clone https://github.com/Firstject/mega-man-maker-mmlv-editor.git
 
 # Contribution Guidelines
 
-First of all, thank you for being a part of the contributors, which helps our project become a better MMLV editor ever. If you'd like to contribute, please wait until further notice as we have not yet planned ways to contribute.
+First of all, thank you for being a part of the contributors, which helps our project become a better MMLV editor ever. 
+
+When contributing to this repository, please first discuss the change you wish to make via issue, or any other method with the owners of this repository before making a change.
+
+We're currently looking for contributions for the following:
+
+- [ ] Typos and grammar errors fix
+- [ ] Small improvements
+- [ ] Ripped in-game assets
 
 # Other links
 
