@@ -13,6 +13,32 @@ class_name Level
 #      Classes
 #-------------------------------------------------
 
+class Node2DUsedRect:
+	extends Reference
+	
+	var offset : Vector2
+	
+	# Return a rectangle boundary enclosing all the objects
+	func get_used_rect(node2ds : Array) -> Rect2:
+		var used_rect = Rect2() # Ensures that if node2ds are empty, Rect2() will always be returned
+		
+		for i in node2ds.size():
+			var node2d = node2ds[i] as Node2D
+			
+			if i == 0:
+				used_rect = Rect2(node2d.position, Vector2.ZERO) # Will always use the first node2d as a comparison for the next node
+				continue
+			
+			used_rect.position.x = min(node2d.position.x, used_rect.position.x) # Leftmost
+			used_rect.size.x = max(used_rect.position.x + used_rect.size.x, node2d.position.x) - used_rect.position.x # Rightmost
+			used_rect.position.y = min(node2d.position.y, used_rect.position.y) # Topmost
+			used_rect.size.y = max(used_rect.position.y + used_rect.size.y, node2d.position.y) - used_rect.position.y # Bottommost
+		
+		# Add offset
+		used_rect.position += offset
+		
+		return used_rect
+
 #-------------------------------------------------
 #      Signals
 #-------------------------------------------------
@@ -339,16 +365,41 @@ func get_player_position() -> Vector2:
 	
 	return Vector2.ZERO
 
-#Update used rect in level config by GameTileMap
 func _update_used_rect():
-	var used_rect = $GameTileMapDrawer.get_used_rect()
+	var tilemap_used_rect = $GameTileMapDrawer.get_used_rect()
+	var spike_used_rect = $GameSpikeTileDrawer.get_used_rect()
+	var ladder_used_rect = $GameLadderTileDrawer.get_used_rect()
+	var objects_used_rect : Rect2
+	var object_rect_offset = Vector2(8, 8)
 	
 	#p = left, q = right, r = top, t = bottom
-	val_p = used_rect.position.x * $GameTileMapDrawer.cell_size.x
-	val_q = (used_rect.position.x + used_rect.size.x) * $GameTileMapDrawer.cell_size.x
-	val_r = used_rect.position.y * $GameTileMapDrawer.cell_size.y
-	val_s = (used_rect.position.y + used_rect.size.y) * $GameTileMapDrawer.cell_size.y
-
+	if not tilemap_used_rect == Rect2(): # Any single tile are in the map?
+		val_p = tilemap_used_rect.position.x * $GameTileMapDrawer.cell_size.x
+		val_q = (tilemap_used_rect.position.x + tilemap_used_rect.size.x) * $GameTileMapDrawer.cell_size.x
+		val_r = tilemap_used_rect.position.y * $GameTileMapDrawer.cell_size.y
+		val_s = (tilemap_used_rect.position.y + tilemap_used_rect.size.y) * $GameTileMapDrawer.cell_size.y
+	
+	if not spike_used_rect == Rect2(): # Any single spike tile are in the map?
+		val_p = min(spike_used_rect.position.x * $GameSpikeTileDrawer.cell_size.x, val_p)
+		val_q = max(val_q, (spike_used_rect.position.x + spike_used_rect.size.x) * $GameSpikeTileDrawer.cell_size.x)
+		val_r = min(spike_used_rect.position.y * $GameSpikeTileDrawer.cell_size.y, val_r)
+		val_s = max(val_s , (spike_used_rect.position.y + spike_used_rect.size.y) * $GameSpikeTileDrawer.cell_size.y)
+	
+	if not ladder_used_rect == Rect2(): # Any single ladder tile are in the map?
+		val_p = min(ladder_used_rect.position.x * $GameLadderTileDrawer.cell_size.x, val_p)
+		val_q = max(val_q, (ladder_used_rect.position.x + ladder_used_rect.size.x) * $GameLadderTileDrawer.cell_size.x)
+		val_r = min(ladder_used_rect.position.y * $GameLadderTileDrawer.cell_size.y, val_r)
+		val_s = max(val_s , (ladder_used_rect.position.y + ladder_used_rect.size.y) * $GameLadderTileDrawer.cell_size.y)
+	
+	var node2d_used_rect = Node2DUsedRect.new()
+	node2d_used_rect.offset = Vector2(-8, -8)
+	objects_used_rect = node2d_used_rect.get_used_rect($Objects.get_children())
+	if not objects_used_rect == Rect2(): # Any object exists in the map?
+		val_p = min(objects_used_rect.position.x, val_p)
+		val_q = max(val_q, objects_used_rect.position.x + objects_used_rect.size.x)
+		val_r = min(objects_used_rect.position.y, val_r)
+		val_s = max(val_s , objects_used_rect.position.y + objects_used_rect.size.y)
+	
 
 #-------------------------------------------------
 #      Connections
