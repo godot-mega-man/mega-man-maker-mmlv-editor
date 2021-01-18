@@ -40,6 +40,7 @@ onready var view_code_button = $PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn
 onready var tab_container = $PanelOpen/ContentVBox/TabContainer
 
 onready var level_tab = $PanelOpen/ContentVBox/TabContainer/LevelTab
+onready var tilemap_tab = $PanelOpen/ContentVBox/TabContainer/TilemapTab
 
 var resize_dragging = false
 

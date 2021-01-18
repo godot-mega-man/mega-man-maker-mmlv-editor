@@ -120,21 +120,33 @@ func _ready() -> void:
 #      Public Methods
 #-------------------------------------------------
 
+func select_tile(tile_id : int, subtile_id = 0):
+	current_selected_tile_id = tile_id * GameTileSetData.SUBTILE_COUNT
+	current_subtile_id = subtile_id
+	emit_signal("tile_selected", current_selected_tile_id + current_subtile_id)
+	
+	#Set subtile button texture
+	subtile_button.icon = get_atlas_from_tileset_texture(get_texture(tile_id))
+	
+	#Set subtile preview texture
+	subtile_select_popup.set_preview_texture(get_texture(tile_id))
+
+func get_atlas_from_tileset_texture(texture : StreamTexture) -> AtlasTexture:
+	var atlas_tex = AtlasTexture.new()
+	atlas_tex.atlas = texture
+	atlas_tex.region = Rect2(SUBTILE_REGION_POS, Vector2(16, 16))
+	
+	return atlas_tex
+
+func get_texture(tile_id : int) -> StreamTexture:
+	return load(IMG_TEXTURE_BEGIN_PATH.plus_file(GameTileSetData.TILESET_DATA[tile_id]) + ".png") as StreamTexture
+
 #-------------------------------------------------
 #      Connections
 #-------------------------------------------------
 
-func _on_tile_btn_pressed_id(tile_id : int, tile_texture : Texture): 
-	current_selected_tile_id = tile_id * GameTileSetData.TILE_COUNT
-	current_subtile_id = 0
-	emit_signal("tile_selected", current_selected_tile_id + current_subtile_id)
-	
-	#Set subtile button texture
-	subtile_button.icon = tile_texture
-	
-	#Set subtile preview texture
-	if tile_texture is AtlasTexture:
-		subtile_select_popup.set_preview_texture(tile_texture.atlas)
+func _on_tile_btn_pressed_id(tile_id : int, tile_texture : Texture):
+	select_tile(tile_id) 
 
 func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String):
 	preview_tex_anim.play("Show")
@@ -181,10 +193,10 @@ func _generate_ui():
 func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	var grid_c = scrl_vbox.get_node(GRID_C_NAME_PREFIX + str(game_id))
 	var tex_btn := TileTextureButton.new()
-	var atlas_tex = AtlasTexture.new()
+	var atlas_tex = get_atlas_from_tileset_texture(
+		load(IMG_TEXTURE_BEGIN_PATH + file_name + ".png")
+	)
 	
-	atlas_tex.atlas = load(IMG_TEXTURE_BEGIN_PATH + file_name + ".png")
-	atlas_tex.region = Rect2(SUBTILE_REGION_POS, Vector2(16, 16))
 	grid_c.add_child(tex_btn)
 	tex_btn.expand = true
 	tex_btn.texture_normal = atlas_tex

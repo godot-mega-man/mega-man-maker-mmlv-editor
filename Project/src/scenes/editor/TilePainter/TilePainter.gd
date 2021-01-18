@@ -17,6 +17,8 @@ extends Node2D
 #      Signals
 #-------------------------------------------------
 
+signal changed_tile_id(tilemap_tile_id)
+
 #-------------------------------------------------
 #      Constants
 #-------------------------------------------------
@@ -124,6 +126,7 @@ func set_tile(tile_id : int):
 func eyedrop():
 	current_tile_id = tilemap.get_cellv(tilemap.world_to_map(self.get_global_position()))
 	_update_tilemap_preview()
+	emit_signal("changed_tile_id", current_tile_id)
 
 #-------------------------------------------------
 #      Connections

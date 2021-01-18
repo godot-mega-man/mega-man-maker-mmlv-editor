@@ -287,6 +287,9 @@ func _on_TilemapTab_tile_selected(tile_id) -> void:
 func _on_BackgroundTab_bg_selected(id) -> void:
 	tile_painter.current_tile_id = id
 
+func _on_TilePainter_changed_tile_id(tilemap_tile_id) -> void:
+	_make_tilemap_tab_current_tile(tilemap_tile_id)
+
 func _on_ViewportEventKeyScroller_moving(velocity) -> void:
 	main_camera.position += velocity * main_camera.zoom.x
 
@@ -355,6 +358,13 @@ func _control_tilemap_by_gui_input(event : InputEvent):
 		EditMode.mode == EditMode.Mode.SPIKE
 	):
 		tile_painter.process_input(event)
+
+func _make_tilemap_tab_current_tile(tilemap_tile_id):
+	if EditMode.mode == EditMode.Mode.TILE:
+		inspector_panel.tilemap_tab.select_tile(
+			tilemap_tile_id / GameTileSetData.SUBTILE_COUNT,
+			tilemap_tile_id % GameTileSetData.SUBTILE_COUNT
+		)
 
 func _update_window_title_by_level_path(path : String):
 	WindowTitleUpdater.current_level_file_path = path

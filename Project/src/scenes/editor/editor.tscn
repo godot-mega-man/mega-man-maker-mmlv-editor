@@ -449,6 +449,7 @@ anims/Anim = SubResource( 3 )
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ReloadLevelDialog" to="." method="_on_ReloadLevelDialog_confirmed"]
 [connection signal="pressed" from="CanvasLayer/Control/Popups/NewFeedbackPopup/Control/VBoxContainer/DismissButton" to="CanvasLayer/Control/Popups/NewFeedbackPopup" method="_on_DismissButton_pressed"]
 [connection signal="moving" from="CanvasLayer/Control/ViewportEventKeyScroller" to="." method="_on_ViewportEventKeyScroller_moving"]
+[connection signal="changed_tile_id" from="TilePainter" to="." method="_on_TilePainter_changed_tile_id"]
 
 [editable path="Level"]
 [editable path="CanvasLayer/Control/InspectorPanel"]
