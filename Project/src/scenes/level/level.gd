@@ -233,11 +233,7 @@ func get_save() -> String:
 	#Weapons
 	idx = 0
 	for i in weapons:
-		if i == -1: #Nothing. Don't save.
-			continue
-		
 		txt_pool.append(_combine_code_line_text("1k" + str(idx), i))
-		
 		idx += 1
 	
 	#Level (cont.)
