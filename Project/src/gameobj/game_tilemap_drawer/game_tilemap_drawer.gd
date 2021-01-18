@@ -46,7 +46,10 @@ func draw_from_game_data_tiles(tiles_data : Array = []):
 	for i in tiles_data:
 		i = i as DataGameTile
 		
-		set_cellv(world_to_map(i.pos), (i.block_id * GameTileSetData.TILE_COUNT) + GameTileSetData.SUBTILE_POSITION_IDS.get(i.tileset_offset))
+		if i.block_id == int(round(DataGameObject.MISSING_DATA)):
+			i.block_id = 0
+		
+		set_cellv(world_to_map(i.pos), (i.block_id * GameTileSetData.SUBTILE_COUNT) + GameTileSetData.SUBTILE_POSITION_IDS.get(i.tileset_offset))
 
 #-------------------------------------------------
 #      Connections

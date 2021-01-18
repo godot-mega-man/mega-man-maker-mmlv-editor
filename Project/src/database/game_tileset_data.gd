@@ -21,7 +21,7 @@ class_name GameTileSetData
 #      Constants
 #-------------------------------------------------
 
-const TILE_COUNT = 77
+const SUBTILE_COUNT = 77
 
 #These data contains filenames used for generating tilemap.
 #TilemapGenerator scene can be found in the project.

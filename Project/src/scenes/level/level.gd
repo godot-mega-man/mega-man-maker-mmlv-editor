@@ -34,8 +34,9 @@ class Node2DUsedRect:
 			used_rect.position.y = min(node2d.position.y, used_rect.position.y) # Topmost
 			used_rect.size.y = max(used_rect.position.y + used_rect.size.y, node2d.position.y) - used_rect.position.y # Bottommost
 		
-		# Add offset
-		used_rect.position += offset
+		# Expands rectangle by offset
+		used_rect.position -= offset
+		used_rect.size += offset
 		
 		return used_rect
 
@@ -309,10 +310,10 @@ func get_save() -> String:
 		var cell_id = $GameTileMapDrawer.get_cellv(i)
 		
 		txt_pool.append(_combine_code_line_text("a", 1, map_to_world_pos))
-		txt_pool.append(_combine_code_line_text("e", floor(cell_id / GameTileSetData.TILE_COUNT), map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("e", floor(cell_id / GameTileSetData.SUBTILE_COUNT), map_to_world_pos))
 		txt_pool.append(_combine_code_line_text("i", 1, map_to_world_pos))
-		txt_pool.append(_combine_code_line_text("j", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].x, map_to_world_pos))
-		txt_pool.append(_combine_code_line_text("k", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.TILE_COUNT].y, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("j", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.SUBTILE_COUNT].x, map_to_world_pos))
+		txt_pool.append(_combine_code_line_text("k", GameTileSetData.SUBTILE_POSITION_IDS.keys()[cell_id % GameTileSetData.SUBTILE_COUNT].y, map_to_world_pos))
 	
 	#Save Spikes
 	for i in $GameSpikeTileDrawer.get_used_cells():
@@ -392,7 +393,7 @@ func _update_used_rect():
 		val_s = max(val_s , (ladder_used_rect.position.y + ladder_used_rect.size.y) * $GameLadderTileDrawer.cell_size.y)
 	
 	var node2d_used_rect = Node2DUsedRect.new()
-	node2d_used_rect.offset = Vector2(-8, -8)
+	node2d_used_rect.offset = Vector2(8, 8)
 	objects_used_rect = node2d_used_rect.get_used_rect($Objects.get_children())
 	if not objects_used_rect == Rect2(): # Any object exists in the map?
 		val_p = min(objects_used_rect.position.x, val_p)
