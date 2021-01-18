@@ -47,6 +47,7 @@ signal zoom_in
 signal zoom_out
 signal normal_zoom
 
+signal view_help_list
 signal readme
 signal release_notes
 signal send_feedback
@@ -91,10 +92,11 @@ const ID_MENU_VIEW_ZOOM_IN = 10
 const ID_MENU_VIEW_ZOOM_OUT = 11
 const ID_MENU_VIEW_NORMAL_ZOOM = 12
 
-const ID_MENU_HELP_README = 0
-const ID_MENU_HELP_RELEASE_NOTES = 1
-const ID_MENU_HELP_SEND_FEEDBACK = 3
-const ID_MENU_HELP_ABOUT = 5
+const ID_MENU_HELP_VIEW_HELP_LIST = 0
+const ID_MENU_HELP_README = 1
+const ID_MENU_HELP_RELEASE_NOTES = 3
+const ID_MENU_HELP_SEND_FEEDBACK = 4
+const ID_MENU_HELP_ABOUT = 6
 
 const FEEDBACK_URL = "https://forms.gle/wrFpgn6S6FcHCV2i8"
 const RELEASE_NOTES_URL = "https://github.com/godot-mega-man/mega-man-maker-mmlv-editor/releases"
@@ -127,6 +129,8 @@ export (ShortCut) var shortcut_view_objects
 export (ShortCut) var shortcut_view_active_screens
 export (ShortCut) var shortcut_view_ladders
 export (ShortCut) var shortcut_view_spikes
+
+export (ShortCut) var shortcut_help_view_help_list
 
 onready var file_menu := $MenuBarHBox/FileMenu as MenuButton
 onready var edit_menu := $MenuBarHBox/EditMenu as MenuButton
@@ -234,6 +238,8 @@ func _on_view_menu_popup_pressed(id : int) -> void:
 #Connected from _init_help_menu()
 func _on_help_menu_popup_pressed(id : int) -> void:
 	match id:
+		ID_MENU_HELP_VIEW_HELP_LIST:
+			emit_signal("view_help_list")
 		ID_MENU_HELP_README:
 			emit_signal("readme")
 		ID_MENU_HELP_RELEASE_NOTES:
@@ -374,11 +380,14 @@ func _init_view_menus():
 
 func _init_help_menus():
 	help_menu.get_popup().connect("id_pressed", self, "_on_help_menu_popup_pressed")
+	help_menu.get_popup().add_item("View Help List", ID_MENU_HELP_VIEW_HELP_LIST)
+	help_menu.get_popup().set_item_shortcut(ID_MENU_HELP_VIEW_HELP_LIST, shortcut_help_view_help_list, true)
+	
+	help_menu.get_popup().add_separator()
+	
 	help_menu.get_popup().add_item("Read Me", ID_MENU_HELP_README)
 	
 	help_menu.get_popup().add_item("Release Notes", ID_MENU_HELP_RELEASE_NOTES)
-	
-	help_menu.get_popup().add_separator()
 	
 	help_menu.get_popup().add_item("Send Us Feedback", ID_MENU_HELP_SEND_FEEDBACK)
 	

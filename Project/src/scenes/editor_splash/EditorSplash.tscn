@@ -96,7 +96,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.498039 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -109,7 +109,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -151,9 +151,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -64.0
-margin_top = 52.0
+margin_top = 4.0
 margin_right = 64.0
-margin_bottom = 142.0
+margin_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_constants/separation = 16
@@ -184,7 +184,27 @@ margin_bottom = 71.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_horizontal = 4
 
+[node name="HintLabel" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -112.0
+margin_right = 160.0
+margin_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-Helpful hint goes here-"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WatermarkHBox" type="HBoxContainer" parent="Panel"]
+modulate = Color( 1, 1, 1, 0.498039 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -276,6 +296,7 @@ __meta__ = {
 anims/Anim = SubResource( 3 )
 
 [node name="GodotEngineLabel" type="Label" parent="Panel"]
+modulate = Color( 1, 1, 1, 0.498039 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

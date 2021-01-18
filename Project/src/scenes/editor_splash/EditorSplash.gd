@@ -42,6 +42,8 @@ onready var watermark_label_proj_name = $Panel/WatermarkHBox/WatermarkLabelProjN
 onready var watermark_label_proj_version = $Panel/WatermarkHBox/WatermarkLabelProjVersion
 onready var watermark_label_creator = $Panel/WatermarkHBox/WatermarkLabelCreator
 
+onready var hint_label = $Panel/HintLabel
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
@@ -53,6 +55,10 @@ func _ready() -> void:
 	res_iloader = ResourceLoader.load_interactive("res://src/scenes/editor/editor.tscn")
 	
 	_play_anims()
+	_randomize_hint_text()
+
+func _input(event: InputEvent) -> void:
+	_test_randomize_hint_text(event)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -127,9 +133,23 @@ func _play_anims():
 	$Panel/IconSplash/ShowAnim.play("Show")
 	$Panel/WatermarkHBox/ShowAnim.play("Anim")
 
+func _randomize_hint_text():
+	randomize() # Randoms the seed of the random number generator (rnd)
+	print_debug("Seed: randomize() was used")
+	hint_label.text = DataHints.get_random_hint()
+
+func _test_randomize_hint_text(event : InputEvent):
+	assert(event != null)
+	
+	if not event is InputEventMouseButton:
+		return
+	if not event.is_pressed():
+		return
+	if not (event as InputEventMouseButton).button_index == BUTTON_LEFT:
+		return
+	
+	_randomize_hint_text()
+
 #-------------------------------------------------
 #      Setters & Getters
 #-------------------------------------------------
-
-
-

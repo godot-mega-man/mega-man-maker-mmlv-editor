@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/global_gameclass/data_gametile.gd"
 }, {
+"base": "Reference",
+"class": "DataHints",
+"language": "GDScript",
+"path": "res://src/database/hints_data.gd"
+}, {
 "base": "AcceptDialog",
 "class": "ExitUnsavedDialog",
 "language": "GDScript",
@@ -160,6 +165,7 @@ _global_script_class_icons={
 "DataGameObject": "",
 "DataGameSpike": "",
 "DataGameTile": "",
+"DataHints": "",
 "ExitUnsavedDialog": "",
 "GameBgColorData": "",
 "GameBgData": "",
