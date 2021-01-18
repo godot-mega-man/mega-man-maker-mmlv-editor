@@ -63,7 +63,7 @@ func _input_process():
 	if Input.is_key_pressed(KEY_CONTROL):
 		return
 	
-	speed_modifier = (1 + int(Input.is_key_pressed(KEY_SHIFT)))
+	speed_modifier = (1 + (int(Input.is_key_pressed(KEY_SHIFT))) * 2)
 	speed_process = default_scroll_speed * get_process_delta_time()
 	
 	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A):
