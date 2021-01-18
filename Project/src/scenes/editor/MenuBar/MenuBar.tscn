@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://src/scenes/editor/MenuBar/MenuBar.gd" type="Script" id=1]
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
@@ -165,6 +165,12 @@ scancode = 54
 [sub_resource type="ShortCut" id=44]
 shortcut = SubResource( 43 )
 
+[sub_resource type="InputEventKey" id=45]
+scancode = 16777244
+
+[sub_resource type="ShortCut" id=46]
+shortcut = SubResource( 45 )
+
 [node name="MenuBarPanel" type="Panel"]
 anchor_right = 1.0
 margin_bottom = 32.0
@@ -194,6 +200,7 @@ shortcut_view_objects = SubResource( 38 )
 shortcut_view_active_screens = SubResource( 40 )
 shortcut_view_ladders = SubResource( 42 )
 shortcut_view_spikes = SubResource( 44 )
+shortcut_help_view_help_list = SubResource( 46 )
 
 [node name="MenuBarHBox" type="HBoxContainer" parent="."]
 anchor_right = 1.0

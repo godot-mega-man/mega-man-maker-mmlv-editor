@@ -47,6 +47,7 @@ onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
 onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
 onready var reload_level_dialog = $CanvasLayer/Control/Popups/ReloadLevelDialog
 onready var editor_config_dialog = $CanvasLayer/Control/Popups/EditorConfigPopupDialog
+onready var hint_list_popup_dialog = $CanvasLayer/Control/Popups/HelpListPopupDialog
 
 #-------------------------------------------------
 #      Notifications
@@ -151,6 +152,8 @@ func _on_MenuPanel_zoom_out() -> void:
 func _on_MenuPanel_normal_zoom() -> void:
 	main_camera.reset_zoom()
 
+func _on_MenuPanel_view_help_list() -> void:
+	hint_list_popup_dialog.popup_centered()
 func _on_MenuPanel_readme() -> void:
 	readme_accept_dialog.popup_centered()
 func _on_MenuPanel_about() -> void:

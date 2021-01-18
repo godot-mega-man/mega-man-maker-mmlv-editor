@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/editor/Popups/HelpListPopupDialog.gd" type="Script" id=2]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=3]
+
+[node name="HelpListPopupDialog" type="AcceptDialog"]
+margin_right = 384.0
+margin_bottom = 512.0
+theme = ExtResource( 1 )
+window_title = "Help List"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+margin_right = 368.0
+margin_bottom = 466.0
+scroll_horizontal_enabled = false
+
+[node name="ContentVBox" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+margin_right = 368.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 3 )]
