@@ -258,8 +258,8 @@ func get_save() -> String:
 		txt_pool.append(_combine_code_line_text("2c", 1, pos))
 	
 	#Active screens
-	for i in GameGrid.LEVEL_SIZE.x:
-		for j in GameGrid.LEVEL_SIZE.y:
+	for i in GameLevel.LEVEL_SIZE.x:
+		for j in GameLevel.LEVEL_SIZE.y:
 			var map_to_world_pos = $GameActiveScreenTileDrawer.map_to_world(Vector2(i, j))
 			
 			if $GameActiveScreenTileDrawer.get_cell(i, j) == TileMap.INVALID_CELL:

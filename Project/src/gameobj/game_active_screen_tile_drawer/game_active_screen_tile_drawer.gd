@@ -51,8 +51,8 @@ func draw_from_vectors(_active_screen_positions : PoolVector2Array):
 		set_cellv(world_to_map(i), -1)
 
 func set_all_cells_inactive():
-	for xs in int(GameGrid.LEVEL_SIZE.x):
-		for ys in int(GameGrid.LEVEL_SIZE.y):
+	for xs in int(GameLevel.LEVEL_SIZE.x):
+		for ys in int(GameLevel.LEVEL_SIZE.y):
 			set_cell(xs, ys, 0)
 
 #-------------------------------------------------
