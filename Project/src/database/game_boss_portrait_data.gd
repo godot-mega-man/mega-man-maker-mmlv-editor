@@ -163,6 +163,30 @@ const DATA = {
 	41 : {
 		"name" : "Bounce Man",
 		"texture" : preload("res://assets/images/boss_portraits/bossportrait41.png")
+	},
+	42 : {
+		"name" : "Quick Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait42.png")
+	},
+	43 : {
+		"name" : "Yamato Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait43.png")
+	},
+	44 : {
+		"name" : "Fire Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait44.png")
+	},
+	45 : {
+		"name" : "Splash Woman",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait45.png")
+	},
+	46 : {
+		"name" : "Freeze Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait46.png")
+	},
+	47 : {
+		"name" : "Strike Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait47.png")
 	}
 }
 
