@@ -1,10 +1,30 @@
-## Programming
+<!--
+## ProTips:
+This is maybe the most important file of your project if you think about maintanability and long-term support. It recognizes people who are helping you and, directly or indirectly, baking your/your project success.
 
-Firstject (creator of MMLV Editor)
+Those people spend their time, for free, to make your project better. You should, by all means, praise and thank them whenever you want. Time is an asset that never comes back, so if people choose to use their time with your code, this file shows them the respect they want.
+-->
+# Contributors
 
-Heart Code
+## Special thanks for all the people who had helped this project so far:
 
-## Testing
+<!--
+Here you should include a list of people who helped your project. A good practice would be their names and GH profiles. Other additional info may fit, but names and profiles are mandatory. Proper credits matter.
+-->
 
-## Sprite rips
+* [Heart Code Games](http://github.com/heartcodegames)
+* DocterLumen
+* ThanatosZero
+* Doriko
 
+<!--
+If you think you can do it better, you can consider using [all-contributors](https://github.com/kentcdodds/all-contributors/) guidelines. This project itself uses it on the README file. You really should consider using them.
+-->
+
+## I would like to join this list. How can I help the project?
+
+Please refer to the following [link](README#contribution-guidelines).
+
+---
+
+> Original CONTRIBUTORS.md template credit goes to https://github.com/cezaraugusto/github-template-guidelines/blob/master/.github/CONTRIBUTORS.md
