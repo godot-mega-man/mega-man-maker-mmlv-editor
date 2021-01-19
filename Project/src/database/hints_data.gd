@@ -27,7 +27,7 @@ const LIST = [
 	"You can filter tilesets and backgrounds through a search box in the inspector panel." ,
 	"To select multiple objects, hold down shift key and click on an object you want to select." ,
 	"Clicking on the inspector label moves the entire panel to the side." ,
-	"Inspector panel's width can be resized, allowing more/less space for the map that can be edited." ,
+	"Inspector panel's width can be resized, allowing more/less space for the map to be edited." ,
 	"Don't like user interface animations? You can turn on reduced motion in the setting." ,
 	"Curious when and what the new features will be released in the future? Go to Help > Our Roadmap to see them all." ,
 	"Found a bug? Have a suggestion? We'd love to hear it. Send us your feedback at Help > Send Us Feedback." ,

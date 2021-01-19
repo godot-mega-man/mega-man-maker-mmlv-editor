@@ -31,12 +31,17 @@ export var max_recent_files : int = 7
 export var max_recent_files_min : int = 1
 export var max_recent_files_max : int = 999
 
+export var fps : int = 0
+export var fps_min : int = 0
+export var fps_max : int = 9999
+
 #-------------------------------------------------
 #      Notifications
 #-------------------------------------------------
 
 func _ready() -> void:
 	_load_init_config()
+	_update_engine_config()
 
 #-------------------------------------------------
 #      Public Methods
@@ -48,7 +53,10 @@ func save():
 	cfg.set_value(CFG_SECTION, "camera_smoothness", camera_smoothness)
 	cfg.set_value(CFG_SECTION, "reduced_motion", reduced_motion)
 	cfg.set_value(CFG_SECTION, "max_recent_files", max_recent_files)
+	cfg.set_value(CFG_SECTION, "fps", fps)
 	cfg.save(CONFIG_DIR.plus_file(CONFIG_FILENAME))
+	
+	_update_engine_config()
 
 #-------------------------------------------------
 #      Private Methods
@@ -73,3 +81,7 @@ func _load_init_config():
 	camera_smoothness = cfg.get_value(CFG_SECTION, "camera_smoothness", camera_smoothness)
 	reduced_motion = cfg.get_value(CFG_SECTION, "reduced_motion", reduced_motion)
 	max_recent_files = cfg.get_value(CFG_SECTION, "max_recent_files", max_recent_files)
+	fps = cfg.get_value(CFG_SECTION, "fps", fps)
+
+func _update_engine_config():
+	Engine.target_fps = fps
