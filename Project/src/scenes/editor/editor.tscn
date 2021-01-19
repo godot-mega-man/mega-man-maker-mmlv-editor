@@ -98,7 +98,7 @@ func _on_EditAreaRect_mouse_exited() -> void:
 #-------------------------------------------------
 "
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("MainCamera:zoom")
@@ -234,6 +234,7 @@ margin_top = -42.5
 margin_bottom = 42.5
 
 [node name="EditorConfigPopupDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 22 )]
+visible = false
 
 [node name="HelpListPopupDialog" parent="CanvasLayer/Control/Popups" instance=ExtResource( 23 )]
 
@@ -251,7 +252,7 @@ add_target_path = NodePath("../Level/Objects")
 
 [node name="EditorInitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Anim"
-anims/Anim = SubResource( 3 )
+anims/Anim = SubResource( 2 )
 
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
