@@ -264,22 +264,28 @@ func _on_ToolBar_pressed() -> void:
 	match EditMode.mode:
 		EditMode.Mode.OBJECT:
 			tile_painter.set_follow_mouse_pointer(false)
+			tile_painter.hide()
 		EditMode.Mode.TILE:
 			tile_painter.tilemap = $Level/GameTileMapDrawer
 			tile_painter.set_follow_mouse_pointer(true)
+			tile_painter.show()
 		EditMode.Mode.BACKGROUND:
 			tile_painter.tilemap = $Level/GameBgTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
+			tile_painter.show()
 		EditMode.Mode.ACTIVE_SCREEN:
 			tile_painter.tilemap = $Level/GameActiveScreenTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
 			tile_painter.current_tile_id = 0
+			tile_painter.show()
 		EditMode.Mode.LADDER:
 			tile_painter.tilemap = $Level/GameLadderTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
+			tile_painter.show()
 		EditMode.Mode.SPIKE:
 			tile_painter.tilemap = $Level/GameSpikeTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
+			tile_painter.show()
 
 func _on_TilemapTab_tile_selected(tile_id) -> void:
 	tile_painter.current_tile_id = tile_id
