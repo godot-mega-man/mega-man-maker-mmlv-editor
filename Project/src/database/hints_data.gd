@@ -31,6 +31,7 @@ const LIST = [
 	"Don't like user interface animations? You can turn on reduced motion in the setting." ,
 	"Curious when and what the new features will be released in the future? Go to Help > Our Roadmap to see them all." ,
 	"Found a bug? Have a suggestion? We'd love to hear it. Send us your feedback at Help > Send Us Feedback." ,
+	"Want to try out new features before anyone else? Download the source code at Help > About > View source code in GitHub." ,
 	"Want to contribute to help improve our program? Check out Help > About in the menu bar." ,
 ]
 
