@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=1]
+
+[node name="NewUpdateInfo" type="PopupDialog"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )

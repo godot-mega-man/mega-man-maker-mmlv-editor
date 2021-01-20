@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/utils/UpdateChecker.gd" type="Script" id=1]
+
+[node name="UpdateChecker" type="Node"]
+script = ExtResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

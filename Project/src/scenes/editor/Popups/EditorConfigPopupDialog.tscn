@@ -18,9 +18,8 @@ scancode = 16777217
 shortcut = SubResource( 3 )
 
 [node name="EditorConfigPopupDialog" type="WindowDialog"]
-visible = true
-margin_right = 640.0
-margin_bottom = 448.0
+margin_right = 496.0
+margin_bottom = 232.0
 theme = ExtResource( 1 )
 popup_exclusive = true
 window_title = "MMLV Editor Configuration"
@@ -43,25 +42,25 @@ __meta__ = {
 [node name="VBox" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 624.0
-margin_bottom = 432.0
+margin_right = 480.0
+margin_bottom = 216.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBox"]
-margin_right = 608.0
-margin_bottom = 390.0
+margin_right = 464.0
+margin_bottom = 174.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer"]
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 130.0
 size_flags_horizontal = 3
 
 [node name="AutoUpdate" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 24.0
 hint_tooltip = "When enabled, automatically checks
 for an update."
@@ -69,14 +68,14 @@ custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/AutoUpdate"]
 margin_top = 1.0
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "Automatically check for updates (WIP)"
+text = "Automatically check for updates"
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/AutoUpdate"]
-margin_left = 320.0
-margin_right = 608.0
+margin_left = 248.0
+margin_right = 464.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -87,7 +86,7 @@ text = "On"
 
 [node name="ReducedMotion" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 28.0
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 52.0
 hint_tooltip = "If you have sensitivity to motion effects,
 animation or screen movement, you can
@@ -97,14 +96,14 @@ custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion"]
 margin_top = 1.0
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "Reduced Motion"
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion"]
-margin_left = 320.0
-margin_right = 608.0
+margin_left = 248.0
+margin_right = 464.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -115,7 +114,7 @@ text = "On"
 
 [node name="CameraSmoothness" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 56.0
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 78.0
 hint_tooltip = "Speed in pixels per second of the
 camera's smoothing effect. Set this to 0 to
@@ -123,14 +122,14 @@ turn this off."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness"]
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Camera Smoothness"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness"]
-margin_left = 320.0
-margin_right = 608.0
+margin_left = 248.0
+margin_right = 464.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -140,21 +139,21 @@ size_flags_horizontal = 3
 
 [node name="MaxRecentFiles" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 82.0
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 104.0
 hint_tooltip = "The maximum number of recent file
 history displayed in the menu file."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles"]
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Max Recent Files"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles"]
-margin_left = 320.0
-margin_right = 608.0
+margin_left = 248.0
+margin_right = 464.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -164,7 +163,7 @@ size_flags_horizontal = 3
 
 [node name="Fps" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 108.0
-margin_right = 608.0
+margin_right = 464.0
 margin_bottom = 130.0
 hint_tooltip = "The desired frames per second. If the
 hardware cannot keep up, this setting may
@@ -173,14 +172,14 @@ limit."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/Fps"]
-margin_right = 288.0
+margin_right = 216.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Rendering Frame Rate"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/Fps"]
-margin_left = 320.0
-margin_right = 608.0
+margin_left = 248.0
+margin_right = 464.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -189,23 +188,23 @@ size_flags_horizontal = 3
 [node name="ControlAutoUnfocus" parent="MarginContainer/VBox/ScrollContainer/VBox/Fps/LineEdit" instance=ExtResource( 3 )]
 
 [node name="ConfirmHBox" type="HBoxContainer" parent="MarginContainer/VBox"]
-margin_top = 394.0
-margin_right = 608.0
-margin_bottom = 416.0
+margin_top = 178.0
+margin_right = 464.0
+margin_bottom = 200.0
 custom_constants/separation = 16
 alignment = 2
 
 [node name="OkButton" type="Button" parent="MarginContainer/VBox/ConfirmHBox"]
-margin_left = 464.0
-margin_right = 528.0
+margin_left = 320.0
+margin_right = 384.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 64, 0 )
 shortcut = SubResource( 2 )
 text = "Ok"
 
 [node name="CancelButton" type="Button" parent="MarginContainer/VBox/ConfirmHBox"]
-margin_left = 544.0
-margin_right = 608.0
+margin_left = 400.0
+margin_right = 464.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 64, 0 )
 shortcut = SubResource( 4 )

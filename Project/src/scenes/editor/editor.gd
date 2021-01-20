@@ -41,6 +41,8 @@ onready var tile_painter = $TilePainter
 onready var menu_bar = $CanvasLayer/Control/MenuPanel
 onready var file_access_ctrl = $CanvasLayer/Control/FileAccessCtrl
 onready var inspector_panel = $CanvasLayer/Control/InspectorPanel
+onready var update_checker = $UpdateChecker
+
 onready var popups = $CanvasLayer/Control/Popups
 onready var readme_accept_dialog = $CanvasLayer/Control/Popups/ReadmeAcceptDialog
 onready var about_popup_dialog = $CanvasLayer/Control/Popups/AboutPopupDialog
@@ -48,6 +50,8 @@ onready var exit_unsaved_dialog = $CanvasLayer/Control/Popups/ExitUnsavedDialog
 onready var reload_level_dialog = $CanvasLayer/Control/Popups/ReloadLevelDialog
 onready var editor_config_dialog = $CanvasLayer/Control/Popups/EditorConfigPopupDialog
 onready var hint_list_popup_dialog = $CanvasLayer/Control/Popups/HelpListPopupDialog
+onready var up_to_date_popup_dialog = $CanvasLayer/Control/Popups/UpToDatePopupDialog
+onready var update_available_popup_dialog = $CanvasLayer/Control/Popups/UpdateAvailablePopupDialog
 
 #-------------------------------------------------
 #      Notifications
@@ -57,6 +61,7 @@ func _ready() -> void:
 	_connect_ExitHandler()
 	_update_window_title_by_level_path("")
 	inspector_panel.load_level_config()
+	_check_for_update(false)
 
 #-------------------------------------------------
 #      Virtual Methods
@@ -156,6 +161,8 @@ func _on_MenuPanel_view_help_list() -> void:
 	hint_list_popup_dialog.popup_centered()
 func _on_MenuPanel_readme() -> void:
 	readme_accept_dialog.popup_centered()
+func _on_MenuPanel_check_for_updates() -> void:
+	update_checker.request()
 func _on_MenuPanel_about() -> void:
 	about_popup_dialog.popup_centered()
 
@@ -319,6 +326,28 @@ func _on_FileAccessCtrl_file_update_detected() -> void:
 func _on_ReloadLevelDialog_confirmed() -> void:
 	file_access_ctrl.reload()
 
+func _on_UpdateChecker_up_to_date() -> void:
+	up_to_date_popup_dialog.popup_centered()
+
+func _on_UpdateChecker_update_available() -> void:
+	update_available_popup_dialog.set_version(
+		update_checker.release_content.get_version()
+	)
+	update_available_popup_dialog.set_author_and_time(
+		update_checker.release_content.get_author_name(),
+		update_checker.release_content.get_publish_date_raw()
+	)
+	update_available_popup_dialog.set_desc(
+		update_checker.release_content.get_description()
+	)
+	update_available_popup_dialog.set_file_size(
+		update_checker.release_content.get_file_size()
+	)
+	update_available_popup_dialog.set_download_url(
+		update_checker.release_content.get_download_url()
+	)
+	update_available_popup_dialog.popup_centered()
+
 #Connect from _connect_ExitHandler()
 func _on_ExitHandler_quit_requested():
 	exit_unsaved_dialog.pending_request = exit_unsaved_dialog.PendingRequest.EXIT_APP
@@ -387,6 +416,12 @@ func _do_unsaved_changes_pending_request():
 			)
 		exit_unsaved_dialog.PendingRequest.EXIT_APP:
 			get_tree().quit()
+
+func _check_for_update(notify : bool = true):
+	if not EditorConfig.auto_check_update:
+		return
+	
+	update_checker.request(notify)
 
 #-------------------------------------------------
 #      Setters & Getters

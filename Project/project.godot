@@ -153,6 +153,11 @@ _global_script_classes=[ {
 "class": "TileTextureButton",
 "language": "GDScript",
 "path": "res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TileTextureButton.gd"
+}, {
+"base": "Reference",
+"class": "VersionComparator",
+"language": "GDScript",
+"path": "res://src/utils/VersionComparator.gd"
 } ]
 _global_script_class_icons={
 "AtbDropdownButton": "",
@@ -183,7 +188,8 @@ _global_script_class_icons={
 "PreviewObject": "",
 "RecentFileManager": "",
 "TextureButtonCallback": "",
-"TileTextureButton": ""
+"TileTextureButton": "",
+"VersionComparator": ""
 }
 
 [application]
