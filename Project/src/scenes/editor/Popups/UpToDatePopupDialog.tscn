@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/DefaultGodotTheme/GodotTheme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/editor/Popups/UpToDatePopupDialog.gd" type="Script" id=2]
+[ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=3]
+
+[node name="UpToDatePopupDialog" type="AcceptDialog"]
+margin_right = 344.0
+margin_bottom = 110.0
+theme = ExtResource( 1 )
+window_title = "Update Checker"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -38.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 324.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 22.0
+text = "You are up to date"
+autowrap = true
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 320.0
+margin_bottom = 48.0
+text = "%s %s is currently the newest version available."
+autowrap = true
+
+[node name="AnimatedPopupAnim" parent="." instance=ExtResource( 3 )]
