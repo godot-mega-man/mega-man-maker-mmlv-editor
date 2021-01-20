@@ -5,7 +5,6 @@
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=3]
 
 [node name="UpdateAvailablePopupDialog" type="WindowDialog"]
-visible = true
 margin_right = 448.0
 margin_bottom = 448.0
 theme = ExtResource( 1 )

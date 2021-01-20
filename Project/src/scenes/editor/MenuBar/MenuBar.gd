@@ -272,6 +272,9 @@ func _on_edit_menu_popup_about_to_show():
 func _on_view_menu_popup_about_to_show():
 	emit_signal("view_menu_about_to_show")
 
+func _on_AboutButton_pressed() -> void:
+	emit_signal("about")
+
 #-------------------------------------------------
 #      Private Methods
 #-------------------------------------------------
