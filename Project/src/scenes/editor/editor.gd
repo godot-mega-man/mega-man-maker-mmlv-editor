@@ -182,7 +182,10 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 			EditorLogBox.add_message("The file you're trying to load is not a .mmlv file. Please select a file with an extension of .mmlv.", true)
 		_:
 			EditorLogBox.add_message("Unknown error. Returned err code: %s" % load_result, true)
-			
+	
+	if load_result != OK:
+		EditorLogBox.add_message("Could not open file at path %s" % path, true)
+		EditorLogBox.add_message("Could not open file at dir %s" % dir, true)
 
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
