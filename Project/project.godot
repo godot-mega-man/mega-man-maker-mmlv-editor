@@ -205,6 +205,7 @@ config/version="0.8.1"
 config/year="2020"
 config/project_creator="Firstject Snowflakes"
 config/test_version=true
+config/version="0.8.1"
 
 [autoload]
 
