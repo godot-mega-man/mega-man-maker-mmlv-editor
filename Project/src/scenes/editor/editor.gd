@@ -109,6 +109,8 @@ func _on_MenuPanel_opening_file() -> void:
 	file_access_ctrl.open_file()
 func _on_MenuPanel_opening_containing_folder() -> void:
 	file_access_ctrl.open_containing_folder()
+func _on_MenuPanel_opening_mega_maker_folder() -> void:
+	file_access_ctrl.open_mega_maker_folder()
 func _on_MenuPanel_saving_file() -> void:
 	file_access_ctrl.save_file()
 func _on_MenuPanel_saving_file_as() -> void:
@@ -216,6 +218,9 @@ func _on_MenuPanel_opening_recent_file(id) -> void:
 	file_access_ctrl.open_file_from_path(file_access_ctrl.recent_file_manager.recent_file_paths[id])
 
 func _on_MenuPanel_file_menu_about_to_show() -> void:
+	menu_bar.file_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_FILE_OPEN_CONTAINING_FOLDER, file_access_ctrl.current_level_path.empty()
+	)
 	menu_bar.update_recent_files(file_access_ctrl.recent_file_manager.get_recent_file_paths())
 
 func _on_MenuPanel_edit_menu_about_to_show() -> void:

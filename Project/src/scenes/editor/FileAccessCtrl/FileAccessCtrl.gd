@@ -73,6 +73,9 @@ func open_file_from_path(file_path : String):
 	recent_file_manager.add(file_path)
 
 func open_containing_folder():
+	OS.shell_open(_get_containing_folder_path())
+
+func open_mega_maker_folder():
 	OS.shell_open(_get_mega_maker_path())
 
 func save_file():
@@ -134,6 +137,11 @@ func _get_mega_maker_path() -> String:
 	var user = OS.get_user_data_dir().split("/")[2]
 	
 	return "C:/Users/" + user + "/AppData/Local/MegaMaker/Levels/"
+
+func _get_containing_folder_path() -> String:
+	var lvls = current_level_path.split("/")
+	lvls.remove(lvls.size() - 1)
+	return lvls.join("/")
 
 func _get_dir_from_path(file_path : String) -> String:
 	var dirs : PoolStringArray = file_path.replace("/", "\\").split("\\")
