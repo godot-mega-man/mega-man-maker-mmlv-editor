@@ -427,6 +427,8 @@ func _do_unsaved_changes_pending_request():
 func _check_for_update(notify : bool = true):
 	if not EditorConfig.auto_check_update:
 		return
+	if update_checker.is_auto_check_on_cooldown():
+		return
 	
 	update_checker.request(notify)
 

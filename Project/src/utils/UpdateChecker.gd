@@ -56,6 +56,9 @@ signal update_available
 const GITHUB_API = "https://api.github.com/repos/godot-mega-man/mega-man-maker-mmlv-editor/"
 const LATEST_RELEASE = "releases/latest"
 
+const AUTO_CHECK_COOLDOWN_FILE = "user://AutoCheckUpdateCooldown.dat"
+const AUTO_CHECK_COOLDOWN = 61200 # in seconds
+
 #-------------------------------------------------
 #      Properties
 #-------------------------------------------------
@@ -74,6 +77,24 @@ func request(notify : bool = true):
 	http_request.request(GITHUB_API + LATEST_RELEASE)
 	yield(http_request, "request_completed")
 	_check()
+
+func is_auto_check_on_cooldown() -> bool:
+	var f = File.new()
+	var err = f.open(AUTO_CHECK_COOLDOWN_FILE, File.READ)
+	var last_check_unix : int
+	
+	if err != OK:
+		return false
+	
+	last_check_unix = f.get_var()
+	
+	return OS.get_unix_time() - last_check_unix < AUTO_CHECK_COOLDOWN
+
+func apply_auto_check_cooldown():
+	var f = File.new()
+	f.open(AUTO_CHECK_COOLDOWN_FILE, File.WRITE)
+	f.store_var(OS.get_unix_time())
+	f.close()
 
 #-------------------------------------------------
 #      Connections
@@ -96,3 +117,6 @@ func _check():
 		emit_signal("up_to_date")
 	if not release_content.is_latest(_get_proj_version()):
 		emit_signal("update_available")
+		
+		if not notify_on_complete: # Not manually checks by user
+			apply_auto_check_cooldown()
