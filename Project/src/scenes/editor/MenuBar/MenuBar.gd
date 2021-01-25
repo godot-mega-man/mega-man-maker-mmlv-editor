@@ -20,6 +20,7 @@ class_name MenuBar
 signal new_file
 signal opening_file
 signal opening_containing_folder
+signal opening_mega_maker_folder
 signal saving_file
 signal saving_file_as
 signal opening_config
@@ -66,11 +67,12 @@ signal view_menu_about_to_show
 const ID_MENU_FILE_NEW = 0
 const ID_MENU_FILE_OPEN = 1
 const ID_MENU_FILE_OPEN_CONTAINING_FOLDER = 2
-const ID_MENU_FILE_SAVE = 4
-const ID_MENU_FILE_SAVE_AS = 5
-const ID_MENU_FILE_CONFIG = 7
-const ID_MENU_FILE_RECENT = 9
-const ID_MENU_FILE_EXIT = 11
+const ID_MENU_FILE_OPEN_MEGA_MAKER_FOLDER = 3
+const ID_MENU_FILE_SAVE = 5
+const ID_MENU_FILE_SAVE_AS = 6
+const ID_MENU_FILE_CONFIG = 8
+const ID_MENU_FILE_RECENT = 10
+const ID_MENU_FILE_EXIT = 12
 const ID_MENU_FILE_RECENT_CLEAR = 99
 
 const ID_MENU_EDIT_UNDO = 0
@@ -188,6 +190,8 @@ func _on_file_menu_popup_pressed(id : int) -> void:
 			emit_signal("opening_file")
 		ID_MENU_FILE_OPEN_CONTAINING_FOLDER:
 			emit_signal("opening_containing_folder")
+		ID_MENU_FILE_OPEN_MEGA_MAKER_FOLDER:
+			emit_signal("opening_mega_maker_folder")
 		ID_MENU_FILE_SAVE:
 			emit_signal("saving_file")
 		ID_MENU_FILE_SAVE_AS:
@@ -290,6 +294,8 @@ func _init_file_menus():
 	file_menu.get_popup().set_item_shortcut(ID_MENU_FILE_OPEN, shortcut_file_open, true)
 	
 	file_menu.get_popup().add_item("Open Containing Folder", ID_MENU_FILE_OPEN_CONTAINING_FOLDER)
+	
+	file_menu.get_popup().add_item("Open Mega Man Maker Folder", ID_MENU_FILE_OPEN_MEGA_MAKER_FOLDER)
 	
 	file_menu.get_popup().add_separator()
 	

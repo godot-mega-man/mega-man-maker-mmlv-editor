@@ -147,7 +147,7 @@ func _create_bg_button(file_name : String, game_id : int, bg_id : int):
 	tex_btn.expand = true
 	tex_btn.texture_normal = tex
 	tex_btn.rect_min_size = BUTTON_SIZE
-	tex_btn.hint_tooltip = file_name
+	tex_btn.hint_tooltip = str(file_name, "\n", "ID: ", bg_id)
 	tex_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	tex_btn.connect("pressed_id", self, "_on_bg_btn_pressed_id")
 	tex_btn.tile_id = bg_id

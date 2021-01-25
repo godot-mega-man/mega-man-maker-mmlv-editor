@@ -21,7 +21,7 @@ hint_tooltip = "Horizontal direction. Possible values:
 - The texture's width scale factor (e.g. set to -1 to make the sprite appear flipped).
 - The speed of the object in x-axis (e.g. Conveyors)
 - Shift position (e.g. Pickups, Energy Element, Lift Block)"
-property_name = "Vector X"
+property_name = "Scale X"
 code = "b"
 
 [node name="AtbHboxObjVecY" parent="VBox/ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
@@ -30,7 +30,7 @@ margin_bottom = 70.0
 hint_tooltip = "Vertical Direction. Possible Values:
 - The texture's height scale factor (however, this value won't work on every object).
 - The speed of the object in y-axis"
-property_name = "Vector Y"
+property_name = "Scale Y"
 code = "c"
 
 [node name="AtbHboxObjType" parent="VBox/ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
