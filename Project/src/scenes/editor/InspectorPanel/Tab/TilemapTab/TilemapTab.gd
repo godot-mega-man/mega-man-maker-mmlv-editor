@@ -201,7 +201,7 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	tex_btn.expand = true
 	tex_btn.texture_normal = atlas_tex
 	tex_btn.rect_min_size = BUTTON_SIZE
-	tex_btn.hint_tooltip = file_name
+	tex_btn.hint_tooltip = str(file_name, "\nID: ", tile_id)
 	tex_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	tex_btn.connect("pressed_id", self, "_on_tile_btn_pressed_id")
 	tex_btn.connect("mouse_entered_btn", self, "_on_tile_btn_mouse_entered_btn")
