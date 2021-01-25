@@ -13,6 +13,47 @@ extends Node2D
 #      Classes
 #-------------------------------------------------
 
+class TilemapsCurrentTileID:
+	extends Reference
+	
+	# Dict structure:
+	# {
+	#    Tilemap1 : id,
+	#    Tilemap2 : id,
+	#    ...
+	# }
+	var _mapped_ids : Dictionary
+	var current : int # Current tile id
+	
+	func save_id_by_tilemap(tilemap : TileMap, tile_id : int = current):
+		_mapped_ids[tilemap] = tile_id
+	
+	# Sets the current id from the mapped ids.
+	# If the tilemap has never been mapped before, the first id from the
+	# tileset of a tilemap is used and then maps the newly fetched id into the
+	# mapped ids.
+	func get_from_mapped_ids(tilemap : TileMap) -> void:
+		assert(tilemap != null)
+		assert(tilemap.tile_set != null)
+		
+		if not _mapped_ids.has(tilemap):
+			var first_tile_id = _get_first_tile_id(tilemap.tile_set)
+			_mapped_ids[tilemap] = first_tile_id
+			current = first_tile_id
+			return
+		
+		current = _mapped_ids[tilemap]
+	
+	func _get_first_tile_id(tile_set : TileSet) -> int:
+		assert(tile_set)
+		
+		var tiles_ids = tile_set.get_tiles_ids()
+		
+		if tiles_ids.empty():
+			return 0
+		
+		return tiles_ids.front()
+
 #-------------------------------------------------
 #      Signals
 #-------------------------------------------------
@@ -39,7 +80,7 @@ var middle_click_press_moved : bool
 
 var follow_mouse_pointer : bool setget set_follow_mouse_pointer
 var tilemap : TileMap setget set_tilemap
-var current_tile_id : int setget set_current_tile_id 
+var tilemaps_current_tile_id : TilemapsCurrentTileID = TilemapsCurrentTileID.new()
 
 #-------------------------------------------------
 #      Notifications
@@ -99,7 +140,7 @@ func process_input(event : InputEvent):
 			eyedrop()
 		else:
 			#Set tile by current tile id
-			set_tile(current_tile_id)
+			set_tile(tilemaps_current_tile_id.current)
 	if right_mouse_down: #Remove
 		set_tile(-1)
 
@@ -124,9 +165,16 @@ func set_tile(tile_id : int):
 
 #Pick and update current tile from current mouse position.
 func eyedrop():
-	current_tile_id = tilemap.get_cellv(tilemap.world_to_map(self.get_global_position()))
+	tilemaps_current_tile_id.current = tilemap.get_cellv(tilemap.world_to_map(self.get_global_position()))
 	_update_tilemap_preview()
-	emit_signal("changed_tile_id", current_tile_id)
+	emit_signal("changed_tile_id", tilemaps_current_tile_id.current)
+
+func get_current_tile_id():
+	return tilemaps_current_tile_id.current
+
+func set_current_tile_id(id):
+	tilemaps_current_tile_id.current = id
+	_update_tilemap_preview()
 
 #-------------------------------------------------
 #      Connections
@@ -141,7 +189,7 @@ func _update_tilemap_preview():
 		return
 	
 	tilemap_preview.tile_set = tilemap.tile_set
-	tilemap_preview.set_cellv(Vector2(0, 0), current_tile_id)
+	tilemap_preview.set_cellv(Vector2(0, 0), tilemaps_current_tile_id.current)
 	tilemap_preview.cell_size = tilemap.cell_size
 
 func _register_undo_start():
@@ -166,9 +214,7 @@ func set_follow_mouse_pointer(val):
 	set_process(val)
 
 func set_tilemap(val):
+	tilemaps_current_tile_id.save_id_by_tilemap(tilemap)
 	tilemap = val
-	_update_tilemap_preview()
-
-func set_current_tile_id(val):
-	current_tile_id = val
+	tilemaps_current_tile_id.get_from_mapped_ids(val)
 	_update_tilemap_preview()

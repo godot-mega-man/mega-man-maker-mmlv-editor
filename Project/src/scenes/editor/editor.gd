@@ -286,7 +286,6 @@ func _on_ToolBar_pressed() -> void:
 		EditMode.Mode.ACTIVE_SCREEN:
 			tile_painter.tilemap = $Level/GameActiveScreenTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
-			tile_painter.current_tile_id = 0
 			tile_painter.show()
 		EditMode.Mode.LADDER:
 			tile_painter.tilemap = $Level/GameLadderTileDrawer
@@ -298,10 +297,10 @@ func _on_ToolBar_pressed() -> void:
 			tile_painter.show()
 
 func _on_TilemapTab_tile_selected(tile_id) -> void:
-	tile_painter.current_tile_id = tile_id
+	tile_painter.set_current_tile_id(tile_id)
 
 func _on_BackgroundTab_bg_selected(id) -> void:
-	tile_painter.current_tile_id = id
+	tile_painter.set_current_tile_id(id)
 
 func _on_TilePainter_changed_tile_id(tilemap_tile_id) -> void:
 	_make_tilemap_tab_current_tile(tilemap_tile_id)
