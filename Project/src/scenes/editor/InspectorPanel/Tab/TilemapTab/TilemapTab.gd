@@ -90,7 +90,8 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
-onready var preview_tex_label = $PreviewTextureRect/TilesetNameLabel
+onready var preview_tex_name_label = $PreviewTextureRect/NameVBox/TilesetNameLabel
+onready var preview_tex_id_label = $PreviewTextureRect/NameVBox/TilesetIDLabel
 onready var subtile_button = $SubtileButton
 onready var subtile_select_popup = $SubtileSelectPopup
 onready var search_lineedit = $VBox/SearchLineEdit
@@ -128,8 +129,10 @@ func select_tile(tile_id : int, subtile_id = 0):
 	#Set subtile button texture
 	subtile_button.icon = get_atlas_from_tileset_texture(get_texture(tile_id))
 	
-	#Set subtile preview texture
+	#Set subtile preview
 	subtile_select_popup.set_preview_texture(get_texture(tile_id))
+	subtile_select_popup.set_tileset_name(GameTileSetData.TILESET_DATA[tile_id])
+	subtile_select_popup.set_tileset_id(tile_id)
 
 func get_atlas_from_tileset_texture(texture : StreamTexture) -> AtlasTexture:
 	var atlas_tex = AtlasTexture.new()
@@ -148,9 +151,10 @@ func get_texture(tile_id : int) -> StreamTexture:
 func _on_tile_btn_pressed_id(tile_id : int, tile_texture : Texture):
 	select_tile(tile_id) 
 
-func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String):
+func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String, tile_id : int):
 	preview_tex_anim.play("Show")
-	preview_tex_label.text = tileset_name
+	preview_tex_name_label.text = tileset_name
+	preview_tex_id_label.text = str("ID: ", tile_id)
 	if texture is AtlasTexture:
 		preview_texture_rect.texture = texture.atlas
 
@@ -201,7 +205,7 @@ func _create_tile_button(file_name : String, game_id : int, tile_id : int):
 	tex_btn.expand = true
 	tex_btn.texture_normal = atlas_tex
 	tex_btn.rect_min_size = BUTTON_SIZE
-	tex_btn.hint_tooltip = file_name
+	tex_btn.hint_tooltip = str(file_name, "\nID: ", tile_id)
 	tex_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	tex_btn.connect("pressed_id", self, "_on_tile_btn_pressed_id")
 	tex_btn.connect("mouse_entered_btn", self, "_on_tile_btn_mouse_entered_btn")

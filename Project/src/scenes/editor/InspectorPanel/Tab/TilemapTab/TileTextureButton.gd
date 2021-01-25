@@ -18,7 +18,7 @@ class_name TileTextureButton
 #-------------------------------------------------
 
 signal pressed_id(tile_id, tile_texture)
-signal mouse_entered_btn(texture, tileset_name)
+signal mouse_entered_btn(texture, tileset_name, tile_id)
 signal mouse_exited_btn(texture)
 
 #-------------------------------------------------
@@ -60,7 +60,7 @@ func _pressed() -> void:
 #-------------------------------------------------
 
 func _on_mouse_entered():
-	emit_signal("mouse_entered_btn", texture_normal, tileset_name)
+	emit_signal("mouse_entered_btn", texture_normal, tileset_name, tile_id)
 
 func _on_mouse_exited():
 	emit_signal("mouse_exited_btn", texture_normal)
