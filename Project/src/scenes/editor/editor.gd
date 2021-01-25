@@ -109,6 +109,8 @@ func _on_MenuPanel_opening_file() -> void:
 	file_access_ctrl.open_file()
 func _on_MenuPanel_opening_containing_folder() -> void:
 	file_access_ctrl.open_containing_folder()
+func _on_MenuPanel_opening_mega_maker_folder() -> void:
+	file_access_ctrl.open_mega_maker_folder()
 func _on_MenuPanel_saving_file() -> void:
 	file_access_ctrl.save_file()
 func _on_MenuPanel_saving_file_as() -> void:
@@ -216,6 +218,9 @@ func _on_MenuPanel_opening_recent_file(id) -> void:
 	file_access_ctrl.open_file_from_path(file_access_ctrl.recent_file_manager.recent_file_paths[id])
 
 func _on_MenuPanel_file_menu_about_to_show() -> void:
+	menu_bar.file_menu.get_popup().set_item_disabled(
+		MenuBar.ID_MENU_FILE_OPEN_CONTAINING_FOLDER, file_access_ctrl.current_level_path.empty()
+	)
 	menu_bar.update_recent_files(file_access_ctrl.recent_file_manager.get_recent_file_paths())
 
 func _on_MenuPanel_edit_menu_about_to_show() -> void:
@@ -286,7 +291,6 @@ func _on_ToolBar_pressed() -> void:
 		EditMode.Mode.ACTIVE_SCREEN:
 			tile_painter.tilemap = $Level/GameActiveScreenTileDrawer
 			tile_painter.set_follow_mouse_pointer(true)
-			tile_painter.current_tile_id = 0
 			tile_painter.show()
 		EditMode.Mode.LADDER:
 			tile_painter.tilemap = $Level/GameLadderTileDrawer
@@ -298,10 +302,10 @@ func _on_ToolBar_pressed() -> void:
 			tile_painter.show()
 
 func _on_TilemapTab_tile_selected(tile_id) -> void:
-	tile_painter.current_tile_id = tile_id
+	tile_painter.set_current_tile_id(tile_id)
 
 func _on_BackgroundTab_bg_selected(id) -> void:
-	tile_painter.current_tile_id = id
+	tile_painter.set_current_tile_id(id)
 
 func _on_TilePainter_changed_tile_id(tilemap_tile_id) -> void:
 	_make_tilemap_tab_current_tile(tilemap_tile_id)
@@ -422,6 +426,8 @@ func _do_unsaved_changes_pending_request():
 
 func _check_for_update(notify : bool = true):
 	if not EditorConfig.auto_check_update:
+		return
+	if update_checker.is_auto_check_on_cooldown():
 		return
 	
 	update_checker.request(notify)

@@ -8,10 +8,11 @@
 text = "Spikes"
 
 [node name="ComingSoonLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 296.0
+margin_top = 287.0
 margin_right = 792.0
-margin_bottom = 310.0
+margin_bottom = 318.0
 size_flags_vertical = 6
-text = "Coming soon..."
+text = "Coming soon...
+However, Eyedropper tool can still be used on spike tiles."
 align = 1
-clip_text = true
+autowrap = true

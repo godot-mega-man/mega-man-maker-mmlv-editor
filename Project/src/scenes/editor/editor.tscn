@@ -290,6 +290,7 @@ anims/Anim = SubResource( 2 )
 [connection signal="opening_config" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_opening_config"]
 [connection signal="opening_containing_folder" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_opening_containing_folder"]
 [connection signal="opening_file" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_opening_file"]
+[connection signal="opening_mega_maker_folder" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_opening_mega_maker_folder"]
 [connection signal="opening_recent_file" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_opening_recent_file"]
 [connection signal="readme" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_readme"]
 [connection signal="redo" from="CanvasLayer/Control/MenuPanel" to="." method="_on_MenuPanel_redo"]

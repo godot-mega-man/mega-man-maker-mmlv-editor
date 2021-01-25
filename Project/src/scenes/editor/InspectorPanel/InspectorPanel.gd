@@ -21,7 +21,6 @@ extends Control
 #      Constants
 #-------------------------------------------------
 
-const INSPECTOR_MIN_LEFT_MARGIN = -160
 const INSPECTOR_MAX_LEFT_MARGIN = 200 #Margin at which the inspector will automatically hide
 const DEFAULT_INSPECTOR_LEFT_MARGIN = 0
 
@@ -77,8 +76,8 @@ func resize_drag_ended():
 	if panel_open.margin_left > INSPECTOR_MAX_LEFT_MARGIN:
 		panel_open.margin_left = DEFAULT_INSPECTOR_LEFT_MARGIN
 		hide_inspector()
-	if panel_open.margin_left < INSPECTOR_MIN_LEFT_MARGIN:
-		panel_open.margin_left = INSPECTOR_MIN_LEFT_MARGIN
+	if panel_open.rect_size.x > OS.window_size.x:
+		panel_open.margin_left = 0
 
 func load_level_config():
 	level_tab.load_properties_from_level()

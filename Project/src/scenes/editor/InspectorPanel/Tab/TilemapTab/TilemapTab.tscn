@@ -114,9 +114,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -183.0
-margin_top = -183.0
+margin_top = -209.5
 margin_right = 183.0
-margin_bottom = 183.0
+margin_bottom = 209.5
 
 [node name="SubtileButton" type="Button" parent="." index="2"]
 anchor_left = 1.0
@@ -127,6 +127,7 @@ margin_left = -60.0
 margin_top = -52.0
 margin_right = -12.0
 margin_bottom = -4.0
+focus_mode = 0
 size_flags_vertical = 0
 shortcut = SubResource( 2 )
 icon = ExtResource( 2 )
@@ -140,7 +141,7 @@ visible = false
 margin_left = -364.0
 margin_top = 8.0
 margin_right = -12.0
-margin_bottom = 384.0
+margin_bottom = 416.0
 mouse_filter = 2
 expand = true
 stretch_mode = 5
@@ -163,16 +164,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TilesetNameLabel" type="Label" parent="PreviewTextureRect" index="1"]
+[node name="NameVBox" type="VBoxContainer" parent="PreviewTextureRect" index="1"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -24.0
-margin_bottom = -2.0
+margin_top = -40.0
+margin_bottom = -12.0
+grow_horizontal = 0
+custom_constants/separation = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TilesetNameLabel" type="Label" parent="PreviewTextureRect/NameVBox" index="0"]
+margin_right = 352.0
+margin_bottom = 14.0
 grow_vertical = 0
 text = "TilesetName"
 align = 1
-autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TilesetIDLabel" type="Label" parent="PreviewTextureRect/NameVBox" index="1"]
+margin_top = 14.0
+margin_right = 352.0
+margin_bottom = 28.0
+grow_vertical = 0
+text = "TilesetID"
+align = 1
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -181,7 +203,6 @@ __meta__ = {
 [node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
 anims/Hide = SubResource( 3 )
 anims/Show = SubResource( 4 )
-
 [connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
 [connection signal="subtile_selected" from="SubtileSelectPopup" to="." method="_on_SubtileSelectPopup_subtile_selected"]
 [connection signal="pressed" from="SubtileButton" to="." method="_on_SubtileButton_pressed"]
