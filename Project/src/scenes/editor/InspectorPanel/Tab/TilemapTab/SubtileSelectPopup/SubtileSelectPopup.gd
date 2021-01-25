@@ -33,7 +33,7 @@ signal subtile_selected(tile_id)
 
 func _ready() -> void:
 	#Connect all buttons
-	for i in $MarginContainer/PreviewTextureRect.get_children():
+	for i in $MarginContainer/Control/PreviewTextureRect.get_children():
 		if i is TileTextureButton:
 			i.connect("pressed_id", self, "_on_btn_pressed_id")
 
@@ -50,7 +50,13 @@ func _ready() -> void:
 #-------------------------------------------------
 
 func set_preview_texture(texture : Texture):
-	$MarginContainer/PreviewTextureRect.texture = texture
+	$MarginContainer/Control/PreviewTextureRect.texture = texture
+
+func set_tileset_name(tileset_name : String):
+	$MarginContainer/Control/LabelVBox/NameLabel.text = tileset_name
+
+func set_tileset_id(tileset_id : int):
+	$MarginContainer/Control/LabelVBox/IDLabel.text = str("ID: ", tileset_id)
 
 #-------------------------------------------------
 #      Connections
