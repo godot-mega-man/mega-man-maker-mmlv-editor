@@ -201,10 +201,10 @@ boot_splash/bg_color=Color( 0.921569, 0.921569, 0.921569, 1 )
 config/icon="res://icon128.png"
 config/windows_native_icon="res://icon256.ico"
 config/auto_accept_quit=false
+config/version="0.8.2"
 config/year="2020"
 config/project_creator="Firstject Snowflakes"
 config/test_version=true
-config/version="0.8.1"
 
 [autoload]
 
