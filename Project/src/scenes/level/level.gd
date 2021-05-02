@@ -226,6 +226,9 @@ func get_save() -> String:
 		txt_pool.append(_combine_code_line_text("1w" + str(idx), boss.drop_wp_slot_id))
 		txt_pool.append(_combine_code_line_text("1xa" + str(idx), boss.change_player_enabled))
 		txt_pool.append(_combine_code_line_text("1x" + str(idx), boss.change_player_id))
+		txt_pool.append(_combine_code_line_text("1z" + str(idx), boss.death_change_music_enabled))
+		txt_pool.append(_combine_code_line_text("1za" + str(idx), boss.death_change_music_category))
+		txt_pool.append(_combine_code_line_text("1zb" + str(idx), boss.death_change_music_id))
 		txt_pool.append(_combine_code_line_text("1n" + str(idx), boss.music_category))
 		txt_pool.append(_combine_code_line_text("1o" + str(idx), boss.music_id))
 		

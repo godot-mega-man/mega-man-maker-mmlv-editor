@@ -44,6 +44,9 @@ export (float) var change_player_enabled
 export (float) var change_player_id
 export (float) var music_category
 export (float) var music_id
+export (float) var death_change_music_enabled
+export (float) var death_change_music_category
+export (float) var death_change_music_id
 
 
 #-------------------------------------------------

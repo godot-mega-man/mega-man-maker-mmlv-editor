@@ -63,6 +63,9 @@ class TempBossCodeData:
 	var _1x
 	var _1n
 	var _1o
+	var _1z
+	var _1za
+	var _1zb
 
 #-------------------------------------------------
 #      Signals
@@ -221,6 +224,12 @@ func build(file_data : String):
 			"1xa":
 				_dataset = _get_dataset_from_line_data(i, "1xa")
 				temp_boss_code_data._1xa = float(_dataset[1])
+			"1za":
+				_dataset = _get_dataset_from_line_data(i, "1za")
+				temp_boss_code_data._1za = float(_dataset[1])
+			"1zb":
+				_dataset = _get_dataset_from_line_data(i, "1zb")
+				temp_boss_code_data._1zb = float(_dataset[1])
 		match i.left(2):
 			"1g":
 				_dataset = _get_dataset_from_line_data(i, "1g")
@@ -236,6 +245,14 @@ func build(file_data : String):
 			"1j":
 				_dataset = _get_dataset_from_line_data(i, "1j")
 				temp_boss_code_data._1j = float(_dataset[1])
+			"1n":
+				_dataset = _get_dataset_from_line_data(i, "1n")
+				temp_boss_code_data._1n = float(_dataset[1])
+			"1o":
+				_dataset = _get_dataset_from_line_data(i, "1o")
+				temp_boss_code_data._1o = float(_dataset[1])
+				_build_from_code_data(temp_boss_code_data)
+				temp_boss_code_data = TempBossCodeData.new() #Create a new one if there are one more bosses.
 			"1u":
 				_dataset = _get_dataset_from_line_data(i, "1u")
 				if not (_dataset[0].left(1) == "a" or _dataset[0].left(1) == "o"):
@@ -251,14 +268,10 @@ func build(file_data : String):
 				_dataset = _get_dataset_from_line_data(i, "1x")
 				if not (_dataset[0].left(1) == "a" or _dataset[0].left(1) == "c"):
 					temp_boss_code_data._1x = float(_dataset[1])
-			"1n":
-				_dataset = _get_dataset_from_line_data(i, "1n")
-				temp_boss_code_data._1n = float(_dataset[1])
-			"1o":
-				_dataset = _get_dataset_from_line_data(i, "1o")
-				temp_boss_code_data._1o = float(_dataset[1])
-				_build_from_code_data(temp_boss_code_data)
-				temp_boss_code_data = TempBossCodeData.new() #Create a new one if there are one more bosses.
+			"1z":
+				_dataset = _get_dataset_from_line_data(i, "1z")
+				if not (_dataset[0].left(1) == "a" or _dataset[0].left(1) == "b"):
+					temp_boss_code_data._1z = float(_dataset[1])
 		
 		#Active screens
 		match i.left(2):
@@ -423,6 +436,9 @@ func _build_from_code_data(code_data):
 		data_boss.change_player_id = code_data._1x
 		data_boss.music_category = code_data._1n
 		data_boss.music_id = code_data._1o
+		data_boss.death_change_music_enabled = code_data._1z
+		data_boss.death_change_music_category = code_data._1za
+		data_boss.death_change_music_id = code_data._1zb
 		
 		_data_bosses.append(data_boss)
 
