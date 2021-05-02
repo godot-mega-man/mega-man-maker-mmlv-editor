@@ -120,11 +120,6 @@ func load_level(level_dir : String, level_file_path : String) -> int:
 	if not level_file_path.get_extension() == "mmlv":
 		return ERR_FILE_UNRECOGNIZED
 	
-	var dir = Directory.new()
-	var dir_result = dir.open(level_dir)
-	if dir_result != OK:
-		return dir_result
-	
 	var f = File.new()
 	var open_result = f.open(level_file_path, File.READ)
 	
@@ -136,12 +131,6 @@ func load_level(level_dir : String, level_file_path : String) -> int:
 	return open_result
 
 func save_level(level_dir : String, level_file_path : String) -> void:
-	var dir = Directory.new()
-	var dir_result = dir.open(level_dir)
-	if dir_result != OK:
-		OS.alert("An error occurred when trying to access the path. Returned " + str(dir_result), "Directory Open Failure")
-		return
-	
 	var f = File.new()
 	var open_result = f.open(level_file_path, File.WRITE)
 	
