@@ -234,7 +234,7 @@ func build(file_data : String):
 				temp_boss_code_data._1j = float(_dataset[1])
 			"1u":
 				_dataset = _get_dataset_from_line_data(i, "1u")
-				if not _dataset[0].left(1) == "a":
+				if not (_dataset[0].left(1) == "a" or _dataset[0].left(1) == "o"):
 					temp_boss_code_data._1u = float(_dataset[1])
 			"1v":
 				_dataset = _get_dataset_from_line_data(i, "1v")
