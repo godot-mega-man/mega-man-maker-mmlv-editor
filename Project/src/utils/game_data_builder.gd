@@ -55,6 +55,7 @@ class TempBossCodeData:
 	var _1j
 	var _1ua
 	var _1u
+	var _1uo
 	var _1va
 	var _1v
 	var _1w
@@ -211,6 +212,9 @@ func build(file_data : String):
 			"1ua":
 				_dataset = _get_dataset_from_line_data(i, "1ua")
 				temp_boss_code_data._1ua = float(_dataset[1])
+			"1uo":
+				_dataset = _get_dataset_from_line_data(i, "1uo")
+				temp_boss_code_data._1uo = float(_dataset[1])
 			"1va":
 				_dataset = _get_dataset_from_line_data(i, "1va")
 				temp_boss_code_data._1va = float(_dataset[1])
@@ -411,6 +415,7 @@ func _build_from_code_data(code_data):
 		data_boss.immune_wp_slot_id = code_data._1j
 		data_boss.drop_item_on_death = code_data._1ua
 		data_boss.drop_item_id = code_data._1u
+		data_boss.drop_key_color = code_data._1uo
 		data_boss.drop_wp_on_death = code_data._1va
 		data_boss.drop_mode = code_data._1v
 		data_boss.drop_wp_slot_id = code_data._1w

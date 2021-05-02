@@ -220,6 +220,7 @@ func get_save() -> String:
 		txt_pool.append(_combine_code_line_text("1j" + str(idx), boss.immune_wp_slot_id))
 		txt_pool.append(_combine_code_line_text("1ua" + str(idx), boss.drop_item_on_death))
 		txt_pool.append(_combine_code_line_text("1u" + str(idx), boss.drop_item_id))
+		txt_pool.append(_combine_code_line_text("1uo" + str(idx), boss.drop_key_color))
 		txt_pool.append(_combine_code_line_text("1va" + str(idx), boss.drop_wp_on_death))
 		txt_pool.append(_combine_code_line_text("1v" + str(idx), boss.drop_mode))
 		txt_pool.append(_combine_code_line_text("1w" + str(idx), boss.drop_wp_slot_id))

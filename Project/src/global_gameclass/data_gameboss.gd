@@ -36,6 +36,7 @@ export (float) var immune_enabled
 export (float) var immune_wp_slot_id
 export (float) var drop_item_on_death
 export (float) var drop_item_id
+export (float) var drop_key_color
 export (float) var drop_wp_on_death
 export (float) var drop_mode
 export (float) var drop_wp_slot_id
