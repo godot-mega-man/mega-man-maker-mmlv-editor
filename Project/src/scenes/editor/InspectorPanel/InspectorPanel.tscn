@@ -123,7 +123,6 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
 [connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn" to="." method="_on_ViewCodeBtn_pressed"]
 [connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]

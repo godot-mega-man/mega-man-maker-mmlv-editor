@@ -137,7 +137,6 @@ __meta__ = {
 }
 
 [node name="PreviewTextureRect" type="TextureRect" parent="." index="3"]
-visible = false
 margin_left = -364.0
 margin_top = 8.0
 margin_right = -12.0
@@ -146,7 +145,6 @@ mouse_filter = 2
 expand = true
 stretch_mode = 5
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 

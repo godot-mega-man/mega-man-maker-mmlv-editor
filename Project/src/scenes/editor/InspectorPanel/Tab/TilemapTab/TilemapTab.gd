@@ -90,6 +90,7 @@ const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)
 
 onready var preview_texture_rect = $PreviewTextureRect
 onready var preview_tex_anim = $PreviewTextureRect/ShowHideAnim
+onready var preview_tex_name_panel = $PreviewTextureRect/NameVBox
 onready var preview_tex_name_label = $PreviewTextureRect/NameVBox/TilesetNameLabel
 onready var preview_tex_id_label = $PreviewTextureRect/NameVBox/TilesetIDLabel
 onready var subtile_button = $SubtileButton
@@ -153,6 +154,7 @@ func _on_tile_btn_pressed_id(tile_id : int, tile_texture : Texture):
 
 func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String, tile_id : int):
 	preview_tex_anim.play("Show")
+	preview_tex_name_panel.show()
 	preview_tex_name_label.text = tileset_name
 	preview_tex_id_label.text = str("ID: ", tile_id)
 	if texture is AtlasTexture:
@@ -160,6 +162,7 @@ func _on_tile_btn_mouse_entered_btn(texture : Texture, tileset_name : String, ti
 
 func _on_tile_btn_mouse_exited_btn(texture):
 	preview_tex_anim.play("Hide")
+	preview_tex_name_panel.hide() # this needs to be here or there is a phantom area you cannot click. 
 
 func _on_tile_btn_gui_input(event : InputEvent):
 	# Check for double click event

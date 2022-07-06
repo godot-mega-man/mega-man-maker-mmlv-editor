@@ -269,7 +269,6 @@ add_target_path = NodePath("../Level/Objects")
 [node name="EditorInitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Anim"
 anims/Anim = SubResource( 2 )
-
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
 [connection signal="files_dropped" from="FileDropNotifier" to="." method="_on_FileDropNotifier_files_dropped"]
@@ -324,4 +323,5 @@ anims/Anim = SubResource( 2 )
 [connection signal="changed_tile_id" from="TilePainter" to="." method="_on_TilePainter_changed_tile_id"]
 
 [editable path="Level"]
+
 [editable path="CanvasLayer/Control/InspectorPanel"]

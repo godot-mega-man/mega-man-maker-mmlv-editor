@@ -42,23 +42,23 @@ scancode = 51
 [sub_resource type="ShortCut" id=6]
 shortcut = SubResource( 5 )
 
-[sub_resource type="InputEventKey" id=12]
+[sub_resource type="InputEventKey" id=7]
 scancode = 52
 
-[sub_resource type="ShortCut" id=7]
-shortcut = SubResource( 12 )
+[sub_resource type="ShortCut" id=8]
+shortcut = SubResource( 7 )
 
-[sub_resource type="InputEventKey" id=8]
+[sub_resource type="InputEventKey" id=9]
 scancode = 53
 
-[sub_resource type="ShortCut" id=9]
-shortcut = SubResource( 8 )
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
 
-[sub_resource type="InputEventKey" id=10]
+[sub_resource type="InputEventKey" id=11]
 scancode = 54
 
-[sub_resource type="ShortCut" id=11]
-shortcut = SubResource( 10 )
+[sub_resource type="ShortCut" id=12]
+shortcut = SubResource( 11 )
 
 [node name="ToolBar" type="Panel"]
 self_modulate = Color( 0, 0.505882, 1, 0.752941 )
@@ -214,7 +214,7 @@ focus_mode = 0
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
-shortcut = SubResource( 7 )
+shortcut = SubResource( 8 )
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 14 )
@@ -238,7 +238,7 @@ focus_mode = 0
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
-shortcut = SubResource( 9 )
+shortcut = SubResource( 10 )
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 20 )
 texture_hover = ExtResource( 21 )
@@ -262,7 +262,7 @@ focus_mode = 0
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
-shortcut = SubResource( 11 )
+shortcut = SubResource( 12 )
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 19 )
@@ -272,7 +272,6 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
-
 [connection signal="pressed" from="HBoxContainer/ObjVBox/AddBtn" to="." method="_on_AddBtn_pressed"]
 [connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ButtonsToggler" to="." method="_on_ButtonsToggler_pressed"]
 [connection signal="pressed" from="HBoxContainer/EditModeVBox/HBoxContainer/ObjectBtn" to="." method="_on_ObjectBtn_pressed"]

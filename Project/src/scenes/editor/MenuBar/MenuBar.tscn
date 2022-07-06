@@ -1,9 +1,10 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://src/scenes/editor/MenuBar/MenuBar.gd" type="Script" id=1]
 [ext_resource path="res://src/utils/AnimatedPopupAnim/AnimatedPopupAnim.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/editor_ui/Info.png" type="Texture" id=3]
 [ext_resource path="res://src/utils/ButtonFx/PressFx/ButtonPressFx.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=5]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -176,6 +177,7 @@ shortcut = SubResource( 45 )
 [node name="MenuBarPanel" type="Panel"]
 anchor_right = 1.0
 margin_bottom = 32.0
+theme = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -215,7 +217,7 @@ __meta__ = {
 }
 
 [node name="FileMenu" type="MenuButton" parent="MenuBarHBox"]
-margin_right = 35.0
+margin_right = 27.0
 margin_bottom = 32.0
 button_mask = 7
 text = "File"
@@ -224,8 +226,8 @@ switch_on_hover = true
 [node name="AnimatedPopupAnim" parent="MenuBarHBox/FileMenu" instance=ExtResource( 2 )]
 
 [node name="EditMenu" type="MenuButton" parent="MenuBarHBox"]
-margin_left = 43.0
-margin_right = 79.0
+margin_left = 35.0
+margin_right = 63.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 button_mask = 7
@@ -235,8 +237,8 @@ switch_on_hover = true
 [node name="AnimatedPopupAnim" parent="MenuBarHBox/EditMenu" instance=ExtResource( 2 )]
 
 [node name="ViewMenu" type="MenuButton" parent="MenuBarHBox"]
-margin_left = 87.0
-margin_right = 129.0
+margin_left = 71.0
+margin_right = 102.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 button_mask = 7
@@ -246,8 +248,8 @@ switch_on_hover = true
 [node name="AnimatedPopupAnim" parent="MenuBarHBox/ViewMenu" instance=ExtResource( 2 )]
 
 [node name="HelpMenu" type="MenuButton" parent="MenuBarHBox"]
-margin_left = 137.0
-margin_right = 179.0
+margin_left = 110.0
+margin_right = 140.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 button_mask = 7
@@ -257,7 +259,7 @@ switch_on_hover = true
 [node name="AnimatedPopupAnim" parent="MenuBarHBox/HelpMenu" instance=ExtResource( 2 )]
 
 [node name="ExpandBox" type="ReferenceRect" parent="MenuBarHBox"]
-margin_left = 187.0
+margin_left = 148.0
 margin_right = 744.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
@@ -284,5 +286,4 @@ __meta__ = {
 }
 
 [node name="ButtonPressFx" parent="MenuBarHBox/AboutButton" instance=ExtResource( 4 )]
-
 [connection signal="pressed" from="MenuBarHBox/AboutButton" to="." method="_on_AboutButton_pressed"]
