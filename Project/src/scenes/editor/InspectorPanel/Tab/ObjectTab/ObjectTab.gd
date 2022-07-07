@@ -171,7 +171,7 @@ func _get_character_asset_name (id: int) -> String:
 	
 # Gets the name for the level object of type [Enemy]
 func _get_enemy_asset_name (id: int) -> String:
-	var level_object = ""
+	var level_object = "MISSING DATA"
 	return level_object
 	
 # Gets the name for the level object of type [Level Object]
