@@ -157,6 +157,8 @@ func _get_level_object_name(type: int ,id: int) -> String:
 # Gets the name for the level object of type [Playable Character]
 func _get_character_asset_name (id: int) -> String:
 	var level_object = ""
+	if id == -999:
+		level_object = "Mega Man"
 	if id == 0:
 		level_object = "Mega Man"
 	if id == 1:
@@ -175,6 +177,271 @@ func _get_enemy_asset_name (id: int) -> String:
 # Gets the name for the level object of type [Level Object]
 func _get_level_asset_name (id: int) -> String:
 	var level_object = ""
+	if id == -999:
+		level_object = "Lift Platform"
+	if id == 0:
+		level_object = "Lift Platform"
+	if id == 1:
+		level_object = "Drop Platform"
+	if id == 2:
+		level_object = "Legacy Conveyor"
+	if id == 3:
+		level_object = "Fire Beam"
+	if id == 4:
+		level_object = "Elec Beam"
+	if id == 5:
+		level_object = "Yoku Block"
+	if id == 6:
+		level_object = "Legacy Force Beam"
+	if id == 7:
+		level_object = "Legacy Red Force Beam"
+	if id == 8:
+		level_object = "Legacy Green Force Beam"
+	if id == 9:
+		level_object = "Dust Block"
+	if id == 10:
+		level_object = "Cossack Block"
+	if id == 11:
+		level_object = "Falling Platform"
+	if id == 12:
+		level_object = "Legacy Rotating Platform"
+	if id == 13:
+		level_object = "Spring"
+	if id == 14:
+		level_object = "Flip Platform"
+	if id == 15:
+		level_object = "Legacy Checkpoint"
+	if id == 16:
+		level_object = "Legacy Water"
+	if id == 17:
+		level_object = "Count Bomb (Vertical)"
+	if id == 18:
+		level_object = "Count Bomb (Horizontal)"
+	if id == 19:
+		level_object = "Legacy Large Health"
+	if id == 20:
+		level_object = "Legacy Small Health"
+	if id == 21:
+		level_object = "Legacy Large Weapon Ammo"
+	if id == 22:
+		level_object = "Legacy Small Weapon Ammo"
+	if id == 23:
+		level_object = "Legacy 1-up"
+	if id == 24:
+		level_object = "Legacy E Tank"
+	if id == 25:
+		level_object = "Legacy M Tank"
+	if id == 26:
+		level_object = "Legacy Teleporter"
+	if id == 27:
+		level_object = "Weapon Block 2x2"
+	if id == 28:
+		level_object = "Weapon Block 1x2"
+	if id == 29:
+		level_object = "Flame Pillar"
+	if id == 30:
+		level_object = "Press"
+	if id == 31:
+		level_object = "Crash Lift"
+	if id == 32:
+		level_object = "Key"
+	if id == 33:
+		level_object = "Key Door (Vertical)"
+	if id == 34:
+		level_object = "Legacy Wannan"
+	if id == 35:
+		level_object = "Magnet"
+	if id == 36:
+		level_object = "Ring Platform"
+	if id == 37:
+		level_object = "Sand"
+	if id == 38:
+		level_object = "Rolling Drill"
+	if id == 39:
+		level_object = "Teckyun"
+	if id == 40:
+		level_object = "Coil Platform"
+	if id == 41:
+		level_object = "Rolling Drill Spawner"
+	if id == 42:
+		level_object = "Oil"
+	if id == 43:
+		level_object = "Fan"
+	if id == 44:
+		level_object = "Floor Light"
+	if id == 45:
+		level_object = "Cracked Block"
+	if id == 46:
+		level_object = "Checkpoint"
+	if id == 47:
+		level_object = "Jet Platform"
+	if id == 48:
+		level_object = "Punch Block"
+	if id == 49:
+		level_object = "Push Block"
+	if id == 50:
+		level_object = "Force Beam"
+	if id == 51:
+		level_object = "Red Force Beam"
+	if id == 52:
+		level_object = "Green Force Beam"
+	if id == 53:
+		level_object = "Rain"
+	if id == 54:
+		level_object = "Illusian"
+	if id == 55:
+		level_object = "Illusian Block"
+	if id == 56:
+		level_object = "Reflecting Yoku Block"
+	if id == 57:
+		level_object = "Bokozurah"
+	if id == 58:
+		level_object = "Bokozurah Block"
+	if id == 59:
+		level_object = "Astro Button"
+	if id == 60:
+		level_object = "Astro Gate"
+	if id == 61:
+		level_object = "Astro Reset Button"
+	if id == 62:
+		level_object = "Thunder Claw Pole"
+	if id == 63:
+		level_object = "Legacy Boss Suppressor"
+	if id == 64:
+		level_object = "TNT Block"
+	if id == 65:
+		level_object = "Teleporter"
+	if id == 66:
+		level_object = "Magma Beam Generator"
+	if id == 67:
+		level_object = "Rotating Platform"
+	if id == 68:
+		level_object = "Wannan"
+	if id == 69:
+		level_object = "Sheep Block"
+	if id == 70:
+		level_object = "Sheep Spike Block"
+	if id == 71:
+		level_object = "Chill Block"
+	if id == 72:
+		level_object = "Moving Elevator"
+	if id == 73:
+		level_object = "Conveyor"
+	if id == 74:
+		level_object = "Moving Cog"
+	if id == 75:
+		level_object = "M Tank that Crashes the game"
+	if id == 76:
+		level_object = "Weapon Block 2x1"
+	if id == 77:
+		level_object = "Acid Solution"
+	if id == 78:
+		level_object = "Spinning Wheel"
+	if id == 79:
+		level_object = "Fire Wall"
+	if id == 80:
+		level_object = "Key Door (Horizontal)"
+	if id == 81:
+		level_object = "Moving Elevator Vertical Stop"
+	if id == 82:
+		level_object = "On/Off Switch"
+	if id == 83:
+		level_object = "On/Off Block (Blue)"
+	if id == 84:
+		level_object = "On/Off Block (Red)"
+	if id == 85:
+		level_object = "On/Off Spike (Blue)"
+	if id == 86:
+		level_object = "On/Off Spike (Red)"
+	if id == 87:
+		level_object = "On/Off Ladder (Blue)"
+	if id == 88:
+		level_object = "On/Off Ladder (Red)"
+	if id == 89:
+		level_object = "Splash Platform"
+	if id == 90:
+		level_object = "Bounce Ball"
+	if id == 91:
+		level_object = "On/Off Switch Timer"
+	if id == 92:
+		level_object = "Plantform"
+	if id == 93:
+		level_object = "Super Arm Block"
+	if id == 94:
+		level_object = "Acid Drop"
+	if id == 95:
+		level_object = "Needle Press (Vertical)"
+	if id == 96:
+		level_object = "Needle Press (Horizontal)"
+	if id == 97:
+		level_object = "Top Platform Spawner"
+	if id == 98:
+		level_object = "Top Platform"
+	if id == 99:
+		level_object = "Music Changer"
+	if id == 100:
+		level_object = "Spike Platform (Down)"
+	if id == 101:
+		level_object = "Fire Wave Spawner (Horizontal)"
+	if id == 102:
+		level_object = "Fire Wave Spawner (Vertical)"
+	if id == 103:
+		level_object = "Fire Wave Redirector"
+	if id == 104:
+		level_object = "Fire Wave Redirector (No-Clip)"
+	if id == 105:
+		level_object = "Steam (Vertical)"
+	if id == 106:
+		level_object = "Steam (Horizontal)"
+	if id == 107:
+		level_object = "Concrete Platform"
+	if id == 108:
+		level_object = "Soccer Ball"
+	if id == 109:
+		level_object = "Fork Block"
+	if id == 110:
+		level_object = "Hornet Roller"
+	if id == 111:
+		level_object = "Fire Wave Shaft (Horizontal)"
+	if id == 112:
+		level_object = "Fire Wave Shaft (Vertical)"
+	if id == 113:
+		level_object = "Jump Through Platform"
+	if id == 114:
+		level_object = "spike platform (Up)"
+	if id == 115:
+		level_object = "Fuse Rail"
+	if id == 116:
+		level_object = "Fuse Crosser"
+	if id == 117:
+		level_object = "Fuse Laser Spawner"
+	if id == 118:
+		level_object = "Fuse Xtender"
+	if id == 119:
+		level_object = "Ice Wall (Horizontal)"
+	if id == 120:
+		level_object = "Ice Wall (Vertical)"
+	if id == 121:
+		level_object = "Fire Wall Stop"
+	if id == 122:
+		level_object = "Fuse Crawler Exit"
+	if id == 123:
+		level_object = "Fire Wave Spawner Screen (Horizontal)"
+	if id == 124:
+		level_object = "Fire Wave Spawner Screen (Vertical)"
+	if id == 125:
+		level_object = "Fuse Crawler"
+	if id == 126:
+		level_object = "Acid Drop"
+	if id == 127:
+		level_object = "Magnetic Ceiling"
+	if id == 128:
+		level_object = "Magnetic Ceiling Conveyor"
+	if id == 129:
+		level_object = "Magnetic Ceiling On/Off (Red)"
+	if id == 130:
+		level_object = "Magnetic Ceiling On/Off (Red)"
+	
 	return level_object
 	
 # Gets the name for the level object of type [Pickup]
