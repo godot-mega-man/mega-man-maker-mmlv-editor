@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/InspectorPanel.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/TilemapTab/TilemapTab.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/SpikeTab/SpikeTab.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ActiveScreenTab/ActiveScreenTab.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=9]
 
 [node name="InspectorPanel" type="Control"]
 margin_right = 288.0
@@ -37,25 +38,26 @@ __meta__ = {
 
 [node name="TitleHBox" type="HBoxContainer" parent="PanelOpen/ContentVBox"]
 margin_right = 272.0
-margin_bottom = 22.0
+margin_bottom = 20.0
 
 [node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox/TitleHBox"]
 margin_right = 173.0
-margin_bottom = 22.0
+margin_bottom = 20.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+theme = ExtResource( 9 )
 text = "Inspector"
 align = 0
 
 [node name="ViewCodeBtn" type="Button" parent="PanelOpen/ContentVBox/TitleHBox"]
 margin_left = 177.0
 margin_right = 272.0
-margin_bottom = 22.0
+margin_bottom = 20.0
 toggle_mode = true
 text = "View as code"
 
 [node name="TabContainer" type="TabContainer" parent="PanelOpen/ContentVBox"]
-margin_top = 26.0
+margin_top = 24.0
 margin_right = 272.0
 margin_bottom = 592.0
 size_flags_vertical = 3
@@ -106,6 +108,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -24.0
+theme = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
