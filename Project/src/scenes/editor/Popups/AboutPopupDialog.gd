@@ -79,7 +79,7 @@ func _update_texts():
 		ProjectSettings.get_setting("application/config/version")
 	)
 	
-	author_label.text = ProjectSettings.get_setting("application/config/project_creator")
+	author_label.text = "Firstject Snowflakes"
 
 #-------------------------------------------------
 #      Setters & Getters
