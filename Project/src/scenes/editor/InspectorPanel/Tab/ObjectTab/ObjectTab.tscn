@@ -144,6 +144,22 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Level Object"
 uppercase = true
 
+[node name="AtbLockBossDoors" type="Label" parent="VBox/ScrollContainer/Vbox" index="15"]
+visible = false
+margin_top = 336.0
+margin_right = 792.0
+margin_bottom = 350.0
+text = "This Asset will Lock boss doors until it is no longer on screen"
+autowrap = true
+
+[node name="AtbFoundTheBone" type="Label" parent="VBox/ScrollContainer/Vbox" index="16"]
+visible = false
+margin_top = 336.0
+margin_right = 792.0
+margin_bottom = 350.0
+text = "Found the Bone"
+autowrap = true
+
 [node name="ObjDeselectEscKeyCtrler" type="Button" parent="." index="1"]
 margin_right = 12.0
 margin_bottom = 20.0
