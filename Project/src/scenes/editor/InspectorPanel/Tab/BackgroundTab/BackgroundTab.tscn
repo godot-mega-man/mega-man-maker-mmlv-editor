@@ -3,7 +3,7 @@
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/utils/ControlAutoUnfocus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/editor_ui/MagnifyingGlass.png" type="Texture" id=3]
-[ext_resource path="res://src/utils/ControlAutoUnfocus.gd" type="Script" id=4]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=4]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/BackgroundTab/BackgroundTab.gd" type="Script" id=5]
 
 [node name="BackgroundTab" instance=ExtResource( 1 )]
@@ -15,8 +15,7 @@ margin_bottom = 24.0
 clear_button_enabled = true
 placeholder_text = "Search backgrounds"
 
-[node name="ControlAutoUnfocus" type="Node" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 2 )]
-script = ExtResource( 4 )
+[node name="ControlAutoUnfocus" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 2 )]
 
 [node name="Icon" type="TextureRect" parent="VBox/SearchLineEdit" index="3"]
 modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
@@ -39,6 +38,12 @@ margin_top = 28.0
 margin_bottom = 560.0
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
+margin_top = -1.0
+margin_bottom = 16.4
+theme = ExtResource( 4 )
 text = "Backgrounds"
 
+[node name="Panel" parent="VBox/ScrollContainer/Vbox/TitleLabel" index="0"]
+margin_left = 0.793701
+margin_right = 0.793701
 [connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]

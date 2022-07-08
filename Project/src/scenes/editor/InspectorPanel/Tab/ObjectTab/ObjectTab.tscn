@@ -1,22 +1,33 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjectTab.gd" type="Script" id=3]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/ObjectTab/ObjDeselectEscKeyCtrler.gd" type="Script" id=4]
+[ext_resource path="res://assets/theme/DarkTheme/Fonts/Ubuntu-L.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=6]
 
-[sub_resource type="InputEventKey" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 15
+font_data = ExtResource( 5 )
+
+[sub_resource type="InputEventKey" id=2]
 scancode = 16777217
 
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
 
 [node name="ObjectTab" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
+margin_top = -1.0
+margin_bottom = 16.4
+theme = ExtResource( 6 )
+
 [node name="AtbHboxObjVecX" parent="VBox/ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
-margin_top = 18.0
-margin_bottom = 42.0
+margin_top = 21.0
+margin_bottom = 45.0
 hint_tooltip = "Horizontal direction. Possible values:
 - The texture's width scale factor (e.g. set to -1 to make the sprite appear flipped).
 - The speed of the object in x-axis (e.g. Conveyors)
@@ -25,8 +36,8 @@ property_name = "Scale X"
 code = "b"
 
 [node name="AtbHboxObjVecY" parent="VBox/ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
-margin_top = 46.0
-margin_bottom = 70.0
+margin_top = 49.0
+margin_bottom = 73.0
 hint_tooltip = "Vertical Direction. Possible Values:
 - The texture's height scale factor (however, this value won't work on every object).
 - The speed of the object in y-axis"
@@ -34,8 +45,8 @@ property_name = "Scale Y"
 code = "c"
 
 [node name="AtbHboxObjType" parent="VBox/ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
-margin_top = 74.0
-margin_bottom = 98.0
+margin_top = 77.0
+margin_bottom = 101.0
 hint_tooltip = "Category ID. Valid values are 0, 4, 5, 6, 7, and 8.
 0 - Special
 4 - Player
@@ -47,30 +58,30 @@ property_name = "Type ID"
 code = "d"
 
 [node name="AtbHboxObjID" parent="VBox/ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
-margin_top = 102.0
-margin_bottom = 126.0
+margin_top = 105.0
+margin_bottom = 129.0
 hint_tooltip = "Asset ID of the object."
 property_name = "Object ID"
 code = "e"
 
 [node name="AtbHboxObjAppearance" parent="VBox/ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
-margin_top = 130.0
-margin_bottom = 154.0
+margin_top = 133.0
+margin_bottom = 157.0
 hint_tooltip = "Object's appearance, such as colors."
 property_name = "Appearance"
 code = "f"
 
 [node name="AtbHboxObjDirection" parent="VBox/ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
-margin_top = 158.0
-margin_bottom = 182.0
+margin_top = 161.0
+margin_bottom = 185.0
 hint_tooltip = "The direction of the object's behavior. Some objects
 use this instead of VectorX and VectorY values."
 property_name = "Direction"
 code = "g"
 
 [node name="AtbHboxObjTimer" parent="VBox/ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
-margin_top = 186.0
-margin_bottom = 210.0
+margin_top = 189.0
+margin_bottom = 213.0
 hint_tooltip = "Number of the object. For example, Count Bomb
 explosion delay, Force Beam emission delay, the
 speed of Rain object, etc."
@@ -92,8 +103,8 @@ property_name = "Texture V Offset"
 code = "k"
 
 [node name="AtbHboxObjDestX" parent="VBox/ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
-margin_top = 214.0
-margin_bottom = 238.0
+margin_top = 217.0
+margin_bottom = 241.0
 hint_tooltip = "The object's destination in x-axis. Used in some
 objects that require placing both the initial and the
 destination position (teleporter, rotating platform, for
@@ -102,8 +113,8 @@ property_name = "Destination X"
 code = "m"
 
 [node name="AtbHboxObjDestY" parent="VBox/ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
-margin_top = 242.0
-margin_bottom = 266.0
+margin_top = 245.0
+margin_bottom = 269.0
 hint_tooltip = "The object's destination in y-axis. Used in some
 objects that require placing both the initial and the
 destination position (teleporter, rotating platform, for
@@ -112,26 +123,33 @@ property_name = "Destination Y"
 code = "n"
 
 [node name="AtbHboxObjOption" parent="VBox/ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
-margin_top = 270.0
-margin_bottom = 294.0
+margin_top = 273.0
+margin_bottom = 297.0
 hint_tooltip = "Weapon ID, ..."
 property_name = "Option"
 code = "o"
 
-[node name="AtbLabelLevelObject" type="Label" parent="VBox/ScrollContainer/Vbox" index="13"]
-margin_top = 298.0
+[node name="HSeparator" type="HSeparator" parent="VBox/ScrollContainer/Vbox" index="13"]
+margin_top = 301.0
 margin_right = 792.0
-margin_bottom = 312.0
-rect_scale = Vector2( 2, 2 )
+margin_bottom = 305.0
+
+[node name="AtbLabelLevelObject" type="Label" parent="VBox/ScrollContainer/Vbox" index="14"]
+margin_top = 308.0
+margin_right = 792.0
+margin_bottom = 331.4
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Level Object"
+uppercase = true
 
 [node name="ObjDeselectEscKeyCtrler" type="Button" parent="." index="1"]
 margin_right = 12.0
 margin_bottom = 20.0
 rect_clip_content = true
 focus_mode = 0
-shortcut = SubResource( 2 )
+shortcut = SubResource( 3 )
 text = "5"
 flat = true
 clip_text = true

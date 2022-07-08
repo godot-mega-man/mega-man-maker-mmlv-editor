@@ -1,104 +1,114 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/AtbHBox/AtbHbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/LevelTab/LevelTab.gd" type="Script" id=3]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=4]
 
 [node name="LevelTab" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
+margin_top = -1.0
+margin_bottom = 16.4
+theme = ExtResource( 4 )
 text = "Level Properties"
 
+[node name="Panel" parent="VBox/ScrollContainer/Vbox/TitleLabel" index="0"]
+margin_left = 0.793701
+margin_top = 0.793701
+margin_right = 0.793701
+margin_bottom = 0.793701
+
 [node name="AtbHboxVersion" parent="VBox/ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
-margin_top = 18.0
-margin_bottom = 42.0
+margin_top = 21.0
+margin_bottom = 45.0
 property_name = "Version"
 code = "0a"
 
 [node name="AtbHboxLevelName" parent="VBox/ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
-margin_top = 46.0
-margin_bottom = 70.0
+margin_top = 49.0
+margin_bottom = 73.0
 property_name = "Level Name"
 code = "1a"
 
 [node name="AtbHboxUsername" parent="VBox/ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
-margin_top = 74.0
-margin_bottom = 98.0
+margin_top = 77.0
+margin_bottom = 101.0
 property_name = "Username"
 code = "4a"
 
 [node name="AtbHboxUserPortrait" parent="VBox/ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
-margin_top = 102.0
-margin_bottom = 126.0
+margin_top = 105.0
+margin_bottom = 129.0
 property_name = "User Portrait ID"
 code = "4b"
 
 [node name="AtbHboxSliding" parent="VBox/ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
-margin_top = 130.0
-margin_bottom = 154.0
+margin_top = 133.0
+margin_bottom = 157.0
 property_name = "Sliding Enabled"
 code = "1b"
 
 [node name="AtbHboxCShotOn" parent="VBox/ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
-margin_top = 158.0
-margin_bottom = 182.0
+margin_top = 161.0
+margin_bottom = 185.0
 property_name = "Charge Shot Enabled"
 code = "1c"
 
 [node name="AtbHboxDblDmg" parent="VBox/ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
-margin_top = 186.0
-margin_bottom = 210.0
+margin_top = 189.0
+margin_bottom = 213.0
 property_name = "Double Damage Enabled"
 code = "1ba"
 
 [node name="AtbHboxProtoStrike" parent="VBox/ScrollContainer/Vbox" index="8" instance=ExtResource( 2 )]
-margin_top = 214.0
-margin_bottom = 238.0
+margin_top = 217.0
+margin_bottom = 241.0
 property_name = "Proto Strike Enabled"
 code = "1ca"
 
 [node name="AtbHboxDblJump" parent="VBox/ScrollContainer/Vbox" index="9" instance=ExtResource( 2 )]
-margin_top = 242.0
-margin_bottom = 266.0
+margin_top = 245.0
+margin_bottom = 269.0
 property_name = "Double Jump Enabled"
 code = "1bb"
 
 [node name="AtbHboxCShotType" parent="VBox/ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
-margin_top = 270.0
-margin_bottom = 294.0
+margin_top = 273.0
+margin_bottom = 297.0
 property_name = "Charge Shot Type"
 code = "1d"
 
 [node name="AtbHboxBgColorID" parent="VBox/ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
-margin_top = 298.0
-margin_bottom = 322.0
+margin_top = 301.0
+margin_bottom = 325.0
 property_name = "Background Color ID"
 code = "1e"
 dropdown_input = 2
 
 [node name="AtbHboxBossPortrait" parent="VBox/ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
-margin_top = 326.0
-margin_bottom = 350.0
+margin_top = 329.0
+margin_bottom = 353.0
 property_name = "Boss Portrait ID"
 code = "1f"
 dropdown_input = 1
 
 [node name="AtbHboxBossCount" parent="VBox/ScrollContainer/Vbox" index="13" instance=ExtResource( 2 )]
-margin_top = 354.0
-margin_bottom = 378.0
+margin_top = 357.0
+margin_bottom = 381.0
 property_name = "Number of Bosses"
 code = "1bc"
 
 [node name="AtbHboxLvlTrackID" parent="VBox/ScrollContainer/Vbox" index="14" instance=ExtResource( 2 )]
-margin_top = 382.0
-margin_bottom = 406.0
+margin_top = 385.0
+margin_bottom = 409.0
 property_name = "Track ID"
 code = "1l"
 
 [node name="AtbHboxLvlMusicNumber" parent="VBox/ScrollContainer/Vbox" index="15" instance=ExtResource( 2 )]
-margin_top = 410.0
-margin_bottom = 434.0
+margin_top = 413.0
+margin_bottom = 437.0
 property_name = "Music Number"
 code = "1m"
 
@@ -129,7 +139,6 @@ margin_top = 522.0
 margin_bottom = 546.0
 property_name = "Bottom Most Position Geometry"
 code = "1s"
-
 [connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxVersion" to="." method="_on_AtbHboxVersion_value_entered"]
 [connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxLevelName" to="." method="_on_AtbHboxLevelName_value_entered"]
 [connection signal="value_entered" from="VBox/ScrollContainer/Vbox/AtbHboxUsername" to="." method="_on_AtbHboxUsername_value_entered"]

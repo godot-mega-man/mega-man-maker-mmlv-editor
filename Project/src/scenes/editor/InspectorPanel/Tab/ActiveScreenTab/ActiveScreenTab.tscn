@@ -1,16 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=2]
 
 [node name="ActiveScreenTab" instance=ExtResource( 1 )]
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
+margin_top = -1.0
+margin_bottom = 16.4
+theme = ExtResource( 2 )
 text = "Active Screens"
 
 [node name="Description" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 287.0
+margin_top = 289.0
 margin_right = 792.0
-margin_bottom = 318.0
+margin_bottom = 320.0
 size_flags_vertical = 6
 text = "Right mouse click to enable screen.
 Left mouse click to disable screen."
