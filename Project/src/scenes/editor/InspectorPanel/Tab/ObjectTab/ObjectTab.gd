@@ -140,38 +140,28 @@ func _get_level_object_name(type: int ,id: int) -> String:
 	atb_label_found_the_bone.hide()
 	# Playable Characters
 	if type == 4:
-		object_name = _get_character_asset_name(id)
+		if id == int(round(DataGameObject.MISSING_DATA)):
+			id = 0
+		object_name = GamePlayerData.PLAYER_DATA.get(id)
 	# Enemies
 	elif type == 5:
 		object_name = _get_enemy_asset_name(id)
 	# Level Objects
 	elif type == 6:
-		object_name = _get_level_asset_name(id)
+		if id == int(round(DataGameObject.MISSING_DATA)):
+			id = 0
+		object_name = GameObjectData.OBJECT_DATA.get(id)
 	# Pickups
 	elif type == 7:
-		object_name = _get_pickup_asset_name(id)
+		if id == int(round(DataGameObject.MISSING_DATA)):
+			id = 0
+		object_name = GamePickupData.PICKUP_DATA.get(id)
 	# Bosses
 	elif type == 8:
 		object_name = _get_boss_asset_name(id)
 	elif type == -999:
 		object_name = _get_water_or_plate(id)
 	return object_name
-	
-	
-# Gets the name for the level object of type [Playable Character]
-func _get_character_asset_name (id: int) -> String:
-	var level_object = ""
-	if id == -999:
-		level_object = "Mega Man"
-	elif id == 0:
-		level_object = "Mega Man"
-	elif id == 1:
-		level_object = "Proto Man"
-	elif id == 2:
-		level_object = "Bass"
-	elif id == 3:
-		level_object = "Roll"
-	return level_object
 	
 # Gets the name for the level object of type [Enemy]
 func _get_enemy_asset_name (id: int) -> String:
@@ -610,309 +600,6 @@ func _get_enemy_asset_name (id: int) -> String:
 	elif id == 157:
 		level_object = "Crunch Don"
 
-	return level_object
-	
-# Gets the name for the level object of type [Level Object]
-func _get_level_asset_name (id: int) -> String:
-	var level_object = ""
-	if id == -999:
-		level_object = "Lift Platform"
-	elif id == 0:
-		level_object = "Lift Platform"
-	elif id == 1:
-		level_object = "Drop Platform"
-	elif id == 2:
-		level_object = "Legacy Conveyor"
-	elif id == 3:
-		level_object = "Fire Beam"
-	elif id == 4:
-		level_object = "Elec Beam"
-	elif id == 5:
-		level_object = "Yoku Block"
-	elif id == 6:
-		level_object = "Legacy Force Beam"
-	elif id == 7:
-		level_object = "Legacy Red Force Beam"
-	elif id == 8:
-		level_object = "Legacy Green Force Beam"
-	elif id == 9:
-		level_object = "Dust Block"
-	elif id == 10:
-		level_object = "Cossack Block"
-	elif id == 11:
-		level_object = "Falling Platform"
-	elif id == 12:
-		level_object = "Legacy Rotating Platform"
-	elif id == 13:
-		level_object = "Spring"
-	elif id == 14:
-		level_object = "Flip Platform"
-	elif id == 15:
-		level_object = "Legacy Checkpoint"
-	elif id == 16:
-		level_object = "Legacy Water"
-	elif id == 17:
-		level_object = "Count Bomb (Vertical)"
-	elif id == 18:
-		level_object = "Count Bomb (Horizontal)"
-	elif id == 19:
-		level_object = "Legacy Large Health"
-	elif id == 20:
-		level_object = "Legacy Small Health"
-	elif id == 21:
-		level_object = "Legacy Large Weapon Ammo"
-	elif id == 22:
-		level_object = "Legacy Small Weapon Ammo"
-	elif id == 23:
-		level_object = "Legacy 1-up"
-	elif id == 24:
-		level_object = "Legacy E Tank"
-	elif id == 25:
-		level_object = "Legacy M Tank"
-	elif id == 26:
-		level_object = "Legacy Teleporter"
-	elif id == 27:
-		level_object = "Weapon Block 2x2"
-	elif id == 28:
-		level_object = "Weapon Block 1x2"
-	elif id == 29:
-		level_object = "Flame Pillar"
-	elif id == 30:
-		level_object = "Press"
-	elif id == 31:
-		level_object = "Crash Lift"
-	elif id == 32:
-		level_object = "Key"
-	elif id == 33:
-		level_object = "Key Door (Vertical)"
-	elif id == 34:
-		level_object = "Legacy Wannan"
-	elif id == 35:
-		level_object = "Magnet"
-	elif id == 36:
-		level_object = "Ring Platform"
-	elif id == 37:
-		level_object = "Sand"
-	elif id == 38:
-		level_object = "Rolling Drill"
-	elif id == 39:
-		level_object = "Teckyun"
-	elif id == 40:
-		level_object = "Coil Platform"
-	elif id == 41:
-		level_object = "Rolling Drill Spawner"
-	elif id == 42:
-		level_object = "Oil"
-	elif id == 43:
-		level_object = "Fan"
-	elif id == 44:
-		level_object = "Floor Light"
-	elif id == 45:
-		level_object = "Cracked Block"
-	elif id == 46:
-		level_object = "Checkpoint"
-	elif id == 47:
-		level_object = "Jet Platform"
-	elif id == 48:
-		level_object = "Punch Block"
-	elif id == 49:
-		level_object = "Push Block"
-	elif id == 50:
-		level_object = "Force Beam"
-	elif id == 51:
-		level_object = "Red Force Beam"
-	elif id == 52:
-		level_object = "Green Force Beam"
-	elif id == 53:
-		level_object = "Rain"
-	elif id == 54:
-		level_object = "Illusian"
-	elif id == 55:
-		level_object = "Illusian Block"
-	elif id == 56:
-		level_object = "Reflecting Yoku Block"
-	elif id == 57:
-		level_object = "Bokozurah"
-	elif id == 58:
-		level_object = "Bokozurah Block"
-	elif id == 59:
-		level_object = "Astro Button"
-	elif id == 60:
-		level_object = "Astro Gate"
-	elif id == 61:
-		level_object = "Astro Reset Button"
-	elif id == 62:
-		level_object = "Thunder Claw Pole"
-	elif id == 63:
-		level_object = "Legacy Boss Suppressor"
-	elif id == 64:
-		level_object = "TNT Block"
-	elif id == 65:
-		level_object = "Teleporter"
-	elif id == 66:
-		level_object = "Magma Beam Generator"
-	elif id == 67:
-		level_object = "Rotating Platform"
-	elif id == 68:
-		level_object = "Wannan"
-	elif id == 69:
-		level_object = "Sheep Block"
-	elif id == 70:
-		level_object = "Sheep Spike Block"
-	elif id == 71:
-		level_object = "Chill Block"
-	elif id == 72:
-		level_object = "Moving Elevator"
-	elif id == 73:
-		level_object = "Conveyor"
-	elif id == 74:
-		level_object = "Moving Cog"
-	elif id == 75:
-		level_object = "M Tank that Crashes the game"
-	elif id == 76:
-		level_object = "Weapon Block 2x1"
-	elif id == 77:
-		level_object = "Acid Solution"
-	elif id == 78:
-		level_object = "Spinning Wheel"
-	elif id == 79:
-		level_object = "Fire Wall"
-	elif id == 80:
-		level_object = "Key Door (Horizontal)"
-	elif id == 81:
-		level_object = "Moving Elevator Vertical Stop"
-	elif id == 82:
-		level_object = "On/Off Switch"
-	elif id == 83:
-		level_object = "On/Off Block (Blue)"
-	elif id == 84:
-		level_object = "On/Off Block (Red)"
-	elif id == 85:
-		level_object = "On/Off Spike (Blue)"
-	elif id == 86:
-		level_object = "On/Off Spike (Red)"
-	elif id == 87:
-		level_object = "On/Off Ladder (Blue)"
-	elif id == 88:
-		level_object = "On/Off Ladder (Red)"
-	elif id == 89:
-		level_object = "Splash Platform"
-	elif id == 90:
-		level_object = "Bounce Ball"
-	elif id == 91:
-		level_object = "On/Off Switch Timer"
-	elif id == 92:
-		level_object = "Plantform"
-	elif id == 93:
-		level_object = "Super Arm Block"
-	elif id == 94:
-		level_object = "Acid Drop"
-	elif id == 95:
-		level_object = "Needle Press (Vertical)"
-	elif id == 96:
-		level_object = "Needle Press (Horizontal)"
-	elif id == 97:
-		level_object = "Top Platform Spawner"
-	elif id == 98:
-		level_object = "Top Platform"
-	elif id == 99:
-		level_object = "Music Changer"
-	elif id == 100:
-		level_object = "Spike Platform (Down)"
-	elif id == 101:
-		level_object = "Fire Wave Spawner (Horizontal)"
-	elif id == 102:
-		level_object = "Fire Wave Spawner (Vertical)"
-	elif id == 103:
-		level_object = "Fire Wave Redirector"
-	elif id == 104:
-		level_object = "Fire Wave Redirector (No-Clip)"
-	elif id == 105:
-		level_object = "Steam (Vertical)"
-	elif id == 106:
-		level_object = "Steam (Horizontal)"
-	elif id == 107:
-		level_object = "Concrete Platform"
-	elif id == 108:
-		level_object = "Soccer Ball"
-	elif id == 109:
-		level_object = "Fork Block"
-	elif id == 110:
-		level_object = "Hornet Roller"
-	elif id == 111:
-		level_object = "Fire Wave Shaft (Horizontal)"
-	elif id == 112:
-		level_object = "Fire Wave Shaft (Vertical)"
-	elif id == 113:
-		level_object = "Jump Through Platform"
-	elif id == 114:
-		level_object = "spike platform (Up)"
-	elif id == 115:
-		level_object = "Fuse Rail"
-	elif id == 116:
-		level_object = "Fuse Crosser"
-	elif id == 117:
-		level_object = "Fuse Laser Spawner"
-	elif id == 118:
-		level_object = "Fuse Xtender"
-	elif id == 119:
-		level_object = "Ice Wall (Horizontal)"
-	elif id == 120:
-		level_object = "Ice Wall (Vertical)"
-	elif id == 121:
-		level_object = "Fire Wall Stop"
-	elif id == 122:
-		level_object = "Fuse Crawler Exit"
-	elif id == 123:
-		level_object = "Fire Wave Spawner Screen (Horizontal)"
-	elif id == 124:
-		level_object = "Fire Wave Spawner Screen (Vertical)"
-	elif id == 125:
-		level_object = "Fuse Crawler"
-	elif id == 126:
-		level_object = "Acid Drop"
-	elif id == 127:
-		level_object = "Magnetic Ceiling"
-	elif id == 128:
-		level_object = "Magnetic Ceiling Conveyor"
-	elif id == 129:
-		level_object = "Magnetic Ceiling On/Off (Red)"
-	elif id == 130:
-		level_object = "Magnetic Ceiling On/Off (Red)"
-	
-	return level_object
-	
-# Gets the name for the level object of type [Pickup]
-func _get_pickup_asset_name (id: int) -> String:
-	var level_object = ""
-	if id == -999:
-		level_object = "Large Health"
-	elif id == 1:
-		level_object = "Small Health"
-	elif id == 2:
-		level_object = "Large Weapon Ammo"
-	elif id == 3:
-		level_object = "Small Weapon Ammo"
-	elif id == 4:
-		level_object = "1-up"
-	elif id == 5:
-		level_object = "E tank"
-	elif id == 6:
-		level_object = "M tank"
-	elif id == 7:
-		level_object = "Weapon Capsule"
-	elif id == 8:
-		level_object = "Player Capsule"
-	elif id == 9:
-		level_object = "Health Spawner"
-	elif id == 10:
-		level_object = "Ammo Spawner"
-	elif id == 11:
-		level_object = "Weapon Remover"
-	elif id == 12:
-		level_object = "Yashichi"
-	elif id == 13:
-		level_object = "? tank"
 	return level_object
 	
 # Gets the name for the level object of type [Boss]

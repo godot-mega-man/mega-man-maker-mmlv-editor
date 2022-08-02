@@ -168,7 +168,7 @@ __meta__ = {
 }
 
 [node name="LoadingLabel" type="Label" parent="Panel/IconSplash/LoadingVbox"]
-margin_top = 20.0
+margin_top = 16.0
 margin_right = 128.0
 margin_bottom = 37.4
 text = "Loading..."
@@ -185,7 +185,7 @@ anims/Blinking = SubResource( 2 )
 [node name="ProgressBar" type="ProgressBar" parent="Panel/IconSplash/LoadingVbox"]
 margin_top = 54.0
 margin_right = 128.0
-margin_bottom = 69.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_horizontal = 4
 
@@ -222,10 +222,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelOpen" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 325.0
-margin_top = 2.0
-margin_right = 341.4
-margin_bottom = 19.4
+margin_left = 312.0
+margin_right = 330.4
+margin_bottom = 21.4
 text = "--"
 align = 1
 valign = 1
@@ -234,10 +233,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelProjName" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 341.0
-margin_top = 2.0
-margin_right = 403.4
-margin_bottom = 19.4
+margin_left = 330.0
+margin_right = 406.4
+margin_bottom = 21.4
 text = "ProjectName"
 align = 1
 valign = 1
@@ -246,10 +244,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelProjVersion" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 403.0
-margin_top = 2.0
-margin_right = 426.4
-margin_bottom = 19.4
+margin_left = 406.0
+margin_right = 434.4
+margin_bottom = 21.4
 text = "v1.x"
 align = 1
 valign = 1
@@ -258,10 +255,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelSeparation" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 426.0
-margin_top = 2.0
-margin_right = 437.4
-margin_bottom = 19.4
+margin_left = 434.0
+margin_right = 446.4
+margin_bottom = 21.4
 text = "-"
 align = 1
 valign = 1
@@ -270,10 +266,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelCreatorPrefix" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 437.0
-margin_top = 2.0
-margin_right = 453.4
-margin_bottom = 19.4
+margin_left = 446.0
+margin_right = 464.4
+margin_bottom = 21.4
 text = "by"
 align = 1
 valign = 1
@@ -282,10 +277,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelCreator" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 453.0
-margin_top = 2.0
-margin_right = 459.4
-margin_bottom = 19.4
+margin_left = 464.0
+margin_right = 470.4
+margin_bottom = 21.4
 align = 1
 valign = 1
 __meta__ = {
@@ -293,10 +287,9 @@ __meta__ = {
 }
 
 [node name="WatermarkLabelClose" type="Label" parent="Panel/WatermarkHBox"]
-margin_left = 459.0
-margin_top = 2.0
-margin_right = 475.4
-margin_bottom = 19.4
+margin_left = 470.0
+margin_right = 488.4
+margin_bottom = 21.4
 text = "--"
 align = 1
 valign = 1
