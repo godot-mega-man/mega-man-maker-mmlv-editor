@@ -75,9 +75,12 @@ func _on_AtbHboxObjVecY_value_entered() -> void:
 
 func _on_AtbHboxObjType_value_entered() -> void:
 	_set_selected_objects("obj_type", atb_hbox_obj_type.get_value())
+	_set_selected_objects("obj_id", "-999") # Resets the id when the type is changed to prevent accidental mismatches.
+	_update_properties_from_selected_objects()
 
 func _on_AtbHboxObjID_value_entered() -> void:
 	_set_selected_objects("obj_id", atb_hbox_obj_id.get_value())
+	_update_properties_from_selected_objects()
 
 func _on_AtbHboxObjAppearance_value_entered() -> void:
 	_set_selected_objects("obj_appearance", atb_hbox_obj_appearance.get_value())

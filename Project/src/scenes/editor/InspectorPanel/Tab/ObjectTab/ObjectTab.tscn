@@ -22,12 +22,12 @@ script = ExtResource( 3 )
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 margin_top = -1.0
-margin_bottom = 16.4
+margin_bottom = 20.4
 theme = ExtResource( 6 )
 
 [node name="AtbHboxObjVecX" parent="VBox/ScrollContainer/Vbox" index="1" instance=ExtResource( 2 )]
-margin_top = 21.0
-margin_bottom = 45.0
+margin_top = 25.0
+margin_bottom = 49.0
 hint_tooltip = "Horizontal direction. Possible values:
 - The texture's width scale factor (e.g. set to -1 to make the sprite appear flipped).
 - The speed of the object in x-axis (e.g. Conveyors)
@@ -36,8 +36,8 @@ property_name = "Scale X"
 code = "b"
 
 [node name="AtbHboxObjVecY" parent="VBox/ScrollContainer/Vbox" index="2" instance=ExtResource( 2 )]
-margin_top = 49.0
-margin_bottom = 73.0
+margin_top = 53.0
+margin_bottom = 77.0
 hint_tooltip = "Vertical Direction. Possible Values:
 - The texture's height scale factor (however, this value won't work on every object).
 - The speed of the object in y-axis"
@@ -45,8 +45,8 @@ property_name = "Scale Y"
 code = "c"
 
 [node name="AtbHboxObjType" parent="VBox/ScrollContainer/Vbox" index="3" instance=ExtResource( 2 )]
-margin_top = 77.0
-margin_bottom = 101.0
+margin_top = 81.0
+margin_bottom = 105.0
 hint_tooltip = "Category ID. Valid values are 0, 4, 5, 6, 7, and 8.
 0 - Special
 4 - Player
@@ -58,30 +58,30 @@ property_name = "Type ID"
 code = "d"
 
 [node name="AtbHboxObjID" parent="VBox/ScrollContainer/Vbox" index="4" instance=ExtResource( 2 )]
-margin_top = 105.0
-margin_bottom = 129.0
+margin_top = 109.0
+margin_bottom = 133.0
 hint_tooltip = "Asset ID of the object."
 property_name = "Object ID"
 code = "e"
 
 [node name="AtbHboxObjAppearance" parent="VBox/ScrollContainer/Vbox" index="5" instance=ExtResource( 2 )]
-margin_top = 133.0
-margin_bottom = 157.0
+margin_top = 137.0
+margin_bottom = 161.0
 hint_tooltip = "Object's appearance, such as colors."
 property_name = "Appearance"
 code = "f"
 
 [node name="AtbHboxObjDirection" parent="VBox/ScrollContainer/Vbox" index="6" instance=ExtResource( 2 )]
-margin_top = 161.0
-margin_bottom = 185.0
+margin_top = 165.0
+margin_bottom = 189.0
 hint_tooltip = "The direction of the object's behavior. Some objects
 use this instead of VectorX and VectorY values."
 property_name = "Direction"
 code = "g"
 
 [node name="AtbHboxObjTimer" parent="VBox/ScrollContainer/Vbox" index="7" instance=ExtResource( 2 )]
-margin_top = 189.0
-margin_bottom = 213.0
+margin_top = 193.0
+margin_bottom = 217.0
 hint_tooltip = "Number of the object. For example, Count Bomb
 explosion delay, Force Beam emission delay, the
 speed of Rain object, etc."
@@ -103,8 +103,8 @@ property_name = "Texture V Offset"
 code = "k"
 
 [node name="AtbHboxObjDestX" parent="VBox/ScrollContainer/Vbox" index="10" instance=ExtResource( 2 )]
-margin_top = 217.0
-margin_bottom = 241.0
+margin_top = 221.0
+margin_bottom = 245.0
 hint_tooltip = "The object's destination in x-axis. Used in some
 objects that require placing both the initial and the
 destination position (teleporter, rotating platform, for
@@ -113,8 +113,8 @@ property_name = "Destination X"
 code = "m"
 
 [node name="AtbHboxObjDestY" parent="VBox/ScrollContainer/Vbox" index="11" instance=ExtResource( 2 )]
-margin_top = 245.0
-margin_bottom = 269.0
+margin_top = 249.0
+margin_bottom = 273.0
 hint_tooltip = "The object's destination in y-axis. Used in some
 objects that require placing both the initial and the
 destination position (teleporter, rotating platform, for
@@ -123,21 +123,21 @@ property_name = "Destination Y"
 code = "n"
 
 [node name="AtbHboxObjOption" parent="VBox/ScrollContainer/Vbox" index="12" instance=ExtResource( 2 )]
-margin_top = 273.0
-margin_bottom = 297.0
+margin_top = 277.0
+margin_bottom = 301.0
 hint_tooltip = "Weapon ID, ..."
 property_name = "Option"
 code = "o"
 
 [node name="HSeparator" type="HSeparator" parent="VBox/ScrollContainer/Vbox" index="13"]
-margin_top = 301.0
+margin_top = 305.0
 margin_right = 792.0
-margin_bottom = 305.0
+margin_bottom = 309.0
 
 [node name="AtbLabelLevelObject" type="Label" parent="VBox/ScrollContainer/Vbox" index="14"]
-margin_top = 308.0
+margin_top = 312.0
 margin_right = 792.0
-margin_bottom = 331.4
+margin_bottom = 335.4
 theme = ExtResource( 6 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
