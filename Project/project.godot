@@ -80,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://src/database/game_bg_data.gd"
 }, {
 "base": "Reference",
+"class": "GameBossData",
+"language": "GDScript",
+"path": "res://src/database/Entities/game_boss_data.gd"
+}, {
+"base": "Reference",
 "class": "GameBossPortraitData",
 "language": "GDScript",
 "path": "res://src/database/game_boss_portrait_data.gd"
@@ -88,6 +93,11 @@ _global_script_classes=[ {
 "class": "GameDataBuilder",
 "language": "GDScript",
 "path": "res://src/utils/game_data_builder.gd"
+}, {
+"base": "Reference",
+"class": "GameEnemyData",
+"language": "GDScript",
+"path": "res://src/database/Entities/game_enemy_data.gd"
 }, {
 "base": "Reference",
 "class": "GameLadderData",
@@ -128,6 +138,11 @@ _global_script_classes=[ {
 "class": "GameTileSetData",
 "language": "GDScript",
 "path": "res://src/database/game_tileset_data.gd"
+}, {
+"base": "Reference",
+"class": "GameWaterAndPlateData",
+"language": "GDScript",
+"path": "res://src/database/Entities/game_water_and_plate_data.gd"
 }, {
 "base": "Node",
 "class": "Level",
@@ -189,8 +204,10 @@ _global_script_class_icons={
 "ExitUnsavedDialog": "",
 "GameBgColorData": "",
 "GameBgData": "",
+"GameBossData": "",
 "GameBossPortraitData": "",
 "GameDataBuilder": "",
+"GameEnemyData": "",
 "GameLadderData": "",
 "GameLevel": "",
 "GameObjectData": "",
@@ -199,6 +216,7 @@ _global_script_class_icons={
 "GameSpikeData": "",
 "GameSpikeTileDrawer": "",
 "GameTileSetData": "",
+"GameWaterAndPlateData": "",
 "Level": "",
 "MainInspectorTab": "",
 "MenuBar": "",
