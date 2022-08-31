@@ -192,15 +192,19 @@ size_flags_stretch_ratio = 0.0
 
 [node name="TitleHBox" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="0"]
 margin_right = 264.0
+margin_bottom = 23.0
 
 [node name="InspectorHideBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="0"]
 margin_right = 165.0
+margin_bottom = 23.0
 
 [node name="ViewCodeBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="1"]
 margin_left = 169.0
 margin_right = 264.0
+margin_bottom = 23.0
 
 [node name="TabContainer" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="1"]
+margin_top = 27.0
 margin_right = 264.0
 margin_bottom = 560.0
 
