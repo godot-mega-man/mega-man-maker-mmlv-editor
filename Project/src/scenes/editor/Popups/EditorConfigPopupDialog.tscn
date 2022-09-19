@@ -49,18 +49,18 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBox"]
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 174.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer"]
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 130.0
 size_flags_horizontal = 3
 
 [node name="AutoUpdate" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 24.0
 hint_tooltip = "When enabled, automatically checks
 for an update."
@@ -68,14 +68,14 @@ custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/AutoUpdate"]
 margin_top = 1.0
-margin_right = 216.0
+margin_right = 222.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "Automatically check for updates"
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/AutoUpdate"]
-margin_left = 248.0
-margin_right = 464.0
+margin_left = 254.0
+margin_right = 476.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -86,7 +86,7 @@ text = "On"
 
 [node name="ReducedMotion" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 28.0
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 52.0
 hint_tooltip = "If you have sensitivity to motion effects,
 animation or screen movement, you can
@@ -96,14 +96,14 @@ custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion"]
 margin_top = 1.0
-margin_right = 216.0
+margin_right = 222.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "Reduced Motion"
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion"]
-margin_left = 248.0
-margin_right = 464.0
+margin_left = 254.0
+margin_right = 476.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -112,9 +112,38 @@ text = "On"
 
 [node name="ControlAutoUnfocus" parent="MarginContainer/VBox/ScrollContainer/VBox/ReducedMotion/CheckBox" instance=ExtResource( 3 )]
 
+[node name="LockedKeyboard" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
+visible = false
+margin_top = 56.0
+margin_right = 476.0
+margin_bottom = 80.0
+hint_tooltip = "If you have sensitivity to motion effects,
+animation or screen movement, you can
+use Reduced Motion to turn off these
+effects."
+custom_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/LockedKeyboard"]
+margin_top = 1.0
+margin_right = 304.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "Lock Screen from moving by keyboard presses"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBox/ScrollContainer/VBox/LockedKeyboard"]
+margin_left = 336.0
+margin_right = 476.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 128, 0 )
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "On"
+
+[node name="ControlAutoUnfocus" parent="MarginContainer/VBox/ScrollContainer/VBox/LockedKeyboard/CheckBox" instance=ExtResource( 3 )]
+
 [node name="CameraSmoothness" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 56.0
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 78.0
 hint_tooltip = "Speed in pixels per second of the
 camera's smoothing effect. Set this to 0 to
@@ -122,14 +151,14 @@ turn this off."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness"]
-margin_right = 216.0
+margin_right = 222.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Camera Smoothness"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness"]
-margin_left = 248.0
-margin_right = 464.0
+margin_left = 254.0
+margin_right = 476.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -139,21 +168,21 @@ size_flags_horizontal = 3
 
 [node name="MaxRecentFiles" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 82.0
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 104.0
 hint_tooltip = "The maximum number of recent file
 history displayed in the menu file."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles"]
-margin_right = 216.0
+margin_right = 222.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Max Recent Files"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles"]
-margin_left = 248.0
-margin_right = 464.0
+margin_left = 254.0
+margin_right = 476.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -163,7 +192,7 @@ size_flags_horizontal = 3
 
 [node name="Fps" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/VBox"]
 margin_top = 108.0
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 130.0
 hint_tooltip = "The desired frames per second. If the
 hardware cannot keep up, this setting may
@@ -172,14 +201,14 @@ limit."
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/VBox/Fps"]
-margin_right = 216.0
+margin_right = 222.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Rendering Frame Rate"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBox/ScrollContainer/VBox/Fps"]
-margin_left = 248.0
-margin_right = 464.0
+margin_left = 254.0
+margin_right = 476.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 128, 0 )
 mouse_filter = 1
@@ -189,29 +218,28 @@ size_flags_horizontal = 3
 
 [node name="ConfirmHBox" type="HBoxContainer" parent="MarginContainer/VBox"]
 margin_top = 178.0
-margin_right = 464.0
+margin_right = 476.0
 margin_bottom = 200.0
 custom_constants/separation = 16
 alignment = 2
 
 [node name="OkButton" type="Button" parent="MarginContainer/VBox/ConfirmHBox"]
-margin_left = 320.0
-margin_right = 384.0
+margin_left = 332.0
+margin_right = 396.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 64, 0 )
 shortcut = SubResource( 2 )
 text = "Ok"
 
 [node name="CancelButton" type="Button" parent="MarginContainer/VBox/ConfirmHBox"]
-margin_left = 400.0
-margin_right = 464.0
+margin_left = 412.0
+margin_right = 476.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 64, 0 )
 shortcut = SubResource( 4 )
 text = "Cancel"
 
 [node name="AnimatedPopupAnim" parent="." instance=ExtResource( 4 )]
-
 [connection signal="about_to_show" from="." to="." method="_on_EditorConfigPopupDialog_about_to_show"]
 [connection signal="unfocused" from="MarginContainer/VBox/ScrollContainer/VBox/CameraSmoothness/LineEdit/ControlAutoUnfocus" to="." method="_on_CameraSmoothness_LineEdit_unfocused"]
 [connection signal="unfocused" from="MarginContainer/VBox/ScrollContainer/VBox/MaxRecentFiles/LineEdit/ControlAutoUnfocus" to="." method="_on_MaxRecentFiles_LineEdit_unfocused"]

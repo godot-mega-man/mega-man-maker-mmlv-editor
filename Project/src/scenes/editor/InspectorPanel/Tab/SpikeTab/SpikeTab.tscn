@@ -7,14 +7,14 @@
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 margin_top = -1.0
-margin_bottom = 16.4
+margin_bottom = 20.4
 theme = ExtResource( 2 )
 text = "Spikes"
 
 [node name="ComingSoonLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 289.0
+margin_top = 291.0
 margin_right = 792.0
-margin_bottom = 320.0
+margin_bottom = 322.0
 size_flags_vertical = 6
 text = "Coming soon...
 However, Eyedropper tool can still be used on spike tiles."

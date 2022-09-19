@@ -22,6 +22,7 @@ const CFG_SECTION = "Settings"
 export var auto_check_update : bool = true
 
 export var reduced_motion : bool
+export var locked_keyboard : bool
 
 export var camera_smoothness : int = 15
 export var camera_smoothness_min : int = 0
@@ -53,6 +54,7 @@ func save():
 	cfg.set_value(CFG_SECTION, "camera_smoothness", camera_smoothness)
 	cfg.set_value(CFG_SECTION, "reduced_motion", reduced_motion)
 	cfg.set_value(CFG_SECTION, "max_recent_files", max_recent_files)
+	cfg.set_value(CFG_SECTION, "locked_keyboard", locked_keyboard)
 	cfg.set_value(CFG_SECTION, "fps", fps)
 	cfg.save(CONFIG_DIR.plus_file(CONFIG_FILENAME))
 	
@@ -80,6 +82,7 @@ func _load_init_config():
 	auto_check_update = cfg.get_value(CFG_SECTION, "auto_check_update", auto_check_update)
 	camera_smoothness = cfg.get_value(CFG_SECTION, "camera_smoothness", camera_smoothness)
 	reduced_motion = cfg.get_value(CFG_SECTION, "reduced_motion", reduced_motion)
+	locked_keyboard = cfg.get_value(CFG_SECTION, 'locked_keyboard', locked_keyboard)
 	max_recent_files = cfg.get_value(CFG_SECTION, "max_recent_files", max_recent_files)
 	fps = cfg.get_value(CFG_SECTION, "fps", fps)
 

@@ -39,7 +39,7 @@ margin_bottom = 560.0
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 margin_top = -1.0
-margin_bottom = 16.4
+margin_bottom = 20.4
 theme = ExtResource( 4 )
 text = "Backgrounds"
 
