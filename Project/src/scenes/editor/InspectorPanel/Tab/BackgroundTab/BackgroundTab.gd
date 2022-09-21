@@ -75,7 +75,7 @@ signal bg_selected(id)
 const BUTTON_PRESS_EFFECT = preload("res://src/utils/ButtonFx/PressFx/ButtonPressFx.tscn")
 const GRID_C_AUTO_RESIZER = preload("res://src/utils/GridContainerAutoResizer/GridContainerAutoResizer.tscn")
 const GRID_C_NAME_PREFIX = "GridGameID"
-const GAME_ID_LABEL_PREFIX = "MM"
+const GAME_ID_LABEL_PREFIX = "Mega Man "
 const IMG_TEXTURE_BEGIN_PATH = "res://assets/images/bg/"
 const BUTTON_SIZE = Vector2(128, 112)
 const MARGIN_BOTTOM_BOX_MIN_SIZE = Vector2(0, 96)

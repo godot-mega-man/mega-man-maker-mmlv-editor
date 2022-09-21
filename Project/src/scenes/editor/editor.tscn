@@ -192,19 +192,15 @@ size_flags_stretch_ratio = 0.0
 
 [node name="TitleHBox" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="0"]
 margin_right = 264.0
-margin_bottom = 23.0
 
 [node name="InspectorHideBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="0"]
 margin_right = 165.0
-margin_bottom = 23.0
 
 [node name="ViewCodeBtn" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TitleHBox" index="1"]
 margin_left = 169.0
 margin_right = 264.0
-margin_bottom = 23.0
 
 [node name="TabContainer" parent="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox" index="1"]
-margin_top = 27.0
 margin_right = 264.0
 margin_bottom = 560.0
 
@@ -273,6 +269,7 @@ add_target_path = NodePath("../Level/Objects")
 [node name="EditorInitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Anim"
 anims/Anim = SubResource( 2 )
+
 [connection signal="cleared_level" from="Level" to="." method="_on_Level_cleared_level"]
 [connection signal="timeout" from="Scroll2PlayerPosDelayTimer" to="." method="_on_Scroll2PlayerPosDelayTimer_timeout"]
 [connection signal="files_dropped" from="FileDropNotifier" to="." method="_on_FileDropNotifier_files_dropped"]
@@ -320,6 +317,7 @@ anims/Anim = SubResource( 2 )
 [connection signal="mouse_exited" from="CanvasLayer/Control/EditAreaRect" to="CanvasLayer/Control/EditAreaRect" method="_on_EditAreaRect_mouse_exited"]
 [connection signal="tile_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/TilemapTab" to="." method="_on_TilemapTab_tile_selected"]
 [connection signal="bg_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/BackgroundTab" to="." method="_on_BackgroundTab_bg_selected"]
+[connection signal="ladder_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/LadderTab" to="." method="_on_LadderTab_ladder_selected"]
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_confirmed_save"]
 [connection signal="custom_action" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_custom_action"]
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ReloadLevelDialog" to="." method="_on_ReloadLevelDialog_confirmed"]
@@ -327,5 +325,4 @@ anims/Anim = SubResource( 2 )
 [connection signal="changed_tile_id" from="TilePainter" to="." method="_on_TilePainter_changed_tile_id"]
 
 [editable path="Level"]
-
 [editable path="CanvasLayer/Control/InspectorPanel"]
