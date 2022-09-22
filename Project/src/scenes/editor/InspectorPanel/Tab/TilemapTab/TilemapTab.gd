@@ -248,27 +248,27 @@ func _create_grid_containters():
 		grid_c.raise()
 		label_game_id.text = GAME_ID_LABEL_PREFIX + str(id)
 		if id == 99:
-			label_game_id.text = "MM&B"
+			label_game_id.text = "Mega Man & Bass"
 		if id == 100:
-			label_game_id.text = "MM SOCCER"
+			label_game_id.text = "Mega Man Soccer"
 		if id == 101:
-			label_game_id.text = "MM I"
+			label_game_id.text = "Mega Man GB I"
 		if id == 102:
-			label_game_id.text = "MM II"		
+			label_game_id.text = "Mega Man GB II"		
 		if id == 103:
-			label_game_id.text = "MM III"
+			label_game_id.text = "Mega Man GB III"
 		if id == 104:
-			label_game_id.text = "MM IV"
+			label_game_id.text = "Mega Man GB IV"
 		if id == 105:
-			label_game_id.text = "MM V"
+			label_game_id.text = "Mega Man GB V"
 		if id == 106:
-			label_game_id.text = "MM POWER FIGHTERS"
+			label_game_id.text = "Power Fighters"
 		if id == 107:
-			label_game_id.text = "MM POWER FIGHTERS 2"
+			label_game_id.text = "Power Fighters 2"
 		if id == 108:
-			label_game_id.text = "MM BATTLE & CHASE"
+			label_game_id.text = "Battle & Chase"
 		if id == 109:
-			label_game_id.text = "MM WILY WARS"
+			label_game_id.text = "Wily Wars"
 		if id == 120:
 			label_game_id.text = "Misc"
 		# Map the newly created title label to tileset_btn_mapper
