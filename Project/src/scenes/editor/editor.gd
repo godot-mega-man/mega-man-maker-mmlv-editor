@@ -309,7 +309,10 @@ func _on_BackgroundTab_bg_selected(id) -> void:
 	
 func _on_LadderTab_ladder_selected(ladder_id) -> void:
 	tile_painter.set_current_tile_id(ladder_id)
-
+	
+func _on_SpikeTab_spike_selected(spike_id) -> void:
+	tile_painter.set_current_tile_id(spike_id)
+	
 func _on_TilePainter_changed_tile_id(tilemap_tile_id) -> void:
 	_make_tilemap_tab_current_tile(tilemap_tile_id)
 

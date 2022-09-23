@@ -73,7 +73,7 @@ script = ExtResource( 4 )
 
 [node name="SearchLineEdit" type="LineEdit" parent="VBox" index="0"]
 margin_right = 792.0
-margin_bottom = 24.0
+margin_bottom = 26.0
 clear_button_enabled = true
 placeholder_text = "Search tilesets"
 
@@ -94,14 +94,14 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" parent="VBox" index="1"]
-margin_top = 28.0
+margin_top = 30.0
 
 [node name="Vbox" parent="VBox/ScrollContainer" index="0"]
-margin_bottom = 560.0
+margin_bottom = 558.0
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 margin_top = -1.0
-margin_bottom = 16.4
+margin_bottom = 20.4
 theme = ExtResource( 7 )
 text = "Tileset"
 
@@ -109,9 +109,9 @@ text = "Tileset"
 theme = ExtResource( 8 )
 
 [node name="DescriptionLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 21.0
+margin_top = 25.0
 margin_right = 792.0
-margin_bottom = 35.0
+margin_bottom = 39.0
 text = "Double click on a tile to select sub-tile (shortcut: T)"
 align = 1
 autowrap = true
@@ -140,9 +140,6 @@ size_flags_vertical = 0
 shortcut = SubResource( 2 )
 icon = ExtResource( 2 )
 expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PreviewTextureRect" type="TextureRect" parent="." index="3"]
 visible = false
@@ -210,6 +207,7 @@ __meta__ = {
 [node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
 anims/Hide = SubResource( 3 )
 anims/Show = SubResource( 4 )
+
 [connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
 [connection signal="subtile_selected" from="SubtileSelectPopup" to="." method="_on_SubtileSelectPopup_subtile_selected"]
 [connection signal="pressed" from="SubtileButton" to="." method="_on_SubtileButton_pressed"]

@@ -318,6 +318,7 @@ anims/Anim = SubResource( 2 )
 [connection signal="tile_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/TilemapTab" to="." method="_on_TilemapTab_tile_selected"]
 [connection signal="bg_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/BackgroundTab" to="." method="_on_BackgroundTab_bg_selected"]
 [connection signal="ladder_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/LadderTab" to="." method="_on_LadderTab_ladder_selected"]
+[connection signal="spike_selected" from="CanvasLayer/Control/InspectorPanel/PanelOpen/ContentVBox/TabContainer/SpikeTab" to="." method="_on_SpikeTab_spike_selected"]
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_confirmed_save"]
 [connection signal="custom_action" from="CanvasLayer/Control/Popups/ExitUnsavedDialog" to="." method="_on_ExitUnsavedDialog_custom_action"]
 [connection signal="confirmed" from="CanvasLayer/Control/Popups/ReloadLevelDialog" to="." method="_on_ReloadLevelDialog_confirmed"]
