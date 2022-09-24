@@ -1,22 +1,191 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/Tab.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=2]
+[ext_resource path="res://src/utils/ControlAutoUnfocus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/editor_ui/MagnifyingGlass.png" type="Texture" id=3]
+[ext_resource path="res://assets/theme/DarkTheme/Dark.theme" type="Theme" id=4]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/SpikeTab/SpikeTab.gd" type="Script" id=5]
+[ext_resource path="res://src/scenes/editor/InspectorPanel/Tab/SpikeTab/SubtileSpikeSelectPopup/SubtileSpikeSelectPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/editor_ui/ToolBar/SpikePressed.png" type="Texture" id=7]
+
+[sub_resource type="InputEventKey" id=1]
+scancode = 84
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="SpikeTab" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="SearchLineEdit" type="LineEdit" parent="VBox" index="0"]
+margin_right = 792.0
+margin_bottom = 26.0
+clear_button_enabled = true
+placeholder_text = "Search Spikes"
+
+[node name="ControlAutoUnfocus" parent="VBox/SearchLineEdit" index="2" instance=ExtResource( 2 )]
+
+[node name="Icon" type="TextureRect" parent="VBox/SearchLineEdit" index="3"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_right = -8.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="ScrollContainer" parent="VBox" index="1"]
+margin_top = 30.0
+
+[node name="Vbox" parent="VBox/ScrollContainer" index="0"]
+margin_bottom = 558.0
 
 [node name="TitleLabel" parent="VBox/ScrollContainer/Vbox" index="0"]
 margin_top = -1.0
 margin_bottom = 20.4
-theme = ExtResource( 2 )
+theme = ExtResource( 4 )
 text = "Spikes"
 
-[node name="ComingSoonLabel" type="Label" parent="VBox/ScrollContainer/Vbox" index="1"]
-margin_top = 291.0
-margin_right = 792.0
-margin_bottom = 322.0
-size_flags_vertical = 6
-text = "Coming soon...
-However, Eyedropper tool can still be used on spike tiles."
+[node name="Panel" parent="VBox/ScrollContainer/Vbox/TitleLabel" index="0"]
+margin_left = 0.793701
+margin_right = 0.793701
+
+[node name="SubtileSpikeSelectPopup" parent="." index="1" instance=ExtResource( 6 )]
+visible = false
+
+[node name="SubtileSpikeButton" type="Button" parent="." index="2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -60.0
+margin_top = -52.0
+margin_right = -12.0
+margin_bottom = -4.0
+size_flags_vertical = 0
+shortcut = SubResource( 2 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="PreviewTextureRect" type="TextureRect" parent="." index="3"]
+visible = false
+margin_left = -364.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = 416.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="PreviewTextureRect" index="0"]
+self_modulate = Color( 1, 1, 1, 0.807843 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameVBox" type="VBoxContainer" parent="PreviewTextureRect" index="1"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_bottom = -12.0
+grow_horizontal = 0
+custom_constants/separation = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TilesetNameLabel" type="Label" parent="PreviewTextureRect/NameVBox" index="0"]
+margin_right = 352.0
+margin_bottom = 14.0
+grow_vertical = 0
+text = "TilesetName"
 align = 1
-autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TilesetIDLabel" type="Label" parent="PreviewTextureRect/NameVBox" index="1"]
+margin_top = 14.0
+margin_right = 352.0
+margin_bottom = 28.0
+grow_vertical = 0
+text = "TilesetID"
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowHideAnim" type="AnimationPlayer" parent="PreviewTextureRect" index="2"]
+anims/Hide = SubResource( 3 )
+anims/Show = SubResource( 4 )
+
+[connection signal="text_changed" from="VBox/SearchLineEdit" to="." method="_on_SearchLineEdit_text_changed"]
+[connection signal="subtile_spike_selected" from="SubtileSpikeSelectPopup" to="." method="_on_SubtileSpikeSelectPopup_subtile_spike_selected"]
+[connection signal="pressed" from="SubtileSpikeButton" to="." method="_on_SubtileSpikeButton_pressed"]

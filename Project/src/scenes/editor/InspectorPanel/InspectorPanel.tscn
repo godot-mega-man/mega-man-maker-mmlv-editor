@@ -38,11 +38,11 @@ __meta__ = {
 
 [node name="TitleHBox" type="HBoxContainer" parent="PanelOpen/ContentVBox"]
 margin_right = 272.0
-margin_bottom = 20.0
+margin_bottom = 23.0
 
 [node name="InspectorHideBtn" type="ToolButton" parent="PanelOpen/ContentVBox/TitleHBox"]
 margin_right = 173.0
-margin_bottom = 20.0
+margin_bottom = 23.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
@@ -52,12 +52,12 @@ align = 0
 [node name="ViewCodeBtn" type="Button" parent="PanelOpen/ContentVBox/TitleHBox"]
 margin_left = 177.0
 margin_right = 272.0
-margin_bottom = 20.0
+margin_bottom = 23.0
 toggle_mode = true
 text = "View as code"
 
 [node name="TabContainer" type="TabContainer" parent="PanelOpen/ContentVBox"]
-margin_top = 24.0
+margin_top = 27.0
 margin_right = 272.0
 margin_bottom = 592.0
 size_flags_vertical = 3
@@ -126,6 +126,7 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/InspectorHideBtn" to="." method="_on_InspectorHideBtn_pressed"]
 [connection signal="pressed" from="PanelOpen/ContentVBox/TitleHBox/ViewCodeBtn" to="." method="_on_ViewCodeBtn_pressed"]
 [connection signal="gui_input" from="PanelOpen/ResizeHandler" to="." method="_on_ResizeHandler_gui_input"]
