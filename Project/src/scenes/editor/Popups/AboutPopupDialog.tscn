@@ -126,16 +126,10 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "Developer"
 
-[node name="EmptyBox3" type="ReferenceRect" parent="VBoxContainer"]
+[node name="ContributorHSep" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 108.0
 margin_right = 443.0
-margin_bottom = 124.0
-rect_min_size = Vector2( 0, 16 )
-
-[node name="ContributorHSep" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 128.0
-margin_right = 443.0
-margin_bottom = 142.0
+margin_bottom = 122.0
 
 [node name="HSeparatorBegin" type="HSeparator" parent="VBoxContainer/ContributorHSep"]
 margin_right = 8.0
@@ -156,16 +150,16 @@ size_flags_horizontal = 3
 
 [node name="Contributors" type="Label" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0.494118 )
-margin_top = 146.0
+margin_top = 126.0
 margin_right = 443.0
-margin_bottom = 160.0
+margin_bottom = 140.0
 size_flags_horizontal = 3
 text = "Special thanks for all the people who had helped this project so far"
 
 [node name="ContribHBox" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 164.0
+margin_top = 144.0
 margin_right = 443.0
-margin_bottom = 178.0
+margin_bottom = 158.0
 
 [node name="Label" type="Label" parent="VBoxContainer/ContribHBox"]
 margin_right = 219.0
@@ -183,9 +177,9 @@ custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
 text = "DocterLumen"
 
 [node name="ContribHBox2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 182.0
+margin_top = 162.0
 margin_right = 443.0
-margin_bottom = 196.0
+margin_bottom = 176.0
 
 [node name="Label3" type="Label" parent="VBoxContainer/ContribHBox2"]
 margin_right = 219.0
@@ -202,36 +196,48 @@ size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
 text = "Doriko"
 
-[node name="EmptyBox2" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 200.0
+[node name="ContribHBox3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 180.0
 margin_right = 443.0
-margin_bottom = 216.0
-rect_min_size = Vector2( 0, 16 )
-size_flags_vertical = 3
+margin_bottom = 194.0
+
+[node name="Label5" type="Label" parent="VBoxContainer/ContribHBox3"]
+margin_right = 219.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
+text = "Shedrel"
+
+[node name="Label6" type="Label" parent="VBoxContainer/ContribHBox3"]
+margin_left = 223.0
+margin_right = 443.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0.439216, 1, 1 )
 
 [node name="ContributionButtton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 182.0
-margin_top = 220.0
+margin_top = 198.0
 margin_right = 261.0
-margin_bottom = 234.0
+margin_bottom = 212.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "Contribution"
 
 [node name="SourceButton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 132.0
-margin_top = 238.0
+margin_top = 216.0
 margin_right = 311.0
-margin_bottom = 252.0
+margin_bottom = 230.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "View source code on Github"
 
 [node name="RoadmapButton" type="LinkButton" parent="VBoxContainer"]
 margin_left = 178.0
-margin_top = 256.0
+margin_top = 234.0
 margin_right = 265.0
-margin_bottom = 270.0
+margin_bottom = 248.0
 size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "Our Roadmap"
@@ -246,17 +252,11 @@ size_flags_horizontal = 4
 custom_colors/font_color_hover = Color( 0.0823529, 0.635294, 1, 1 )
 text = "Contribute"
 
-[node name="EmptyFixBox" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 274.0
-margin_right = 443.0
-margin_bottom = 282.0
-rect_min_size = Vector2( 0, 8 )
-
 [node name="OkButton" type="Button" parent="VBoxContainer"]
 margin_left = 206.0
-margin_top = 286.0
+margin_top = 252.0
 margin_right = 237.0
-margin_bottom = 306.0
+margin_bottom = 272.0
 size_flags_horizontal = 4
 text = "OK"
 __meta__ = {
