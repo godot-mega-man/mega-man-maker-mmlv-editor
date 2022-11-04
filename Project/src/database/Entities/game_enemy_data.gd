@@ -246,12 +246,48 @@ const ENEMY_DATA = {
 	154: "Anti-Eddie",
 	155: "Air Stone/Fire/Nut",
 	156: "Mash Burner",
-	157: "Crunch Don"
+	157: "Crunch Don",
+	
+	#MM&B
+	203: "Electric Generator",
+	204: "Plasma +-",
+	205: "Gori Three",
+	206: "Dodonpa Cannon",
+	207: "Mokumokumo",
+	208: "Romper",
+	209: "Romper G (unused)",
+	210: "Hogale",
+	211: "Hogale (Spawner)",
+	212: "Kamikamin",
+	213: "Snoler",
+	214: "Big Telly (Fire)",
+	216: "Ammoner",
+	224: "Oni Robo Cloud",
+	225: "Oni Robo Wind",
+	226: "Oni Robo",
+	227: "Sydecka",
+	
+	#MMGB
+	215: "Hyoey",
+	217: "Biribaree",
+	218: "Piribaree",
+	219: "Doncatch",
+	220: "Hell Metall DX",
+	221: "Metall Sniper",
+	222: "Fukuhorn",
+	223: "Press'n",
+	228: "Cutting Wheel",
+	229: "Tamp",
+	230: "La Jaba",
+	231: "Fankrow",
+	232: "Shuhorn",
+	233: "Chainsoar"
+	
 }
 
 const BoneEnemies = [31,79,80,157,190]
 
-const MiniBosses = [62,74,83,98,170]
+const MiniBosses = [62,74,83,98,170,213,215,224,225,226]
 
 #-------------------------------------------------
 #      Properties

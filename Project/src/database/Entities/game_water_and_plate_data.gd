@@ -30,6 +30,7 @@ const WATER_AND_PLATE_DATA = {
 	141:"Mr.X Plate",
 	176:"Dr.Light Plate",
 	195:"Dr.Right Plate",
+	854: "King Plate",
 	196:"Top Shadow",
 	197:"Bottom Shadow",
 		
