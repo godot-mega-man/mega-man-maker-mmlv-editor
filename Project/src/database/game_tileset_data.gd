@@ -541,7 +541,7 @@ const TILESET_DATA = {
 	#885 : "",
 	#886 : "",
 	887 : "TstMMBTengu1",
-	888: "TstMmbTengu2",
+	888: "TstMMBTengu2",
 	889: "TstMmbTengu3",
 	890: "TstMmbTengu4",
 	893: "Tstmagic1",
