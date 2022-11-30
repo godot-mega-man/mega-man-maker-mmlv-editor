@@ -39,6 +39,8 @@ const PICKUP_DATA = {
 	11: "Weapon Remover",
 	12: "Yashichi",
 	13: "?-Tank",
+	14: "Anti-Yashichi",
+	15: "Drop Suppressor"
 }
 
 #-------------------------------------------------
