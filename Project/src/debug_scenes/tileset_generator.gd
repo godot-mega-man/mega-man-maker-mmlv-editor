@@ -81,7 +81,9 @@ func generate_tileset():
 	for i in GameTileSetData.TILESET_DATA.keys():
 		#generate each subtiles
 		var idx_j : int = 0
+		print(i)
 		for j in GameTileSetData.SUBTILE_POSITION_IDS.keys():
+			
 			tileset_output.create_tile(i * GameTileSetData.SUBTILE_COUNT + idx_j)
 			tileset_output.tile_set_texture(i * GameTileSetData.SUBTILE_COUNT + idx_j, load("res://assets/images/tilesets/" + GameTileSetData.TILESET_DATA.get(i) + ".png"))
 			tileset_output.tile_set_region(i * GameTileSetData.SUBTILE_COUNT + idx_j, Rect2(j + Vector2(-1, -1) + GameTileSetData.SUBTILE_TEXTURE_OFFSETS.get(i), Vector2(16, 16)))

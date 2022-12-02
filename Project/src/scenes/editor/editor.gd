@@ -21,7 +21,7 @@ extends Node
 #      Constants
 #-------------------------------------------------
 
-const TILESET_TILE = preload("res://assets/tilesets/175_offset_fix.tres")
+const TILESET_TILE = preload("res://assets/tilesets/all_tiles_1_8_0.tres")
 const TILESET_BG = preload("res://assets/tilesets/all_bg_1_8_0.tres")
 const TILESET_LADDER = preload("res://assets/tilesets/all_ladders_1_8_0.tres")
 const TILESET_SPIKE = preload("res://assets/tilesets/all_spikes_1_8_0.tres")
@@ -192,7 +192,14 @@ func _on_FileAccessCtrl_opened_file(dir, path : String) -> void:
 func _on_FileAccessCtrl_saved_file(dir, path) -> void:
 	level.save_level(dir, path)
 	_update_window_title_by_level_path(path)
-	EditorLogBox.add_message("Level saved at " + path)
+	var newSaveStyle = true
+	if !newSaveStyle:
+		EditorLogBox.add_message("Level saved at " + path)
+	else :
+		var last_slash = path.find_last("/") + 1
+		var level_name_string = path.substr(last_slash, path.length())
+		EditorLogBox.add_message(level_name_string + " Saved")
+	
 	UnsaveChanges.set_activated(false)
 
 #New level

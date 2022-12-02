@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/TstgbUranus1.png-d364c9f01c4b6cb0b514f077650bb132.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/images/tilesets/TstgbUranus1.png"
+dest_files=[ "res://.import/TstgbUranus1.png-d364c9f01c4b6cb0b514f077650bb132.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
