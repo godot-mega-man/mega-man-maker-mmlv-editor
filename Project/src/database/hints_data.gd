@@ -14,7 +14,7 @@ class_name DataHints
 
 const LIST = [
 	"Hold Alt to use eyedropper tool on an already placed tile, or even on a background to quickly select it. Middle clicking also works the same way." ,
-	"There are many ways to move around the map: Through directional keys, WASD, middle click & drag, or holding space key." ,
+	"There are many ways to move around the map: ThrougFh directional keys, WASD, middle click & drag, or holding space key." ,
 	"Selected objects can be moved with the mouse." ,
 	"You can drag & drop a level file from the OS file manager to load the level instantly." ,
 	"The program checks for an update on a regular basis. You can turn it on or off in the setting." ,
