@@ -21,7 +21,7 @@ class_name GameTileSetData
 #      Constants
 #-------------------------------------------------
 
-const SUBTILE_COUNT = 77
+const SUBTILE_COUNT = 80
 
 #These data contains filenames used for generating tilemap.
 #TilemapGenerator scene can be found in the project.
@@ -865,6 +865,9 @@ const SUBTILE_POSITION_IDS := {
 	
 	Vector2(106, 158) : 75,
 	Vector2(123, 158) : 76,
+	Vector2(1, 158) : 77,
+	Vector2(18, 158) : 78,
+	Vector2(36, 158) : 79,
 	
 }
 
