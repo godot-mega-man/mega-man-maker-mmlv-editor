@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TstMMBPirate2Alt2.png-3dfe2ace1c30b89384d824d8ab3abf6f.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/images/tilesets/TstMMBPirate2Alt2.png"
-dest_files=[ "res://.import/TstMMBPirate2Alt2.png-3dfe2ace1c30b89384d824d8ab3abf6f.stex" ]
-
 [params]
 
 compress/mode=0
