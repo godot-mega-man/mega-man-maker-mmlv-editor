@@ -1151,7 +1151,7 @@ const SUBTILE_TEXTURE_OFFSETS := {
 	537 : Vector2(0, 0),
 	538 : Vector2(1, 1),
 	539 : Vector2(0, 0),
-	540 : Vector2(1, 1),
+	540 : Vector2(0, 0),
 	541 : Vector2(1, 1),
 	542 : Vector2(0, 0),
 	543 : Vector2(1, 1),

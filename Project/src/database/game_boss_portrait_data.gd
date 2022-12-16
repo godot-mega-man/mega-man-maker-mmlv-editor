@@ -187,7 +187,87 @@ const DATA = {
 	47 : {
 		"name" : "Strike Man",
 		"texture" : preload("res://assets/images/boss_portraits/bossportrait47.png")
-	}
+	},	
+	48 : {
+		"name" : "Pirate Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait48.png")
+	},
+	49 : {
+		"name" : "Burner Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait49.png")
+	},
+	50 : {
+		"name" : "Cold Man",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait50.png")
+	},
+	51 : {
+		"name" : "Punk",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait51.png")
+	},
+	52 : {
+		"name" : "Enker",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait52.png")
+	},
+	53 : {
+		"name" : "Pluto",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait53.png")
+	},
+	54 : {
+		"name" : "Yellow Devil",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait54.png")
+	},
+	55 : {
+		"name" : "Boo Beam",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait55.png")
+	},
+#	56 : {
+#		"name" : "Boo Beam",
+#		"texture" : preload("res://assets/images/boss_portraits/bossportrait56.png")
+#	},
+#	57 : {
+#		"name" : "Boo Beam",
+#		"texture" : preload("res://assets/images/boss_portraits/bossportrait57.png")
+#	},
+	58 : {
+		"name" : "Kamegoro Machine",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait58.png")
+	},
+#	59 : {
+#		"name" : "Kamegoro Machine",
+#		"texture" : preload("res://assets/images/boss_portraits/bossportrait59.png")
+#	},
+#	60 : {
+#		"name" : "Kamegoro Machine",
+#		"texture" : preload("res://assets/images/boss_portraits/bossportrait60.png")
+#	},
+	61 : {
+		"name" : "Cossack Catcher",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait61.png")
+	},
+	62 : {
+		"name" : "Wily Machine 4",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait62.png")
+	},
+	63 : {
+		"name" : "Dark Man 3",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait63.png")
+	},
+	64 : {
+		"name" : "Dark Man 4",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait64.png")
+	},
+	65 : {
+		"name" : "Big Pets",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait65.png")
+	},
+#	66 : {
+#		"name" : "DO NOT DELETE",
+#		"texture" : preload("res://assets/images/boss_portraits/bossportrait66.png")
+#	},
+	67 : {
+		"name" : "Wily Machine 6",
+		"texture" : preload("res://assets/images/boss_portraits/bossportrait67.png")
+	}	
 }
 
 #-------------------------------------------------
