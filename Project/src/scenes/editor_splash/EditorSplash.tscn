@@ -321,5 +321,4 @@ anims/Show = SubResource( 4 )
 [node name="LoadDoneCheckTimer" type="Timer" parent="."]
 wait_time = 0.001
 autostart = true
-
 [connection signal="timeout" from="LoadDoneCheckTimer" to="." method="_on_LoadDoneCheckTimer_timeout"]

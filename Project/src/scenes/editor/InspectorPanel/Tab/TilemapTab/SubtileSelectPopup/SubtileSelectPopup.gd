@@ -37,7 +37,7 @@ func _ready() -> void:
 		if i is TileTextureButton:
 			i.connect("pressed_id", self, "_on_btn_pressed_id")
 			# TODO : EditorConfig Setting for showing hidden tiles for special users.
-			var show_hidden_tiles = false
+			var show_hidden_tiles = EditorConfig.advanced_mode
 			if (i.tile_id == 79 || i.tile_id == 78 || i.tile_id == 77) :
 				i.visible = show_hidden_tiles
 
