@@ -14,3 +14,9 @@ export_presets.cfg
 
 # End of https://www.gitignore.io/api/godot
 Project/addons/welcome_dialog/opened.txt
+
+Project/assets/images/tilesets/*.import
+Project/assets/images/spikes/*.import
+Project/assets/images/ladders/*.import
+Project/assets/images/bg/*.import
+Project/assets/images/boss_portraits/*.import
