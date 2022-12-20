@@ -390,6 +390,27 @@ func _update_used_rect():
 		val_r = min(objects_used_rect.position.y, val_r)
 		val_s = max(val_s , objects_used_rect.position.y + objects_used_rect.size.y)
 	
+	# I assume that this won't happen, but if these vals would not be a multiple of TILE_SIZE, 
+	# it  breaks the level, so fix this.
+	val_p = round(val_p / GameLevel.TILE_SIZE) * GameLevel.TILE_SIZE
+	val_q = round(val_q / GameLevel.TILE_SIZE) * GameLevel.TILE_SIZE
+	val_r = round(val_r / GameLevel.TILE_SIZE) * GameLevel.TILE_SIZE
+	val_s = round(val_s / GameLevel.TILE_SIZE) * GameLevel.TILE_SIZE
+	
+	# This does happen, where the bounds can become outside of the entire 50x20 screens, either to
+	# the left, or the right. So in order to fix this problem, we will minmax the bounds always.
+	
+	# left bound has to be at least 0
+	val_p = max(val_p, 0)
+	
+	# right bound has to be at most the end of the level
+	val_q = min(val_q, GameLevel.SCREEN_SIZE.x * GameLevel.LEVEL_SIZE.x - GameLevel.TILE_SIZE)
+	
+	# left bound has to be at least 0
+	val_r = max(val_r, 0)
+	
+	# bottom bound has to be at most the bottom of the level
+	val_s = min(val_s, GameLevel.SCREEN_SIZE.y * GameLevel.LEVEL_SIZE.y - GameLevel.TILE_SIZE)
 
 #-------------------------------------------------
 #      Connections
